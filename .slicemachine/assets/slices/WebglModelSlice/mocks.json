@@ -1,0 +1,142 @@
+[
+  {
+    "variation": "default-slice",
+    "name": "Default slice",
+    "slice_type": "webgl_model_slice",
+    "items": [
+      {
+        "Model": {
+          "url": "https://twitter.com/timbenniks/status/1304146886832594944",
+          "author_name": "Tim Benniks",
+          "author_url": "https://twitter.com/timbenniks",
+          "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">I’ve been diving deep on <a href=\"https://twitter.com/prismicio?ref_src=twsrc%5Etfw\">@prismicio</a> <a href=\"https://twitter.com/hashtag/slicemachine?src=hash&amp;ref_src=twsrc%5Etfw\">#slicemachine</a> today. I made all my own components and I used custom slices. It works like a charm with <a href=\"https://twitter.com/nuxt_js?ref_src=twsrc%5Etfw\">@nuxt_js</a>. Also: I’m coding with this view. <a href=\"https://t.co/F0I8X9gz39\">pic.twitter.com/F0I8X9gz39</a></p>&mdash; Tim Benniks (@timbenniks) <a href=\"https://twitter.com/timbenniks/status/1304146886832594944?ref_src=twsrc%5Etfw\">September 10, 2020</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+          "width": 550,
+          "height": null,
+          "type": "rich",
+          "cache_age": "3153600000",
+          "provider_name": "Twitter",
+          "provider_url": "http://www.twitter.com/",
+          "version": "1.0"
+        },
+        "Title": [
+          {
+            "type": "paragraph",
+            "text": "Laboris ea eiusmod non et ex aliqua sint nisi culpa. Adipisicing ut occaecat ut dolore eu aliquip officia nisi irure Lorem aute velit reprehenderit fugiat et.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "Model": {
+          "title": "Prismic January Product Meetup",
+          "author_name": "Prismic",
+          "author_url": "https://www.youtube.com/channel/UCJq6AEgtWeZt7ziQ-fLKOeA",
+          "type": "video",
+          "height": 113,
+          "width": 200,
+          "version": "1.0",
+          "provider_name": "YouTube",
+          "provider_url": "https://www.youtube.com/",
+          "thumbnail_height": 360,
+          "thumbnail_width": 480,
+          "thumbnail_url": "https://i.ytimg.com/vi/fiOwHYFkUz0/hqdefault.jpg",
+          "html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/fiOwHYFkUz0?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+        },
+        "Title": [
+          {
+            "type": "paragraph",
+            "text": "Occaecat ad culpa proident irure in officia ipsum tempor occaecat ipsum consequat do Lorem. Culpa consequat voluptate commodo nulla irure labore deserunt Lorem sunt. Occaecat mollit nostrud est in.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "Model": {
+          "title": "Prismic January Product Meetup",
+          "author_name": "Prismic",
+          "author_url": "https://www.youtube.com/channel/UCJq6AEgtWeZt7ziQ-fLKOeA",
+          "type": "video",
+          "height": 113,
+          "width": 200,
+          "version": "1.0",
+          "provider_name": "YouTube",
+          "provider_url": "https://www.youtube.com/",
+          "thumbnail_height": 360,
+          "thumbnail_width": 480,
+          "thumbnail_url": "https://i.ytimg.com/vi/fiOwHYFkUz0/hqdefault.jpg",
+          "html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/fiOwHYFkUz0?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+        },
+        "Title": [
+          {
+            "type": "paragraph",
+            "text": "Magna cillum do adipisicing sit dolor ullamco adipisicing deserunt velit commodo dolore consequat ad irure anim. Mollit consequat aliqua eiusmod duis labore anim anim minim culpa. Adipisicing aliqua elit do dolore eiusmod amet fugiat anim occaecat exercitation duis enim laborum tempor.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "Model": {
+          "title": "Introducing Slice Machine",
+          "author_name": "Prismic",
+          "author_url": "https://www.youtube.com/channel/UCJq6AEgtWeZt7ziQ-fLKOeA",
+          "type": "video",
+          "height": 113,
+          "width": 200,
+          "version": "1.0",
+          "provider_name": "YouTube",
+          "provider_url": "https://www.youtube.com/",
+          "thumbnail_height": 360,
+          "thumbnail_width": 480,
+          "thumbnail_url": "https://i.ytimg.com/vi/iewZXv94XGY/hqdefault.jpg",
+          "html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/iewZXv94XGY?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+        },
+        "Title": [
+          {
+            "type": "paragraph",
+            "text": "Adipisicing cillum Lorem Lorem eu minim dolor excepteur et ex qui excepteur aliquip est tempor officia. Lorem ullamco velit amet aliqua esse esse tempor enim consectetur ea. Esse pariatur esse enim veniam voluptate eiusmod.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "SectionNumber": "scale wireless bandwidth",
+      "SectionTitle": "drive strategic eyeballs",
+      "Type": "Default",
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Enable open-source solutions",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Voluptate anim elit aliquip dolore sint. Commodo ad consequat do ullamco.",
+          "spans": []
+        }
+      ],
+      "VideoLoop": {
+        "title": "Data Modelling — Create your Custom Types and Slices",
+        "author_name": "Prismic",
+        "author_url": "https://www.youtube.com/channel/UCJq6AEgtWeZt7ziQ-fLKOeA",
+        "type": "video",
+        "height": 113,
+        "width": 200,
+        "version": "1.0",
+        "provider_name": "YouTube",
+        "provider_url": "https://www.youtube.com/",
+        "thumbnail_height": 360,
+        "thumbnail_width": 480,
+        "thumbnail_url": "https://i.ytimg.com/vi/c-ATzcy6VkI/hqdefault.jpg",
+        "html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/c-ATzcy6VkI?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+      },
+      "CtaLink": {
+        "link_type": "Web",
+        "url": "http://twitter.com"
+      },
+      "CtaText": "seize strategic blockchains"
+    }
+  }
+]

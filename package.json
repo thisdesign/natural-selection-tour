@@ -1,0 +1,59 @@
+{
+  "name": "natural-selection-tour",
+  "version": "0.0.0",
+  "description": "Natural Selection Tour website built with Prismic and Nuxt",
+  "author": "14Four / This",
+  "license": "MIT",
+  "main": "slices/index.js",
+  "scripts": {
+    "dev": "nuxt",
+    "nuxt:build": "nuxt build",
+    "build": "nuxt generate",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "prepublishOnly": "node ./node_modules/sm-commons/scripts/bundle",
+    "storybook": "nuxt storybook",
+    "build-storybook": "nuxt storybook build",
+    "slicemachine": "start-slicemachine --port 9999"
+  },
+  "dependencies": {
+    "@nuxtjs/prismic": "^1.3.1",
+    "@nuxtjs/robots": "^2.5.0",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "@nuxtjs/svg": "^0.3.0",
+    "babel-eslint": "^10.1.0",
+    "cookies": "^0.8.0",
+    "js-logger": "^1.6.1",
+    "nuxt": "^2.15.8",
+    "nuxt-sm": "^0.0.8",
+    "slice-machine-ui": "^0.1.0",
+    "vue-essential-slices": "^0.3.0",
+    "vue-slicezone": "^0.1.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^6.0.1",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/storybook": "^4.1.1",
+    "@nuxtjs/style-resources": "^1.2.1",
+    "@nuxtjs/stylelint-module": "^4.0.0",
+    "core-js": "^3.18.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^7.18.0",
+    "postcss-loader": "3.0.0",
+    "prettier": "^2.4.1",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "sass": "^1.42.1",
+    "sass-loader": "^10.1.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended-scss": "^4.3.0",
+    "stylelint-scss": "^3.21.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thisdesign/natural-selection-tour"
+  }
+}

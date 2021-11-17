@@ -1,0 +1,53 @@
+{
+  "slices": {
+    "TextSlice": {
+      "default-slice": {
+        "primary": {
+          "Text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "HeroVideoSlice": {
+      "default-slice": {
+        "primary": {},
+        "items": {
+          "TextTop": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "TextBottom": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "TwoColumnSlice": {
+      "twoColumnCountdown": {
+        "primary": {}
+      }
+    },
+    "WebglModelSlice": {
+      "default-slice": {
+        "items": {
+          "Title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "primary": {}
+      }
+    }
+  }
+}

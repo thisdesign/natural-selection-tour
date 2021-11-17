@@ -1,0 +1,66 @@
+{
+  "id": "hero_video_slice",
+  "type": "SharedSlice",
+  "name": "HeroVideoSlice",
+  "description": "HeroVideoSlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "HeroVideoSlice",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "VideoLoop": {
+          "config": {
+            "label": "VideoLoop",
+            "placeholder": ""
+          },
+          "type": "Embed"
+        },
+        "VideoFull": {
+          "config": {
+            "label": "VideoFull",
+            "placeholder": ""
+          },
+          "type": "Embed"
+        },
+        "CtaText": {
+          "config": {
+            "label": "CtaText",
+            "placeholder": ""
+          },
+          "type": "Text"
+        }
+      },
+      "items": {
+        "TextTop": {
+          "config": {
+            "label": "TextTop",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph"
+          },
+          "type": "StructuredText"
+        },
+        "TextBottom": {
+          "config": {
+            "label": "TextBottom",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph"
+          },
+          "type": "StructuredText"
+        }
+      }
+    }
+  ]
+}

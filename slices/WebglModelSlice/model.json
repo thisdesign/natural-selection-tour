@@ -1,0 +1,99 @@
+{
+  "id": "webgl_model_slice",
+  "type": "SharedSlice",
+  "name": "WebglModelSlice",
+  "description": "WebglModelSlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "WebglModelSlice",
+      "primary": {
+        "SectionNumber": {
+          "config": {
+            "label": "SectionNumber",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "SectionTitle": {
+          "config": {
+            "label": "SectionTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "Type": {
+          "config": {
+            "label": "Type",
+            "placeholder": "",
+            "options": [
+              "Default",
+              "Hero"
+            ]
+          },
+          "type": "Select"
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your product"
+          }
+        },
+        "VideoLoop": {
+          "config": {
+            "label": "VideoLoop",
+            "placeholder": ""
+          },
+          "type": "Embed"
+        },
+        "CtaLink": {
+          "config": {
+            "label": "CtaLink",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
+        },
+        "CtaText": {
+          "config": {
+            "label": "CtaText",
+            "placeholder": ""
+          },
+          "type": "Text"
+        }
+      },
+      "items": {
+        "Model": {
+          "config": {
+            "label": "Model",
+            "placeholder": ""
+          },
+          "type": "Embed"
+        },
+        "Title": {
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph"
+          },
+          "type": "StructuredText"
+        }
+      }
+    }
+  ]
+}

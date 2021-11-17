@@ -1,0 +1,22 @@
+button {
+  appearance: none;
+}
+
+button,
+.btn {
+  display: inline-block;
+  width: 12rem;
+  padding: 1em 2em;
+  font-family: $baseFontFamily;
+  line-height: 1;
+  border: 1px solid black;
+  background: white;
+  color: black;
+  transition: $durationFast;
+
+  @include hocus {
+    background: black;
+    border-color: white;
+    color: white;
+  }
+}
