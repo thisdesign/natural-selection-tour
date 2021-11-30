@@ -1,0 +1,58 @@
+{
+  "id": "image_content_hero_slice",
+  "type": "SharedSlice",
+  "name": "ImageContentHeroSlice",
+  "description": "ImageContentHeroSlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ImageContentHeroSlice",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your product"
+          }
+        },
+        "Hero": {
+          "config": {
+            "label": "Hero",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
+        "CtaLink": {
+          "config": {
+            "label": "CtaLink",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
+        },
+        "CtaTitle": {
+          "config": {
+            "label": "CtaTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        }
+      },
+      "items": {}
+    }
+  ]
+}

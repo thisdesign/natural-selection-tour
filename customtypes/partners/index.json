@@ -1,0 +1,46 @@
+{
+  "id": "partners",
+  "label": "Partners",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "FeaturedPartners": {
+        "config": {
+          "label": "FeaturedPartners",
+          "placeholder": "",
+          "fields": {
+            "Partner": {
+              "config": {
+                "label": "Partner",
+                "customtypes": [
+                  "partner"
+                ],
+                "select": "document"
+              },
+              "type": "Link"
+            }
+          }
+        },
+        "type": "Group"
+      },
+      "Partners": {
+        "config": {
+          "label": "Partners",
+          "placeholder": "",
+          "fields": {
+            "Partner": {
+              "config": {
+                "label": "Partner",
+                "customtypes": [],
+                "select": "document"
+              },
+              "type": "Link"
+            }
+          }
+        },
+        "type": "Group"
+      }
+    }
+  }
+}

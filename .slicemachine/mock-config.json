@@ -1,53 +1,132 @@
 {
   "slices": {
+    "TwoColumnSlice": {
+      "default-slice": {
+        "primary": {}
+      }
+    },
+    "CountdownSlice": {
+      "default-slice": {
+        "primary": {
+          "SectionNumber": {
+            "content": "01"
+          },
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "CtaTitle": {
+            "content": "More"
+          },
+          "SidebarSectionNumber": {
+            "content": "02"
+          },
+          "SidebarSectionTitle": {
+            "content": "Sidebar"
+          },
+          "SectionTitle": {
+            "content": "Section"
+          }
+        }
+      }
+    },
+    "ImageBannerSlice": {
+      "default-slice": {
+        "primary": {
+          "Banner": {
+            "content": "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f"
+          },
+          "MobileBanner": {
+            "content": "https://images.unsplash.com/photo-1555169062-013468b47731"
+          },
+          "CtaTitle": {
+            "content": "More"
+          },
+          "SectionTitle": {
+            "content": "Section"
+          },
+          "SectionNumber": {
+            "content": "00"
+          }
+        }
+      }
+    },
+    "PartnerHeroSlice": {},
+    "PartnerLogoGridSlice": {
+      "default-slice": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "ImageContentHeroSlice": {},
     "TextSlice": {
       "default-slice": {
         "primary": {
-          "Text": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
+          "CtaTitle": {
+            "content": "More"
+          },
+          "SectionTitle": {
+            "content": "Section"
+          },
+          "SectionNumber": {
+            "content": "00"
           }
         }
       }
     },
     "HeroVideoSlice": {
       "default-slice": {
-        "primary": {},
         "items": {
           "TextTop": {
             "config": {
               "patternType": "PARAGRAPH",
-              "blocks": 1
+              "blocks": 4
             }
           },
           "TextBottom": {
             "config": {
               "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
-    "TwoColumnSlice": {
-      "twoColumnCountdown": {
-        "primary": {}
-      }
-    },
-    "WebglModelSlice": {
-      "default-slice": {
-        "items": {
-          "Title": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
+              "blocks": 4
             }
           }
         },
-        "primary": {}
+        "primary": {
+          "CtaText": {
+            "content": "Play"
+          },
+          "Logo": {
+            "content": "https://images.unsplash.com/photo-1490535004195-099bc723fa1f"
+          },
+          "SectionNumber": {
+            "content": "00"
+          },
+          "SectionTitle": {
+            "content": "Section"
+          },
+          "VideoLoop": {
+            "content": "https://www.youtube.com/embed/9J2Smg6j0pw"
+          },
+          "VideoFull": {
+            "content": "https://www.youtube.com/embed/Os8zzu5bQE8"
+          }
+        }
       }
+    }
+  },
+  "_cts": {
+    "rider": {},
+    "page": {},
+    "partner": {},
+    "partners": {
+      "FeaturedPartners": {}
     }
   }
 }

@@ -1,13 +1,16 @@
 <template>
-  <section class="section">
+  <section class="text-slice">
     <element-section-bar
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
-    <prismic-rich-text :field="slice.primary.Text" />
-    <prismic-link :field="slice.primary.CtaLink">{{
-      slice.primary.CtaTitle
-    }}</prismic-link>
+    <div class="rte">
+      <prismic-rich-text :field="slice.primary.Text" />
+    </div>
+    <element-cta-button
+      :link="slice.primary.CtaLink"
+      :title="slice.primary.CtaTitle"
+    />
   </section>
 </template>
 
@@ -26,18 +29,17 @@ export default {
 }
 </script>
 
-<style scoped>
-.section {
-  position: relative;
-  background: #f7f7f7;
-  color: #111;
-  padding: 4em;
-  text-align: center;
-}
-a {
-  color: #111;
-}
-.title {
-  margin-bottom: 2em;
+<style lang="scss">
+.text-slice {
+  padding: 0 40px;
+  margin-bottom: 40px;
+  color: $white;
+  p {
+    font-size: $font-large;
+    line-height: 1.1;
+  }
+  .rte {
+    margin-bottom: 10vw;
+  }
 }
 </style>

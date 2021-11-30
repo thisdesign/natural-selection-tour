@@ -11,15 +11,6 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "TextSlice",
       "primary": {
-        "Text": {
-          "config": {
-            "label": "Text",
-            "placeholder": "Main Text Content",
-            "allowTargetBlank": true,
-            "multi": "paragraph"
-          },
-          "type": "StructuredText"
-        },
         "SectionNumber": {
           "config": {
             "label": "SectionNumber",
@@ -34,14 +25,14 @@
           },
           "type": "Text"
         },
-        "CtaLink": {
+        "Text": {
           "config": {
-            "label": "CtaLink",
-            "placeholder": "",
-            "select": "web",
-            "allowTargetBlank": false
+            "label": "Text",
+            "placeholder": "Main Text Content",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
           },
-          "type": "Link"
+          "type": "StructuredText"
         },
         "CtaTitle": {
           "config": {
@@ -49,6 +40,14 @@
             "placeholder": ""
           },
           "type": "Text"
+        },
+        "CtaLink": {
+          "config": {
+            "label": "CtaLink",
+            "customtypes": [],
+            "select": "document"
+          },
+          "type": "Link"
         }
       },
       "items": {}

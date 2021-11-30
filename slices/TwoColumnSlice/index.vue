@@ -1,13 +1,23 @@
 <template>
-  <section class="section">
-    <prismic-rich-text :field="slice.primary.title" class="title" />
+  <layout-two-column
+    :section-number="slice.primary.SectionNumber"
+    :section-title="slice.primary.SectionTitle"
+    :sidebar-status="slice.primary.SidebarStatus"
+    :sidebar-section-number="slice.primary.SidebarSectionNumber"
+    :sidebar-section-title="slice.primary.SidebarSectionTitle"
+  >
+    <prismic-rich-text :field="slice.primary.title" />
     <prismic-rich-text :field="slice.primary.description" />
-  </section>
+    <prismic-rich-text :field="slice.primary.Content" />
+    <template #footer>
+      <prismic-rich-text :field="slice.primary.SidebarFooterText" />
+    </template>
+  </layout-two-column>
 </template>
 
 <script>
 export default {
-  name: "TwoColumnSlice",
+  name: 'TwoColumnSlice',
   props: {
     slice: {
       type: Object,
@@ -22,16 +32,6 @@ export default {
 
 <style scoped>
 .section {
-  position: relative;
-  background: #f7f7f7;
-  color: #111;
-  padding: 4em;
-  text-align: center;
-}
-a {
-  color: #111;
-}
-.title {
-  margin-bottom: 2em;
+  color: white;
 }
 </style>

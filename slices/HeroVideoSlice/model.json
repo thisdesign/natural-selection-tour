@@ -11,27 +11,27 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "HeroVideoSlice",
       "primary": {
-        "title": {
-          "type": "StructuredText",
+        "SectionNumber": {
           "config": {
-            "single": "heading1",
-            "label": "Title",
-            "placeholder": "This is where it all begins..."
-          }
-        },
-        "VideoLoop": {
-          "config": {
-            "label": "VideoLoop",
+            "label": "SectionNumber",
             "placeholder": ""
           },
-          "type": "Embed"
+          "type": "Text"
         },
-        "VideoFull": {
+        "SectionTitle": {
           "config": {
-            "label": "VideoFull",
+            "label": "SectionTitle",
             "placeholder": ""
           },
-          "type": "Embed"
+          "type": "Text"
+        },
+        "Logo": {
+          "config": {
+            "label": "Logo",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
         },
         "CtaText": {
           "config": {
@@ -39,6 +39,24 @@
             "placeholder": ""
           },
           "type": "Text"
+        },
+        "VideoFull": {
+          "config": {
+            "label": "VideoFull",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
+        },
+        "VideoLoop": {
+          "config": {
+            "label": "VideoLoop",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
         }
       },
       "items": {

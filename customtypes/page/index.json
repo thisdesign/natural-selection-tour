@@ -9,7 +9,31 @@
         "type": "UID",
         "config": {
           "label": "UID",
-          "placeholder": "unique-identifier-eg-homepage"
+          "placeholder": "unique-identifier-eg-homepage",
+          "useAsTitle" : true
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "rider_gallery_slice": {
+              "type": "SharedSlice"
+            },
+            "text_slice": {
+              "type": "SharedSlice"
+            },
+            "two_column_slice": {
+              "type": "SharedSlice"
+            },
+            "webgl_model_slice": {
+              "type": "SharedSlice"
+            },
+            "hero_video_slice": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

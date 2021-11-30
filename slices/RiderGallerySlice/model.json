@@ -1,0 +1,43 @@
+{
+  "id": "rider_gallery_slice",
+  "type": "SharedSlice",
+  "name": "RiderGallerySlice",
+  "description": "RiderGallerySlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "RiderGallerySlice",
+      "primary": {
+        "SectionNumber": {
+          "config": {
+            "label": "SectionNumber",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "SectionTitle": {
+          "config": {
+            "label": "SectionTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        }
+      },
+      "items": {
+        "Rider": {
+          "config": {
+            "label": "Rider",
+            "customtypes": [
+              "rider"
+            ],
+            "select": "document"
+          },
+          "type": "Link"
+        }
+      }
+    }
+  ]
+}

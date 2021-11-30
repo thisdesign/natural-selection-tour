@@ -6,6 +6,11 @@
 // Customize this to meet your project needs
 
 // COLORS
+$solid-black:     #000000;
+$black:           #181818;
+$white:           #ffffff;
+$dark-gray:       #0B0A0A;
+
 $gray-50:         #fafafa;
 $gray-100:        #f4f4f5;
 $gray-200:        #e4e4e7;
@@ -18,13 +23,15 @@ $gray-800:        #27272a;
 $gray-900:        #18181b;
 $green-primary:   #00F024;
 $blue-primary:    #0BA6D9;
-$purple-primary:  #520DFC;
+$purple-primary:  #1F2744;
 $red-primary:     #FF0E00;
 $orange-primary:  #FC8E0F;
 $yellow-primary:  #D9CE0B;
 
-$defaultTextColor: black;
-$linkColor: black;
+$font-large: clamp(24px, 3.9vw, 55px);
+
+$defaultTextColor: $black;
+$linkColor: $black;
 $linkColorHover: $blue-primary;
 $errorColor: $red-primary;
 
@@ -47,6 +54,7 @@ $font-bold: 700;
 
 $baseFontFamily: 'aktiv-grotesk', sans-serif;
 $headingFontFamily: 'aktiv-grotesk', sans-serif;
+$monoFontFamily: 'Sneak Mono', monospace;
 
 // DURATIONS
 $durationSlower: 0.75s;

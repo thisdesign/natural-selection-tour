@@ -1,0 +1,105 @@
+{
+  "id": "rider",
+  "label": "Rider",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "Name": {
+        "config": {
+          "label": "Name",
+          "useAsTitle" : true,
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      },
+      "Location": {
+        "config": {
+          "label": "Location",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      },
+      "InformationLeft": {
+        "config": {
+          "label": "InformationLeft",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      },
+      "InformationRight": {
+        "config": {
+          "label": "InformationRight",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      },
+      "Bio": {
+        "config": {
+          "label": "Bio",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      },
+      "Flag": {
+        "config": {
+          "label": "Flag",
+          "constraint": {},
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "Rider": {
+        "config": {
+          "label": "Rider",
+          "constraint": {},
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "Video": {
+        "config": {
+          "label": "Video",
+          "placeholder": ""
+        },
+        "type": "Embed"
+      },
+      "Logos": {
+        "config": {
+          "label": "Logos",
+          "placeholder": "",
+          "fields": {
+            "Link": {
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": "web",
+                "allowTargetBlank": false
+              },
+              "type": "Link"
+            },
+            "Image": {
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              },
+              "type": "Image"
+            }
+          }
+        },
+        "type": "Group"
+      }
+    }
+  }
+}

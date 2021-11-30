@@ -3,15 +3,17 @@ Looking for more information about the Slice Zone? Here's the documentation abou
 https://www.slicemachine.dev/documentation/nuxt/add-the-slice-zone-to-your-page
 -->
 <template>
-  <slice-zone type="page" :uid="$route.params.uid" />
+  <div class="app">
+    <slice-zone type="page" :uid="$route.params.uid" />
+  </div>
 </template>
 
 <script>
-import SliceZone from "vue-slicezone";
+import SliceZone from 'vue-slicezone'
 
 export default {
   components: {
-    SliceZone
-  }
-};
+    SliceZone,
+  },
+}
 </script>

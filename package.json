@@ -14,7 +14,7 @@
     "prepublishOnly": "node ./node_modules/sm-commons/scripts/bundle",
     "storybook": "nuxt storybook",
     "build-storybook": "nuxt storybook build",
-    "slicemachine": "start-slicemachine --port 9999"
+    "slicemachine": "start-slicemachine --port 9000"
   },
   "dependencies": {
     "@nuxtjs/prismic": "^1.3.1",
@@ -28,7 +28,8 @@
     "nuxt-sm": "^0.0.8",
     "slice-machine-ui": "^0.1.0",
     "vue-essential-slices": "^0.3.0",
-    "vue-slicezone": "^0.1.0"
+    "vue-slicezone": "^0.1.0",
+    "vue-youtube": "^1.4.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^6.0.1",

@@ -1,0 +1,43 @@
+{
+  "id": "2a7f9e57-47b2-4349-863d-b0cc1199cc57",
+  "uid": "quam-dolor-molestias",
+  "type": "partner",
+  "data": {
+    "Hero": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
+    },
+    "Title": [
+      {
+        "type": "paragraph",
+        "text": "Excepteur velit anim occaecat ea dolore amet reprehenderit consectetur culpa id pariatur fugiat. Non quis ullamco elit non ipsum qui ex non in laborum ullamco quis. Sint minim incididunt ut ex eu Lorem reprehenderit excepteur deserunt.",
+        "spans": []
+      }
+    ],
+    "Content": [
+      {
+        "type": "paragraph",
+        "text": "Occaecat nulla esse consequat cupidatat amet irure mollit sunt consectetur. Adipisicing culpa nostrud irure mollit consectetur.",
+        "spans": []
+      }
+    ],
+    "Logo": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
+    },
+    "Link": {
+      "link_type": "Web",
+      "url": "http://google.com"
+    }
+  }
+}

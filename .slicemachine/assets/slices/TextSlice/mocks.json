@@ -5,20 +5,20 @@
     "slice_type": "text_slice",
     "items": [],
     "primary": {
+      "SectionNumber": "00",
+      "SectionTitle": "Section",
       "Text": [
         {
           "type": "paragraph",
-          "text": "Sint nisi ad deserunt id incididunt velit est adipisicing aliqua aliquip est minim. Fugiat consectetur tempor aliquip eu do id ullamco adipisicing reprehenderit laboris sit et cupidatat.",
+          "text": "Enim irure magna elit consectetur ut nostrud id ad. Ex fugiat laboris adipisicing et quis labore nostrud dolor deserunt esse. Laborum dolor ut consequat do excepteur.",
           "spans": []
         }
       ],
-      "SectionNumber": "expedite innovative networks",
-      "SectionTitle": "innovate seamless solutions",
+      "CtaTitle": "More",
       "CtaLink": {
         "link_type": "Web",
-        "url": "https://slicemachine.dev"
-      },
-      "CtaTitle": "facilitate bricks-and-clicks eyeballs"
+        "url": "https://prismic.io"
+      }
     }
   }
 ]

@@ -1,0 +1,64 @@
+{
+  "id": "image_banner_slice",
+  "type": "SharedSlice",
+  "name": "ImageBannerSlice",
+  "description": "ImageBannerSlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ImageBannerSlice",
+      "primary": {
+        "SectionNumber": {
+          "config": {
+            "label": "SectionNumber",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "SectionTitle": {
+          "config": {
+            "label": "SectionTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "Banner": {
+          "config": {
+            "label": "Banner",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
+        "MobileBanner": {
+          "config": {
+            "label": "MobileBanner",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
+        "CtaTitle": {
+          "config": {
+            "label": "CtaTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "CtaLink": {
+          "config": {
+            "label": "CtaLink",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
+        }
+      },
+      "items": {}
+    }
+  ]
+}

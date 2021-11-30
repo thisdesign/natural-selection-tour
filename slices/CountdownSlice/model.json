@@ -1,0 +1,110 @@
+{
+  "id": "countdown_slice",
+  "type": "SharedSlice",
+  "name": "CountdownSlice",
+  "description": "CountdownSlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "CountdownSlice",
+      "primary": {
+        "SectionNumber": {
+          "config": {
+            "label": "SectionNumber",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "SectionTitle": {
+          "config": {
+            "label": "SectionTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "This is where it all begins...",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "TargetDate": {
+          "config": {
+            "label": "TargetDate",
+            "placeholder": ""
+          },
+          "type": "Timestamp"
+        },
+        "CtaTitle": {
+          "config": {
+            "label": "CtaTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "CtaLink": {
+          "config": {
+            "label": "CtaLink",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
+        },
+        "FooterContent": {
+          "config": {
+            "label": "FooterContent",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          },
+          "type": "StructuredText"
+        },
+        "SidebarSectionNumber": {
+          "config": {
+            "label": "SidebarSectionNumber",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "SidebarSectionTitle": {
+          "config": {
+            "label": "SidebarSectionTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "SidebarStatus": {
+          "config": {
+            "label": "SidebarStatus",
+            "placeholder": "Event status",
+            "options": [
+              "terrain-prep",
+              "live",
+              "wx-hold",
+              "archived"
+            ],
+            "default_value": "terrain-prep"
+          },
+          "type": "Select"
+        },
+        "SidebarFooterText": {
+          "config": {
+            "label": "SidebarFooterText",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          },
+          "type": "StructuredText"
+        }
+      },
+      "items": {}
+    }
+  ]
+}
