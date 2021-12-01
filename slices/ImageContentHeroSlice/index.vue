@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "ImageContentHeroSlice",
+  name: 'ImageContentHeroSlice',
   props: {
     slice: {
       type: Object,

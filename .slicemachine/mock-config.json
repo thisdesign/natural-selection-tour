@@ -119,6 +119,82 @@
           }
         }
       }
+    },
+    "EventListSlice": {
+      "default-slice": {
+        "primary": {
+          "SectionTitle": {
+            "content": "Section"
+          },
+          "SectionNumber": {
+            "content": "00"
+          }
+        },
+        "items": {
+          "SnowAmount": {
+            "content": 550
+          },
+          "SnowDescription": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "Description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "Location": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "Title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "Graphic": {
+            "content": "https://images.unsplash.com/photo-1426604966848-d7adac402bff"
+          },
+          "End": {
+            "content": 24
+          },
+          "Start": {
+            "content": 1
+          },
+          "Month": {
+            "content": "January"
+          },
+          "Active": {
+            "content": true
+          }
+        }
+      }
+    },
+    "ImageSliderSlice": {
+      "default-slice": {
+        "primary": {}
+      }
+    },
+    "CodeSlice": {
+      "default-slice": {
+        "primary": {}
+      }
+    },
+    "RiderRandomizerSlice": {
+      "default-slice": {
+        "primary": {}
+      }
+    },
+    "EventScheduleSlice": {
+      "default-slice": {
+        "primary": {}
+      }
     }
   },
   "_cts": {
