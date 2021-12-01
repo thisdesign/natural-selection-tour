@@ -1,7 +1,10 @@
 <template>
   <section class="section">
-    <prismic-rich-text :field="slice.primary.title" class="title" />
-    <prismic-rich-text :field="slice.primary.description" />
+    <element-section-bar
+      :number="slice.primary.SectionNumber"
+      :title="slice.primary.SectionTitle"
+    />
+    <prismic-rich-text :field="slice.primary.title" />
   </section>
 </template>
 
@@ -22,16 +25,8 @@ export default {
 
 <style scoped>
 .section {
-  position: relative;
-  background: #f7f7f7;
-  color: #111;
+  color: #fff;
   padding: 4em;
   text-align: center;
-}
-a {
-  color: #111;
-}
-.title {
-  margin-bottom: 2em;
 }
 </style>
