@@ -5,91 +5,36 @@
     "slice_type": "two_column_slice",
     "items": [],
     "primary": {
-      "SectionNumber": "streamline scalable vortals",
-      "SectionTitle": "harness 24/7 convergence",
+      "SectionNumber": "01",
+      "SectionTitle": "Section Title",
       "title": [
         {
           "type": "heading1",
-          "text": "Iterate real-time synergies",
+          "text": "Revolutionize open-source infomediaries",
           "spans": []
         }
       ],
       "description": [
         {
           "type": "paragraph",
-          "text": "Cupidatat id dolore ex qui labore duis magna. Officia non dolore sint dolor exercitation quis commodo et tempor non. Culpa velit elit aliquip adipisicing dolor dolore sit nulla.",
+          "text": "Fugiat non cillum sit esse labore.",
           "spans": []
         }
       ],
       "Content": [
         {
           "type": "paragraph",
-          "text": "Adipisicing in reprehenderit duis dolor duis aliqua dolore proident magna in proident qui. Aliqua ex tempor reprehenderit ad voluptate et Lorem fugiat irure fugiat sit.",
+          "text": "Amet cupidatat ipsum adipisicing excepteur exercitation do eu est anim labore cillum occaecat. Aute laborum irure veniam est ex ea ex. Veniam commodo do cillum et officia et deserunt aliquip cupidatat in labore et cillum pariatur.",
           "spans": []
         }
       ],
-      "SidebarSectionNumber": "empower 24/365 ROI",
-      "SidebarSectionTitle": "harness real-time portals",
+      "SidebarSectionNumber": "01",
+      "SidebarSectionTitle": "Status",
       "SidebarStatus": "terrain-prep",
       "SidebarFooterText": [
         {
           "type": "paragraph",
-          "text": "Ea dolor cupidatat velit labore adipisicing incididunt velit consequat in commodo reprehenderit minim cupidatat velit.",
-          "spans": []
-        }
-      ]
-    }
-  },
-  {
-    "variation": "twoColumnCountdown",
-    "name": "Two Column - Countdown",
-    "slice_type": "two_column_slice",
-    "items": [],
-    "primary": {
-      "SectionNumber": "strategize 24/7 markets",
-      "SectionTitle": "generate ubiquitous deliverables",
-      "Content": [
-        {
-          "type": "paragraph",
-          "text": "Eu laborum in excepteur anim consectetur. Ullamco labore tempor mollit irure aliqua incididunt pariatur. Irure non do ipsum non aute nulla nulla officia ex.",
-          "spans": []
-        }
-      ],
-      "Countdown": "2021-01-12T20:20:59.330Z",
-      "CtaLink": {
-        "link_type": "Web",
-        "url": "https://slicemachine.dev"
-      },
-      "CtaTitle": "integrate value-added web-readiness",
-      "FooterTitle": [
-        {
-          "type": "paragraph",
-          "text": "Amet veniam cillum sit nulla ullamco cupidatat non sunt occaecat nulla. Dolore deserunt exercitation adipisicing ea dolore et id proident aute Lorem. Eu dolor laboris esse ea qui voluptate ullamco velit dolor tempor ad officia amet reprehenderit.",
-          "spans": []
-        }
-      ],
-      "FooterCopy": [
-        {
-          "type": "paragraph",
-          "text": "Minim minim mollit eu in in officia nulla mollit eiusmod magna quis nulla. Dolor excepteur enim cupidatat tempor eiusmod do anim voluptate fugiat pariatur reprehenderit quis. Reprehenderit occaecat veniam proident.",
-          "spans": []
-        }
-      ],
-      "SidebarSectionNumber": "aggregate cross-platform systems",
-      "SidebarSectionTitle": "generate visionary action-items",
-      "SidebarColor": "#9e7e1d",
-      "SidebarTitle": [
-        {
-          "type": "paragraph",
-          "text": "Occaecat eu eiusmod velit sint incididunt Lorem amet. Mollit qui commodo nisi duis aliqua est nulla consequat aliquip eiusmod irure pariatur anim laboris ex. Minim veniam ad pariatur cupidatat aliqua Lorem in esse pariatur.",
-          "spans": []
-        }
-      ],
-      "SidebarFeaturedLetter": "disintermediate one-to-one methodologies",
-      "SidebarFooterText": [
-        {
-          "type": "paragraph",
-          "text": "Id magna commodo laboris eu qui proident commodo eu reprehenderit amet. Incididunt consequat occaecat laboris occaecat fugiat consectetur proident exercitation proident veniam esse aute reprehenderit fugiat. In veniam reprehenderit eu do irure aliquip.",
+          "text": "Consectetur nostrud fugiat officia cillum in commodo nulla ad cillum.",
           "spans": []
         }
       ]

@@ -2,7 +2,38 @@
   "slices": {
     "TwoColumnSlice": {
       "default-slice": {
-        "primary": {}
+        "primary": {
+          "SectionNumber": {
+            "content": "01"
+          },
+          "SidebarSectionNumber": {
+            "content": "01"
+          },
+          "SectionTitle": {
+            "content": "Section Title"
+          },
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "SidebarSectionTitle": {
+            "content": "Status"
+          },
+          "Content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     },
     "CountdownSlice": {
@@ -28,6 +59,9 @@
           },
           "SectionTitle": {
             "content": "Section"
+          },
+          "TargetDate": {
+            "content": "2022-01-20T23:04:44.000Z"
           }
         }
       }
