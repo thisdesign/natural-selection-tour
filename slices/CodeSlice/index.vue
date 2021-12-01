@@ -1,12 +1,12 @@
 <template>
   <section class="section">
-    <h3>Web GL Module</h3>
+    <h1>Code Slice</h1>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'WebglModelSlice',
+  name: 'CodeSlice',
   props: {
     slice: {
       type: Object,

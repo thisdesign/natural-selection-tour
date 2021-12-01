@@ -1,0 +1,17 @@
+{
+  "id": "event_schedule_slice",
+  "type": "SharedSlice",
+  "name": "EventScheduleSlice",
+  "description": "EventScheduleSlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "EventScheduleSlice",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

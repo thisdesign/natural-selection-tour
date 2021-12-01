@@ -1,12 +1,13 @@
 <template>
   <section class="section">
-    <h3>Web GL Module</h3>
+    <prismic-rich-text :field="slice.primary.title" class="title" />
+    <prismic-rich-text :field="slice.primary.description" />
   </section>
 </template>
 
 <script>
 export default {
-  name: 'WebglModelSlice',
+  name: 'EventScheduleSlice',
   props: {
     slice: {
       type: Object,
@@ -21,8 +22,16 @@ export default {
 
 <style scoped>
 .section {
-  color: #fff;
+  position: relative;
+  background: #f7f7f7;
+  color: #111;
   padding: 4em;
   text-align: center;
+}
+a {
+  color: #111;
+}
+.title {
+  margin-bottom: 2em;
 }
 </style>

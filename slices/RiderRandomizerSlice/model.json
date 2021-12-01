@@ -1,0 +1,17 @@
+{
+  "id": "rider_randomizer_slice",
+  "type": "SharedSlice",
+  "name": "RiderRandomizerSlice",
+  "description": "RiderRandomizerSlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "RiderRandomizerSlice",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

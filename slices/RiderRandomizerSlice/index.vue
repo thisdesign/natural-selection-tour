@@ -1,12 +1,12 @@
 <template>
   <section class="section">
-    <h3>Web GL Module</h3>
+    <h3>Randomizer</h3>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'WebglModelSlice',
+  name: 'RiderRandomizerSlice',
   props: {
     slice: {
       type: Object,

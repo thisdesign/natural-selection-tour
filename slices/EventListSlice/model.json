@@ -1,0 +1,140 @@
+{
+  "id": "event_list_slice",
+  "type": "SharedSlice",
+  "name": "EventListSlice",
+  "description": "EventListSlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "EventListSlice",
+      "primary": {
+        "SectionTitle": {
+          "config": {
+            "label": "SectionTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "SectionNumber": {
+          "config": {
+            "label": "SectionNumber",
+            "placeholder": ""
+          },
+          "type": "Text"
+        }
+      },
+      "items": {
+        "Active": {
+          "config": {
+            "label": "Active",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          },
+          "type": "Boolean"
+        },
+        "Month": {
+          "config": {
+            "label": "Month",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "Start": {
+          "config": {
+            "label": "Start",
+            "placeholder": ""
+          },
+          "type": "Number"
+        },
+        "End": {
+          "config": {
+            "label": "End",
+            "placeholder": ""
+          },
+          "type": "Number"
+        },
+        "Graphic": {
+          "config": {
+            "label": "Graphic",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
+        "Title": {
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "heading2,heading1,heading3,heading4,heading5,heading6"
+          },
+          "type": "StructuredText"
+        },
+        "Location": {
+          "config": {
+            "label": "Location",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph"
+          },
+          "type": "StructuredText"
+        },
+        "Description": {
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph"
+          },
+          "type": "StructuredText"
+        },
+        "Status": {
+          "config": {
+            "label": "Status",
+            "placeholder": "",
+            "options": [
+              "terrain-prep",
+              "live",
+              "wx-hold",
+              "archived"
+            ],
+            "default_value": "terrain-prep"
+          },
+          "type": "Select"
+        },
+        "SnowDescription": {
+          "config": {
+            "label": "Snow Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          },
+          "type": "StructuredText"
+        },
+        "SnowAmount": {
+          "config": {
+            "label": "Snow Amount",
+            "placeholder": ""
+          },
+          "type": "Number"
+        },
+        "SnowUnits": {
+          "config": {
+            "label": "Snow Units",
+            "placeholder": "",
+            "options": [
+              "in",
+              "c"
+            ],
+            "default_value": "in"
+          },
+          "type": "Select"
+        }
+      }
+    }
+  ]
+}

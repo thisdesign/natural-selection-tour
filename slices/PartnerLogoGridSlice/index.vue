@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "PartnerLogoGridSlice",
+  name: 'PartnerLogoGridSlice',
   props: {
     slice: {
       type: Object,

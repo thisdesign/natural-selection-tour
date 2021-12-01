@@ -1,0 +1,17 @@
+{
+  "id": "code_slice",
+  "type": "SharedSlice",
+  "name": "CodeSlice",
+  "description": "CodeSlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "CodeSlice",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}
