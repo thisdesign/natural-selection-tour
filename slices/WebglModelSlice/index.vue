@@ -4,6 +4,7 @@
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
+    <media-webgl-player />
     <prismic-rich-text :field="slice.primary.title" />
     <prismic-rich-text :field="slice.primary.description" />
     <prismic-embed :field="slice.primary.VideoLoop" />
