@@ -227,7 +227,12 @@
     },
     "EventScheduleSlice": {
       "default-slice": {
-        "primary": {}
+        "primary": {},
+        "items": {
+          "date": {
+            "content": "2021-12-02T00:00:40.439Z"
+          }
+        }
       }
     }
   },
