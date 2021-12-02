@@ -55,6 +55,7 @@ export default {
 <style scoped lang="scss">
 .section {
   position: relative;
+  justify-content: space-between;
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-wrap: wrap;
@@ -68,21 +69,28 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 5vw;
+  margin-bottom: 10vw;
   @include media-breakpoint-up(sm) {
-    flex-wrap: nowrap;
     padding-right: 1vw;
     width: 48%;
+    margin-bottom: 6vw;
+  }
+  @include media-breakpoint-up(md) {
+    flex-wrap: nowrap;
   }
 }
 .event-image {
   position: relative;
-  padding-top: 12.5%;
   overflow: hidden;
+  padding-top: 35%;
   border-radius: 1vw;
   width: 48%;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
+    padding-top: 13%;
     width: 25%;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: 18%;
   }
   img {
     position: absolute;
@@ -101,7 +109,7 @@ a {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     width: 20%;
   }
   .month,
@@ -112,7 +120,10 @@ a {
     background: white;
     color: black;
     padding: 5px 0;
-    font-size: 1.5vw;
+    font-size: 6vw;
+    @include media-breakpoint-up(sm) {
+      font-size: 1.5vw;
+    }
   }
   .day {
     font-family: 'Natural-Selection';
@@ -121,13 +132,18 @@ a {
     align-items: center;
     justify-content: center;
     line-height: 0.5;
-    font-size: 5vw;
+    font-size: 20vw;
     padding: 20px;
+    @include media-breakpoint-up(sm) {
+      font-size: 5vw;
+    }
   }
 }
 .event-description {
   width: 100%;
-  @include media-breakpoint-up(sm) {
+  margin-top: 4vw;
+  @include media-breakpoint-up(md) {
+    margin-top: 0;
     width: 50%;
   }
 }
