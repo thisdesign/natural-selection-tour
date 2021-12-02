@@ -1,5 +1,41 @@
 {
   "slices": {
+    "TwoColumnSlice": {
+      "default-slice": {
+        "primary": {
+          "SectionNumber": {
+            "content": "01"
+          },
+          "SidebarSectionNumber": {
+            "content": "01"
+          },
+          "SectionTitle": {
+            "content": "Section Title"
+          },
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "SidebarSectionTitle": {
+            "content": "Status"
+          },
+          "Content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
     "CountdownSlice": {
       "default-slice": {
         "primary": {
@@ -23,6 +59,9 @@
           },
           "SectionTitle": {
             "content": "Section"
+          },
+          "TargetDate": {
+            "content": "2022-01-20T23:04:44.000Z"
           }
         }
       }
@@ -141,7 +180,12 @@
     },
     "EventScheduleSlice": {
       "default-slice": {
-        "primary": {}
+        "primary": {},
+        "items": {
+          "date": {
+            "content": "2021-12-02T00:00:40.439Z"
+          }
+        }
       }
     }
   },

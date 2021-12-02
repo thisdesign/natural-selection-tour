@@ -5,36 +5,36 @@
     "slice_type": "two_column_slice",
     "items": [],
     "primary": {
-      "SectionNumber": "streamline viral schemas",
-      "SectionTitle": "integrate innovative interfaces",
+      "SectionNumber": "01",
+      "SectionTitle": "Section Title",
       "title": [
         {
           "type": "heading1",
-          "text": "Redefine best-of-breed interfaces",
+          "text": "Revolutionize open-source infomediaries",
           "spans": []
         }
       ],
       "description": [
         {
           "type": "paragraph",
-          "text": "Laborum minim fugiat sunt Lorem nulla mollit ullamco sit cillum ipsum officia. Ea officia aliquip cillum pariatur velit reprehenderit.",
+          "text": "Fugiat non cillum sit esse labore.",
           "spans": []
         }
       ],
       "Content": [
         {
           "type": "paragraph",
-          "text": "Do voluptate excepteur ad magna anim enim. Veniam ipsum officia laboris pariatur elit esse velit sunt cillum velit officia ad reprehenderit eu.",
+          "text": "Amet cupidatat ipsum adipisicing excepteur exercitation do eu est anim labore cillum occaecat. Aute laborum irure veniam est ex ea ex. Veniam commodo do cillum et officia et deserunt aliquip cupidatat in labore et cillum pariatur.",
           "spans": []
         }
       ],
-      "SidebarSectionNumber": "orchestrate interactive supply-chains",
-      "SidebarSectionTitle": "architect 24/365 experiences",
+      "SidebarSectionNumber": "01",
+      "SidebarSectionTitle": "Status",
       "SidebarStatus": "terrain-prep",
       "SidebarFooterText": [
         {
           "type": "paragraph",
-          "text": "Elit commodo magna officia duis do. Ipsum deserunt cupidatat eu. Incididunt dolore elit officia ipsum amet ipsum nisi deserunt.",
+          "text": "Consectetur nostrud fugiat officia cillum in commodo nulla ad cillum.",
           "spans": []
         }
       ]

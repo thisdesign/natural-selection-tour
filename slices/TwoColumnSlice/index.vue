@@ -6,11 +6,20 @@
     :sidebar-section-number="slice.primary.SidebarSectionNumber"
     :sidebar-section-title="slice.primary.SidebarSectionTitle"
   >
-    <prismic-rich-text :field="slice.primary.title" />
-    <prismic-rich-text :field="slice.primary.description" />
-    <prismic-rich-text :field="slice.primary.Content" />
+    <prismic-rich-text class="two-column-title" :field="slice.primary.title" />
+    <prismic-rich-text
+      class="two-column-description"
+      :field="slice.primary.description"
+    />
+    <prismic-rich-text
+      class="two-column-content"
+      :field="slice.primary.Content"
+    />
     <template #footer>
-      <prismic-rich-text :field="slice.primary.SidebarFooterText" />
+      <prismic-rich-text
+        class="two-column-footer"
+        :field="slice.primary.SidebarFooterText"
+      />
     </template>
   </layout-two-column>
 </template>
@@ -30,8 +39,44 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 .section {
   color: white;
+}
+.two-column-title {
+  h1 {
+    font-family: 'Natural-Selection';
+    line-height: 0.8;
+    font-size: 8vw;
+    @include media-breakpoint-up(sm) {
+      font-size: 3.9vw;
+    }
+  }
+}
+.two-column-description {
+  padding-top: 0.7vw;
+  p {
+    font-size: 4vw;
+    @include media-breakpoint-up(sm) {
+      font-size: 1.3vw;
+    }
+  }
+}
+.two-column-content {
+  margin: 12vw 0 16vw;
+  @include media-breakpoint-up(sm) {
+    margin: 3vw 0 5vw;
+  }
+  p {
+    line-height: 1;
+    font-size: 7vw;
+    @include media-breakpoint-up(sm) {
+      font-size: 4vw;
+    }
+  }
+}
+.two-column-footer {
+  font-family: 'Sneak';
+  text-transform: uppercase;
 }
 </style>

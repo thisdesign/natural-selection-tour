@@ -1,4 +1,3 @@
-
 // --------------------------------------------------
 //
 // Variables
@@ -6,27 +5,28 @@
 // Customize this to meet your project needs
 
 // COLORS
-$solid-black:     #000000;
-$black:           #181818;
-$white:           #ffffff;
-$dark-gray:       #0B0A0A;
+$solid-black: #000000;
+$black: #181818;
+$white: #ffffff;
+$dark-gray: #0b0a0a;
 
-$gray-50:         #fafafa;
-$gray-100:        #f4f4f5;
-$gray-200:        #e4e4e7;
-$gray-300:        #d4d4d8;
-$gray-400:        #a1a1aa;
-$gray-500:        #71717a;
-$gray-600:        #52525b;
-$gray-700:        #3f3f46;
-$gray-800:        #27272a;
-$gray-900:        #18181b;
-$green-primary:   #00F024;
-$blue-primary:    #0BA6D9;
-$purple-primary:  #1F2744;
-$red-primary:     #FF0E00;
-$orange-primary:  #FC8E0F;
-$yellow-primary:  #D9CE0B;
+$gray-50: #fafafa;
+$gray-100: #f4f4f5;
+$gray-200: #e4e4e7;
+$gray-300: #d4d4d8;
+$gray-400: #a1a1aa;
+$gray-500: #71717a;
+$gray-600: #52525b;
+$gray-700: #3f3f46;
+$gray-800: #27272a;
+$gray-900: #18181b;
+$green-primary: #00f024;
+$blue-primary: #0038ff;
+$blue-smoke: #1f2744;
+$purple-primary: #1f2744;
+$red-primary: #ff0e00;
+$orange-primary: #fc8e0f;
+$yellow-primary: #ffe600;
 
 $font-large: clamp(24px, 3.9vw, 55px);
 
@@ -36,8 +36,8 @@ $linkColorHover: $blue-primary;
 $errorColor: $red-primary;
 
 // TYPOGRAPHY
-$text-xs: .75rem;
-$text-sm: .875rem;
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
 $text-base: 1rem;
 $text-lg: 1.25rem;
 $text-xl: 2rem;
@@ -76,7 +76,7 @@ $grid-breakpoints: (
   sm: 768px,
   md: 1024px,
   lg: 1366px,
-  xl: 1920px
+  xl: 1920px,
 ) !default;
 
 /**
