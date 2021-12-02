@@ -18,7 +18,7 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"text_slice","items":[],"primary":{"SectionNumber":"00","SectionTitle":"Section","Text":[{"type":"paragraph","text":"Enim irure magna elit consectetur ut nostrud id ad. Ex fugiat laboris adipisicing et quis labore nostrud dolor deserunt esse. Laborum dolor ut consequat do excepteur.","spans":[]}],"CtaTitle":"More","CtaLink":{"link_type":"Web","url":"https://prismic.io"}},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","name":"Default slice","slice_type":"text_slice","items":[],"primary":{"SectionNumber":"enhance scalable functionalities","SectionTitle":"expedite holistic schemas","Text":[{"type":"paragraph","text":"Amet ex sint do laboris occaecat mollit eiusmod qui voluptate anim adipisicing minim magna commodo. Excepteur sint ullamco exercitation labore reprehenderit.","spans":[]}],"CtaTitle":"utilize cross-media mindshare","CtaLink":{"link_type":"Web","url":"http://twitter.com"}},"id":"_DefaultSlice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'

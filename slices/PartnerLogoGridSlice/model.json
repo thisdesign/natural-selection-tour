@@ -11,6 +11,20 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "PartnerLogoGridSlice",
       "primary": {
+        "SectionTitle": {
+          "config": {
+            "label": "SectionTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "SectionNumber": {
+          "config": {
+            "label": "SectionNumber",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
         "title": {
           "type": "StructuredText",
           "config": {

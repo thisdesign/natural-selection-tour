@@ -5,10 +5,12 @@
     "slice_type": "partner_logo_grid_slice",
     "items": [],
     "primary": {
+      "SectionTitle": "Section",
+      "SectionNumber": "00",
       "title": [
         {
           "type": "heading1",
-          "text": "Drive open-source systems",
+          "text": "Matrix scalable initiatives",
           "spans": []
         }
       ]

@@ -96,64 +96,17 @@
               "patternType": "HEADING",
               "blocks": 1
             }
+          },
+          "SectionNumber": {
+            "content": "00"
+          },
+          "SectionTitle": {
+            "content": "Section"
           }
         }
       }
     },
     "ImageContentHeroSlice": {},
-    "TextSlice": {
-      "default-slice": {
-        "primary": {
-          "CtaTitle": {
-            "content": "More"
-          },
-          "SectionTitle": {
-            "content": "Section"
-          },
-          "SectionNumber": {
-            "content": "00"
-          }
-        }
-      }
-    },
-    "HeroVideoSlice": {
-      "default-slice": {
-        "items": {
-          "TextTop": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 4
-            }
-          },
-          "TextBottom": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 4
-            }
-          }
-        },
-        "primary": {
-          "CtaText": {
-            "content": "Play"
-          },
-          "Logo": {
-            "content": "https://images.unsplash.com/photo-1490535004195-099bc723fa1f"
-          },
-          "SectionNumber": {
-            "content": "00"
-          },
-          "SectionTitle": {
-            "content": "Section"
-          },
-          "VideoLoop": {
-            "content": "https://www.youtube.com/embed/9J2Smg6j0pw"
-          },
-          "VideoFull": {
-            "content": "https://www.youtube.com/embed/Os8zzu5bQE8"
-          }
-        }
-      }
-    },
     "EventListSlice": {
       "default-slice": {
         "primary": {

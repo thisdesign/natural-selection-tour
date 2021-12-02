@@ -10,8 +10,17 @@
         "config": {
           "label": "UID",
           "placeholder": "unique-identifier-eg-homepage",
-          "useAsTitle" : true
+          "useAsTitle": true
         }
+      },
+      "FloatingNav": {
+        "config": {
+          "label": "FloatingNav",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": true
+        },
+        "type": "Boolean"
       },
       "slices": {
         "type": "Slices",
