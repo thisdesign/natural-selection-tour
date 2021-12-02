@@ -1,28 +1,34 @@
 <template>
   <section class="section">
-    <div
-      v-for="(event, index) in getPaginatedEvents()"
-      :key="event.date"
-      class="event"
-      :class="{ hidden: index >= amountToShow && collapsed }"
-    >
-      <div class="event-image">
-        <prismic-image :field="event.image" />
-      </div>
-      <div class="event-date">
-        <span class="month">
-          {{ eventMonth(event.date) }}
-        </span>
-        <span class="day">
-          {{ eventDay(event.date) }}
-        </span>
-      </div>
-      <div class="event-description">
-        <h5>
-          {{ eventWeekday(event.date) }}, {{ eventMonth(event.date, 'short') }}
-          {{ eventDay(event.date) }}rd
-        </h5>
-        <prismic-rich-text :field="event.description" />
+    <element-section-bar
+      :number="slice.primary.SectionNumber"
+      :title="slice.primary.SectionTitle"
+    />
+    <div class="events">
+      <div
+        v-for="(event, index) in getPaginatedEvents()"
+        :key="event.date"
+        class="event"
+        :class="{ hidden: index >= amountToShow && collapsed }"
+      >
+        <div class="event-image">
+          <prismic-image :field="event.image" />
+        </div>
+        <div class="event-date">
+          <span class="month">
+            {{ eventMonth(event.date) }}
+          </span>
+          <span class="day">
+            {{ eventDay(event.date) }}
+          </span>
+        </div>
+        <div class="event-description">
+          <h5>
+            {{ eventWeekday(event.date) }},
+            {{ eventMonth(event.date, 'short') }} {{ eventDay(event.date) }}rd
+          </h5>
+          <prismic-rich-text :field="event.description" />
+        </div>
       </div>
     </div>
     <button class="btn-show-more" v-if="collapsed" @click="expandEvents()">
@@ -76,11 +82,6 @@ export default {
 <style scoped lang="scss">
 .section {
   position: relative;
-  justify-content: space-between;
-  @include media-breakpoint-up(sm) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 a {
   color: #111;
@@ -89,6 +90,14 @@ a {
 .btn-show-more {
   @include media-breakpoint-up(sm) {
     display: none;
+  }
+}
+
+.events {
+  justify-content: space-between;
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -136,40 +145,8 @@ a {
 }
 .event-date {
   width: 48%;
-  text-align: center;
-  border: 1px solid white;
-  border-radius: 1vw;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
   @include media-breakpoint-up(md) {
     width: 20%;
-  }
-  .month,
-  .day {
-    display: block;
-  }
-  .month {
-    background: white;
-    color: black;
-    padding: 5px 0;
-    font-size: 6vw;
-    @include media-breakpoint-up(sm) {
-      font-size: 1.5vw;
-    }
-  }
-  .day {
-    font-family: 'Natural-Selection';
-    flex: 1 1 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 0.5;
-    font-size: 20vw;
-    padding: 20px;
-    @include media-breakpoint-up(sm) {
-      font-size: 5vw;
-    }
   }
 }
 .event-description {

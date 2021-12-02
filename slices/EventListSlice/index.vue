@@ -10,9 +10,12 @@
         :key="`event-item-${i}`"
         :class="`event-item ${item.Active ? '' : 'disable'}`"
       >
-        <span>{{ item.Month }}</span>
-        <span>{{ item.Start }}</span>
-        <span>{{ item.End }}</span>
+        <div class="event-date">
+          <span class="month">{{ item.Month }}</span>
+          <span class="day">{{ item.Start }}</span>
+          <span class="divider"></span>
+          <span class="day">{{ item.End }}</span>
+        </div>
         <prismic-image :field="item.Graphic" />
         <prismic-rich-text :field="item.Title" />
         <prismic-rich-text :field="item.Location" />
@@ -57,6 +60,15 @@ export default {
 
   img {
     width: 100%;
+  }
+}
+.event-date {
+  .divider {
+    display: block;
+    height: 1px;
+    width: 25%;
+    background: white;
+    margin: auto;
   }
 }
 </style>

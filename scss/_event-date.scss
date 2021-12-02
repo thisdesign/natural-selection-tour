@@ -1,0 +1,38 @@
+.event-date {
+  //   width: 48%;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 1vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  //   @include media-breakpoint-up(md) {
+  //     width: 20%;
+  //   }
+  .month,
+  .day {
+    display: block;
+  }
+  .month {
+    background: white;
+    color: black;
+    padding: 5px 0;
+    font-size: 6vw;
+    @include media-breakpoint-up(sm) {
+      font-size: 1.5vw;
+    }
+  }
+  .day {
+    font-family: 'Natural-Selection';
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0.5;
+    font-size: 20vw;
+    padding: 20px;
+    @include media-breakpoint-up(sm) {
+      font-size: 5vw;
+    }
+  }
+}
