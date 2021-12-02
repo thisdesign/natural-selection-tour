@@ -1,6 +1,11 @@
 <template>
   <section class="section">
-    <div v-for="event in slice.items" :key="event.date" class="event">
+    <div
+      v-for="(event, index) in getPaginatedEvents()"
+      :key="event.date"
+      class="event"
+      :class="{ hidden: index >= amountToShow && collapsed }"
+    >
       <div class="event-image">
         <prismic-image :field="event.image" />
       </div>
@@ -20,6 +25,9 @@
         <prismic-rich-text :field="event.description" />
       </div>
     </div>
+    <button class="btn-show-more" v-if="collapsed" @click="expandEvents()">
+      More
+    </button>
   </section>
 </template>
 
@@ -35,7 +43,20 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      collapsed: true,
+      amountToShow: 2,
+      eventItems: this.slice.items,
+    }
+  },
   methods: {
+    expandEvents() {
+      this.collapsed = false
+    },
+    getPaginatedEvents() {
+      return this.eventItems
+    },
     eventMonth(eventDate, length = 'long') {
       const date = new Date(eventDate)
       return date.toLocaleString('default', { month: length })
@@ -65,6 +86,12 @@ a {
   color: #111;
 }
 
+.btn-show-more {
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
+
 .event {
   display: flex;
   justify-content: space-between;
@@ -77,6 +104,12 @@ a {
   }
   @include media-breakpoint-up(md) {
     flex-wrap: nowrap;
+  }
+  &.hidden {
+    display: none;
+    @include media-breakpoint-up(sm) {
+      display: flex;
+    }
   }
 }
 .event-image {
