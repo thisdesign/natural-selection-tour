@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    <button class="btn-show-more" v-if="collapsed" @click="expandEvents()">
+    <button v-if="collapsed" class="btn-show-more" @click="expandEvents()">
       More
     </button>
   </section>
@@ -147,6 +147,18 @@ a {
   width: 48%;
   @include media-breakpoint-up(md) {
     width: 20%;
+  }
+  .month {
+    font-size: 6vw;
+    @include media-breakpoint-up(sm) {
+      font-size: 1.5vw;
+    }
+  }
+  .day {
+    font-size: 20vw;
+    @include media-breakpoint-up(sm) {
+      font-size: 5vw;
+    }
   }
 }
 .event-description {
