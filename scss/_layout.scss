@@ -11,6 +11,7 @@ body {
     width: calc(100% - 4rem);
     // padding: 0 clamp(2rem, 2.5%, 5rem);
     height: 100%;
+    z-index: -1;
     background-image: linear-gradient($bgLineColor, $bgLineColor),
       linear-gradient($bgLineColor, $bgLineColor),
       linear-gradient($bgLineColor, $bgLineColor),
