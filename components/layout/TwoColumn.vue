@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section site-padding">
     <div class="col col-left">
       <element-section-bar :number="sectionNumber" :title="sectionTitle" />
       <slot></slot>

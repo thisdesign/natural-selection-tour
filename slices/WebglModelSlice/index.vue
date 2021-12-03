@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section site-padding">
     <element-section-bar
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
@@ -37,7 +37,6 @@ export default {
 <style scoped>
 .section {
   color: #fff;
-  padding: 4em;
   text-align: center;
 }
 </style>
