@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section site-padding">
     <element-section-bar
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
@@ -35,6 +35,7 @@
               <span class="unit">{{ item.SnowUnits }}</span>
             </div>
           </div>
+          <button class="event-btn">Explore</button>
         </div>
       </vue-glide-slide>
     </vue-glide>
@@ -78,7 +79,7 @@ export default {
           730: {
             perView: 2,
           },
-          940: {
+          1023: {
             perView: 3,
           },
         },
@@ -107,6 +108,15 @@ export default {
       opacity: 0.5;
       pointer-events: none;
     }
+  }
+  .event-btn {
+    margin-top: clamp(2.5rem, 5vw, 10rem);
+    border-radius: 100rem;
+    font-size: clamp(1.3rem, 2.8vw, 10rem);
+    line-height: 1;
+    padding: 0.5em;
+    text-align: center;
+    width: 100%;
   }
   .event-graphic {
     position: relative;
@@ -173,6 +183,10 @@ export default {
     margin-top: clamp(3rem, 5vw, 10rem);
     .label {
       margin-bottom: 2vw;
+      width: 60%;
+      * {
+        font-size: clamp(0.85rem, 1.2vw, 3rem);
+      }
     }
     .snow-amount {
       display: flex;

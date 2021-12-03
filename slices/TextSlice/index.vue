@@ -1,5 +1,5 @@
 <template>
-  <section class="text-slice">
+  <section class="text-slice site-padding">
     <element-section-bar
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
@@ -31,7 +31,6 @@ export default {
 
 <style lang="scss">
 .text-slice {
-  padding: 0 40px;
   margin-bottom: 40px;
   color: $white;
   p {

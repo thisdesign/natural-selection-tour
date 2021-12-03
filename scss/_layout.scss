@@ -1,5 +1,40 @@
 body {
   background-color: $solid-black;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    // width: 95%;
+    width: calc(100% - 4rem);
+    // padding: 0 clamp(2rem, 2.5%, 5rem);
+    height: 100%;
+    background-image: linear-gradient($bgLineColor, $bgLineColor),
+      linear-gradient($bgLineColor, $bgLineColor),
+      linear-gradient($bgLineColor, $bgLineColor),
+      linear-gradient($bgLineColor, $bgLineColor),
+      linear-gradient($bgLineColor, $bgLineColor);
+    background-position: 0 center, 100% center;
+    background-repeat: no-repeat;
+    background-size: 1px 100%;
+    @include media-breakpoint-up(sm) {
+      background-position: 0 center, 50% center, 100% center;
+    }
+    @include media-breakpoint-up(md) {
+      width: 95%;
+      background-position: 0 center, 25% center, 50% center, 75% center,
+        100% center;
+    }
+  }
+}
+
+.site-padding {
+  padding: 0 2rem;
+  @include media-breakpoint-up(md) {
+    padding: 0 2.5%;
+  }
 }
 
 .site-wrapper {
@@ -20,7 +55,8 @@ body {
   &--inner {
     flex-grow: 1;
 
-    & > * { // page
+    & > * {
+      // page
       position: relative;
       width: 100%;
       text-align: center;
