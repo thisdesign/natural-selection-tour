@@ -6,7 +6,7 @@
         :title="slice.primary.SectionTitle"
       />
     </div>
-    <vue-glide :options="sliderOptions" class="events-list">
+    <!-- <vue-glide :options="sliderOptions" class="events-list">
       <vue-glide-slide
         v-for="(item, i) in slice.items"
         :key="`event-item-${i}`"
@@ -40,19 +40,59 @@
           <button class="event-btn">Explore</button>
         </div>
       </vue-glide-slide>
-    </vue-glide>
+    </vue-glide> -->
+    <slider
+      ref="slider"
+      :options="sliderOptions"
+      class="events-list"
+      @slide="onSlide"
+    >
+      <slideritem v-for="(item, i) in slice.items" :key="`event-item-${i}`">
+        <div :class="`event-item ${item.Active ? '' : 'disable'}`">
+          <div class="event-date">
+            <span class="month">{{ item.Month }}</span>
+            <span class="day">{{ item.Start }}</span>
+            <span class="divider"></span>
+            <span class="day">{{ item.End }}</span>
+          </div>
+          <div class="event-graphic">
+            <prismic-image :field="item.Graphic" />
+          </div>
+          <prismic-rich-text class="event-title" :field="item.Title" />
+          <div class="status-row">
+            <prismic-rich-text class="event-location" :field="item.Location" />
+            <element-status-icon class="status-icon" :status="item.Status" />
+          </div>
+          <prismic-rich-text
+            class="event-description"
+            :field="item.Description"
+          />
+          <div class="location-stats">
+            <prismic-rich-text class="label" :field="item.SnowDescription" />
+            <div class="snow-amount">
+              <span class="number">{{ item.SnowAmount }}</span>
+              <span class="unit">{{ item.SnowUnits }}</span>
+            </div>
+          </div>
+          <button class="event-btn">Explore</button>
+        </div>
+      </slideritem>
+    </slider>
   </section>
 </template>
 
 <script>
-import { Glide, GlideSlide } from 'vue-glide-js'
-import 'vue-glide-js/dist/vue-glide.css'
+// import { Glide, GlideSlide } from 'vue-glide-js'
+// import 'vue-glide-js/dist/vue-glide.css'
+import { slider, slideritem } from 'vue-concise-slider'
 
 export default {
   name: 'EventListSlice',
   components: {
-    [Glide.name]: Glide,
-    [GlideSlide.name]: GlideSlide,
+    // [Glide.name]: Glide,
+    // [GlideSlide.name]: GlideSlide,
+    slider,
+    slideritem,
   },
   props: {
     slice: {
@@ -66,29 +106,25 @@ export default {
   data() {
     return {
       sliderOptions: {
-        bound: true,
-        perView: 4,
-        gap: 0,
-        rewind: false,
-        peek: {
-          before: 0,
-          after: 0,
-        },
-        breakpoints: {
-          500: {
-            perView: 1,
-          },
-          730: {
-            perView: 2,
-          },
-          1023: {
-            perView: 3,
-          },
-        },
+        preventRebound: true,
+        pagination: false,
+        threshold: 100,
+        currentPage: 0,
+        loop: false,
+        freeze: true,
       },
     }
   },
-  methods: {},
+  methods: {
+    slide() {
+      this.$refs.slider.$emit('slideNext')
+    },
+    onSlide(data) {
+      // if (this.$refs.slider.currentSlide)
+      console.log(data.end)
+      window.end = data.end
+    },
+  },
 }
 </script>
 
@@ -102,17 +138,42 @@ export default {
   }
 }
 .events-list {
-  .glide__slide {
+  // .glide__slide {
+  //   height: unset;
+  //   margin-right: calc(5vw) !important;
+  //   width: calc(100vw - 4rem) !important;
+  //   @include media-breakpoint-up(xs) {
+  //     margin-right: 0 !important;
+  //     width: calc(50vw - 2rem) !important;
+  //   }
+  //   @include media-breakpoint-up(md) {
+  //     width: calc(23.75vw) !important;
+  //   }
+  // }
+  .slider-wrapper {
+    align-items: stretch;
+  }
+  .slider-item {
+    width: calc(100vw - 4rem);
+    margin-right: 20px;
+    white-space: normal;
+    text-align: left;
     height: unset;
-    margin-right: calc(5vw) !important;
-    width: calc(100vw - 4rem) !important;
+    font-size: 100%;
     @include media-breakpoint-up(xs) {
-      margin-right: 0 !important;
-      width: calc(24.358974%) !important;
+      width: calc(50vw - 2rem);
+      margin-right: 0;
+    }
+    @include media-breakpoint-up(sm) {
+      width: calc(100vw / 3 - 1rem);
+    }
+    @include media-breakpoint-up(md) {
+      width: calc(97.5vw / 4 - 2.5vw / 4);
     }
   }
   .event-item {
     height: 100%;
+    width: 100%;
     color: $white;
     display: flex;
     flex-direction: column;

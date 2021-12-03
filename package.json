@@ -54,7 +54,8 @@
     "slice-machine-ui": "^0.1.2",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.3.0",
-    "stylelint-scss": "^3.21.0"
+    "stylelint-scss": "^3.21.0",
+    "vue-concise-slider": "^4.2.3"
   },
   "repository": {
     "type": "git",
