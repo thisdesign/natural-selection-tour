@@ -1,9 +1,11 @@
 <template>
-  <section class="section site-padding">
-    <element-section-bar
-      :number="slice.primary.SectionNumber"
-      :title="slice.primary.SectionTitle"
-    />
+  <section class="section event-section site-padding">
+    <div class="section-bar site-padding">
+      <element-section-bar
+        :number="slice.primary.SectionNumber"
+        :title="slice.primary.SectionTitle"
+      />
+    </div>
     <vue-glide :options="sliderOptions" class="events-list">
       <vue-glide-slide
         v-for="(item, i) in slice.items"
@@ -70,7 +72,7 @@ export default {
         rewind: false,
         peek: {
           before: 0,
-          after: 50,
+          after: 0,
         },
         breakpoints: {
           500: {
@@ -91,19 +93,33 @@ export default {
 </script>
 
 <style lang="scss">
+.event-section {
+  &.site-padding {
+    padding-right: 0;
+  }
+  .section-bar.site-padding {
+    padding-left: 0;
+  }
+}
 .events-list {
   .glide__slide {
     height: unset;
-    // width: 25% !important;
-    // min-width: 250px;
+    margin-right: calc(5vw) !important;
+    width: calc(100vw - 4rem) !important;
+    @include media-breakpoint-up(xs) {
+      margin-right: 0 !important;
+      width: calc(24.358974%) !important;
+    }
   }
   .event-item {
     height: 100%;
     color: $white;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include media-breakpoint-up(xs) {
+      padding-right: 2rem;
+    }
     &.disable {
       opacity: 0.5;
       pointer-events: none;
@@ -142,7 +158,8 @@ export default {
       font-size: clamp(1.5rem, 1.5vw, 5rem);
     }
     .day {
-      font-size: clamp(3rem, 5vw, 7rem);
+      font-size: clamp(3rem, 8vw, 10rem);
+      padding: clamp(20px, 2vw, 2vw) 1vw;
     }
   }
   .event-title {

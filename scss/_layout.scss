@@ -20,9 +20,6 @@ body {
     background-position: 0 center, 100% center;
     background-repeat: no-repeat;
     background-size: 1px 100%;
-    @include media-breakpoint-up(sm) {
-      background-position: 0 center, 50% center, 100% center;
-    }
     @include media-breakpoint-up(md) {
       width: 95%;
       background-position: 0 center, 25% center, 50% center, 75% center,
