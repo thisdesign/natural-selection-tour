@@ -41,6 +41,33 @@
             },
             "hero_video_slice": {
               "type": "SharedSlice"
+            },
+            "code_slice": {
+              "type": "SharedSlice"
+            },
+            "countdown_slice": {
+              "type": "SharedSlice"
+            },
+            "event_list_slice": {
+              "type": "SharedSlice"
+            },
+            "image_banner_slice": {
+              "type": "SharedSlice"
+            },
+            "event_schedule_slice": {
+              "type": "SharedSlice"
+            },
+            "image_content_hero_slice": {
+              "type": "SharedSlice"
+            },
+            "image_slider_slice": {
+              "type": "SharedSlice"
+            },
+            "partner_logo_grid_slice": {
+              "type": "SharedSlice"
+            },
+            "rider_randomizer_slice": {
+              "type": "SharedSlice"
             }
           }
         }

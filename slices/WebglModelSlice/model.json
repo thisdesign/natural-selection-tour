@@ -74,6 +74,15 @@
             "placeholder": ""
           },
           "type": "Text"
+        },
+        "Featured": {
+          "config": {
+            "label": "Featured",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          },
+          "type": "Boolean"
         }
       },
       "items": {

@@ -18,18 +18,17 @@
 export default {
   name: 'RiderGallerySlice',
   props: {
-    riders: {
-      type: Object,
-      default() {
-        return {}
-      },
-    },
     slice: {
       type: Object,
       required: true,
       default() {
         return {}
       },
+    },
+  },
+  computed: {
+    riders() {
+      return this.$store.state.riders.results
     },
   },
   methods: {

@@ -18,7 +18,7 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"image_banner_slice","items":[],"primary":{"SectionNumber":"00","SectionTitle":"Section","Banner":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=900&h=500&fit=crop"},"MobileBanner":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1555169062-013468b47731?w=900&h=500&fit=crop"},"CtaTitle":"More","CtaLink":{"link_type":"Web","url":"http://google.com"}},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","name":"Default slice","slice_type":"image_banner_slice","items":[],"primary":{"SectionNumber":"deploy back-end schemas","SectionTitle":"enable rich web-readiness","Banner":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1587840171670-8b850147754e?w=900&h=500&fit=crop"},"MobileBanner":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1587905069134-008460d7a636?w=900&h=500&fit=crop"},"CtaTitle":"scale compelling interfaces","CtaLink":{"link_type":"Web","url":"https://prismic.io"}},"id":"_DefaultSlice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
