@@ -7,6 +7,7 @@
       :link="slice.primary.CtaLink"
       :title="slice.primary.CtaTitle"
     />
+    <button v-if="slice.NextUid" @click="handleNext">Next</button>
   </section>
 </template>
 
@@ -20,6 +21,12 @@ export default {
       default() {
         return {}
       },
+    },
+  },
+  methods: {
+    handleNext() {
+      console.log(this.slice)
+      this.$router.push('/partner/' + this.slice.NextUid)
     },
   },
 }

@@ -66,7 +66,7 @@ export default {
   },
   computed: {
     statusTitle() {
-      return this.sidebarStatus.replace('-', ' ')
+      return this.sidebarStatus ? this.sidebarStatus.replace('-', ' ') : ''
     },
     statusColor() {
       if (this.sidebarStatus === 'terrain-prep') {

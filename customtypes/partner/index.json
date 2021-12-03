@@ -8,7 +8,8 @@
       "uid": {
         "config": {
           "label": "uid",
-          "placeholder": ""
+          "placeholder": "",
+          "useAsTitle": true
         },
         "type": "UID"
       },
@@ -54,6 +55,13 @@
           "allowTargetBlank": false
         },
         "type": "Link"
+      },
+      "LinkTitle": {
+        "config": {
+          "label": "LinkTitle",
+          "placeholder": ""
+        },
+        "type": "Text"
       }
     }
   }

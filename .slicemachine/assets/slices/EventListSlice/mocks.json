@@ -5,10 +5,10 @@
     "slice_type": "event_list_slice",
     "items": [
       {
-        "Active": true,
-        "Month": "engage world-class convergence",
-        "Start": 6807,
-        "End": 9572,
+        "Active": false,
+        "Month": "exploit back-end technologies",
+        "Start": 9259,
+        "End": 6963,
         "Graphic": {
           "dimensions": {
             "width": 900,
@@ -16,26 +16,26 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?w=900&h=500&fit=crop"
         },
         "Title": [
           {
             "type": "heading2",
-            "text": "Expedite frictionless blockchains",
+            "text": "Reinvent turn-key interfaces",
             "spans": []
           }
         ],
         "Location": [
           {
             "type": "paragraph",
-            "text": "Eiusmod duis in aliqua exercitation irure id mollit enim velit qui sit ex. Eiusmod deserunt ullamco duis fugiat adipisicing aliqua do velit irure.",
+            "text": "Tempor enim culpa nostrud laborum consequat commodo aute nisi ullamco aliquip.",
             "spans": []
           }
         ],
         "Description": [
           {
             "type": "paragraph",
-            "text": "Esse ut non laborum elit amet mollit do aliquip. Esse ad irure eu sit id anim nostrud proident.",
+            "text": "Cillum deserunt nulla anim veniam tempor sit elit exercitation. Elit proident est magna non proident ea culpa nulla commodo.",
             "spans": []
           }
         ],
@@ -43,64 +43,18 @@
         "SnowDescription": [
           {
             "type": "paragraph",
-            "text": "Excepteur irure nisi voluptate commodo irure et dolor sint et do laboris commodo laborum. Esse esse ex duis enim consequat labore officia voluptate.",
+            "text": "Et exercitation labore mollit voluptate elit pariatur labore nostrud qui pariatur aute do tempor Lorem excepteur. Cillum ipsum cillum ut ut ad laboris occaecat irure irure exercitation mollit pariatur pariatur non amet.",
             "spans": []
           }
         ],
-        "SnowAmount": 541,
-        "SnowUnits": "c"
-      },
-      {
-        "Active": false,
-        "Month": "orchestrate dot-com functionalities",
-        "Start": 7802,
-        "End": 4522,
-        "Graphic": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=900&h=500&fit=crop"
-        },
-        "Title": [
-          {
-            "type": "heading2",
-            "text": "Cultivate real-time markets",
-            "spans": []
-          }
-        ],
-        "Location": [
-          {
-            "type": "paragraph",
-            "text": "Est veniam dolore ex in aliqua cillum non aute. Irure aute labore aute sit. Esse labore nulla ullamco magna consectetur.",
-            "spans": []
-          }
-        ],
-        "Description": [
-          {
-            "type": "paragraph",
-            "text": "Mollit exercitation adipisicing duis et dolor Lorem consectetur dolor magna dolor incididunt nisi. In sit pariatur commodo elit sunt sit sint ut. Consectetur enim sint mollit tempor sint id eu duis aliquip nisi aute excepteur.",
-            "spans": []
-          }
-        ],
-        "Status": "terrain-prep",
-        "SnowDescription": [
-          {
-            "type": "paragraph",
-            "text": "Tempor laborum duis labore voluptate consequat sint fugiat ullamco eu Lorem dolore in mollit sit pariatur. Ullamco sit reprehenderit et incididunt consectetur enim ullamco elit qui labore occaecat consectetur minim aute. Aliqua deserunt eiusmod esse in.",
-            "spans": []
-          }
-        ],
-        "SnowAmount": 111,
+        "SnowAmount": 9991,
         "SnowUnits": "in"
       },
       {
         "Active": false,
-        "Month": "unleash turn-key solutions",
-        "Start": 2322,
-        "End": 8215,
+        "Month": "leverage open-source models",
+        "Start": 3021,
+        "End": 344,
         "Graphic": {
           "dimensions": {
             "width": 900,
@@ -108,72 +62,26 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e?w=900&h=500&fit=crop"
         },
         "Title": [
           {
             "type": "heading2",
-            "text": "Transform global partnerships",
+            "text": "Leverage out-of-the-box action-items",
             "spans": []
           }
         ],
         "Location": [
           {
             "type": "paragraph",
-            "text": "Eu Lorem mollit ea sit pariatur nulla cillum proident nostrud occaecat ex Lorem officia. Proident est aliquip pariatur officia est ipsum occaecat ad.",
+            "text": "Nostrud officia irure eiusmod non nostrud consectetur laboris officia velit ex reprehenderit ad nisi labore dolor. Aute ex labore deserunt sunt consectetur nostrud.",
             "spans": []
           }
         ],
         "Description": [
           {
             "type": "paragraph",
-            "text": "Elit aute do do nostrud exercitation nisi aliquip voluptate laborum sit nisi anim exercitation ad. Nostrud consequat labore do. Ipsum dolore ullamco fugiat laboris eu eu.",
-            "spans": []
-          }
-        ],
-        "Status": "terrain-prep",
-        "SnowDescription": [
-          {
-            "type": "paragraph",
-            "text": "Dolor et enim irure enim nisi ad eiusmod ipsum esse duis et duis. Nulla tempor veniam consectetur amet ad exercitation minim proident eiusmod nostrud. Id esse officia magna quis veniam ad deserunt quis minim in irure anim laboris.",
-            "spans": []
-          }
-        ],
-        "SnowAmount": 5791,
-        "SnowUnits": "in"
-      },
-      {
-        "Active": false,
-        "Month": "productize seamless technologies",
-        "Start": 4391,
-        "End": 8145,
-        "Graphic": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118?w=900&h=500&fit=crop"
-        },
-        "Title": [
-          {
-            "type": "heading2",
-            "text": "Matrix rich paradigms",
-            "spans": []
-          }
-        ],
-        "Location": [
-          {
-            "type": "paragraph",
-            "text": "Sint eu sunt ex irure culpa dolore excepteur ex cillum ullamco. Duis eiusmod duis tempor sunt aute et voluptate ad est ea cillum sint duis minim in.",
-            "spans": []
-          }
-        ],
-        "Description": [
-          {
-            "type": "paragraph",
-            "text": "Velit officia Lorem id aute veniam dolore aliqua commodo nisi aliquip quis magna aliqua ullamco consectetur. Consectetur do qui eu deserunt non sunt non laborum qui eu labore enim mollit.",
+            "text": "Aliquip tempor consectetur dolor dolor proident qui amet sint velit sunt pariatur irure duis nisi ex. Voluptate ullamco esse sunt nisi nisi mollit adipisicing labore dolore aliqua anim.",
             "spans": []
           }
         ],
@@ -181,18 +89,18 @@
         "SnowDescription": [
           {
             "type": "paragraph",
-            "text": "Cupidatat exercitation incididunt anim dolor eu ea aliqua est laboris ad commodo cillum sit.",
+            "text": "Magna aliquip elit adipisicing est ullamco do fugiat officia. Nostrud consectetur qui qui labore commodo consequat consequat magna.",
             "spans": []
           }
         ],
-        "SnowAmount": 3616,
-        "SnowUnits": "in"
+        "SnowAmount": 5715,
+        "SnowUnits": "c"
       },
       {
         "Active": true,
-        "Month": "morph front-end methodologies",
-        "Start": 7857,
-        "End": 1613,
+        "Month": "embrace frictionless infomediaries",
+        "Start": 6459,
+        "End": 2935,
         "Graphic": {
           "dimensions": {
             "width": 900,
@@ -200,44 +108,44 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
         },
         "Title": [
           {
             "type": "heading2",
-            "text": "Productize cross-platform technologies",
+            "text": "Grow seamless networks",
             "spans": []
           }
         ],
         "Location": [
           {
             "type": "paragraph",
-            "text": "Qui occaecat Lorem aliqua non dolor dolor occaecat nisi culpa do magna irure in.",
+            "text": "In incididunt deserunt veniam et quis proident. Est reprehenderit consectetur cillum.",
             "spans": []
           }
         ],
         "Description": [
           {
             "type": "paragraph",
-            "text": "Do laborum id eu esse esse exercitation et occaecat officia. In aliquip ipsum in occaecat magna irure.",
+            "text": "Pariatur tempor proident ullamco ex labore commodo nostrud do. Enim dolor excepteur elit veniam ut elit veniam.",
             "spans": []
           }
         ],
-        "Status": "terrain-prep",
+        "Status": "wx-hold",
         "SnowDescription": [
           {
             "type": "paragraph",
-            "text": "Ullamco velit quis excepteur minim ullamco anim aliqua voluptate eiusmod id voluptate amet ullamco.",
+            "text": "Eu proident nostrud elit ea ipsum esse nisi cupidatat est aliquip dolor pariatur. Officia ullamco anim in adipisicing exercitation tempor nostrud id ea excepteur.",
             "spans": []
           }
         ],
-        "SnowAmount": 2546,
-        "SnowUnits": "in"
+        "SnowAmount": 616,
+        "SnowUnits": "c"
       }
     ],
     "primary": {
-      "SectionTitle": "Section",
-      "SectionNumber": "00"
+      "SectionTitle": "optimize e-business functionalities",
+      "SectionNumber": "reinvent strategic web-readiness"
     }
   }
 ]

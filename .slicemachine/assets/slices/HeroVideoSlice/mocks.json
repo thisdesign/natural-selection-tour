@@ -8,14 +8,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Duis commodo exercitation sit laborum consequat cillum.",
+            "text": "Id excepteur enim qui voluptate quis occaecat duis ea tempor eu esse. Exercitation fugiat anim amet nostrud minim commodo anim nostrud consectetur labore sint nulla officia. Anim eiusmod culpa consequat velit enim dolor minim irure est.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Sint veniam excepteur nostrud fugiat minim proident esse ex eu incididunt elit ipsum sint nulla commodo.",
+            "text": "Aute ad mollit enim reprehenderit nisi do qui.",
             "spans": []
           }
         ]
@@ -24,14 +24,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Ex dolor sit eu nostrud tempor anim tempor fugiat minim laboris proident.",
+            "text": "Non officia esse tempor est duis ex sit sunt. Culpa qui ullamco sunt commodo officia officia nisi magna ullamco nulla excepteur.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Dolor non culpa proident commodo anim adipisicing ullamco ex in. Irure nostrud ex id dolore incididunt ut magna magna labore quis laboris.",
+            "text": "Duis amet Lorem officia officia ut non laboris consequat ea fugiat mollit deserunt.",
             "spans": []
           }
         ]
@@ -40,14 +40,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Voluptate eu fugiat non fugiat nisi aute elit commodo fugiat. Cillum in voluptate cupidatat eu ipsum nulla amet do Lorem eu.",
+            "text": "Nostrud sit consectetur nostrud reprehenderit ea ad amet quis pariatur commodo quis ea eu exercitation Lorem. Cupidatat eu aute fugiat consequat dolor ad adipisicing Lorem pariatur ullamco et reprehenderit proident mollit.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Proident esse mollit ad sunt magna ullamco.",
+            "text": "Commodo pariatur consequat exercitation duis laboris irure do cupidatat et aute eiusmod elit. Eiusmod aliqua irure in. Consectetur amet adipisicing ad laborum esse excepteur consectetur do magna sint.",
             "spans": []
           }
         ]
@@ -56,22 +56,22 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Aliquip nisi magna veniam mollit sunt aliqua elit. Duis non et sunt nostrud.",
+            "text": "Enim aute irure ea enim consequat velit.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Eu duis excepteur id deserunt duis consequat consectetur minim eiusmod id eiusmod. Ea dolor adipisicing voluptate magna proident amet Lorem esse mollit ipsum magna aliqua adipisicing elit.",
+            "text": "Exercitation duis sit exercitation nulla culpa velit consequat ad commodo fugiat cupidatat. Laborum sint amet quis do in nostrud. Dolore do qui irure.",
             "spans": []
           }
         ]
       }
     ],
     "primary": {
-      "SectionNumber": "innovate enterprise technologies",
-      "SectionTitle": "seize real-time mindshare",
+      "SectionNumber": "envisioneer cutting-edge e-commerce",
+      "SectionTitle": "morph extensible networks",
       "Logo": {
         "dimensions": {
           "width": 900,
@@ -79,16 +79,16 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
       },
-      "CtaText": "seize magnetic schemas",
+      "CtaText": "innovate dynamic users",
       "VideoFull": {
         "link_type": "Web",
-        "url": "https://slicemachine.dev"
+        "url": "http://google.com"
       },
       "VideoLoop": {
         "link_type": "Web",
-        "url": "https://prismic.io"
+        "url": "http://google.com"
       }
     }
   }

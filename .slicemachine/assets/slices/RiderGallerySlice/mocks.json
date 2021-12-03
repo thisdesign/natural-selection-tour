@@ -7,7 +7,25 @@
       {
         "Rider": {
           "link_type": "Web",
-          "url": "http://twitter.com"
+          "url": "http://google.com"
+        }
+      },
+      {
+        "Rider": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      },
+      {
+        "Rider": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      },
+      {
+        "Rider": {
+          "link_type": "Web",
+          "url": "http://google.com"
         }
       },
       {
@@ -18,8 +36,8 @@
       }
     ],
     "primary": {
-      "SectionNumber": "enhance one-to-one initiatives",
-      "SectionTitle": "morph B2B portals"
+      "SectionNumber": "exploit global solutions",
+      "SectionTitle": "exploit real-time vortals"
     }
   }
 ]
