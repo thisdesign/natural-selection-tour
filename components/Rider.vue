@@ -1,29 +1,53 @@
 <template>
-  <div class="rider">
-    <div v-if="rider.data" class="rider-front" @click="active = true">
-      <prismic-image class="rider-image" :field="rider.data.Rider" />
-      <div class="rider-about">
-        <prismic-image :field="rider.data.Flag" />
-        <prismic-rich-text :field="rider.data.Location" />
+  <div v-if="rider.data" class="rider">
+    <div
+      class="rider-image"
+      @mouseenter="updateCurrentRider(rider)"
+      @mouseleave="onMouseOut"
+      @click="active = true"
+    >
+      <prismic-image :field="rider.data.Rider" />
+    </div>
+    <div class="rider-info">
+      <div class="rider-flag">
+        <div class="flag-wrapper">
+          <prismic-image :field="rider.data.Flag" />
+        </div>
       </div>
-      <div class="rider-info">
-        <prismic-rich-text :field="rider.data.InformationLeft" />
-        <prismic-rich-text :field="rider.data.InformationRight" />
+      <div class="rider-info-col">
+        <prismic-rich-text
+          class="rider-location"
+          :field="rider.data.Location"
+        />
+        <div class="rider-stats">
+          <prismic-rich-text :field="rider.data.InformationLeft" />
+          <prismic-rich-text :field="rider.data.InformationRight" />
+        </div>
       </div>
     </div>
-    <div v-if="active === true" class="rider-back">
+    <div v-if="active" class="rider-overlay">
       <button class="rider-close" @click="active = false"></button>
-      <prismic-rich-text :field="rider.data.Name" />
-      <prismic-rich-text :field="rider.data.Bio" />
-      <div class="rider-logos">
-        <div
-          v-for="(item, index) in rider.data.Logos"
-          :key="`rider-logo-${index}`"
-          class="rider-logo"
-        >
-          <a :href="item.Link.url">
-            <prismic-image :field="item.Image" />
-          </a>
+      <div class="rider-description">
+        <div class="inner">
+          <prismic-rich-text class="rider-name" :field="rider.data.Name" />
+          <prismic-rich-text :field="rider.data.Bio" />
+        </div>
+      </div>
+      <div class="rider-sponsors">
+        <div class="rider-sponsors-title">
+          <h4>Industry Alliance Sponsors</h4>
+          <span>05</span>
+        </div>
+        <div class="rider-sponsors-logos">
+          <div
+            v-for="(item, index) in rider.data.Logos"
+            :key="`rider-logo-${index}`"
+            class="rider-logo"
+          >
+            <a :href="item.Link.url">
+              <prismic-image :field="item.Image" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -45,63 +69,39 @@ export default {
       active: false,
     }
   },
+  methods: {
+    updateCurrentRider() {
+      this.$emit('update-rider', this.rider.data)
+    },
+    onMouseOut() {
+      this.$emit('hidename')
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.rider {
-  width: calc(100% / 3);
-  background-color: $solid-black;
-  color: $white;
-  position: relative;
-}
-
-.rider-front {
-  img.rider-image {
-    width: 100%;
-  }
-}
-.rider-about {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  p {
-    margin: 0;
-  }
-}
-.rider-info {
-  display: flex;
-}
-
-.rider-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
 .rider-close {
   position: absolute;
   display: block;
-  background: red;
+  background: transparent;
   outline: 0;
   border: 0;
   padding: 0;
-  top: 0px;
-  right: 0px;
-  width: 30px;
-  height: 30px;
+  top: 1vw;
+  right: 1vw;
+  width: 18px;
+  height: 18px;
+  z-index: 1;
 
   &:before,
   &:after {
     content: '';
     position: absolute;
     display: block;
-    width: 18px;
+    width: 100%;
     height: 2px;
-    background: black;
+    background: white;
     top: 50%;
     left: 50%;
   }
@@ -112,14 +112,117 @@ export default {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
-</style>
 
-<style lang="scss">
 .rider {
-  .rider-about {
-    p {
-      margin-bottom: 0;
+  width: calc(100% / 3);
+  color: white;
+  position: relative;
+}
+.rider-image {
+  cursor: none;
+  // cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDEwQzIwIDE1LjUyMjggMTUuNTIyOCAyMCAxMCAyMEM0LjQ3NzE1IDIwIDAgMTUuNTIyOCAwIDEwQzAgNC40NzcxNSA0LjQ3NzE1IDAgMTAgMEMxNS41MjI4IDAgMjAgNC40NzcxNSAyMCAxMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=')
+  //     16 16,
+  //   pointer;
+  position: relative;
+  overflow: hidden;
+  padding-top: 100%;
+  width: 100%;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.rider-info {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.3;
+  padding: 1vw 1vw 4vw;
+}
+.rider-flag {
+  width: 18%;
+  padding-right: 2vw;
+  .flag-wrapper {
+    border-radius: 50rem;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
+.rider-info-col {
+  width: 82%;
+}
+.rider-location {
+  font-weight: 700;
+}
+.rider-stats {
+  columns: 2;
+  span {
+    display: block;
+  }
+}
+.rider-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1vw;
+}
+.rider-sponsors {
+  border-top: 1px solid white;
+  padding: 1.5vw 0;
+  background: black;
+  flex: 1 1 auto;
+}
+.rider-sponsors-title {
+  display: flex;
+  justify-content: space-between;
+  * {
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 1vw;
+    font-family: 'Sneak', sans-serif;
+  }
+}
+.rider-name {
+  font-weight: 700;
+}
+.rider-description {
+  position: relative;
+  padding-top: calc(100% + 1vw);
+  .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+  }
+}
+</style>
+
+<style lang="scss">
+// .rider {
+//   .rider-about {
+//     p {
+//       margin-bottom: 0;
+//     }
+//   }
+// }
 </style>
