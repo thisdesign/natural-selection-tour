@@ -1,13 +1,19 @@
 <template>
-  <section class="section">
+  <section class="section site-padding">
     <element-section-bar
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
-    <prismic-rich-text
+    <!-- <prismic-rich-text
       v-if="slice.primary.title"
       :field="slice.primary.title"
-    />
+    /> -->
+    <div class="partners-title">
+      <p>
+        Special thanks to our supporting partners helping advance our people,
+        planet, and purpose.
+      </p>
+    </div>
     <div class="partner-list">
       <div
         v-for="(item, index) in featured"
@@ -62,12 +68,17 @@ export default {
 <style lang="scss" scoped>
 .section {
   color: #fff;
-  padding: 4em;
-  text-align: center;
+}
+.partners-title * {
+  font-size: clamp(1.5rem, 4vw, 4vw);
+  line-height: 1.2;
 }
 .partner-list {
   display: flex;
   flex-wrap: wrap;
+  @include media-breakpoint-up(sm) {
+    padding: 0 10vw;
+  }
 }
 .partner {
   img {

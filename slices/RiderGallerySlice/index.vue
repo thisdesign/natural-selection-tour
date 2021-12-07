@@ -136,16 +136,18 @@ export default {
   methods: {
     sliderResize() {
       const slider = this.$refs.riderSlider
-      slider.config.pageWidth = slider.$el.offsetWidth
-      slider.config.pageHeight = slider.$el.offsetHeight
-      if (
-        slider.data.currentPage >= slider.config.sliderLength &&
-        slider.config.loop
-      ) {
-        slider.slide(0, 'animationnone')
-        return false
+      if (slider) {
+        slider.config.pageWidth = slider.$el.offsetWidth
+        slider.config.pageHeight = slider.$el.offsetHeight
+        if (
+          slider.data.currentPage >= slider.config.sliderLength &&
+          slider.config.loop
+        ) {
+          slider.slide(0, 'animationnone')
+          return false
+        }
+        slider.slide(slider.data.currentPage, 'animationnone')
       }
-      slider.slide(slider.data.currentPage, 'animationnone')
     },
     onRiderSelect(data) {
       const value = data.target.value.split(',')
