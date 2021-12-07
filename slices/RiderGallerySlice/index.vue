@@ -15,11 +15,11 @@
           @update-rider="updateCurrentRider"
           @hidename="hideCursorName"
         />
-        <div v-show="showPointer" id="mouse-pointer">
+        <div v-show="pointer.showPointer" id="mouse-pointer">
           <div class="inner">
             <span class="pointer"></span>
-            <span v-if="currentRider" class="rider-name">{{
-              currentRider.Name[0].text
+            <span v-if="pointer.currentRider" class="rider-name">{{
+              pointer.currentRider.Name[0].text
             }}</span>
           </div>
         </div>
@@ -107,10 +107,12 @@ export default {
   },
   data() {
     return {
-      currentRider: null,
       currentMobileRider: null,
-      selectedRider: '',
-      showPointer: false,
+      selectedRider: 'YZfz2REAACIAR63l, 3',
+      pointer: {
+        showPointer: false,
+        currentRider: null,
+      },
       riderSliderOptions: {
         preventRebound: true,
         pagination: false,
@@ -127,8 +129,24 @@ export default {
   mounted() {
     this.$store.dispatch('riders/loadRiders')
     this.currentMobileRider = this.getRider(this.slice.items[0].Rider.id)
+    window.addEventListener('resize', () => {
+      this.sliderResize()
+    })
   },
   methods: {
+    sliderResize() {
+      const slider = this.$refs.riderSlider
+      slider.config.pageWidth = slider.$el.offsetWidth
+      slider.config.pageHeight = slider.$el.offsetHeight
+      if (
+        slider.data.currentPage >= slider.config.sliderLength &&
+        slider.config.loop
+      ) {
+        slider.slide(0, 'animationnone')
+        return false
+      }
+      slider.slide(slider.data.currentPage, 'animationnone')
+    },
     onRiderSelect(data) {
       const value = data.target.value.split(',')
       this.currentMobileRider = this.getRider(value[0])
@@ -139,6 +157,9 @@ export default {
         this.currentMobileRider = this.getRider(
           this.slice.items[data.currentPage].Rider.id,
         )
+        this.selectedRider = `${this.slice.items[data.currentPage].Rider.id}, ${
+          data.currentPage
+        }`
       }
     },
     getRider(key) {
@@ -154,11 +175,11 @@ export default {
       pointer.style.top = event.clientY + 'px'
     },
     hideCursorName() {
-      this.showPointer = false
+      this.pointer.showPointer = false
     },
     updateCurrentRider(rider) {
-      this.currentRider = rider
-      this.showPointer = true
+      this.pointer.currentRider = rider
+      this.pointer.showPointer = true
     },
   },
 }
