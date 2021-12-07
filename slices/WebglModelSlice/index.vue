@@ -1,27 +1,47 @@
 <template>
-  <section class="section webgl site-padding">
-    <element-section-bar
-      :number="slice.primary.SectionNumber"
-      :title="slice.primary.SectionTitle"
-    />
+  <section class="section webgl">
+    <div class="site-padding">
+      <element-section-bar
+        :number="slice.primary.SectionNumber"
+        :title="slice.primary.SectionTitle"
+      />
+    </div>
     <!-- <media-webgl-player class="webgl-player" /> -->
     <!-- <prismic-embed :field="slice.primary.VideoLoop" /> -->
-    <div class="section-content">
-      <prismic-rich-text class="section-title" :field="slice.primary.title" />
-      <prismic-rich-text
-        class="section-description"
-        :field="slice.primary.description"
-      />
-      <ol class="locations-list">
-        <li v-for="(item, i) in slice.items" :key="`slice-item-${i}`">
-          <prismic-rich-text class="locations-title" :field="item.Title" />
+    <div class="section-inner">
+      <div class="background-video">
+        <div class="video-wrapper">
+          <video
+            src="http://d39tpa37kkhgnr.cloudfront.net/01.mp4"
+            muted
+            autoplay
+            loop
+            playsinline
+          ></video>
+        </div>
+      </div>
+      <div class="section-content site-padding">
+        <prismic-rich-text class="section-title" :field="slice.primary.title" />
+        <prismic-rich-text
+          class="section-description"
+          :field="slice.primary.description"
+        />
+        <div
+          v-for="(item, i) in slice.items"
+          :key="`slice-item-${i}`"
+          class="location"
+        >
+          <div class="location-index">
+            <span>{{ indexLetters[i] }}</span>
+          </div>
+          <prismic-rich-text class="location-title" :field="item.Title" />
           <!-- <prismic-embed :field="item.Model" /> -->
-        </li>
-      </ol>
-      <element-cta-button
-        :link="slice.primary.CtaLink"
-        :title="slice.primary.CtaTitle"
-      />
+        </div>
+        <element-cta-button
+          :link="slice.primary.CtaLink"
+          :title="slice.primary.CtaTitle"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -38,6 +58,11 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      indexLetters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'],
+    }
+  },
 }
 </script>
 
@@ -46,11 +71,36 @@ export default {
   color: #fff;
 }
 .webgl {
+  .section-inner {
+    position: relative;
+  }
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
   .section-title h1 {
     font-size: 4vw;
     line-height: 1;
   }
   .section-content {
+    position: relative;
+    z-index: 1;
     width: 60%;
   }
   .section-description {
@@ -60,14 +110,34 @@ export default {
     max-width: 100%;
     width: 100%;
   }
-  .locations-list {
-    list-style: upper-alpha;
+  .location {
+    display: flex;
+    align-items: flex-start;
   }
-  .locations-title {
-    font-family: 'Natural-Selection';
+  .location-index {
     line-height: 1;
+    background: white;
+    color: black;
+    width: 5%;
+    padding-top: 5%;
+    border-radius: 5rem;
+    position: relative;
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .location-title {
     margin-left: 1rem;
     margin-bottom: 1rem;
+    flex: 1 1 100%;
+    * {
+      font-family: 'Natural-Selection';
+      line-height: 1;
+      font-size: 2vw;
+    }
   }
 }
 </style>
