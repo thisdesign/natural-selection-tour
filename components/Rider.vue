@@ -114,9 +114,13 @@ export default {
 }
 
 .rider {
-  width: calc(100% / 3);
+  width: calc(100% / 2);
   color: white;
   position: relative;
+  background: black;
+  @include media-breakpoint-up(md) {
+    width: calc(100% / 3);
+  }
 }
 .rider-image {
   cursor: none;
