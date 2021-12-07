@@ -25,7 +25,6 @@ export default {
   },
   methods: {
     handleNext() {
-      console.log(this.slice)
       this.$router.push('/partner/' + this.slice.NextUid)
     },
   },

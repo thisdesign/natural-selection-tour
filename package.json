@@ -25,6 +25,7 @@
     "babel-eslint": "^10.1.0",
     "babylonjs": "^4.2.0",
     "cookies": "^0.8.0",
+    "gsap": "^3.8.0",
     "js-logger": "^1.6.1",
     "nuxt": "^2.15.8",
     "nuxt-sm": "^0.0.8",

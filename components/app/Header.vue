@@ -45,7 +45,7 @@
 
 <style lang="scss" scoped>
 header {
-  position: relative;
+  position: fixed;
   width: 100%;
   padding: 1rem;
   text-align: right;
@@ -53,6 +53,7 @@ header {
   color: $white;
   display: flex;
   justify-content: space-between;
+  z-index: 100;
 }
 
 nav {
