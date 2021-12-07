@@ -128,6 +128,9 @@ export default {
     port: 4000,
     // This is a bug with `getStoriesPaths` and Nuxt that is awaiting to be fixed
     stories: [...getStoriesPaths().map((path) => path.replace('../', '~/'))],
+    parameters: {
+      layout: 'fullscreen',
+    },
   },
   // This is a bug with `getStoriesPaths` and Nuxt that is awaiting to be fixed
   ignore: [...getStoriesPaths().map((path) => path.replace('../', '~/'))],

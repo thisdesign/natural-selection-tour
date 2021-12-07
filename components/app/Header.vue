@@ -100,13 +100,13 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  position: relative;
+  position: absolute;
   width: 100%;
   text-align: right;
-  background: $solid-black;
   color: $white;
   display: flex;
   justify-content: space-between;
+  z-index: 100;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
