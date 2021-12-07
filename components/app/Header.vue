@@ -35,7 +35,7 @@
           />
         </svg>
       </nuxt-link>
-      <button @click="navOpen = !navOpen" class="mobile-close-nav">
+      <button class="mobile-close-nav" @click="navOpen = !navOpen">
         <span></span>
         <span></span>
       </button>
@@ -154,8 +154,10 @@ header {
 }
 
 .main-menu {
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   top: 0;
@@ -165,11 +167,14 @@ header {
   z-index: 10;
   padding: 6rem 2rem 0rem;
   background: rgba(0, 0, 0, 0.7);
+  transition: opacity 600ms, visibility 600ms;
   @include media-breakpoint-up(sm) {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
   }
   &.open {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
   }
   &:after {
     content: '';
