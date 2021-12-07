@@ -24,11 +24,13 @@ export default {
 
 <style lang="scss" scoped>
 .webgl {
-  max-width: 500px;
+  // max-width: 500px;
+  height: 100%;
 }
 .wrapper {
   position: relative;
-  padding-top: 100%;
+  // padding-top: 55vw;
+  height: 100%;
 }
 canvas {
   position: absolute;

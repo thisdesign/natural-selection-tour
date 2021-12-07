@@ -109,6 +109,9 @@ header {
   z-index: 100;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  @include media-breakpoint-up(sm) {
+    // background: black;
+  }
 }
 .nav-controls-wrapper {
   display: flex;
@@ -169,6 +172,7 @@ header {
   background: rgba(0, 0, 0, 0.7);
   transition: opacity 600ms, visibility 600ms;
   @include media-breakpoint-up(sm) {
+    background: transparent;
     visibility: visible;
     opacity: 1;
   }

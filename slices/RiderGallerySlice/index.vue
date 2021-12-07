@@ -1,5 +1,5 @@
 <template>
-  <section class="rider-gallery-slice">
+  <section class="rider-gallery-slice" @mousemove="updateMouse">
     <div class="site-padding">
       <element-section-bar
         :number="slice.primary.SectionNumber"
@@ -7,7 +7,7 @@
       />
     </div>
     <div class="site-padding">
-      <div class="desktop-gallery" @mousemove="updateMouse">
+      <div class="desktop-gallery">
         <rider
           v-for="(item, i) in slice.items"
           :key="`slice-item-${i}`"
@@ -15,7 +15,7 @@
           @update-rider="updateCurrentRider"
           @hidename="hideCursorName"
         />
-        <div v-show="pointer.showPointer" id="mouse-pointer">
+        <div id="mouse-pointer" :class="{ active: pointer.showPointer }">
           <div class="inner">
             <span class="pointer"></span>
             <span v-if="pointer.currentRider" class="rider-name">{{
@@ -108,7 +108,7 @@ export default {
   data() {
     return {
       currentMobileRider: null,
-      selectedRider: 'YZfz2REAACIAR63l, 3',
+      selectedRider: '',
       pointer: {
         showPointer: false,
         currentRider: null,
@@ -210,9 +210,15 @@ export default {
   z-index: 1000;
   cursor: none;
   pointer-events: none;
-  // cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDEwQzIwIDE1LjUyMjggMTUuNTIyOCAyMCAxMCAyMEM0LjQ3NzE1IDIwIDAgMTUuNTIyOCAwIDEwQzAgNC40NzcxNSA0LjQ3NzE1IDAgMTAgMEMxNS41MjI4IDAgMjAgNC40NzcxNSAyMCAxMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=')
-  //     16 16,
-  //   pointer;
+  opacity: 0;
+  transition: opacity 300ms;
+  &.active {
+    opacity: 1;
+  }
+  * {
+    cursor: none;
+    pointer-events: none;
+  }
   .inner {
     display: flex;
     align-items: flex-start;

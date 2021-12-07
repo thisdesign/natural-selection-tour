@@ -1,5 +1,5 @@
 <template>
-  <div class="section site-padding">
+  <div class="section">
     <layout-two-column
       :section-number="slice.primary.SectionNumber"
       :section-title="slice.primary.SectionTitle"
