@@ -8,6 +8,15 @@
     "partner": {},
     "partners": {
       "FeaturedPartners": {}
+    },
+    "global": {
+      "Title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "main-links": {}
     }
   }
 }
