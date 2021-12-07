@@ -6,7 +6,6 @@
         :title="slice.primary.SectionTitle"
       />
     </div>
-    <!-- <media-webgl-player class="webgl-player" /> -->
     <!-- <prismic-embed :field="slice.primary.VideoLoop" /> -->
     <div class="section-inner">
       <div class="background-video">
@@ -21,26 +20,34 @@
         </div>
       </div>
       <div class="section-content site-padding">
-        <prismic-rich-text class="section-title" :field="slice.primary.title" />
-        <prismic-rich-text
-          class="section-description"
-          :field="slice.primary.description"
-        />
-        <div
-          v-for="(item, i) in slice.items"
-          :key="`slice-item-${i}`"
-          class="location"
-        >
-          <div class="location-index">
-            <span>{{ indexLetters[i] }}</span>
+        <div class="col-left">
+          <prismic-rich-text
+            class="section-title"
+            :field="slice.primary.title"
+          />
+          <prismic-rich-text
+            class="section-description"
+            :field="slice.primary.description"
+          />
+          <div
+            v-for="(item, i) in slice.items"
+            :key="`slice-item-${i}`"
+            class="location"
+          >
+            <div class="location-index">
+              <span>{{ indexLetters[i] }}</span>
+            </div>
+            <prismic-rich-text class="location-title" :field="item.Title" />
+            <!-- <prismic-embed :field="item.Model" /> -->
           </div>
-          <prismic-rich-text class="location-title" :field="item.Title" />
-          <!-- <prismic-embed :field="item.Model" /> -->
+          <element-cta-button
+            :link="slice.primary.CtaLink"
+            :title="slice.primary.CtaTitle"
+          />
         </div>
-        <element-cta-button
-          :link="slice.primary.CtaLink"
-          :title="slice.primary.CtaTitle"
-        />
+        <div class="col-right">
+          <media-webgl-player class="webgl-player" />
+        </div>
       </div>
     </div>
   </section>
@@ -71,6 +78,12 @@ export default {
   color: #fff;
 }
 .webgl {
+  .webgl-player {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+  }
   .section-inner {
     position: relative;
   }
@@ -100,15 +113,17 @@ export default {
   }
   .section-content {
     position: relative;
+    display: flex;
     z-index: 1;
-    width: 60%;
+    .col-left {
+      width: 60%;
+    }
+    .col-right {
+      width: 40%;
+    }
   }
   .section-description {
     margin-bottom: 1rem;
-  }
-  .webgl-player {
-    max-width: 100%;
-    width: 100%;
   }
   .location {
     display: flex;
