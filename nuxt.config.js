@@ -124,6 +124,17 @@ export default {
   build: {
     transpile: ['vue-slicezone', 'nuxt-sm'],
   },
+
+  server: {
+    host: '0.0.0.0',
+  },
+
+  sitemap: {
+    hostname: 'https://natural-selection.netlify.com',
+    gzip: true,
+    exclude: [],
+  },
+
   storybook: {
     port: 4000,
     // This is a bug with `getStoriesPaths` and Nuxt that is awaiting to be fixed

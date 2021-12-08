@@ -1,0 +1,301 @@
+{
+  "id": "c89c484a-9410-47bc-a623-858ff0b78a94",
+  "uid": "a-debitis-magni",
+  "type": "global",
+  "data": {
+    "Logo": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?w=900&h=500&fit=crop"
+    },
+    "Title": [
+      {
+        "type": "heading1",
+        "text": "Envisioneer rich niches",
+        "spans": []
+      }
+    ],
+    "SocialTitle": [
+      {
+        "type": "paragraph",
+        "text": "Nulla proident excepteur ex.",
+        "spans": []
+      }
+    ],
+    "FooterLogo": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?w=900&h=500&fit=crop"
+    },
+    "FooterText": [
+      {
+        "type": "paragraph",
+        "text": "Enim elit nulla aliqua ipsum deserunt veniam id. In enim fugiat mollit non ipsum ullamco quis irure ex pariatur.",
+        "spans": []
+      }
+    ],
+    "Copyright": [
+      {
+        "type": "paragraph",
+        "text": "Commodo ex voluptate ad laboris laboris aute eu officia duis nostrud pariatur sint.",
+        "spans": []
+      }
+    ],
+    "main-links": [
+      {
+        "label": [
+          {
+            "type": "paragraph",
+            "text": "Culpa irure velit dolor aliquip deserunt adipisicing.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      },
+      {
+        "label": [
+          {
+            "type": "paragraph",
+            "text": "Consequat culpa quis Lorem veniam adipisicing enim fugiat ea eiusmod.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "label": [
+          {
+            "type": "paragraph",
+            "text": "Consequat fugiat labore sint. Esse anim ad eiusmod. Reprehenderit irure irure adipisicing elit minim quis adipisicing eu ad proident consequat eu incididunt.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      },
+      {
+        "label": [
+          {
+            "type": "paragraph",
+            "text": "Sunt et occaecat proident ullamco culpa consectetur eiusmod non ut. Minim enim cupidatat aliqua enim amet nostrud. Velit minim officia labore ea aute.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ],
+    "MobileSecondaryLinks": [
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Proident anim velit est minim reprehenderit mollit. Elit id dolore exercitation id Lorem laborum occaecat magna adipisicing velit cillum cupidatat laborum.",
+            "spans": []
+          }
+        ],
+        "Liink": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      },
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Esse elit incididunt esse laborum irure id irure cupidatat. Aliquip in velit do culpa consectetur sunt nisi anim dolore in aute minim et ea.",
+            "spans": []
+          }
+        ],
+        "Liink": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      },
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Esse dolor consequat fugiat et commodo elit est. Anim irure pariatur voluptate ut labore id voluptate sit amet ut eiusmod cupidatat labore aliquip. Anim ullamco laboris consequat non excepteur.",
+            "spans": []
+          }
+        ],
+        "Liink": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Reprehenderit eiusmod ut in exercitation incididunt tempor anim dolor aliqua.",
+            "spans": []
+          }
+        ],
+        "Liink": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      },
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Anim consectetur excepteur exercitation deserunt et elit ex cillum excepteur do anim culpa incididunt dolor.",
+            "spans": []
+          }
+        ],
+        "Liink": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      }
+    ],
+    "FooterPrimaryLinks": [
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Reprehenderit quis proident qui deserunt excepteur cupidatat esse. Et deserunt elit nulla in ex proident occaecat eu deserunt laborum aute nisi sit do. Exercitation minim enim ut elit ut irure.",
+            "spans": []
+          }
+        ],
+        "Link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Ex sunt sunt nulla dolor.",
+            "spans": []
+          }
+        ],
+        "Link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Eiusmod do nulla anim culpa veniam qui nisi nostrud.",
+            "spans": []
+          }
+        ],
+        "Link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      },
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Qui aliqua veniam anim reprehenderit sunt voluptate irure aliqua. Aliqua velit tempor velit mollit.",
+            "spans": []
+          }
+        ],
+        "Link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      }
+    ],
+    "FooterSecondaryLinks": [
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Minim velit pariatur eu elit nulla sint. Enim exercitation labore laboris sit dolor ipsum nisi. Commodo aute et dolore minim quis reprehenderit magna eu est mollit excepteur nisi officia esse.",
+            "spans": []
+          }
+        ],
+        "Link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      },
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Quis nulla et mollit occaecat aute.",
+            "spans": []
+          }
+        ],
+        "Link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      },
+      {
+        "LinkLabel": [
+          {
+            "type": "paragraph",
+            "text": "Esse anim in aliquip nisi labore laboris duis nostrud deserunt proident labore. Excepteur cupidatat cillum ullamco ut do et dolore. Amet occaecat tempor nulla id.",
+            "spans": []
+          }
+        ],
+        "Link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      }
+    ],
+    "SocialLinks": [
+      {
+        "Icon": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=900&h=500&fit=crop"
+        },
+        "Link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "Icon": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?w=900&h=500&fit=crop"
+        },
+        "Link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      }
+    ]
+  }
+}
