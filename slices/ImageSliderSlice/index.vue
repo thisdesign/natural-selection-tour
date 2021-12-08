@@ -17,7 +17,6 @@
             <div class="slide-image">
               <!-- <prismic-image :field="item.Image" /> -->
               <img src="/mocks/mock-slider-image.jpg" alt="" />
-              <div style="position: absolute; z-index: 10">{{ i }}</div>
             </div>
           </div>
         </div>
@@ -54,6 +53,7 @@ export default {
   },
   mounted() {
     this.slider = new CubeSlider(document.querySelector('.image-slider'))
+    window.slider = this.slider
   },
   methods: {
     slideNext() {
@@ -148,13 +148,19 @@ export default {
   justify-content: center;
   font-size: 2rem;
   display: none;
+  &.previous {
+    display: block;
+    transform: translateX(-90%);
+  }
   &.current {
     display: block;
-    transform: translateZ(50vw);
+    transform: translateX(5vw);
+    z-index: 1;
+    width: 90vw;
   }
   &.next {
     display: block;
-    transform: translateX(50vw) rotateY(90deg);
+    transform: translateX(90%);
   }
 }
 </style>
