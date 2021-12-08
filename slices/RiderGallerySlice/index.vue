@@ -127,6 +127,9 @@ export default {
     },
   },
   mounted() {
+    const section = document.querySelector('.rider-gallery-slice')
+    const header = document.querySelector('header')
+    section.style.paddingTop = `${header.offsetHeight}px`
     this.$store.dispatch('riders/loadRiders')
     this.currentMobileRider = this.getRider(this.slice.items[0].Rider.id)
     window.addEventListener('resize', () => {

@@ -104,6 +104,8 @@ header {
   width: 100%;
   text-align: right;
   color: $white;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   z-index: 100;

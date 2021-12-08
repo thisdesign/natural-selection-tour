@@ -9,10 +9,13 @@
         :number="sidebarSectionNumber"
         :title="sidebarSectionTitle"
       />
-      <!-- <div class="status" :class="statusColor">
+      <div class="status" :class="getStatus(sidebarStatus).color">
         <span class="status-title">{{ statusTitle }}</span>
-        <element-status-icon class="status-icon" :status="sidebarStatus" />
-      </div> -->
+        <element-status-icon
+          class="status-icon"
+          :status="getStatus(sidebarStatus)"
+        />
+      </div>
       <slot name="footer"></slot>
       <!-- <prismic-rich-text :field="slice.primary.SidebarFooterText" /> -->
     </div>
@@ -53,7 +56,28 @@ export default {
       return this.sidebarStatus ? this.sidebarStatus.replace('-', ' ') : ''
     },
   },
-  methods: {},
+  methods: {
+    getStatus(statusCode) {
+      const status = {
+        color: '',
+        letter: 'X',
+      }
+      if (statusCode === 'terrain-prep') {
+        status.color = 'yellow'
+        status.letter = 'P'
+      } else if (statusCode === 'live') {
+        status.color = 'blue'
+        status.letter = 'L'
+      } else if (statusCode === 'archived') {
+        status.color = 'smoke-blue'
+        status.letter = 'A'
+      } else if (statusCode === 'wx-hold') {
+        status.color = 'red'
+        status.letter = 'H'
+      }
+      return status
+    },
+  },
 }
 </script>
 
@@ -88,6 +112,7 @@ section {
   text-transform: capitalize;
   line-height: 1;
   font-size: 16vw;
+  color: currentColor;
   margin-bottom: 22vw;
   @include media-breakpoint-up(sm) {
     font-size: 4vw;

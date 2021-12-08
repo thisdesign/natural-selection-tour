@@ -75,6 +75,7 @@ export default {
       },
     }
   },
+  mounted() {},
   methods: {
     onSlide(data) {},
   },

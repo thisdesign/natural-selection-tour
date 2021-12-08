@@ -1,7 +1,7 @@
 <template>
   <div>
     <svg
-      :class="getStatus(status).color"
+      :class="status.color"
       width="100%"
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@
         font-size="450%"
         font-family="Natural-Selection"
       >
-        {{ getStatus(status).letter }}
+        {{ status.letter }}
       </text>
     </svg>
   </div>
@@ -25,46 +25,12 @@
 export default {
   props: {
     status: {
-      type: String,
-      default: '',
+      type: Object,
+      default: () => {
+        return { color: 'yellow', letter: 'T' }
+      },
     },
   },
-  methods: {
-    getStatus(statusCode) {
-      const status = {
-        color: '',
-        letter: 'X',
-      }
-      if (statusCode === 'terrain-prep') {
-        status.color = 'yellow'
-        status.letter = 'P'
-      } else if (statusCode === 'live') {
-        status.color = 'blue'
-        status.letter = 'L'
-      } else if (statusCode === 'archived') {
-        status.color = 'smoke-blue'
-        status.letter = 'A'
-      } else if (statusCode === 'wx-hold') {
-        status.color = 'red'
-        status.letter = 'H'
-      }
-      return status
-    },
-  },
+  methods: {},
 }
 </script>
-
-<style lang="scss" scoped>
-.yellow {
-  color: $yellow-primary;
-}
-.blue {
-  color: $blue-primary;
-}
-.red {
-  color: $red-primary;
-}
-.smoke-blue {
-  color: $blue-smoke;
-}
-</style>

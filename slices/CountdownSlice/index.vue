@@ -88,6 +88,10 @@ export default {
         Object.keys(timeUnitsInSeconds).forEach((key) => {
           times[key] = Math.floor(deltaTime / timeUnitsInSeconds[key])
           deltaTime -= times[key] * timeUnitsInSeconds[key]
+
+          times[key] = times[key].toLocaleString('en-US', {
+            minimumIntegerDigits: 2,
+          })
         })
 
         this.timer = times
@@ -104,7 +108,7 @@ export default {
 .countdown-title {
   h1 {
     line-height: 0.9;
-    font-size: 8vw;
+    font-size: clamp(1.8rem, 4vw, 4vw);
   }
 }
 .countdown-time {
