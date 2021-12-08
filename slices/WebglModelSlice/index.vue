@@ -1,6 +1,6 @@
 <template>
-  <section class="section webgl">
-    <div class="site-padding">
+  <section class="section webgl" :class="{ featured: slice.primary.Featured }">
+    <div v-if="!slice.primary.Featured" class="site-padding">
       <element-section-bar
         :number="slice.primary.SectionNumber"
         :title="slice.primary.SectionTitle"
@@ -8,7 +8,7 @@
     </div>
     <!-- <prismic-embed :field="slice.primary.VideoLoop" /> -->
     <div class="section-inner">
-      <div class="background-video">
+      <div v-if="!slice.primary.Featured" class="background-video">
         <div class="video-wrapper">
           <video
             src="http://d39tpa37kkhgnr.cloudfront.net/01.mp4"
@@ -20,19 +20,20 @@
         </div>
       </div>
       <div class="section-content site-padding">
-        <div class="col-left">
-          <prismic-rich-text
-            class="section-title"
-            :field="slice.primary.title"
-          />
-          <prismic-rich-text
-            class="section-description"
-            :field="slice.primary.description"
-          />
+        <prismic-rich-text
+          class="section-title col-left"
+          :field="slice.primary.title"
+        />
+        <prismic-rich-text
+          class="section-description col-left"
+          :field="slice.primary.description"
+        />
+        <div class="locations-list col-left">
           <div
             v-for="(item, i) in slice.items"
             :key="`slice-item-${i}`"
             class="location"
+            :class="{ active: item.Model }"
           >
             <div class="location-index">
               <span>{{ indexLetters[i] }}</span>
@@ -40,14 +41,17 @@
             <prismic-rich-text class="location-title" :field="item.Title" />
             <!-- <prismic-embed :field="item.Model" /> -->
           </div>
-          <element-cta-button
-            :link="slice.primary.CtaLink"
-            :title="slice.primary.CtaTitle"
-          />
         </div>
-        <div class="col-right">
-          <media-webgl-player class="webgl-player" />
-        </div>
+        <element-cta-button
+          v-if="!slice.primary.Featured"
+          class="section-cta-button"
+          :link="slice.primary.CtaLink"
+          :title="slice.primary.CtaText"
+        />
+        <media-webgl-player
+          class="webgl-player"
+          :class="{ featured: slice.primary.Featured }"
+        />
       </div>
     </div>
   </section>
@@ -78,14 +82,34 @@ export default {
   color: #fff;
 }
 .webgl {
+  &.section.featured {
+    .section-inner {
+      padding-top: 5rem;
+      padding-bottom: 0;
+    }
+    .section-description {
+      margin-top: 40vh;
+    }
+  }
   .webgl-player {
     position: absolute;
+    width: 100%;
     right: 0;
     top: 0;
-    width: 50%;
+    z-index: -1;
+    @include media-breakpoint-up(sm) {
+      width: 75%;
+    }
+    &.featured {
+      height: 110%;
+    }
   }
   .section-inner {
     position: relative;
+    // padding-bottom: 5rem;
+    // @include media-breakpoint-up(sm) {
+    //   padding-bottom: 0;
+    // }
   }
   .background-video {
     position: absolute;
@@ -107,27 +131,45 @@ export default {
       object-fit: cover;
     }
   }
+  .col-left {
+    @include media-breakpoint-up(sm) {
+      width: 60%;
+    }
+  }
   .section-title h1 {
-    font-size: 4vw;
+    font-size: clamp(1.4rem, 4vw, 4vw);
     line-height: 1;
   }
   .section-content {
     position: relative;
-    display: flex;
     z-index: 1;
-    .col-left {
-      width: 60%;
-    }
-    .col-right {
-      width: 40%;
-    }
+    padding-top: 3vw;
+    padding-bottom: 5rem;
   }
   .section-description {
     margin-bottom: 1rem;
+    width: 60%;
+    @include media-breakpoint-up(sm) {
+      width: 40%;
+      margin-top: 0;
+    }
+    * {
+      line-height: 1;
+      font-size: clamp(0.8rem, 1.5vw, 1.5vw);
+    }
+  }
+  .locations-list {
+    @include media-breakpoint-up(sm) {
+      padding-bottom: 25vw;
+    }
   }
   .location {
     display: flex;
     align-items: flex-start;
+    opacity: 0.3;
+    &.active {
+      opacity: 1;
+    }
   }
   .location-index {
     line-height: 1;
@@ -147,11 +189,23 @@ export default {
   .location-title {
     margin-left: 1rem;
     margin-bottom: 1rem;
-    flex: 1 1 100%;
+    word-spacing: 999rem;
+    flex: 1 1 95%;
     * {
       font-family: 'Natural-Selection';
       line-height: 1;
-      font-size: 2vw;
+      font-size: clamp(1rem, 2vw, 2vw);
+    }
+  }
+  .section-cta-button {
+    bottom: 0;
+    width: 100%;
+    margin-top: 8rem;
+    @include media-breakpoint-up(sm) {
+      margin-top: 0;
+      width: unset;
+      position: absolute;
+      transform: translateY(50%);
     }
   }
 }
