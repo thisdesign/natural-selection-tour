@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="section countdown">
     <layout-two-column
       :section-number="slice.primary.SectionNumber"
       :section-title="slice.primary.SectionTitle"
@@ -102,70 +102,71 @@ export default {
 </script>
 
 <style lang="scss">
-.section {
+.countdown.section {
   color: white;
-}
-.countdown-title {
-  h1 {
-    line-height: 0.9;
-    font-size: clamp(1.8rem, 4vw, 4vw);
+  padding-bottom: 3rem;
+  .countdown-title {
+    h1 {
+      line-height: 0.9;
+      font-size: clamp(1.8rem, 4vw, 4vw);
+    }
   }
-}
-.countdown-time {
-  font-family: 'Natural-Selection';
-  line-height: 0.8;
-  font-size: 40vw;
-  @include media-breakpoint-up(sm) {
-    font-size: 10vw;
-    padding-bottom: 10vw;
-  }
-}
-.countdown-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  text-transform: uppercase;
-  @include media-breakpoint-up(sm) {
-    justify-content: flex-start;
-  }
-}
-.countdown-designation {
-  display: block;
-  margin-left: 5%;
-  font-size: 0.1em;
-  font-family: 'Sneak';
-  @include media-breakpoint-up(sm) {
+  .countdown-time {
     font-family: 'Natural-Selection';
-    font-size: 1em;
+    line-height: 0.8;
+    font-size: 40vw;
+    @include media-breakpoint-up(sm) {
+      font-size: 10vw;
+      padding-bottom: 10vw;
+    }
   }
-}
-.cta-row {
-  display: flex;
-  flex-direction: column-reverse;
-  @include media-breakpoint-up(sm) {
-    flex-direction: row;
+  .countdown-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-transform: uppercase;
+    @include media-breakpoint-up(sm) {
+      justify-content: flex-start;
+    }
   }
-}
-.cta-button {
-  text-align: center;
-  margin: 20vw 0 10vw;
-  @include media-breakpoint-up(sm) {
-    margin: 0 25% 0 0;
-    width: 50%;
+  .countdown-designation {
+    display: block;
+    margin-left: 5%;
+    font-size: 0.1em;
+    font-family: 'Sneak';
+    @include media-breakpoint-up(sm) {
+      font-family: 'Natural-Selection';
+      font-size: 1em;
+    }
   }
-}
-.two-column-footer {
-  font-family: 'Sneak';
-  text-transform: uppercase;
-  margin-top: 10vw;
-  @include media-breakpoint-up(sm) {
-    margin-top: 0;
+  .cta-row {
+    display: flex;
+    flex-direction: column-reverse;
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+    }
   }
-}
-.last-updated {
-  margin-top: 10vw;
-  @include media-breakpoint-up(sm) {
-    margin-top: 0;
+  .cta-button {
+    text-align: center;
+    margin: 20vw 0 10vw;
+    @include media-breakpoint-up(sm) {
+      margin: 0 25% 0 0;
+      width: 60%;
+    }
+  }
+  .two-column-footer {
+    font-family: 'Sneak';
+    text-transform: uppercase;
+    margin-top: 10vw;
+    @include media-breakpoint-up(sm) {
+      margin-top: 0;
+    }
+  }
+  .last-updated {
+    margin-top: 10vw;
+    @include media-breakpoint-up(sm) {
+      margin-top: 0;
+    }
   }
 }
 </style>

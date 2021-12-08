@@ -1,7 +1,7 @@
 <template>
   <div>
     <svg
-      :class="status.color"
+      :class="getStatus(status).color"
       width="100%"
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
@@ -15,20 +15,20 @@
         font-size="450%"
         font-family="Natural-Selection"
       >
-        {{ status.letter }}
+        {{ getStatus(status).letter }}
       </text>
     </svg>
   </div>
 </template>
 
 <script>
+import GetStatus from '@/mixins/GetStatus'
 export default {
+  mixins: [GetStatus],
   props: {
     status: {
-      type: Object,
-      default: () => {
-        return { color: 'yellow', letter: 'T' }
-      },
+      type: String,
+      default: 'terrain-prep',
     },
   },
   methods: {},

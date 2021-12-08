@@ -81,11 +81,11 @@ export default {
 </script>
 
 <style lang="scss">
-.section {
-  color: #fff;
-  padding-bottom: 6rem;
-}
 .webgl {
+  &.section {
+    color: #fff;
+    padding-bottom: 6rem;
+  }
   &.section.featured {
     padding-bottom: 3rem;
     .section-inner {

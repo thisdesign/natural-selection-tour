@@ -48,13 +48,14 @@
 
 <script>
 import { slider, slideritem } from 'vue-concise-slider'
-
+import GetStatus from '@/mixins/GetStatus'
 export default {
   name: 'EventListSlice',
   components: {
     slider,
     slideritem,
   },
+  mixins: [GetStatus],
   props: {
     slice: {
       type: Object,
@@ -84,6 +85,7 @@ export default {
 
 <style lang="scss">
 .event-section {
+  padding-bottom: 3rem;
   &.site-padding {
     padding-right: 0;
   }
@@ -168,6 +170,7 @@ export default {
   .event-title {
     margin: 0;
     * {
+      word-spacing: 10rem;
       font-family: 'Natural-Selection';
       font-size: clamp(1.2rem, 2vw, 7rem);
       line-height: 0.9;

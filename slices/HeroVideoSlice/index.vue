@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="video-hero section">
     <div class="video-wrapper">
       <video
         :src="slice.primary.VideoLoop.url"
@@ -60,10 +60,7 @@ export default {
 </script>
 
 <style lang="scss">
-.section {
-  @include media-breakpoint-up(md) {
-    padding: 0 2.5%;
-  }
+.video-hero.section {
   p {
     margin-bottom: 0;
     font-size: 12px;
@@ -75,6 +72,13 @@ export default {
 .section {
   color: white;
   position: relative;
+  @include media-breakpoint-up(md) {
+    padding: 0 2.5%;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 12px;
+  }
 }
 .video-modal {
   position: fixed;

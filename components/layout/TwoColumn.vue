@@ -11,10 +11,7 @@
       />
       <div class="status" :class="getStatus(sidebarStatus).color">
         <span class="status-title">{{ statusTitle }}</span>
-        <element-status-icon
-          class="status-icon"
-          :status="getStatus(sidebarStatus)"
-        />
+        <element-status-icon class="status-icon" :status="sidebarStatus" />
       </div>
       <slot name="footer"></slot>
       <!-- <prismic-rich-text :field="slice.primary.SidebarFooterText" /> -->
@@ -23,7 +20,9 @@
 </template>
 
 <script>
+import GetStatus from '@/mixins/GetStatus'
 export default {
+  mixins: [GetStatus],
   props: {
     sectionNumber: {
       type: String,
@@ -56,28 +55,7 @@ export default {
       return this.sidebarStatus ? this.sidebarStatus.replace('-', ' ') : ''
     },
   },
-  methods: {
-    getStatus(statusCode) {
-      const status = {
-        color: '',
-        letter: 'X',
-      }
-      if (statusCode === 'terrain-prep') {
-        status.color = 'yellow'
-        status.letter = 'P'
-      } else if (statusCode === 'live') {
-        status.color = 'blue'
-        status.letter = 'L'
-      } else if (statusCode === 'archived') {
-        status.color = 'smoke-blue'
-        status.letter = 'A'
-      } else if (statusCode === 'wx-hold') {
-        status.color = 'red'
-        status.letter = 'H'
-      }
-      return status
-    },
-  },
+  methods: {},
 }
 </script>
 
