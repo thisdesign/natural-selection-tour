@@ -150,7 +150,7 @@ export default {
   display: none;
   &.previous {
     display: block;
-    transform: translateX(-90%);
+    transform: translateX(-95%);
   }
   &.current {
     display: block;
@@ -160,7 +160,7 @@ export default {
   }
   &.next {
     display: block;
-    transform: translateX(90%);
+    transform: translateX(95%);
   }
 }
 </style>
