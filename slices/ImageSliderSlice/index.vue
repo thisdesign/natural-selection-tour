@@ -148,19 +148,24 @@ export default {
   justify-content: center;
   font-size: 2rem;
   display: none;
+  transform: translateX(-100%);
   &.previous {
     display: block;
-    transform: translateX(-95%);
+    transform: translateX(-97.5%);
   }
   &.current {
     display: block;
-    transform: translateX(5vw);
+    transform: translateX(2.5vw);
     z-index: 1;
-    width: 90vw;
+    width: 95vw;
+    @include media-breakpoint-up(sm) {
+      transform: translateX(1vw);
+      width: 99vw;
+    }
   }
   &.next {
     display: block;
-    transform: translateX(95%);
+    transform: translateX(97.5%);
   }
 }
 </style>
