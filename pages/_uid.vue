@@ -15,5 +15,17 @@ export default {
   components: {
     SliceZone,
   },
+  async asyncData({ store, $prismic, params, error }) {
+    const document = await $prismic.api.getByUID('page', params.uid)
+    if (document) {
+      await store.dispatch('ui/setOptions', {
+        floatingHeader: document.data.FloatingNav,
+        footerColor: document.data.FooterBackground || '#1f2744',
+      })
+      return { document }
+    } else {
+      error({ statusCode: 404, message: 'Page not found' })
+    }
+  },
 }
 </script>

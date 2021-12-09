@@ -5,8 +5,8 @@
     "slice_type": "image_banner_slice",
     "items": [],
     "primary": {
-      "SectionNumber": "deploy back-end schemas",
-      "SectionTitle": "enable rich web-readiness",
+      "SectionNumber": "scale scalable experiences",
+      "SectionTitle": "enhance web-enabled e-tailers",
       "Banner": {
         "dimensions": {
           "width": 900,
@@ -14,7 +14,7 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
       },
       "MobileBanner": {
         "dimensions": {
@@ -23,12 +23,12 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f?w=900&h=500&fit=crop"
       },
-      "CtaTitle": "scale compelling interfaces",
+      "CtaTitle": "reintermediate bleeding-edge vortals",
       "CtaLink": {
         "link_type": "Web",
-        "url": "https://prismic.io"
+        "url": "http://twitter.com"
       }
     }
   }

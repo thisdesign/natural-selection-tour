@@ -4,7 +4,7 @@ https://www.slicemachine.dev/documentation/nuxt/add-the-slice-zone-to-your-page
 -->
 <template>
   <div class="app">
-    <slice-zone type="page" uid="home" />
+    <slice-zone :slices="document.data.slices" />
   </div>
 </template>
 
@@ -14,6 +14,18 @@ import SliceZone from 'vue-slicezone'
 export default {
   components: {
     SliceZone,
+  },
+  async asyncData({ store, $prismic, params, error }) {
+    const document = await $prismic.api.getByUID('page', 'home')
+    if (document) {
+      await store.dispatch('ui/setOptions', {
+        floatingHeader: document.data.FloatingNav,
+        footerColor: document.data.FooterBackground || '#1f2744',
+      })
+      return { document }
+    } else {
+      error({ statusCode: 404, message: 'Page not found' })
+    }
   },
 }
 </script>

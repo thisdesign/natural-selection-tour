@@ -1,11 +1,12 @@
 {
-  "id": "5d768eb3-b5ce-458e-bbdd-5cd06a55120c",
-  "uid": "et-at-voluptate",
+  "id": "a073043e-b5b7-4398-871f-22c751b0444d",
+  "uid": "aut-sint-culpa",
   "type": "page",
   "data": {
     "FloatingNav": false,
-    "meta_title": "optimize seamless web-readiness",
-    "meta_description": "unleash turn-key e-markets",
+    "FooterBackground": "#1f2744",
+    "meta_title": "integrate customized e-business",
+    "meta_description": "cultivate cross-media web-readiness",
     "social_cards": [
       {
         "social_card_image": {
@@ -15,10 +16,10 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
         },
-        "social_card_title": "engineer wireless metrics",
-        "social_card_description": "transition extensible eyeballs"
+        "social_card_title": "iterate granular eyeballs",
+        "social_card_description": "strategize next-generation platforms"
       },
       {
         "social_card_image": {
@@ -28,10 +29,23 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=900&h=500&fit=crop"
         },
-        "social_card_title": "deploy vertical eyeballs",
-        "social_card_description": "cultivate transparent solutions"
+        "social_card_title": "productize scalable methodologies",
+        "social_card_description": "streamline B2C action-items"
+      },
+      {
+        "social_card_image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=500&fit=crop"
+        },
+        "social_card_title": "repurpose granular architectures",
+        "social_card_description": "visualize 24/365 systems"
       }
     ]
   }

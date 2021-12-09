@@ -21,9 +21,13 @@ export default {
     PartnerLogoGrid: PartnerLogoGridSlice,
     CodeSlice,
   },
-  async asyncData({ $prismic, params, error }) {
+  async asyncData({ store, $prismic, params, error }) {
     const document = await $prismic.api.getByUID('partner', params.uid)
     if (document) {
+      await store.dispatch('ui/setOptions', {
+        floatingHeader: false,
+        footerColor: '#FFE500',
+      })
       return { document }
     } else {
       error({ statusCode: 404, message: 'Page not found' })

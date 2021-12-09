@@ -18,7 +18,7 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"rider_gallery_slice","items":[{"Rider":{"link_type":"Web","url":"http://google.com"}},{"Rider":{"link_type":"Web","url":"http://google.com"}},{"Rider":{"link_type":"Web","url":"https://prismic.io"}},{"Rider":{"link_type":"Web","url":"http://google.com"}},{"Rider":{"link_type":"Web","url":"http://google.com"}}],"primary":{"SectionNumber":"exploit global solutions","SectionTitle":"exploit real-time vortals"},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","name":"Default slice","slice_type":"rider_gallery_slice","items":[{"Rider":{"link_type":"Web","url":"https://slicemachine.dev"}},{"Rider":{"link_type":"Web","url":"https://slicemachine.dev"}}],"primary":{"SectionNumber":"enhance web-enabled markets","SectionTitle":"benchmark one-to-one web services"},"id":"_DefaultSlice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
