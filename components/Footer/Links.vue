@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footer-links">
     <ul v-for="(list, listIndex) in linkLists" :key="`linkList${listIndex}`">
       <li v-for="(item, index) in list" :key="`footerPrimary${index}`">
         <nuxt-link
@@ -54,13 +54,29 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+// .footer-links {
+//   a * {
+//     font-size: 12px;
+//     line-height: 1.1;
+//     text-decoration: none;
+//     text-transform: uppercase;
+//   }
+// }
+</style>
 <style lang="scss" scoped>
 ul {
   list-style: none;
   padding-left: 0;
   font-family: 'Sneak', sans-serif;
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+li {
+  margin-top: 0.5em;
 }
 a {
+  display: block;
   font-size: 12px;
   line-height: 1.1;
   text-decoration: none;

@@ -1,42 +1,40 @@
 <template>
   <div class="video-player">
-    <youtube
-      :video-id="videoId"
-      :player-vars="playerVars"
-      width="100%"
-      height="100%"
-    ></youtube>
+    <video ref="videoPlayer" class="video-js"></video>
   </div>
 </template>
 
 <script>
-import { Youtube, getIdFromUrl } from 'vue-youtube'
-
+import videojs from 'video.js'
+import 'video.js/dist/video-js.min.css'
 export default {
-  components: {
-    Youtube,
-  },
+  name: 'VideoPlayer',
   props: {
-    url: {
-      type: String,
-      default: '',
+    options: {
+      type: Object,
+      default() {
+        return {}
+      },
     },
   },
   data() {
     return {
-      videoId: '',
-      playerVars: {
-        controls: 0,
-        autoplay: 1,
-        mute: 1,
-        modestbranding: 0,
-        rel: 0,
-        showinfo: 0,
-      },
+      player: null,
     }
   },
   mounted() {
-    this.videoId = getIdFromUrl(this.url)
+    this.player = videojs(
+      this.$refs.videoPlayer,
+      this.options,
+      function onPlayerReady() {
+        // console.log('onPlayerReady', this)
+      },
+    )
+  },
+  beforeDestroy() {
+    if (this.player) {
+      this.player.dispose()
+    }
   },
 }
 </script>
@@ -45,14 +43,6 @@ export default {
 .video-player {
   position: relative;
   width: 100%;
-  padding-top: calc((9 / 16) * 100%);
-  pointer-events: none;
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+  height: 100%;
 }
 </style>

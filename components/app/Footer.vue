@@ -5,7 +5,7 @@
   >
     <div class="mobile">
       <nuxt-link to="/">
-        <prismic-image :field="globals.data.FooterLogo" />
+        <prismic-image class="logo" :field="globals.data.FooterLogo" />
       </nuxt-link>
       <div class="feature-text">
         <footer-feature-text />
@@ -20,7 +20,7 @@
     <div class="desktop">
       <div class="column col1">
         <nuxt-link to="/">
-          <prismic-image :field="globals.data.FooterLogo" />
+          <prismic-image class="logo" :field="globals.data.FooterLogo" />
         </nuxt-link>
         <footer-copy />
       </div>
@@ -63,6 +63,7 @@ footer {
 }
 .logo {
   max-width: 250px;
+  width: 100%;
 }
 .desktop {
   display: none;

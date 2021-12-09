@@ -9,9 +9,11 @@
   transform: rotate(45deg);
   &:hover {
     transform: rotate(405deg);
+    background: transparent;
   }
   &:focus {
     outline: none;
+    background: transparent;
   }
   span {
     display: block;

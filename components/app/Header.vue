@@ -4,7 +4,7 @@
       <nuxt-link to="/" class="logo">
         <prismic-image :field="globals.data.Logo" />
       </nuxt-link>
-      <button class="close-btn" @click="navOpen = !navOpen">
+      <button class="close-btn" @click="toggleNav">
         <span></span>
         <span></span>
       </button>
@@ -101,7 +101,26 @@ export default {
       return this.$store.state.ui.options.floatingHeader
     },
   },
+  watch: {
+    $route() {
+      this.navOpen = false
+      this.toggleNav(false)
+    },
+  },
   methods: {
+    toggleNav(toggle) {
+      const body = document.querySelector('body')
+      if (toggle) this.navOpen = !this.navOpen
+      if (this.navOpen) {
+        body.style.overflow = 'hidden'
+        body.style.position = 'fixed'
+        body.style.width = '100%'
+      } else {
+        body.style.removeProperty('overflow')
+        body.style.removeProperty('position')
+        body.style.removeProperty('width')
+      }
+    },
     htmlSerializer(type, element, content, children) {
       // If element is a list item,
       if (type === 'paragraph') {
@@ -130,11 +149,9 @@ header {
   z-index: 100;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  @include media-breakpoint-up(sm) {
-    // background: black;
-  }
 }
 .close-btn {
+  z-index: 100;
   @include media-breakpoint-up(sm) {
     display: none;
   }
@@ -212,14 +229,18 @@ nav {
     flex-direction: row;
   }
   .menu-link {
-    margin-bottom: 3rem;
+    margin-bottom: clamp(1rem, 4vh, 3rem);
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 0;
+    }
   }
   .menu-link a {
-    // margin: 0 60px;
     font-size: 1.8rem;
     text-decoration: none;
     line-height: 1;
+    position: relative;
     @include media-breakpoint-up(sm) {
+      display: flex;
       font-size: 20px;
       margin-bottom: 0;
     }
@@ -229,8 +250,11 @@ nav {
     &:after {
       @include media-breakpoint-up(sm) {
         content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
         display: block;
-        margin-top: 5px;
+        margin-bottom: -10px;
         width: 8px;
         height: 3px;
         background: $white;
@@ -265,7 +289,7 @@ nav {
     text-decoration: none;
     // font-weight: 700;
     font-size: 1.3rem;
-    margin-bottom: 1.8rem;
+    margin-bottom: clamp(0.5rem, 3vh, 1.8rem);
   }
 }
 .nav-social {
