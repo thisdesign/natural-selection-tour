@@ -21,7 +21,9 @@
           </div>
         </div>
       </div>
-      <element-btn-slide-next class="slide-next-btn" @click="slideNext" />
+      <div @click="slideNext">
+        <element-btn-slide-next class="slide-next-btn" />
+      </div>
     </div>
   </section>
 </template>

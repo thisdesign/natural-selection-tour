@@ -191,8 +191,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.rider-gallery-slice {
-}
 .mobile-gallery {
   color: white;
   @include media-breakpoint-up(sm) {

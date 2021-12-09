@@ -208,13 +208,16 @@ nav {
   }
   .menu-link {
     margin-bottom: 3rem;
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 0;
+    }
   }
   .menu-link a {
-    // margin: 0 60px;
     font-size: 1.8rem;
     text-decoration: none;
     line-height: 1;
     @include media-breakpoint-up(sm) {
+      display: flex;
       font-size: 20px;
       margin-bottom: 0;
     }
