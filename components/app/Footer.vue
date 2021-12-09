@@ -2,7 +2,7 @@
   <footer class="footer site-padding">
     <div class="mobile">
       <nuxt-link to="/">
-        <logo class="logo" />
+        <prismic-image :field="globals.data.FooterLogo" />
       </nuxt-link>
       <div class="feature-text">
         <footer-feature-text />
@@ -17,7 +17,7 @@
     <div class="desktop">
       <div class="column col1">
         <nuxt-link to="/">
-          <logo class="logo" />
+          <prismic-image :field="globals.data.FooterLogo" />
         </nuxt-link>
         <footer-copy />
       </div>
@@ -34,11 +34,12 @@
 </template>
 
 <script>
-import Logo from '@/assets/svg/logo.svg?inline'
 export default {
   name: 'AppFooter',
-  components: {
-    Logo,
+  computed: {
+    globals() {
+      return this.$store.state.globals.results
+    },
   },
 }
 </script>

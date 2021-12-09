@@ -60,12 +60,10 @@
               },
               "type": "StructuredText"
             },
-            "Liink": {
+            "Link": {
               "config": {
-                "label": "Liink",
-                "placeholder": "",
-                "select": "web",
-                "allowTargetBlank": false
+                "label": "Link",
+                "placeholder": ""
               },
               "type": "Link"
             }
@@ -90,9 +88,7 @@
             "Link": {
               "config": {
                 "label": "Link",
-                "placeholder": "",
-                "select": "web",
-                "allowTargetBlank": false
+                "placeholder": ""
               },
               "type": "Link"
             }
@@ -117,9 +113,7 @@
             "Link": {
               "config": {
                 "label": "Link",
-                "placeholder": "",
-                "select": "web",
-                "allowTargetBlank": false
+                "placeholder": ""
               },
               "type": "Link"
             }
@@ -149,12 +143,18 @@
               },
               "type": "Image"
             },
+            "IconAlt": {
+              "config": {
+                "label": "IconAlt",
+                "constraint": {},
+                "thumbnails": []
+              },
+              "type": "Image"
+            },
             "Link": {
               "config": {
                 "label": "Link",
-                "placeholder": "",
-                "select": "web",
-                "allowTargetBlank": false
+                "placeholder": ""
               },
               "type": "Link"
             }

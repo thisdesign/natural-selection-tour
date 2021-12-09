@@ -1,10 +1,20 @@
 <template>
-  <div class="feature-text">
-    <p>Created with stoke from remote regions across the earth️.</p>
+  <div class="footer-feature-text">
+    <prismic-rich-text :field="globals.data.FooterText" />
   </div>
 </template>
-<style lang="scss" scoped>
-.feature-text {
+<script>
+export default {
+  name: 'FooterFeatureText',
+  computed: {
+    globals() {
+      return this.$store.state.globals.results
+    },
+  },
+}
+</script>
+<style lang="scss">
+.footer-feature-text {
   max-width: 250px;
   p {
     font-family: $baseFontFamily;

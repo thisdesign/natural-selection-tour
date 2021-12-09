@@ -1,20 +1,57 @@
 <template>
   <div>
-    <ul>
-      <li><nuxt-link to="">About</nuxt-link></li>
-      <li><nuxt-link to="/events">Events</nuxt-link></li>
-      <li><nuxt-link to="/riders">Riders</nuxt-link></li>
-      <li><nuxt-link to="">Streams</nuxt-link></li>
-      <li><nuxt-link to="">SHOP</nuxt-link></li>
-      <li><nuxt-link to="/faq">FAQ</nuxt-link></li>
-    </ul>
-    <ul>
-      <li><nuxt-link to="/partners">Partners</nuxt-link></li>
-      <li><nuxt-link to="/randomizer">RANDOMIZER</nuxt-link></li>
-      <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+    <ul v-for="(list, listIndex) in linkLists" :key="`linkList${listIndex}`">
+      <li v-for="(item, index) in list" :key="`footerPrimary${index}`">
+        <nuxt-link
+          v-if="item.Link.link_type === 'Document'"
+          :to="`${item.Link.type === 'page' ? '' : 'partner/'}${item.Link.uid}`"
+        >
+          <prismic-rich-text
+            :field="item.LinkLabel"
+            :html-serializer="htmlSerializer"
+          />
+        </nuxt-link>
+        <a
+          v-if="item.Link.link_type === 'Web'"
+          :href="item.Link.url"
+          target="_blank"
+        >
+          <prismic-rich-text
+            :field="item.LinkLabel"
+            :html-serializer="htmlSerializer"
+          />
+        </a>
+      </li>
     </ul>
   </div>
 </template>
+<script>
+export default {
+  name: 'FooterLinks',
+  computed: {
+    linkLists() {
+      return [
+        this.globals.data.FooterPrimaryLinks,
+        this.globals.data.FooterSecondaryLinks,
+      ]
+    },
+    globals() {
+      return this.$store.state.globals.results
+    },
+  },
+  methods: {
+    htmlSerializer(type, element, content, children) {
+      // If element is a list item,
+      if (type === 'paragraph') {
+        // return some customized HTML.
+        return `<span>${children.join('')}</span>`
+      }
+      /// Otherwise, return null.
+      return null
+    },
+  },
+}
+</script>
 <style lang="scss" scoped>
 ul {
   list-style: none;
