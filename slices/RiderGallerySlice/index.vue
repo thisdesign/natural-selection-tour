@@ -54,35 +54,37 @@
       </slider>
 
       <div class="site-padding">
-        <div v-if="currentMobileRider">
-          <div class="slider-rider-name">
-            {{ currentMobileRider.data.Name[0].text }}
-          </div>
-          <div class="rider-info">
-            <div class="rider-flag">
-              <div class="flag-wrapper">
-                <prismic-image :field="currentMobileRider.data.Flag" />
+        <transition name="vt-fade" mode="out-in">
+          <div v-if="currentMobileRider" :key="currentMobileRider.id">
+            <div class="slider-rider-name">
+              {{ currentMobileRider.data.Name[0].text }}
+            </div>
+            <div class="rider-info">
+              <div class="rider-flag">
+                <div class="flag-wrapper">
+                  <prismic-image :field="currentMobileRider.data.Flag" />
+                </div>
+              </div>
+              <div class="rider-info-col">
+                <prismic-rich-text
+                  class="rider-location"
+                  :field="currentMobileRider.data.Location"
+                />
+                <div class="rider-stats">
+                  <prismic-rich-text
+                    :field="currentMobileRider.data.InformationLeft"
+                  />
+                  <prismic-rich-text
+                    :field="currentMobileRider.data.InformationRight"
+                  />
+                </div>
               </div>
             </div>
-            <div class="rider-info-col">
-              <prismic-rich-text
-                class="rider-location"
-                :field="currentMobileRider.data.Location"
-              />
-              <div class="rider-stats">
-                <prismic-rich-text
-                  :field="currentMobileRider.data.InformationLeft"
-                />
-                <prismic-rich-text
-                  :field="currentMobileRider.data.InformationRight"
-                />
-              </div>
+            <div class="rider-description">
+              <prismic-rich-text :field="currentMobileRider.data.Bio" />
             </div>
           </div>
-          <div class="rider-description">
-            <prismic-rich-text :field="currentMobileRider.data.Bio" />
-          </div>
-        </div>
+        </transition>
       </div>
     </div>
   </section>
@@ -253,6 +255,7 @@ export default {
   margin-bottom: 3rem;
   position: relative;
   appearance: none;
+  text-transform: uppercase;
 }
 .slider-item {
   box-shadow: 0px 0px 0px 0px #000000;

@@ -232,14 +232,15 @@ export default {
     overflow-x: scroll;
   }
 }
-</style>
-
-<style lang="scss">
-// .rider {
-//   .rider-about {
-//     p {
-//       margin-bottom: 0;
-//     }
-//   }
-// }
+.rider-sponsors-logos {
+  display: flex;
+  flex-wrap: wrap;
+}
+.rider-logo {
+  width: 25%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
 </style>
