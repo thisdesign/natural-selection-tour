@@ -57,7 +57,6 @@ export default {
       videoOptions: {
         autoplay: true,
         controls: true,
-        // fluid: true,
         fill: true,
         sources: [
           {

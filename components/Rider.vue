@@ -7,6 +7,12 @@
       @click="active = true"
     >
       <prismic-image :field="rider.data.Rider" />
+      <video
+        ref="riderVideo"
+        src="https://prismic-io.s3.amazonaws.com/naturalselectiontour/79e3cfe0-fa21-4caf-b8c5-24ef0aab5003_AustenSweetin_RiderHeadshot_NaturalSelection_500x500_S.mp4"
+        muted
+        playsinline
+      ></video>
     </div>
     <div class="rider-info">
       <div class="rider-flag">
@@ -72,9 +78,14 @@ export default {
   methods: {
     updateCurrentRider() {
       this.$emit('update-rider', this.rider.data)
+      this.$refs.riderVideo.play()
+      this.$refs.riderVideo.style.opacity = '1'
     },
     onMouseOut() {
       this.$emit('hidename')
+      this.$refs.riderVideo.pause()
+      this.$refs.riderVideo.currentTime = 0
+      this.$refs.riderVideo.style.opacity = '0'
     },
   },
 }
@@ -124,20 +135,22 @@ export default {
 }
 .rider-image {
   cursor: none;
-  // cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDEwQzIwIDE1LjUyMjggMTUuNTIyOCAyMCAxMCAyMEM0LjQ3NzE1IDIwIDAgMTUuNTIyOCAwIDEwQzAgNC40NzcxNSA0LjQ3NzE1IDAgMTAgMEMxNS41MjI4IDAgMjAgNC40NzcxNSAyMCAxMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=')
-  //     16 16,
-  //   pointer;
   position: relative;
   overflow: hidden;
   padding-top: 100%;
   width: 100%;
-  img {
+  img,
+  video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  video {
+    opacity: 0;
+    transition: opacity 400ms;
   }
 }
 .rider-info {
