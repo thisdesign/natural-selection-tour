@@ -126,7 +126,7 @@ export default {
       padding-right: 2rem;
     }
     &.disable {
-      opacity: 0.5;
+      opacity: 0.2;
       pointer-events: none;
     }
   }

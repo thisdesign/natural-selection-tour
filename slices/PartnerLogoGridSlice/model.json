@@ -31,7 +31,7 @@
             "label": "Intro",
             "placeholder": "Introduction",
             "allowTargetBlank": false,
-            "single": "heading1"
+            "single": "heading2"
           }
         }
       },

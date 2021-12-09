@@ -4,15 +4,8 @@
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
-    <!-- <prismic-rich-text
-      v-if="slice.primary.title"
-      :field="slice.primary.title"
-    /> -->
-    <div class="partners-title">
-      <p>
-        Special thanks to our supporting partners helping advance our people,
-        planet, and purpose.
-      </p>
+    <div v-if="slice.primary.title" class="partners-title">
+      <prismic-rich-text :field="slice.primary.title" />
     </div>
     <div class="partner-list">
       <div
@@ -64,14 +57,16 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+.partners-title * {
+  font-size: clamp(1.5rem, 4vw, 4vw);
+  line-height: 1.2;
+}
+</style>
 
 <style lang="scss" scoped>
 .section {
   color: #fff;
-}
-.partners-title * {
-  font-size: clamp(1.5rem, 4vw, 4vw);
-  line-height: 1.2;
 }
 .partner-list {
   display: flex;

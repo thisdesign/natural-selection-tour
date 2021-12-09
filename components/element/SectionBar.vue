@@ -29,7 +29,7 @@ export default {
   color: $white;
   font-size: 12px;
   padding: 20px 0;
-  margin-bottom: 3vw;
+  margin-bottom: 1vw;
 }
 
 .section-title {
