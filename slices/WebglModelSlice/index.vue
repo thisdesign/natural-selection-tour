@@ -11,7 +11,7 @@
       <div class="background-video">
         <div class="video-wrapper">
           <video
-            :src="slice.primary.VideoLoop"
+            :src="slice.primary.VideoLoop.url"
             muted
             autoplay
             loop
