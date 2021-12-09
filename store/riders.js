@@ -11,7 +11,7 @@ export const mutations = {
 export const actions = {
   async loadRiders({ commit }, $prismic) {
     // get results
-    const riders = await this.$prismic.api.query(
+    const riders = await $prismic.api.query(
       this.$prismic.predicates.at('document.type', 'rider'),
     )
     // console.log('riders', riders)
