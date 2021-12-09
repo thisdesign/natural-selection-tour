@@ -42,16 +42,16 @@
     </div>
     <div class="main-menu" :class="{ open: navOpen }">
       <nav class="nav">
-        <nuxt-link class="menu-link" to="events">The<br />Events</nuxt-link>
-        <nuxt-link class="menu-link" to="riders">The<br />Riders</nuxt-link>
+        <nuxt-link class="menu-link" to="/events">The<br />Events</nuxt-link>
+        <nuxt-link class="menu-link" to="/riders">The<br />Riders</nuxt-link>
         <nuxt-link class="menu-link" to="streams">The<br />Streams</nuxt-link>
         <nuxt-link class="menu-link" to="shop">The<br />Shop</nuxt-link>
       </nav>
       <div class="nav-footer">
         <div class="nav-footer-links">
-          <nuxt-link class="link" to="faq">FAQ</nuxt-link>
-          <nuxt-link class="link" to="partners">Partners</nuxt-link>
-          <nuxt-link class="link" to="contact">Contact</nuxt-link>
+          <nuxt-link class="link" to="/faq">FAQ</nuxt-link>
+          <nuxt-link class="link" to="/partners">Partners</nuxt-link>
+          <nuxt-link class="link" to="/contact">Contact</nuxt-link>
         </div>
         <div class="nav-social">
           <a href="" target="_blank">
