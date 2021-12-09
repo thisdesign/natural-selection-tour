@@ -22,49 +22,15 @@
 </template>
 
 <script>
+import GetStatus from '@/mixins/GetStatus'
 export default {
+  mixins: [GetStatus],
   props: {
     status: {
       type: String,
-      default: '',
+      default: 'terrain-prep',
     },
   },
-  methods: {
-    getStatus(statusCode) {
-      const status = {
-        color: '',
-        letter: 'X',
-      }
-      if (statusCode === 'terrain-prep') {
-        status.color = 'yellow'
-        status.letter = 'P'
-      } else if (statusCode === 'live') {
-        status.color = 'blue'
-        status.letter = 'L'
-      } else if (statusCode === 'archived') {
-        status.color = 'smoke-blue'
-        status.letter = 'A'
-      } else if (statusCode === 'wx-hold') {
-        status.color = 'red'
-        status.letter = 'H'
-      }
-      return status
-    },
-  },
+  methods: {},
 }
 </script>
-
-<style lang="scss" scoped>
-.yellow {
-  color: $yellow-primary;
-}
-.blue {
-  color: $blue-primary;
-}
-.red {
-  color: $red-primary;
-}
-.smoke-blue {
-  color: $blue-smoke;
-}
-</style>

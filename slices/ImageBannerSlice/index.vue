@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section site-padding">
     <element-section-bar
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"

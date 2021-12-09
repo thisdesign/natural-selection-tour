@@ -8,7 +8,7 @@
     </div>
     <!-- <prismic-embed :field="slice.primary.VideoLoop" /> -->
     <div class="section-inner">
-      <div v-if="!slice.primary.Featured" class="background-video">
+      <div class="background-video">
         <div class="video-wrapper">
           <video
             src="http://d39tpa37kkhgnr.cloudfront.net/01.mp4"
@@ -74,21 +74,29 @@ export default {
       indexLetters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'],
     }
   },
+  mounted() {
+    console.log(this.slice.primary.Featured)
+  },
 }
 </script>
 
 <style lang="scss">
-.section {
-  color: #fff;
-}
 .webgl {
+  &.section {
+    color: #fff;
+    padding-bottom: 6rem;
+  }
   &.section.featured {
+    padding-bottom: 3rem;
     .section-inner {
       padding-top: 5rem;
       padding-bottom: 0;
     }
     .section-description {
       margin-top: 40vh;
+      @include media-breakpoint-up(sm) {
+        margin: 2rem 0;
+      }
     }
   }
   .webgl-player {
@@ -106,10 +114,6 @@ export default {
   }
   .section-inner {
     position: relative;
-    // padding-bottom: 5rem;
-    // @include media-breakpoint-up(sm) {
-    //   padding-bottom: 0;
-    // }
   }
   .background-video {
     position: absolute;
@@ -147,20 +151,17 @@ export default {
     padding-bottom: 5rem;
   }
   .section-description {
-    margin-bottom: 1rem;
+    margin: 2rem 0;
     width: 60%;
-    @include media-breakpoint-up(sm) {
-      width: 40%;
-      margin-top: 0;
-    }
+    max-width: 300px;
     * {
       line-height: 1;
-      font-size: clamp(0.8rem, 1.5vw, 1.5vw);
+      font-size: clamp(0.8rem, 1.3vw, 1.5vw);
     }
   }
   .locations-list {
     @include media-breakpoint-up(sm) {
-      padding-bottom: 25vw;
+      padding-bottom: 20vw;
     }
   }
   .location {

@@ -8,14 +8,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Id excepteur enim qui voluptate quis occaecat duis ea tempor eu esse. Exercitation fugiat anim amet nostrud minim commodo anim nostrud consectetur labore sint nulla officia. Anim eiusmod culpa consequat velit enim dolor minim irure est.",
+            "text": "Laborum laboris labore sit excepteur fugiat quis eiusmod. Magna sit laboris ex et. Fugiat fugiat do pariatur.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Aute ad mollit enim reprehenderit nisi do qui.",
+            "text": "Ex non enim nisi exercitation culpa ea esse duis est anim. In eu tempor exercitation ad mollit quis veniam ad labore laborum. Deserunt excepteur quis voluptate proident anim ipsum ipsum magna eu in pariatur deserunt.",
             "spans": []
           }
         ]
@@ -24,14 +24,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Non officia esse tempor est duis ex sit sunt. Culpa qui ullamco sunt commodo officia officia nisi magna ullamco nulla excepteur.",
+            "text": "Nostrud enim non dolore Lorem ad adipisicing consectetur.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Duis amet Lorem officia officia ut non laboris consequat ea fugiat mollit deserunt.",
+            "text": "Culpa occaecat duis occaecat nisi id. Amet adipisicing minim do sint ullamco anim dolore do enim non aliquip cupidatat sint ipsum. Excepteur nisi laborum est culpa consectetur adipisicing velit sint id velit labore.",
             "spans": []
           }
         ]
@@ -40,14 +40,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Nostrud sit consectetur nostrud reprehenderit ea ad amet quis pariatur commodo quis ea eu exercitation Lorem. Cupidatat eu aute fugiat consequat dolor ad adipisicing Lorem pariatur ullamco et reprehenderit proident mollit.",
+            "text": "Exercitation deserunt quis tempor.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Commodo pariatur consequat exercitation duis laboris irure do cupidatat et aute eiusmod elit. Eiusmod aliqua irure in. Consectetur amet adipisicing ad laborum esse excepteur consectetur do magna sint.",
+            "text": "Officia laboris magna dolore qui aliqua consectetur reprehenderit enim nostrud do irure laboris. Dolor sint cupidatat ullamco esse nulla ea quis quis. Consequat esse occaecat officia id nisi do elit tempor mollit nisi elit consequat aliquip.",
             "spans": []
           }
         ]
@@ -56,22 +56,22 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Enim aute irure ea enim consequat velit.",
+            "text": "Dolore officia laboris labore velit et dolor dolor eu quis do tempor reprehenderit nostrud.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Exercitation duis sit exercitation nulla culpa velit consequat ad commodo fugiat cupidatat. Laborum sint amet quis do in nostrud. Dolore do qui irure.",
+            "text": "Est officia eiusmod adipisicing culpa eiusmod consectetur dolor ut tempor labore ea. Exercitation est velit ipsum ullamco deserunt aute ad incididunt veniam.",
             "spans": []
           }
         ]
       }
     ],
     "primary": {
-      "SectionNumber": "envisioneer cutting-edge e-commerce",
-      "SectionTitle": "morph extensible networks",
+      "SectionNumber": "repurpose mission-critical mindshare",
+      "SectionTitle": "empower distributed e-services",
       "Logo": {
         "dimensions": {
           "width": 900,
@@ -79,9 +79,9 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=900&h=500&fit=crop"
       },
-      "CtaText": "innovate dynamic users",
+      "CtaText": "architect viral users",
       "VideoFull": {
         "link_type": "Web",
         "url": "http://google.com"

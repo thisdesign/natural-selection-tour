@@ -17,12 +17,18 @@
             <div class="slide-image">
               <!-- <prismic-image :field="item.Image" /> -->
               <img src="/mocks/mock-slider-image.jpg" alt="" />
-              <div style="position: absolute; z-index: 10">{{ i }}</div>
             </div>
           </div>
         </div>
       </div>
-      <button class="btn-slide-next" @click="slideNext">Next Slide</button>
+      <button class="btn-slide-next" @click="slideNext">
+        <svg viewBox="0 0 39 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M29.345 13.625C30.4817 11.2783 31.545 9.51833 32.535 8.345H0.470001V6.035H32.535C31.545 4.86167 30.4817 3.10167 29.345 0.754999H31.27C33.58 3.43167 36 5.41167 38.53 6.695V7.685C36 8.93167 33.58 10.9117 31.27 13.625H29.345Z"
+            fill="white"
+          />
+        </svg>
+      </button>
     </div>
   </section>
 </template>
@@ -47,6 +53,7 @@ export default {
   },
   mounted() {
     this.slider = new CubeSlider(document.querySelector('.image-slider'))
+    window.slider = this.slider
   },
   methods: {
     slideNext() {
@@ -64,7 +71,10 @@ export default {
 
 .slider-container {
   position: relative;
-  padding-top: 50%;
+  padding-top: 78%;
+  @include media-breakpoint-up(md) {
+    padding-top: 50%;
+  }
 }
 .slider-wrapper {
   position: absolute;
@@ -75,8 +85,35 @@ export default {
 }
 .btn-slide-next {
   position: absolute;
-  right: 0;
-  top: 50%;
+  background: black;
+  border: 1px solid white;
+  border-radius: 10rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0;
+  right: 0.5rem;
+  top: calc(100% - 4rem);
+  @include media-breakpoint-up(sm) {
+    right: 2.5%;
+    transform: translateY(-50%);
+    top: 50%;
+    height: unset;
+    width: 8rem;
+    padding: 2.5rem 0;
+  }
+  @include media-breakpoint-up(md) {
+    padding: 3rem 0;
+    width: 10rem;
+  }
+  &:focus {
+    outline: none;
+  }
+  svg {
+    width: 50%;
+    @include media-breakpoint-up(sm) {
+      width: 30%;
+    }
+  }
 }
 .slide-image {
   color: black;
@@ -98,7 +135,7 @@ export default {
 .image-slider {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 100%;
   transform-style: preserve-3d;
 }
 
@@ -111,13 +148,24 @@ export default {
   justify-content: center;
   font-size: 2rem;
   display: none;
+  transform: translateX(-100%);
+  &.previous {
+    display: block;
+    transform: translateX(-97.5%);
+  }
   &.current {
     display: block;
-    transform: translateZ(50vw);
+    transform: translateX(2.5vw);
+    z-index: 1;
+    width: 95vw;
+    @include media-breakpoint-up(sm) {
+      transform: translateX(1vw);
+      width: 99vw;
+    }
   }
   &.next {
     display: block;
-    transform: translateX(50vw) rotateY(90deg);
+    transform: translateX(97.5%);
   }
 }
 </style>

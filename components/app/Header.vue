@@ -4,7 +4,7 @@
       <nuxt-link to="/" class="logo">
         <prismic-image :field="globals.data.Logo" />
       </nuxt-link>
-      <button class="mobile-close-nav" @click="navOpen = !navOpen">
+      <button class="close-btn" @click="navOpen = !navOpen">
         <span></span>
         <span></span>
       </button>
@@ -118,6 +118,8 @@ header {
   width: 100%;
   text-align: right;
   color: $white;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   z-index: 100;
@@ -127,6 +129,11 @@ header {
     // background: black;
   }
 }
+.close-btn {
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
 .nav-controls-wrapper {
   display: flex;
   width: 100%;
@@ -134,34 +141,6 @@ header {
   align-items: center;
   @include media-breakpoint-up(sm) {
     width: unset;
-  }
-}
-.mobile-close-nav {
-  width: 1rem;
-  height: 1rem;
-  position: relative;
-  padding: 0;
-  z-index: 100;
-  border: none;
-  background: transparent;
-  transform: rotate(45deg);
-  &:hover {
-    transform: rotate(405deg);
-  }
-  &:focus {
-    outline: none;
-  }
-  @include media-breakpoint-up(sm) {
-    display: none;
-  }
-  span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: white;
-    &:first-child {
-      transform: translate(0px, 2px) rotate(90deg);
-    }
   }
 }
 
@@ -189,6 +168,13 @@ header {
     background: transparent;
     visibility: visible;
     opacity: 1;
+    position: relative;
+    width: unset;
+    height: unset;
+    padding: 0;
+  }
+  @include media-breakpoint-up(sm) {
+    width: 50%;
   }
   &.open {
     opacity: 1;
@@ -207,12 +193,6 @@ header {
       display: none;
     }
   }
-  @include media-breakpoint-up(sm) {
-    position: relative;
-    width: unset;
-    height: unset;
-    padding: 0;
-  }
 }
 nav {
   display: flex;
@@ -221,6 +201,7 @@ nav {
   text-align: right;
   @include media-breakpoint-up(sm) {
     height: 100%;
+    justify-content: space-between;
     text-align: left;
     align-items: center;
     flex-direction: row;
@@ -235,8 +216,10 @@ nav {
     line-height: 1;
     @include media-breakpoint-up(sm) {
       font-size: 20px;
-      margin-left: 8vw;
       margin-bottom: 0;
+    }
+    @include media-breakpoint-up(md) {
+      margin-right: 7vw;
     }
     &:after {
       @include media-breakpoint-up(sm) {

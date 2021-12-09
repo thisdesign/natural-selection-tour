@@ -9,10 +9,10 @@
         :number="sidebarSectionNumber"
         :title="sidebarSectionTitle"
       />
-      <!-- <div class="status" :class="statusColor">
+      <div class="status" :class="getStatus(sidebarStatus).color">
         <span class="status-title">{{ statusTitle }}</span>
         <element-status-icon class="status-icon" :status="sidebarStatus" />
-      </div> -->
+      </div>
       <slot name="footer"></slot>
       <!-- <prismic-rich-text :field="slice.primary.SidebarFooterText" /> -->
     </div>
@@ -20,7 +20,9 @@
 </template>
 
 <script>
+import GetStatus from '@/mixins/GetStatus'
 export default {
+  mixins: [GetStatus],
   props: {
     sectionNumber: {
       type: String,
@@ -88,6 +90,7 @@ section {
   text-transform: capitalize;
   line-height: 1;
   font-size: 16vw;
+  color: currentColor;
   margin-bottom: 22vw;
   @include media-breakpoint-up(sm) {
     font-size: 4vw;
