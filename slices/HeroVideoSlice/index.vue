@@ -34,7 +34,7 @@
           <span></span>
         </button>
       </div>
-      <media-video-player class="player" :url="slice.primary.VideoFull.url" />
+      <media-video-player class="player" :options="videoOptions" />
     </div>
   </section>
 </template>
@@ -54,6 +54,18 @@ export default {
   data() {
     return {
       videoModalOpen: false,
+      videoOptions: {
+        autoplay: true,
+        controls: true,
+        // fluid: true,
+        fill: true,
+        sources: [
+          {
+            src: this.slice.primary.VideoFull.url,
+            type: 'video/mp4',
+          },
+        ],
+      },
     }
   },
 }
