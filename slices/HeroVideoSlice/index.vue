@@ -8,7 +8,7 @@
         playsinline
         loop
       ></video>
-      <button @click="videoModalOpen = true" class="btn-play-video">
+      <button class="btn-play-video" @click="videoModalOpen = true">
         Play
       </button>
       <div class="video-footer">
@@ -29,7 +29,7 @@
     </div>
     <div v-if="videoModalOpen" class="video-modal">
       <div class="close-btn-wrapper">
-        <button @click="videoModalOpen = false" class="close-btn">
+        <button class="close-btn" @click="videoModalOpen = false">
           <span></span>
           <span></span>
         </button>
@@ -72,8 +72,9 @@ export default {
 .section {
   color: white;
   position: relative;
+  padding-bottom: 3rem;
   @include media-breakpoint-up(md) {
-    padding: 0 2.5%;
+    padding: 0 2.5% 3rem;
   }
   p {
     margin-bottom: 0;

@@ -158,8 +158,14 @@ export default {
     font-family: 'Sneak';
     text-transform: uppercase;
     margin-top: 10vw;
+    width: 85%;
+    display: none;
     @include media-breakpoint-up(sm) {
       margin-top: 0;
+      display: block;
+    }
+    p {
+      font-size: clamp(0.6rem, 0.8vw, 0.8vw);
     }
   }
   .last-updated {

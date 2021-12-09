@@ -48,6 +48,7 @@ export default {
     font-family: 'Natural-Selection';
     line-height: 0.8;
     font-size: 8vw;
+    word-spacing: 100rem;
     @include media-breakpoint-up(sm) {
       font-size: 3.9vw;
     }

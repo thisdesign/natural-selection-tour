@@ -18,7 +18,7 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"partner_logo_grid_slice","items":[],"primary":{"SectionTitle":"reintermediate clicks-and-mortar partnerships","SectionNumber":"harness efficient partnerships","title":[{"type":"heading1","text":"Utilize efficient convergence","spans":[]}]},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","name":"Default slice","slice_type":"partner_logo_grid_slice","items":[],"primary":{"SectionTitle":"engineer e-business relationships","SectionNumber":"grow leading-edge solutions","title":[{"type":"heading2","text":"Productize value-added markets","spans":[]}]},"id":"_DefaultSlice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
