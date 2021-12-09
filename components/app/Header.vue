@@ -233,6 +233,7 @@ nav {
     font-size: 1.8rem;
     text-decoration: none;
     line-height: 1;
+    position: relative;
     @include media-breakpoint-up(sm) {
       display: flex;
       font-size: 20px;
@@ -244,8 +245,11 @@ nav {
     &:after {
       @include media-breakpoint-up(sm) {
         content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
         display: block;
-        margin-top: 5px;
+        margin-bottom: -10px;
         width: 8px;
         height: 3px;
         background: $white;
