@@ -7,7 +7,7 @@ const handler = async function (event) {
   
   try {
     
-    const response = await fetch('https://www.eventbriteapi.com/v3/organizations/731256743703/events', {	
+    const response = await fetch('https://www.eventbriteapi.com/v3/organizations/690467846183/events', {	
 	    headers: {'Authorization': `Bearer ${EVENTBRITE_TOKEN}`}
     });
     
