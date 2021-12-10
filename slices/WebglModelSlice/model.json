@@ -55,9 +55,11 @@
         "VideoLoop": {
           "config": {
             "label": "VideoLoop",
-            "placeholder": ""
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
           },
-          "type": "Embed"
+          "type": "Link"
         },
         "CtaLink": {
           "config": {

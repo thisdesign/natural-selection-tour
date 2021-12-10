@@ -22,6 +22,13 @@
         },
         "type": "Boolean"
       },
+      "FooterBackground": {
+        "config": {
+          "label": "FooterBackground",
+          "placeholder": ""
+        },
+        "type": "Color"
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

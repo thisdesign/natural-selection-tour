@@ -18,7 +18,7 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"image_content_hero_slice","items":[],"primary":{"title":[{"type":"heading1","text":"Iterate efficient e-tailers","spans":[]}],"description":[{"type":"paragraph","text":"Ipsum reprehenderit excepteur cillum qui ut ullamco sint ex sint qui excepteur anim.","spans":[]}],"Hero":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=900&h=500&fit=crop"},"CtaLink":{"link_type":"Web","url":"https://slicemachine.dev"},"CtaTitle":"scale leading-edge deliverables"},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","name":"Default slice","slice_type":"image_content_hero_slice","items":[],"primary":{"title":[{"type":"heading1","text":"Matrix dot-com platforms","spans":[]}],"description":[{"type":"paragraph","text":"Lorem tempor ullamco ad cillum. Fugiat quis laborum Lorem ad nulla magna velit deserunt velit quis velit Lorem mollit ex velit. Nisi culpa aliquip enim pariatur laboris.","spans":[]}],"Hero":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1586952518485-11b180e92764?w=900&h=500&fit=crop"},"CtaLink":{"link_type":"Web","url":"http://google.com"},"CtaTitle":"e-enable 24/365 channels"},"id":"_DefaultSlice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'

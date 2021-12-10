@@ -1,5 +1,5 @@
 <template>
-  <header class="header site-padding">
+  <header :class="`header site-padding ${floatingHeader ? 'floating' : ''}`">
     <div class="nav-controls-wrapper">
       <nuxt-link to="/" class="logo">
         <prismic-image :field="globals.data.Logo" />
@@ -18,7 +18,7 @@
         >
           <nuxt-link
             v-if="item.link.link_type === 'Document'"
-            :to="`${item.link.type === 'page' ? '' : 'partner/'}${
+            :to="`${item.link.type === 'page' ? '/' : '/partner/'}${
               item.link.uid
             }`"
           >
@@ -48,7 +48,7 @@
           >
             <nuxt-link
               v-if="item.Link.link_type === 'Document'"
-              :to="`${item.Link.type === 'page' ? '' : 'partner/'}${
+              :to="`${item.Link.type === 'page' ? '/' : '/partner/'}${
                 item.Link.uid
               }`"
               class="link"
@@ -97,6 +97,9 @@ export default {
     globals() {
       return this.$store.state.globals.results
     },
+    floatingHeader() {
+      return this.$store.state.ui.options.floatingHeader
+    },
   },
   watch: {
     $route() {
@@ -133,7 +136,9 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  position: absolute;
+  &.floating {
+    position: absolute;
+  }
   width: 100%;
   text-align: right;
   color: $white;

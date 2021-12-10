@@ -1,5 +1,8 @@
 <template>
-  <footer class="footer site-padding">
+  <footer
+    class="footer site-padding"
+    :style="{ backgroundColor: footerBackground }"
+  >
     <div class="mobile">
       <nuxt-link to="/">
         <prismic-image class="logo" :field="globals.data.FooterLogo" />
@@ -37,9 +40,15 @@
 export default {
   name: 'AppFooter',
   computed: {
+    footerBackground() {
+      return this.$store.state.ui.options.footerColor
+    },
     globals() {
       return this.$store.state.globals.results
     },
+  },
+  mounted() {
+    console.log('Footer', this.footerBackground)
   },
 }
 </script>
@@ -47,6 +56,7 @@ export default {
 <style lang="scss" scoped>
 footer {
   background: $purple-primary;
+  transition: background-color 0.3s ease-out;
   width: 100%;
   padding-top: 70px;
   padding-bottom: 70px;

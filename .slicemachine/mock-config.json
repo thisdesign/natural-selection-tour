@@ -1,40 +1,19 @@
 {
   "slices": {
     "PartnerHeroSlice": {},
-    "HeroVideoSlice": {
+    "WebglModelSlice": {
       "default-slice": {
-        "items": {
-          "TextTop": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "TextBottom": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
-    "PartnerLogoGridSlice": {
-      "default-slice": {
-        "primary": {
-          "title": {
-            "config": {
-              "patternType": "HEADING",
-              "blocks": 1
-            }
-          }
-        }
+        "primary": {}
       }
     }
   },
   "_cts": {
     "rider": {},
-    "page": {},
+    "page": {
+      "FooterBackground": {
+        "content": "#1f2744"
+      }
+    },
     "partner": {},
     "partners": {
       "FeaturedPartners": {}
