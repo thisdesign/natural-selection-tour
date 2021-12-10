@@ -6,7 +6,6 @@
         :title="slice.primary.SectionTitle"
       />
     </div>
-    <!-- <prismic-embed :field="slice.primary.VideoLoop" /> -->
     <div class="section-inner">
       <div class="background-video">
         <div class="video-wrapper">
@@ -75,7 +74,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.slice.primary.Featured)
+    // console.log(this.slice.primary.Featured)
   },
 }
 </script>

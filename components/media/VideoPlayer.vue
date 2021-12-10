@@ -38,8 +38,17 @@ export default {
   },
 }
 </script>
-
 <style lang="scss">
+#vjs_video_3 {
+  .vjs-big-play-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+</style>
+<style lang="scss" scoped>
 .video-player {
   position: relative;
   width: 100%;
