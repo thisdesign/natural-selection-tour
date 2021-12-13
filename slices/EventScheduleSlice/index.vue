@@ -4,30 +4,30 @@
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
-    <div class="events">
+    <div v-if="!isLoading" class="events">
       <div
-        v-for="(event, index) in getPaginatedEvents()"
-        :key="event.date"
+        v-for="(event, index) in eventItems"
+        :key="`event${index}`"
         class="event"
         :class="{ hidden: index >= amountToShow && collapsed }"
       >
         <div class="event-image">
-          <prismic-image :field="event.image" />
+          <img :src="event.image" />
         </div>
         <div class="event-date">
           <span class="month">
-            {{ eventMonth(event.date) }}
+            {{ eventMonth(event.start) }}
           </span>
           <span class="day">
-            {{ eventDay(event.date) }}
+            {{ eventDay(event.start) }}
           </span>
         </div>
         <div class="event-description">
           <h5>
-            {{ eventWeekday(event.date) }},
-            {{ eventMonth(event.date, 'short') }} {{ eventDay(event.date) }}rd
+            {{ eventWeekday(event.start) }},
+            {{ eventMonth(event.start, 'short') }} {{ eventDay(event.start) }}rd
           </h5>
-          <prismic-rich-text :field="event.description" />
+          <div v-html="event.title" />
         </div>
       </div>
     </div>
@@ -53,15 +53,24 @@ export default {
     return {
       collapsed: true,
       amountToShow: 2,
-      eventItems: this.slice.items,
     }
+  },
+  async fetch() {
+    if (this.isLoading) {
+      await this.$store.dispatch('events/loadEvents', fetch)
+    }
+  },
+  computed: {
+    isLoading() {
+      return this.$store.getters['events/isLoading']
+    },
+    eventItems() {
+      return this.$store.state.events.items
+    },
   },
   methods: {
     expandEvents() {
       this.collapsed = false
-    },
-    getPaginatedEvents() {
-      return this.eventItems
     },
     eventMonth(eventDate, length = 'long') {
       const date = new Date(eventDate)

@@ -15,6 +15,7 @@
     "storybook": "nuxt storybook",
     "build-storybook": "nuxt storybook build",
     "slicemachine": "start-slicemachine --port 9000",
+    "netlify": "netlify dev",
     "all": "npm run dev & npm run storybook & npm run slicemachine"
   },
   "dependencies": {
@@ -45,6 +46,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^7.18.0",
+    "netlify-cli": "^8.1.1",
     "postcss-loader": "3.0.0",
     "prettier": "^2.4.1",
     "pug": "^3.0.2",
