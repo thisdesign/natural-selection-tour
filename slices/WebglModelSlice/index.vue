@@ -11,6 +11,7 @@
         <div class="video-wrapper">
           <video
             :src="slice.primary.VideoLoop.url"
+            :poster="slice.primary.VideoPoster.url"
             muted
             autoplay
             loop
@@ -32,7 +33,7 @@
             v-for="(item, i) in slice.items"
             :key="`slice-item-${i}`"
             class="location"
-            :class="{ active: item.Model }"
+            :class="{ active: item.Active }"
           >
             <div class="location-index">
               <span>{{ indexLetters[i] }}</span>
@@ -70,17 +71,15 @@ export default {
   },
   data() {
     return {
-      indexLetters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'],
+      indexLetters: ['A', 'B', 'C', 'D'],
     }
-  },
-  mounted() {
-    // console.log(this.slice.primary.Featured)
   },
 }
 </script>
 
 <style lang="scss">
 .webgl {
+  position: inherit;
   &.section {
     color: #fff;
     padding-bottom: 6rem;
@@ -159,6 +158,7 @@ export default {
     }
   }
   .locations-list {
+    position: inherit;
     @include media-breakpoint-up(sm) {
       padding-bottom: 20vw;
     }
@@ -189,8 +189,8 @@ export default {
   .location-title {
     margin-left: 1rem;
     margin-bottom: 1rem;
-    word-spacing: 999rem;
-    flex: 1 1 95%;
+    // word-spacing: 999rem;
+    // flex: 1 1 95%;
     * {
       font-family: 'Natural-Selection';
       line-height: 1;

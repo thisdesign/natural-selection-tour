@@ -29,8 +29,7 @@ export default {
 }
 .wrapper {
   position: relative;
-  // padding-top: 55vw;
-  height: 100%;
+  padding-top: 100%;
 }
 canvas {
   position: absolute;

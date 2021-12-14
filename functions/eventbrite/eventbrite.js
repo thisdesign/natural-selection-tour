@@ -25,7 +25,6 @@ const handler = async function (event) {
     }
   } catch (error) {
     // output to netlify function log
-    console.log(error)
     return {
       statusCode: 500,
       // Could be a custom message or object i.e. JSON.stringify(err)

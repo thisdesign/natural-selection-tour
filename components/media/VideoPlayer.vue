@@ -1,6 +1,6 @@
 <template>
   <div class="video-player">
-    <video ref="videoPlayer" class="video-js"></video>
+    <video ref="videoPlayer" :poster="options.poster" class="video-js"></video>
   </div>
 </template>
 
@@ -26,9 +26,7 @@ export default {
     this.player = videojs(
       this.$refs.videoPlayer,
       this.options,
-      function onPlayerReady() {
-        // console.log('onPlayerReady', this)
-      },
+      function onPlayerReady() {},
     )
   },
   beforeDestroy() {

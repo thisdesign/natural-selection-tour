@@ -51,9 +51,7 @@
         "CtaLink": {
           "config": {
             "label": "CtaLink",
-            "placeholder": "",
-            "select": "web",
-            "allowTargetBlank": false
+            "placeholder": ""
           },
           "type": "Link"
         }

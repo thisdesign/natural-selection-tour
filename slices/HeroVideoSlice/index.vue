@@ -3,6 +3,7 @@
     <div class="video-wrapper">
       <video
         :src="slice.primary.VideoLoop.url"
+        :poster="slice.primary.VideoPoster.url"
         autoplay
         muted
         playsinline
@@ -58,6 +59,7 @@ export default {
         autoplay: true,
         controls: true,
         fill: true,
+        poster: this.slice.primary.VideoPoster.url,
         sources: [
           {
             src: this.slice.primary.VideoFull.url,

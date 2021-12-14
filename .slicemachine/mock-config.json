@@ -3,7 +3,25 @@
     "PartnerHeroSlice": {},
     "WebglModelSlice": {
       "default-slice": {
-        "primary": {}
+        "primary": {
+          "CtaLink": {
+            "content": "https://www.google.com"
+          }
+        },
+        "items": {}
+      }
+    },
+    "HeroVideoSlice": {},
+    "CountdownSlice": {
+      "default-slice": {
+        "primary": {
+          "FooterContent": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     }
   },

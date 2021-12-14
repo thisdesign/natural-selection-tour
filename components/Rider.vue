@@ -9,7 +9,7 @@
       <prismic-image :field="rider.data.Rider" />
       <video
         ref="riderVideo"
-        src="https://prismic-io.s3.amazonaws.com/naturalselectiontour/79e3cfe0-fa21-4caf-b8c5-24ef0aab5003_AustenSweetin_RiderHeadshot_NaturalSelection_500x500_S.mp4"
+        :src="rider.data.Video.url"
         muted
         playsinline
       ></video>

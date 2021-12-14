@@ -32,7 +32,6 @@ export const actions = {
         image: item.logo?.url,
       }
     })
-    console.log(filteredEvents)
     commit('setEvents', filteredEvents)
   },
 }

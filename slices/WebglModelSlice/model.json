@@ -61,12 +61,18 @@
           },
           "type": "Link"
         },
+        "VideoPoster": {
+          "config": {
+            "label": "VideoPoster",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
         "CtaLink": {
           "config": {
             "label": "CtaLink",
-            "placeholder": "",
-            "select": "web",
-            "allowTargetBlank": false
+            "placeholder": ""
           },
           "type": "Link"
         },
@@ -103,6 +109,15 @@
             "single": "paragraph"
           },
           "type": "StructuredText"
+        },
+        "Active": {
+          "config": {
+            "label": "Active",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          },
+          "type": "Boolean"
         }
       }
     }
