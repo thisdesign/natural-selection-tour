@@ -35,6 +35,7 @@ class Viewer {
     )
     // camera.setPosition(new BABYLON.Vector3(0, Math.PI, 11))
     camera.attachControl(this.canvas, false)
+    camera.inputs.remove(camera.inputs.attached.mousewheel)
     camera.alpha = 0
     camera.lowerAlphaLimit = -Math.PI * 0.5
     camera.upperAlphaLimit = Math.PI * 0.5

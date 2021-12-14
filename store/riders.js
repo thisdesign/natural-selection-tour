@@ -14,7 +14,6 @@ export const actions = {
     const riders = await $prismic.api.query(
       this.$prismic.predicates.at('document.type', 'rider'),
     )
-    // console.log('riders', riders)
     // format data
     const results = {}
     riders.results.forEach((element) => {

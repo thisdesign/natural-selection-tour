@@ -8,7 +8,7 @@
     </div> -->
     <div class="slider-container">
       <div class="slider-wrapper">
-        <div class="image-slider">
+        <div ref="slider" class="image-slider">
           <div
             v-for="(item, i) in mockimages"
             :key="`slice-item-${i}`"
@@ -47,8 +47,7 @@ export default {
     }
   },
   mounted() {
-    this.slider = new CubeSlider(document.querySelector('.image-slider'))
-    window.slider = this.slider
+    this.slider = new CubeSlider(this.$refs.slider)
   },
   methods: {
     slideNext() {

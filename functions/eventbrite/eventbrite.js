@@ -3,19 +3,12 @@ const fetch = require('node-fetch')
 
 const { EVENTBRITE_TOKEN } = process.env
 
-const headers = {
-  Authorization: `Bearer ${EVENTBRITE_TOKEN}`,
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'Content-Type',
-  'Access-Control-Allow-Methods': 'GET',
-}
-
 const handler = async function (event) {
   try {
     const response = await fetch(
       'https://www.eventbriteapi.com/v3/organizations/690467846183/events',
       {
-        headers,
+        headers: { Authorization: `Bearer ${EVENTBRITE_TOKEN}` },
       },
     )
 
@@ -32,7 +25,6 @@ const handler = async function (event) {
     }
   } catch (error) {
     // output to netlify function log
-    console.log(error)
     return {
       statusCode: 500,
       // Could be a custom message or object i.e. JSON.stringify(err)

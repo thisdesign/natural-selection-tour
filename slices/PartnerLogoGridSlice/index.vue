@@ -52,9 +52,6 @@ export default {
       return this.$store.state.partners.results.partners
     },
   },
-  mounted() {
-    // console.log(this.slice)
-  },
 }
 </script>
 <style lang="scss">
@@ -67,6 +64,7 @@ export default {
 <style lang="scss" scoped>
 .section {
   color: #fff;
+  padding-bottom: 10vh;
 }
 .partner-list {
   display: flex;

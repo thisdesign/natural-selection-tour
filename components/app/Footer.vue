@@ -47,9 +47,6 @@ export default {
       return this.$store.state.globals.results
     },
   },
-  mounted() {
-    console.log('Footer', this.footerBackground)
-  },
 }
 </script>
 

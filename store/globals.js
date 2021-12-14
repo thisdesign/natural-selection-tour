@@ -4,7 +4,6 @@ export const state = () => ({
 
 export const mutations = {
   setGlobals(state, globals) {
-    console.log(globals)
     state.results = globals
   },
 }

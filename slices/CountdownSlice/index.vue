@@ -27,11 +27,13 @@
           </div>
         </div>
         <div class="cta-row">
-          <element-cta-button
-            class="cta-button"
-            :link="slice.primary.CtaLink"
-            :title="slice.primary.CtaTitle"
-          />
+          <div class="button-container">
+            <element-cta-button
+              class="cta-button"
+              :link="slice.primary.CtaLink"
+              :title="slice.primary.CtaTitle"
+            />
+          </div>
           <prismic-rich-text
             class="last-updated"
             :field="slice.primary.FooterContent"
@@ -102,6 +104,17 @@ export default {
 </script>
 
 <style lang="scss">
+.last-updated {
+  h1 {
+    margin-bottom: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+</style>
+
+<style lang="scss">
 .countdown.section {
   color: white;
   padding-bottom: 3rem;
@@ -142,17 +155,24 @@ export default {
   .cta-row {
     display: flex;
     flex-direction: column-reverse;
+    align-items: flex-end;
+
     @include media-breakpoint-up(sm) {
       flex-direction: row;
     }
   }
+
+  .button-container {
+    width: calc(100% / 3 * 2);
+    margin-right: 20px;
+  }
   .cta-button {
-    text-align: center;
-    margin: 20vw 0 10vw;
-    @include media-breakpoint-up(sm) {
-      margin: 0 25% 0 0;
-      width: 60%;
-    }
+    // text-align: center;
+    // margin: 20vw 0 10vw;
+    // @include media-breakpoint-up(sm) {
+    //   margin: 0 25% 0 0;
+    //   width: 60%;
+    // }
   }
   .two-column-footer {
     font-family: 'Sneak';

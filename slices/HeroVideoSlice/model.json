@@ -40,6 +40,14 @@
           },
           "type": "Text"
         },
+        "VideoPoster": {
+          "config": {
+            "label": "VideoPoster",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
         "VideoFull": {
           "config": {
             "label": "VideoFull",
