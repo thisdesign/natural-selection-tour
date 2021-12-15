@@ -23,10 +23,23 @@
           }
         }
       }
+    },
+    "CodeSlice": {
+      "default-slice": {
+        "items": {},
+        "primary": {}
+      }
+    },
+    "EventScheduleSlice": {
+      "default-slice": {
+        "items": {}
+      }
     }
   },
   "_cts": {
-    "rider": {},
+    "rider": {
+      "Sponsors": {}
+    },
     "page": {
       "FooterBackground": {
         "content": "#1f2744"
@@ -42,7 +55,9 @@
           "patternType": "HEADING",
           "blocks": 1
         }
-      }
+      },
+      "main-links": {},
+      "FooterPrimaryLinks": {}
     }
   }
 }
