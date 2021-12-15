@@ -1,233 +1,65 @@
 <template>
-  <section class="section site-padding">
-    <p class="title section-title">Welcome to NST Version 2.0</p>
+  <section class="section site-padding code-slice">
     <div class="columns">
       <div class="col indented">
         <div class="set">
           <div class="title">
-            <p>directory:\></p>
+            <prismic-rich-text :field="slice.primary.Intro" />
           </div>
         </div>
         <div class="set">
           <div class="title">
-            <p>Locations</p>
+            <p>{{ slice.primary.LocationTitle }}</p>
           </div>
           <div class="row">
-            <p>Jackson Hole</p>
-          </div>
-          <div class="row">
-            <p>Baldface lodge</p>
-          </div>
-          <div class="row">
-            <p>Tordrillo range</p>
+            <div class="loction-rte">
+              <prismic-rich-text :field="slice.primary.Locations" />
+            </div>
           </div>
         </div>
         <div class="set">
           <div class="title">
-            <p>Riders</p>
+            <p>{{ slice.primary.RiderTitle }}</p>
           </div>
           <div class="riders">
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-            <p>Mikkel Bang</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="set">
-          <p class="title">Commands:</p>
-          <div class="row">
-            <p>Download media kit</p>
-            <p>ALT-D</p>
-          </div>
-          <div class="row">
-            <p>Scroll to top</p>
-            <p>ESC</p>
-          </div>
-          <div class="row">
-            <p>share page</p>
-            <p>alt-s</p>
-          </div>
-          <div class="row">
-            <p>toggle grid</p>
-            <p>alt-t</p>
-          </div>
-          <div class="row">
-            <p>background white</p>
-            <p>alt-w</p>
-          </div>
-          <div class="row">
-            <p>background black</p>
-            <p>alt-b</p>
-          </div>
-        </div>
-        <div class="set">
-          <div class="row">
-            <p>access:</p>
-            <p>granted</p>
-          </div>
-          <div class="row">
-            <p>permissions:</p>
-            <p>enabled</p>
-          </div>
-          <div class="row">
-            <p>installation:</p>
-            <p>complete</p>
-          </div>
-        </div>
-        <div class="set">
-          <p class="title">baud rate:</p>
-          <div class="row">
-            <p>Download media kit</p>
-            <p>ALT-D</p>
-          </div>
-          <div class="row">
-            <p>Scroll to top</p>
-            <p>ESC</p>
-          </div>
-          <div class="row">
-            <p>share page</p>
-            <p>alt-s</p>
-          </div>
-          <div class="row">
-            <p>toggle grid</p>
-            <p>alt-t</p>
-          </div>
-          <div class="row">
-            <p>background white</p>
-            <p>alt-w</p>
-          </div>
-          <div class="row">
-            <p>background black</p>
-            <p>alt-b</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="set">
-          <div class="row">
-            <p>access:</p>
-            <p>granted</p>
-          </div>
-          <div class="row">
-            <p>permissions:</p>
-            <p>enabled</p>
-          </div>
-          <div class="row">
-            <p>installation:</p>
-            <p>complete</p>
-          </div>
-        </div>
-        <div class="set">
-          <p class="title">baud rate:</p>
-          <div class="row">
-            <p>Download media kit</p>
-            <p>ALT-D</p>
-          </div>
-          <div class="row">
-            <p>Scroll to top</p>
-            <p>ESC</p>
-          </div>
-          <div class="row">
-            <p>share page</p>
-            <p>alt-s</p>
-          </div>
-        </div>
-        <div class="set">
-          <div class="row">
-            <p>access:</p>
-            <p>granted</p>
-          </div>
-          <div class="row">
-            <p>permissions:</p>
-            <p>enabled</p>
-          </div>
-          <div class="row">
-            <p>installation:</p>
-            <p>complete</p>
-          </div>
-        </div>
-        <div class="set">
-          <p class="title">baud rate:</p>
-          <div class="row">
-            <p>Download media kit</p>
-            <p>ALT-D</p>
-          </div>
-          <div class="row">
-            <p>Scroll to top</p>
-            <p>ESC</p>
-          </div>
-          <div class="row">
-            <p>share page</p>
-            <p>alt-s</p>
-          </div>
-          <div class="row">
-            <p>toggle grid</p>
-            <p>alt-t</p>
-          </div>
-          <div class="row">
-            <p>background white</p>
-            <p>alt-w</p>
-          </div>
-          <div class="row">
-            <p>background black</p>
-            <p>alt-b</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="set">
-          <div class="row">
-            <p>Download media kit</p>
-            <p>ALT-D</p>
-          </div>
-          <div class="row">
-            <p>Scroll to top</p>
-            <p>ESC</p>
-          </div>
-          <div class="row">
-            <p>share page</p>
-            <p>alt-s</p>
-          </div>
-          <div class="row">
-            <p>toggle grid</p>
-            <p>alt-t</p>
-          </div>
-          <div class="row">
-            <p>background white</p>
-            <p>alt-w</p>
-          </div>
-          <div class="row">
-            <p>background black</p>
-            <p>alt-b</p>
+            <p
+              v-for="(item, index) in $store.state.riders.results"
+              :key="`riderName${index}`"
+            >
+              {{ item.data.Name[0].text }}
+            </p>
           </div>
         </div>
         <div class="set">
           <div class="title">
-            <p>C: \></p>
+            <prismic-rich-text :field="slice.primary.Footer" />
           </div>
         </div>
       </div>
-    </div>
-    <div class="copywrite">
-      <p>© copyright 2022 nst</p>
+      <div
+        v-for="(col, colIndex) in columns"
+        :key="`col${colIndex}`"
+        class="col"
+      >
+        <div
+          v-for="(set, setIndex) in slice.primary.ColumnTwo"
+          :key="`col${colIndex}_set${setIndex}`"
+          class="set"
+        >
+          <div
+            v-for="(row, rowIndex) in set.text.split('\n')"
+            :key="`col${colIndex}_set${setIndex}row${rowIndex}`"
+            class="row"
+          >
+            <p
+              v-for="(item, index) in row.split('||')"
+              :key="`col${colIndex}_set${setIndex}row${rowIndex}item${index}`"
+            >
+              {{ item }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -244,8 +76,34 @@ export default {
       },
     },
   },
+  computed: {
+    columns() {
+      return [
+        this.slice.primary.ColumnTwo,
+        this.slice.primary.ColumnThree,
+        this.slice.primary.ColumnFour,
+      ]
+    },
+  },
+  mounted() {
+    console.log(this.slice.primary.ColumnTwo)
+  },
 }
 </script>
+
+<style lang="scss">
+.code-slice {
+  p {
+    font-size: clamp(8px, 1vw, 12px);
+    line-height: 1.1;
+  }
+  .loction-rte {
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+</style>
 
 <style scoped lang="scss">
 * {
