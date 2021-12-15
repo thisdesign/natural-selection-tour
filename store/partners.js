@@ -30,17 +30,19 @@ export const actions = {
       fetchLinks: ['partner.Logo'],
     })
     const uids = []
+    const logos = {}
     const mapItem = (item) => {
       const {
         uid,
         data: { Logo },
       } = item.Partner
       uids.push(uid)
+      logos[uid] = Logo
       return { uid, logo: Logo }
     }
     const featured = partnerResults.data.FeaturedPartners.map(mapItem)
     const partners = partnerResults.data.Partners.map(mapItem)
 
-    commit('setPartners', { uids, featured, partners })
+    commit('setPartners', { uids, logos, featured, partners })
   },
 }

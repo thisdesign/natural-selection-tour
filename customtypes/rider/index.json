@@ -76,27 +76,20 @@
         },
         "type": "Image"
       },
-      "Logos": {
+      "Sponsors": {
         "config": {
-          "label": "Logos",
+          "label": "Sponsors",
           "placeholder": "",
           "fields": {
-            "Link": {
+            "Partner": {
               "config": {
-                "label": "Link",
-                "placeholder": "",
-                "select": "web",
-                "allowTargetBlank": false
+                "label": "Partner",
+                "customtypes": [
+                  "partner"
+                ],
+                "select": "document"
               },
               "type": "Link"
-            },
-            "Image": {
-              "config": {
-                "label": "Image",
-                "constraint": {},
-                "thumbnails": []
-              },
-              "type": "Image"
             }
           }
         },

@@ -14,7 +14,7 @@
         <div
           v-for="(item, index) in globals.data['main-links']"
           :key="`mainLink${index}`"
-          class="menu-link"
+          :class="`menu-link ${item.Active ? 'active' : ''}`"
         >
           <nuxt-link
             v-if="item.link.link_type === 'Document'"
@@ -229,6 +229,10 @@ nav {
     flex-direction: row;
   }
   .menu-link {
+    display: none;
+    &.active {
+      display: block;
+    }
     margin-bottom: clamp(1rem, 4vh, 3rem);
     @include media-breakpoint-up(sm) {
       margin-bottom: 0;
@@ -263,8 +267,10 @@ nav {
         pointer-events: none;
       }
     }
-    &.nuxt-link-active,
     &:hover {
+      font-weight: bold;
+    }
+    &.nuxt-link-active {
       font-weight: bold;
       font-style: italic;
       &:after {

@@ -28,6 +28,15 @@
           "label": "Main Links",
           "placeholder": "",
           "fields": {
+            "Active": {
+              "config": {
+                "label": "Active",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": true
+              },
+              "type": "Boolean"
+            },
             "label": {
               "type": "StructuredText",
               "config": {
@@ -76,6 +85,15 @@
           "label": "FooterPrimaryLinks",
           "placeholder": "",
           "fields": {
+            "Active": {
+              "config": {
+                "label": "Active",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": true
+              },
+              "type": "Boolean"
+            },
             "LinkLabel": {
               "config": {
                 "label": "LinkLabel",

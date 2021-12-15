@@ -1,7 +1,11 @@
 <template>
   <div class="footer-links">
     <ul v-for="(list, listIndex) in linkLists" :key="`linkList${listIndex}`">
-      <li v-for="(item, index) in list" :key="`footerPrimary${index}`">
+      <li
+        v-for="(item, index) in list"
+        :key="`footerPrimary${index}`"
+        :class="`${listIndex === 0 && item.Active === false ? 'hide' : ''}`"
+      >
         <nuxt-link
           v-if="item.Link.link_type === 'Document'"
           :to="`${item.Link.type === 'page' ? '/' : '/partner/'}${
@@ -74,6 +78,9 @@ ul {
 }
 li {
   margin-top: 0.5em;
+  &.hide {
+    display: none;
+  }
 }
 a {
   display: block;

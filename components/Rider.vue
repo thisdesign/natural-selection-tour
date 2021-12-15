@@ -42,17 +42,20 @@
       <div class="rider-sponsors">
         <div class="rider-sponsors-title">
           <h4>Industry Alliance Sponsors</h4>
-          <span>05</span>
+          <span>0{{ rider.data.Sponsors.length }}</span>
         </div>
         <div class="rider-sponsors-logos">
           <div
-            v-for="(item, index) in rider.data.Logos"
+            v-for="(item, index) in rider.data.Sponsors"
             :key="`rider-logo-${index}`"
             class="rider-logo"
           >
-            <a :href="item.Link.url">
-              <prismic-image :field="item.Image" />
-            </a>
+            <nuxt-link
+              v-if="item.Partner.uid"
+              :to="`/partners/${item.Partner.uid}`"
+            >
+              <prismic-image :field="logos[item.Partner.uid]" />
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -75,17 +78,29 @@ export default {
       active: false,
     }
   },
+  computed: {
+    logos() {
+      return this.$store.state.partners.results.logos
+    },
+  },
+  mounted() {
+    console.log(this.rider.data)
+  },
   methods: {
     updateCurrentRider() {
       this.$emit('update-rider', this.rider.data)
-      this.$refs.riderVideo.play()
-      this.$refs.riderVideo.style.opacity = '1'
+      if (this.$refs.riderVideo) {
+        this.$refs.riderVideo.play()
+        this.$refs.riderVideo.style.opacity = '1'
+      }
     },
     onMouseOut() {
       this.$emit('hidename')
-      this.$refs.riderVideo.pause()
-      this.$refs.riderVideo.currentTime = 0
-      this.$refs.riderVideo.style.opacity = '0'
+      if (this.$refs.riderVideo) {
+        this.$refs.riderVideo.pause()
+        this.$refs.riderVideo.currentTime = 0
+        this.$refs.riderVideo.style.opacity = '0'
+      }
     },
   },
 }
