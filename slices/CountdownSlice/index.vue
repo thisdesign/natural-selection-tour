@@ -35,14 +35,14 @@
             />
           </div>
           <prismic-rich-text
-            class="last-updated"
+            class="last-updated font-sneak"
             :field="slice.primary.FooterContent"
           />
         </div>
       </div>
       <template #footer>
         <prismic-rich-text
-          class="two-column-footer"
+          class="two-column-footer font-sneak"
           :field="slice.primary.SidebarFooterText"
         />
       </template>
@@ -147,6 +147,7 @@ export default {
     margin-left: 5%;
     font-size: 0.1em;
     font-family: 'Sneak';
+    letter-spacing: 0.05em;
     @include media-breakpoint-up(sm) {
       font-family: 'Natural-Selection';
       font-size: 1em;
@@ -182,7 +183,6 @@ export default {
     }
   }
   .two-column-footer {
-    font-family: 'Sneak';
     text-transform: uppercase;
     margin-top: 10vw;
     width: 85%;
@@ -199,7 +199,6 @@ export default {
   .last-updated {
     margin-top: 10vw;
     margin-right: auto;
-    font-family: 'Sneak';
     font-size: 10px;
     @include media-breakpoint-up(sm) {
       margin-top: 0;

@@ -1,5 +1,5 @@
 <template lang="pug">
-  .section-bar
+  .section-bar.font-sneak
     <div class="section-title">{{number}}_{{title}}</div>
     <div  class="section-number">{{number}}</div>
 </template>
@@ -24,7 +24,6 @@ export default {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid $white;
-  font-family: $monoFontFamily;
   text-transform: uppercase;
   color: $white;
   font-size: 12px;

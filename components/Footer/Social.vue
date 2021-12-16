@@ -1,5 +1,5 @@
 <template>
-  <div class="social footer-social">
+  <div class="social footer-social font-sneak">
     <div>
       <prismic-rich-text
         :field="globals.data.SocialTitle"
@@ -40,7 +40,6 @@ export default {
 <style lang="scss">
 .footer-social {
   span {
-    font-family: 'Sneak', sans-serif;
     font-size: 12px;
     text-transform: uppercase;
   }

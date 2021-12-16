@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-copyright">
+  <div class="footer-copyright font-sneak">
     <prismic-rich-text :field="globals.data.Copyright" />
   </div>
 </template>
@@ -18,7 +18,6 @@ export default {
 <style lang="scss">
 .footer-copyright {
   * {
-    font-family: 'Sneak', sans-serif;
     font-size: clamp(10px, 1vw, 12px);
     text-transform: uppercase;
   }

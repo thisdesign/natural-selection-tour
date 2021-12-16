@@ -1,5 +1,5 @@
 <template>
-  <section class="section site-padding code-slice">
+  <section class="section site-padding code-slice font-sneak">
     <div class="columns">
       <div class="col indented">
         <div class="set">
@@ -112,7 +112,6 @@ export default {
 }
 .section {
   color: #fff;
-  font-family: 'Sneak';
   text-transform: uppercase;
   line-height: 1;
   border-top: 1px solid white;

@@ -26,7 +26,7 @@
       <div class="video-footer-logo">
         <prismic-image :field="slice.primary.Logo" />
       </div>
-      <div class="video-footer-items">
+      <div class="video-footer-items font-sneak">
         <div
           v-for="(item, i) in slice.items"
           :key="`video-footer-item-${i}`"
@@ -217,7 +217,6 @@ export default {
   left: 2rem;
   width: calc(100% - 4rem);
   z-index: 1;
-  font-family: 'Sneak';
   text-transform: uppercase;
   padding-bottom: 2rem;
   @include media-breakpoint-up(md) {
