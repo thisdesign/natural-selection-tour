@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import gsap from 'gsap'
 export default {
   name: 'HeroVideoSlice',
   props: {
@@ -64,13 +65,7 @@ export default {
   data() {
     return {
       videoModalOpen: false,
-      animation: {
-        startPercent: 2.5,
-        frame: null,
-        startTime: 0,
-        duration: 1000,
-        targetPercent: null,
-      },
+      animationStartPercent: 2.5,
       videoOptions: {
         autoplay: true,
         controls: true,
@@ -88,8 +83,12 @@ export default {
   mounted() {},
   methods: {
     onMouseLeave() {
-      this.$refs.videoSection.style.paddingLeft = `${this.startPercent}%`
-      this.$refs.videoSection.style.paddingRight = `${this.startPercent}%`
+      gsap.to(this.$refs.videoSection, {
+        paddingLeft: `${this.animationStartPercent}%`,
+        paddingRight: `${this.animationStartPercent}%`,
+        duration: 0.01,
+        ease: 'ease',
+      })
     },
 
     onMouseMove(e) {
@@ -108,30 +107,16 @@ export default {
           return this.x + this.y
         },
       }
-      this.animation.targetPercent = normalized.distance * this.startPercent
-
-      if (this.animation.frame) cancelAnimationFrame(this.animation.frame)
-      this.animation.frame = requestAnimationFrame(this.animateExpand)
-    },
-
-    animateExpand(timestamp) {
-      const videoSection = this.$refs.videoSection
-      if (!this.animation.startTime) {
-        this.animation.startTime = timestamp
-      }
-
-      const runtime = timestamp - this.animation.startTime
-
+      const targetPercent = normalized.distance * this.animationStartPercent
       const percent =
-        this.animation.targetPercent > 0.2
-          ? Math.min(2.5, this.animation.targetPercent * 1.85)
-          : 0
-      videoSection.style.paddingLeft = `${percent}%`
-      videoSection.style.paddingRight = `${percent}%`
+        targetPercent > 0.2 ? Math.min(2.5, targetPercent * 1.85) : 0
 
-      if (runtime < this.animation.duration) {
-        requestAnimationFrame(this.animateExpand)
-      }
+      gsap.to(videoSection, {
+        paddingLeft: `${percent}%`,
+        paddingRight: `${percent}%`,
+        duration: 0.01,
+        ease: 'ease',
+      })
     },
   },
 }
