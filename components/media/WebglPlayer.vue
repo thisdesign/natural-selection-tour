@@ -1,13 +1,7 @@
 <template>
   <div class="webgl">
     <div class="wrapper">
-      <canvas
-        id="canvas"
-        ref="canvas"
-        class="canvas"
-        width="500"
-        height="500"
-      />
+      <canvas id="canvas" ref="canvas" class="canvas" />
     </div>
   </div>
 </template>
@@ -24,7 +18,6 @@ export default {
 
 <style lang="scss" scoped>
 .webgl {
-  // max-width: 500px;
   height: 100%;
 }
 .wrapper {

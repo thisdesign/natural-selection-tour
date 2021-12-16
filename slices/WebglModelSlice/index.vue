@@ -102,7 +102,6 @@ export default {
     width: 100%;
     right: 0;
     top: 0;
-    z-index: -1;
     @include media-breakpoint-up(sm) {
       width: 75%;
     }
