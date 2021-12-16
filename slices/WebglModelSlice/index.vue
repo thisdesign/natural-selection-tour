@@ -24,6 +24,10 @@
           class="section-title col-left"
           :field="slice.primary.title"
         />
+        <media-webgl-player
+          v-if="slice.primary.Featured"
+          class="webgl-player featured"
+        />
         <prismic-rich-text
           class="section-description col-left"
           :field="slice.primary.description"
@@ -49,8 +53,8 @@
           :title="slice.primary.CtaText"
         />
         <media-webgl-player
+          v-if="!slice.primary.Featured"
           class="webgl-player"
-          :class="{ featured: slice.primary.Featured }"
         />
       </div>
     </div>
@@ -87,22 +91,24 @@ export default {
   &.section.featured {
     padding-bottom: 3rem;
     .section-inner {
-      padding-top: 5rem;
+      padding-top: 10rem;
       padding-bottom: 0;
+      @include media-breakpoint-up(sm) {
+        padding-top: 5rem;
+      }
     }
     .section-description {
-      margin-top: 40vh;
       @include media-breakpoint-up(sm) {
         margin: 2rem 0;
       }
     }
   }
   .webgl-player {
-    position: absolute;
     width: 100%;
-    right: 0;
-    top: 0;
     @include media-breakpoint-up(sm) {
+      position: absolute;
+      right: 0;
+      top: 0;
       width: 75%;
     }
     &.featured {
@@ -197,13 +203,17 @@ export default {
     }
   }
   .section-cta-button {
-    bottom: 0;
-    width: 100%;
+    position: absolute;
+    width: calc(100% - 4rem);
     margin-top: 8rem;
+    bottom: 1.8rem;
+    left: 2rem;
+
     @include media-breakpoint-up(sm) {
+      bottom: 0;
       margin-top: 0;
+      left: unset;
       width: unset;
-      position: absolute;
       transform: translateY(50%);
     }
   }
