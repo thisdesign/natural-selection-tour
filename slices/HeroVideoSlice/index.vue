@@ -1,5 +1,10 @@
 <template>
-  <section class="video-hero section">
+  <section
+    ref="videoSection"
+    class="video-hero section"
+    @mousemove="onMouseMove"
+    @mouseleave="onMouseLeave"
+  >
     <div class="video-wrapper">
       <video
         :src="slice.primary.VideoLoop.url"
@@ -9,22 +14,26 @@
         playsinline
         loop
       ></video>
-      <button class="btn-play-video" @click="videoModalOpen = true">
+      <button
+        ref="playBtn"
+        class="btn-play-video"
+        @click="videoModalOpen = true"
+      >
         Play
       </button>
-      <div class="video-footer">
-        <div class="video-footer-logo">
-          <prismic-image :field="slice.primary.Logo" />
-        </div>
-        <div class="video-footer-items">
-          <div
-            v-for="(item, i) in slice.items"
-            :key="`video-footer-item-${i}`"
-            class="video-footer-item"
-          >
-            <prismic-rich-text :field="item.TextTop" />
-            <prismic-rich-text :field="item.TextBottom" />
-          </div>
+    </div>
+    <div class="video-footer site-padding">
+      <div class="video-footer-logo">
+        <prismic-image :field="slice.primary.Logo" />
+      </div>
+      <div class="video-footer-items">
+        <div
+          v-for="(item, i) in slice.items"
+          :key="`video-footer-item-${i}`"
+          class="video-footer-item"
+        >
+          <prismic-rich-text :field="item.TextTop" />
+          <prismic-rich-text :field="item.TextBottom" />
         </div>
       </div>
     </div>
@@ -55,6 +64,7 @@ export default {
   data() {
     return {
       videoModalOpen: false,
+      growAmount: 0,
       videoOptions: {
         autoplay: true,
         controls: true,
@@ -68,6 +78,59 @@ export default {
         ],
       },
     }
+  },
+  methods: {
+    /* eslint-disable */
+    onMouseLeave() {
+      this.$refs.videoSection.style.paddingLeft = `${2.5}%`
+      this.$refs.videoSection.style.paddingRight = `${2.5}%`
+    },
+    onMouseMove(e) {
+      const videoSection = this.$refs.videoSection
+      const videoSectionBox = videoSection.getBoundingClientRect()
+      // const playBtnBox = this.$refs.playBtn.getBoundingClientRect()
+      console.log(e)
+      const pointer = {
+        x: e.clientX - videoSectionBox.left,
+        y: e.clientY - videoSectionBox.top,
+      }
+      const normalized = {
+        x: Math.abs(pointer.x / videoSection.offsetWidth - 0.5),
+        y: Math.abs(pointer.y / videoSection.offsetHeight - 0.5),
+        get distance() {
+          return this.x + this.y
+        },
+      }
+      const target = normalized.distance * 2.5
+
+      if (target < 0.15) {
+        videoSection.style.paddingLeft = `${0}%`
+        videoSection.style.paddingRight = `${0}%`
+      } else {
+        videoSection.style.paddingLeft = `${Math.min(2.5, target * 1.8)}%`
+        videoSection.style.paddingRight = `${Math.min(2.5, target * 1.8)}%`
+      }
+
+      // const target = normalized.distance * 2.5
+      // const step = () => {
+      //   const fps = 7
+      //   const stepSize = target / 7
+
+      //   if (this.growAmount < target) {
+      //     this.growAmount += stepSize
+      //   } else if (this.growAmount > target) {
+      //     this.growAmount -= stepSize
+      //   }
+
+      //   videoSection.style.paddingLeft = `${this.growAmount}%`
+      //   videoSection.style.paddingRight = `${this.growAmount}%`
+      //   console.log('moving ', this.growAmount)
+      //   if (this.growAmount <= target) {
+      //     window.requestAnimationFrame(step)
+      //   }
+      // }
+      // window.requestAnimationFrame(step)
+    },
   },
 }
 </script>
@@ -86,6 +149,7 @@ export default {
   color: white;
   position: relative;
   padding-bottom: 3rem;
+  transition: padding 0.2s;
   @include media-breakpoint-up(md) {
     padding: 0 2.5% 3rem;
   }
@@ -157,7 +221,7 @@ export default {
 }
 .video-footer {
   position: absolute;
-  bottom: 0;
+  bottom: 3rem;
   left: 2rem;
   width: calc(100% - 4rem);
   z-index: 1;
