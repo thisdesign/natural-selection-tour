@@ -2,7 +2,7 @@
   <section
     ref="videoSection"
     class="video-hero section"
-    @mouseenter="onMouseMove"
+    @mousemove="onMouseMove"
     @mouseleave="onMouseLeave"
   >
     <div class="video-wrapper">
@@ -50,7 +50,6 @@
 </template>
 
 <script>
-import BezierEasing from 'bezier-easing'
 export default {
   name: 'HeroVideoSlice',
   props: {
@@ -65,13 +64,13 @@ export default {
   data() {
     return {
       videoModalOpen: false,
-      animationFrame: null,
-      animationStartTime: 0,
-      animationDuration: 1000,
+      animation: {
+        frame: null,
+        startTime: 0,
+        duration: 1000,
+        target: null,
+      },
       videoPadding: 2.5,
-      animationEasing: BezierEasing(0.47, 0, 0.745, 0.715),
-      animationTarget: null,
-      animationStep: null,
       videoOptions: {
         autoplay: true,
         controls: true,
@@ -88,7 +87,6 @@ export default {
   },
   mounted() {},
   methods: {
-    /* eslint-disable */
     onMouseLeave() {
       this.$refs.videoSection.style.paddingLeft = `${2.5}%`
       this.$refs.videoSection.style.paddingRight = `${2.5}%`
@@ -97,7 +95,6 @@ export default {
     onMouseMove(e) {
       const videoSection = this.$refs.videoSection
       const videoSectionBox = videoSection.getBoundingClientRect()
-      // const playBtnBox = this.$refs.playBtn.getBoundingClientRect()
       const pointer = {
         x: e.clientX - videoSectionBox.left,
         y: e.clientY - videoSectionBox.top,
@@ -109,34 +106,28 @@ export default {
           return this.x + this.y
         },
       }
-      this.animationTarget = normalized.distance * this.videoPadding
-      if (this.animationFrame) cancelAnimationFrame(this.animationFrame)
-      this.animationFrame = requestAnimationFrame(this.animateExpand)
+      this.animation.target = normalized.distance * this.videoPadding
+
+      if (this.animation.frame) cancelAnimationFrame(this.animation.frame)
+      this.animation.frame = requestAnimationFrame(this.animateExpand)
     },
 
     animateExpand(timestamp) {
       const videoSection = this.$refs.videoSection
-      if (!this.animationStartTime) {
-        this.animationStartTime = timestamp
+      if (!this.animation.startTime) {
+        this.animation.startTime = timestamp
       }
 
-      const runtime = timestamp - this.animationStartTime
-      const relativeProgress = runtime / this.animationDuration
-      const easedProgress = this.animationEasing(relativeProgress)
+      const runtime = timestamp - this.animation.startTime
 
-      // 1. We're calculating a new left position based on the relative progress we've made in time.
-      // 2. We're using Math.min to ensure that the progress value will never more be more than 1 (one hundred percent). That way the new animation value will never be more than the distance we want to cover. This is called "clamping".
-
-      this.animationStep =
-        (2.5 - this.animationTarget) * Math.min(easedProgress, 1)
-
-      const percent = Math.min(2.5, this.animationTarget * 1.8)
-      // const percent = this.animationStep
+      const percent =
+        this.animation.target > 0.2
+          ? Math.min(2.5, this.animation.target * 1.85)
+          : 0
       videoSection.style.paddingLeft = `${percent}%`
       videoSection.style.paddingRight = `${percent}%`
 
-      // We want to request another frame when our desired duration isn't met yet
-      if (runtime < this.animationDuration) {
+      if (runtime < this.animation.duration) {
         requestAnimationFrame(this.animateExpand)
       }
     },
@@ -158,7 +149,7 @@ export default {
   color: white;
   position: relative;
   padding-bottom: 3rem;
-  // transition: padding 0.2s;
+  transition: padding 0.5s;
   @include media-breakpoint-up(md) {
     padding: 0 2.5% 3rem;
   }
