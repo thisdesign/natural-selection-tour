@@ -2,7 +2,7 @@
   <section
     ref="videoSection"
     class="video-hero section"
-    @mousemove="onMouseMove"
+    @mouseenter="onMouseMove"
     @mouseleave="onMouseLeave"
   >
     <div class="video-wrapper">
@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import BezierEasing from 'bezier-easing'
 export default {
   name: 'HeroVideoSlice',
   props: {
@@ -64,7 +65,13 @@ export default {
   data() {
     return {
       videoModalOpen: false,
-      growAmount: 0,
+      animationFrame: null,
+      animationStartTime: 0,
+      animationDuration: 1000,
+      videoPadding: 2.5,
+      animationEasing: BezierEasing(0.47, 0, 0.745, 0.715),
+      animationTarget: null,
+      animationStep: null,
       videoOptions: {
         autoplay: true,
         controls: true,
@@ -79,17 +86,18 @@ export default {
       },
     }
   },
+  mounted() {},
   methods: {
     /* eslint-disable */
     onMouseLeave() {
       this.$refs.videoSection.style.paddingLeft = `${2.5}%`
       this.$refs.videoSection.style.paddingRight = `${2.5}%`
     },
+
     onMouseMove(e) {
       const videoSection = this.$refs.videoSection
       const videoSectionBox = videoSection.getBoundingClientRect()
       // const playBtnBox = this.$refs.playBtn.getBoundingClientRect()
-      console.log(e)
       const pointer = {
         x: e.clientX - videoSectionBox.left,
         y: e.clientY - videoSectionBox.top,
@@ -101,35 +109,36 @@ export default {
           return this.x + this.y
         },
       }
-      const target = normalized.distance * 2.5
+      this.animationTarget = normalized.distance * this.videoPadding
+      if (this.animationFrame) cancelAnimationFrame(this.animationFrame)
+      this.animationFrame = requestAnimationFrame(this.animateExpand)
+    },
 
-      if (target < 0.15) {
-        videoSection.style.paddingLeft = `${0}%`
-        videoSection.style.paddingRight = `${0}%`
-      } else {
-        videoSection.style.paddingLeft = `${Math.min(2.5, target * 1.8)}%`
-        videoSection.style.paddingRight = `${Math.min(2.5, target * 1.8)}%`
+    animateExpand(timestamp) {
+      const videoSection = this.$refs.videoSection
+      if (!this.animationStartTime) {
+        this.animationStartTime = timestamp
       }
 
-      // const target = normalized.distance * 2.5
-      // const step = () => {
-      //   const fps = 7
-      //   const stepSize = target / 7
+      const runtime = timestamp - this.animationStartTime
+      const relativeProgress = runtime / this.animationDuration
+      const easedProgress = this.animationEasing(relativeProgress)
 
-      //   if (this.growAmount < target) {
-      //     this.growAmount += stepSize
-      //   } else if (this.growAmount > target) {
-      //     this.growAmount -= stepSize
-      //   }
+      // 1. We're calculating a new left position based on the relative progress we've made in time.
+      // 2. We're using Math.min to ensure that the progress value will never more be more than 1 (one hundred percent). That way the new animation value will never be more than the distance we want to cover. This is called "clamping".
 
-      //   videoSection.style.paddingLeft = `${this.growAmount}%`
-      //   videoSection.style.paddingRight = `${this.growAmount}%`
-      //   console.log('moving ', this.growAmount)
-      //   if (this.growAmount <= target) {
-      //     window.requestAnimationFrame(step)
-      //   }
-      // }
-      // window.requestAnimationFrame(step)
+      this.animationStep =
+        (2.5 - this.animationTarget) * Math.min(easedProgress, 1)
+
+      const percent = Math.min(2.5, this.animationTarget * 1.8)
+      // const percent = this.animationStep
+      videoSection.style.paddingLeft = `${percent}%`
+      videoSection.style.paddingRight = `${percent}%`
+
+      // We want to request another frame when our desired duration isn't met yet
+      if (runtime < this.animationDuration) {
+        requestAnimationFrame(this.animateExpand)
+      }
     },
   },
 }
@@ -149,7 +158,7 @@ export default {
   color: white;
   position: relative;
   padding-bottom: 3rem;
-  transition: padding 0.2s;
+  // transition: padding 0.2s;
   @include media-breakpoint-up(md) {
     padding: 0 2.5% 3rem;
   }
