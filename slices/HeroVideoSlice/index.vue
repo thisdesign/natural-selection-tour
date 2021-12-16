@@ -65,12 +65,12 @@ export default {
     return {
       videoModalOpen: false,
       animation: {
+        startPercent: 2.5,
         frame: null,
         startTime: 0,
         duration: 1000,
-        target: null,
+        targetPercent: null,
       },
-      videoPadding: 2.5,
       videoOptions: {
         autoplay: true,
         controls: true,
@@ -88,17 +88,19 @@ export default {
   mounted() {},
   methods: {
     onMouseLeave() {
-      this.$refs.videoSection.style.paddingLeft = `${2.5}%`
-      this.$refs.videoSection.style.paddingRight = `${2.5}%`
+      this.$refs.videoSection.style.paddingLeft = `${this.startPercent}%`
+      this.$refs.videoSection.style.paddingRight = `${this.startPercent}%`
     },
 
     onMouseMove(e) {
       const videoSection = this.$refs.videoSection
       const videoSectionBox = videoSection.getBoundingClientRect()
+      // The pointer relative within the video section
       const pointer = {
         x: e.clientX - videoSectionBox.left,
         y: e.clientY - videoSectionBox.top,
       }
+      // The normalized values from 0 - 1
       const normalized = {
         x: Math.abs(pointer.x / videoSection.offsetWidth - 0.5),
         y: Math.abs(pointer.y / videoSection.offsetHeight - 0.5),
@@ -106,7 +108,7 @@ export default {
           return this.x + this.y
         },
       }
-      this.animation.target = normalized.distance * this.videoPadding
+      this.animation.targetPercent = normalized.distance * this.startPercent
 
       if (this.animation.frame) cancelAnimationFrame(this.animation.frame)
       this.animation.frame = requestAnimationFrame(this.animateExpand)
@@ -121,8 +123,8 @@ export default {
       const runtime = timestamp - this.animation.startTime
 
       const percent =
-        this.animation.target > 0.2
-          ? Math.min(2.5, this.animation.target * 1.85)
+        this.animation.targetPercent > 0.2
+          ? Math.min(2.5, this.animation.targetPercent * 1.85)
           : 0
       videoSection.style.paddingLeft = `${percent}%`
       videoSection.style.paddingRight = `${percent}%`
