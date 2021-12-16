@@ -69,7 +69,7 @@ export default {
       videoOptions: {
         autoplay: true,
         controls: true,
-        fill: true,
+        fluid: true,
         poster: this.slice.primary.VideoPoster.url,
         sources: [
           {
@@ -147,6 +147,9 @@ export default {
 }
 .video-modal {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -155,11 +158,13 @@ export default {
   background: black;
   padding: 3rem 0;
   @include media-breakpoint-up(md) {
-    padding: 5vw 0;
+    padding: clamp(1rem, 5vw, 5rem) 0;
   }
   .player {
     height: 100%;
     padding: 0;
+    max-width: 1400px;
+    margin: auto;
   }
 }
 .video-wrapper {
