@@ -268,10 +268,10 @@ nav {
       }
     }
     &:hover {
-      font-weight: bold;
+      text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
     }
     &.nuxt-link-active {
-      font-weight: bold;
+      text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
       font-style: italic;
       &:after {
         opacity: 1;
