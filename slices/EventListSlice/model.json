@@ -133,6 +133,13 @@
             "default_value": "in"
           },
           "type": "Select"
+        },
+        "SnowPercent": {
+          "config": {
+            "label": "Snow Percent",
+            "placeholder": ""
+          },
+          "type": "Number"
         }
       }
     }

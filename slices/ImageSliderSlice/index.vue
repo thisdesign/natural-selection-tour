@@ -1,22 +1,15 @@
 <template>
   <section class="section">
-    <!-- <div class="site-padding">
-      <element-section-bar
-        :number="slice.primary.SectionNumber"
-        :title="slice.primary.SectionTitle"
-      />
-    </div> -->
     <div class="slider-container">
       <div class="slider-wrapper">
         <div ref="slider" class="image-slider">
           <div
-            v-for="(item, i) in mockimages"
+            v-for="(item, i) in slice.items"
             :key="`slice-item-${i}`"
             class="slide"
           >
             <div class="slide-image">
-              <!-- <prismic-image :field="item.Image" /> -->
-              <img src="/mocks/mock-slider-image.jpg" alt="" />
+              <prismic-image :field="item.Image" />
             </div>
           </div>
         </div>

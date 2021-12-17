@@ -21,6 +21,7 @@ export default {
       await store.dispatch('ui/setOptions', {
         floatingHeader: document.data.FloatingNav,
         footerColor: document.data.FooterBackground || '#1f2744',
+        showCode: document.data.ShowFooterCode,
       })
       return { document }
     } else {

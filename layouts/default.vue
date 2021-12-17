@@ -2,6 +2,7 @@
   <div class="app">
     <app-header />
     <Nuxt />
+    <app-code />
     <app-footer />
   </div>
 </template>

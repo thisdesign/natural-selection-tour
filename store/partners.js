@@ -43,6 +43,12 @@ export const actions = {
     const featured = partnerResults.data.FeaturedPartners.map(mapItem)
     const partners = partnerResults.data.Partners.map(mapItem)
 
-    commit('setPartners', { uids, logos, featured, partners })
+    commit('setPartners', {
+      uids,
+      logos,
+      featured,
+      partners,
+      showCode: partnerResults.data.ShowFooterCode,
+    })
   },
 }

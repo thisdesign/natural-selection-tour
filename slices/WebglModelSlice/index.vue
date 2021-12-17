@@ -26,6 +26,7 @@
         />
         <media-webgl-player
           v-if="slice.primary.Featured"
+          :model="slice.items[0].Model.url"
           class="webgl-player featured"
         />
         <prismic-rich-text
@@ -43,7 +44,6 @@
               <span>{{ indexLetters[i] }}</span>
             </div>
             <prismic-rich-text class="location-title" :field="item.Title" />
-            <!-- <prismic-embed :field="item.Model" /> -->
           </div>
         </div>
         <element-cta-button
@@ -54,7 +54,8 @@
         />
         <media-webgl-player
           v-if="!slice.primary.Featured"
-          class="webgl-player"
+          :model="slice.items[0].Model.url"
+          :class="{ featured: slice.primary.Featured }"
         />
       </div>
     </div>

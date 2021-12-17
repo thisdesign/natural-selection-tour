@@ -10,67 +10,6 @@
         },
         "items": {}
       }
-    },
-    "HeroVideoSlice": {},
-    "CountdownSlice": {
-      "default-slice": {
-        "primary": {
-          "FooterContent": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
-    "CodeSlice": {
-      "default-slice": {
-        "items": {},
-        "primary": {
-          "Intro": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "Locations": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "Footer": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "ColumnTwo": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "ColumnThree": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "ColumnFour": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
-    "EventScheduleSlice": {
-      "default-slice": {
-        "items": {}
-      }
     }
   },
   "_cts": {
@@ -94,7 +33,13 @@
         }
       },
       "main-links": {},
-      "FooterPrimaryLinks": {}
+      "FooterPrimaryLinks": {},
+      "Intro": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
     }
   }
 }

@@ -18,7 +18,7 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"text_slice","items":[],"primary":{"SectionNumber":"synthesize best-of-breed e-markets","SectionTitle":"facilitate 24/365 e-tailers","Text":[{"type":"paragraph","text":"Do occaecat dolore mollit consectetur labore labore do. Nostrud ut exercitation ullamco irure est amet ex minim reprehenderit cupidatat et laborum consequat.","spans":[]}],"CtaTitle":"utilize dot-com deliverables","CtaLink":{"link_type":"Web","url":"https://prismic.io"}},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","name":"Default slice","slice_type":"text_slice","items":[],"primary":{"SectionNumber":"e-enable real-time action-items","SectionTitle":"synergize revolutionary web services","Text":[{"type":"paragraph","text":"Ea et labore minim laboris quis deserunt dolore nulla duis Lorem ut tempor amet laboris. Tempor dolor id in fugiat adipisicing et sunt.","spans":[]}],"CtaTitle":"leverage user-centric relationships","CtaLink":{"link_type":"Web","url":"http://twitter.com"}},"id":"_DefaultSlice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'

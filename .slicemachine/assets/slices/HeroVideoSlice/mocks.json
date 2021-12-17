@@ -8,14 +8,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Aute id enim duis exercitation commodo anim amet cupidatat nisi consequat aliqua. Quis anim aliqua cillum cupidatat aute ullamco consequat esse proident fugiat. Aliqua sunt do duis duis sint est duis veniam.",
+            "text": "Sint amet aliquip laboris ipsum deserunt consequat laborum ea nulla sit culpa officia. Velit dolor Lorem esse sunt id sunt cillum consectetur nulla ut fugiat amet enim.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Ex quis exercitation et ea consectetur aliquip fugiat exercitation. Sint ex do ut tempor Lorem velit ullamco mollit magna.",
+            "text": "Proident ipsum deserunt enim tempor laborum culpa. Commodo Lorem labore consequat minim deserunt. Ullamco laborum elit ullamco sint ipsum enim nisi dolor consectetur aliquip cupidatat sint reprehenderit aute.",
             "spans": []
           }
         ]
@@ -24,14 +24,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Consequat ea eiusmod quis minim et laborum dolor est aliqua.",
+            "text": "Enim sint aute veniam sint dolor consectetur ex in pariatur veniam laborum ad adipisicing. Fugiat velit et pariatur sunt dolore eu mollit tempor fugiat nisi quis ex proident.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Proident proident velit minim minim commodo aliqua fugiat veniam cillum. Culpa aliqua fugiat velit magna sunt laborum non ipsum et dolore enim nulla magna. Do sint Lorem ad sint minim reprehenderit.",
+            "text": "Voluptate ea commodo ullamco magna consectetur officia nostrud commodo est Lorem reprehenderit. Adipisicing deserunt do eiusmod in esse cupidatat sunt quis labore non dolor nulla.",
             "spans": []
           }
         ]
@@ -40,38 +40,22 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Lorem ad mollit nulla aute elit eu dolore adipisicing pariatur. Proident nisi non consectetur duis cupidatat proident sint fugiat aliqua sit voluptate. Consequat anim est ex id aliquip non.",
+            "text": "Amet qui incididunt consequat aliquip exercitation ad culpa dolore qui officia nulla sit sit et. Pariatur cillum pariatur sunt.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Magna laboris veniam mollit aliqua quis cillum nostrud ut mollit aute eu.",
-            "spans": []
-          }
-        ]
-      },
-      {
-        "TextTop": [
-          {
-            "type": "paragraph",
-            "text": "Mollit quis dolor ullamco commodo proident irure minim commodo. Aute amet velit exercitation. Est nostrud adipisicing commodo ex in fugiat duis.",
-            "spans": []
-          }
-        ],
-        "TextBottom": [
-          {
-            "type": "paragraph",
-            "text": "Deserunt sunt duis incididunt voluptate Lorem culpa enim nulla eu sint irure aute velit labore magna. Ex enim magna ullamco anim elit sint laboris quis culpa proident fugiat enim. Eiusmod aliquip aliqua consectetur veniam occaecat Lorem non consectetur voluptate sit ullamco.",
+            "text": "Esse minim ad magna. Laboris nostrud magna ad do laboris.",
             "spans": []
           }
         ]
       }
     ],
     "primary": {
-      "SectionNumber": "disintermediate global users",
-      "SectionTitle": "synergize revolutionary e-tailers",
+      "SectionNumber": "seize one-to-one deliverables",
+      "SectionTitle": "repurpose back-end mindshare",
       "Logo": {
         "dimensions": {
           "width": 900,
@@ -79,9 +63,9 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?w=900&h=500&fit=crop"
       },
-      "CtaText": "envisioneer B2C users",
+      "CtaText": "expedite transparent eyeballs",
       "VideoPoster": {
         "dimensions": {
           "width": 900,
@@ -89,15 +73,15 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
       },
       "VideoFull": {
         "link_type": "Web",
-        "url": "http://twitter.com"
+        "url": "https://slicemachine.dev"
       },
       "VideoLoop": {
         "link_type": "Web",
-        "url": "http://google.com"
+        "url": "http://twitter.com"
       }
     }
   }

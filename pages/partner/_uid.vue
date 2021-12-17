@@ -26,6 +26,7 @@ export default {
       await store.dispatch('ui/setOptions', {
         floatingHeader: false,
         footerColor: '#FFE500',
+        showCode: store.state.partners.results.showCode,
       })
       return { document }
     } else {
