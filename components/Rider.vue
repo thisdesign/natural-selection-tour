@@ -256,7 +256,12 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow-x: scroll;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 .rider-sponsors-logos {
