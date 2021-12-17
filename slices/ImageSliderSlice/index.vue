@@ -127,6 +127,7 @@ export default {
   display: none;
   transform: translateX(-100%);
   &.previous {
+    z-index: 2;
     display: block;
     transform: translateX(-97.5%);
   }
@@ -142,7 +143,7 @@ export default {
   }
   &.next {
     display: block;
-    transform: translateX(97.5%);
+    transform: translateX(100%);
   }
 }
 </style>

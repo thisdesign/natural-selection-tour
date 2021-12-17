@@ -36,7 +36,7 @@
         <div class="cta-row">
           <div class="button-container">
             <element-cta-button
-              class="cta-button"
+              class="cta-button btn"
               :link="slice.primary.CtaLink"
               :title="slice.primary.CtaTitle"
             />
@@ -209,8 +209,19 @@ export default {
     margin-top: 10vw;
     margin-right: auto;
     font-size: 10px;
+    margin-bottom: 3rem;
     @include media-breakpoint-up(sm) {
       margin-top: 0;
+      margin-bottom: 0;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Natural-Selection';
+      font-size: clamp(1.8rem, 3vw, 3.5rem);
     }
     * {
       text-transform: uppercase;

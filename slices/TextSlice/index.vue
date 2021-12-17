@@ -17,6 +17,7 @@
       <prismic-rich-text :field="slice.primary.Text" />
     </div>
     <element-cta-button
+      class="btn"
       v-if="slice.primary.CtaTitle"
       :link="slice.primary.CtaLink"
       :title="slice.primary.CtaTitle"

@@ -149,7 +149,7 @@ export default {
     border-radius: 100rem;
     font-size: clamp(1.3rem, 2.8vw, 10rem);
     line-height: 1;
-    padding: 0.5em;
+    padding: 0.4em;
     text-align: center;
     width: 100%;
   }
