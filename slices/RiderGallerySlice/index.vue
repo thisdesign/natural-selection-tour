@@ -196,8 +196,8 @@ export default {
     },
     updateMouse(event) {
       const pointer = document.getElementById('mouse-pointer')
-      pointer.style.left = event.clientX + 'px'
-      pointer.style.top = event.clientY + 'px'
+      pointer.style.left = event.pageX + 'px'
+      pointer.style.top = event.pageY + 'px'
     },
     hideCursorName() {
       this.pointer.showPointer = false
