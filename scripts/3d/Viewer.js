@@ -1,4 +1,5 @@
 import * as BABYLON from 'babylonjs'
+import 'babylonjs-loaders'
 
 class Viewer {
   init(canvas) {
@@ -9,7 +10,7 @@ class Viewer {
     })
     this.objects = this.createScene()
     this.engine.runRenderLoop(() => {
-      this.objects.scene.render()
+      this.scene.render()
     })
   }
 
@@ -37,8 +38,8 @@ class Viewer {
     camera.attachControl(this.canvas, false)
     camera.inputs.remove(camera.inputs.attached.mousewheel)
     camera.alpha = 0
-    camera.lowerAlphaLimit = -Math.PI * 0.5
-    camera.upperAlphaLimit = Math.PI * 0.5
+    camera.lowerAlphaLimit = -Math.PI * 0.25
+    camera.upperAlphaLimit = Math.PI * 0.25
 
     camera.beta = Math.PI * 0.2
     camera.lowerBetaLimit = Math.PI * 0.2
@@ -54,19 +55,45 @@ class Viewer {
       scene,
     )
 
-    const sphere = BABYLON.Mesh.CreateSphere(
-      'sphere1',
-      16,
-      2,
-      scene,
-      false,
-      BABYLON.Mesh.FRONTSIDE,
-    )
-    sphere.position.y = 1
+    // const sphere = BABYLON.Mesh.CreateSphere(
+    //   'sphere1',
+    //   16,
+    //   2,
+    //   scene,
+    //   false,
+    //   BABYLON.Mesh.FRONTSIDE,
+    // )
+    // sphere.position.y = 1
 
-    const ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene)
+    // const ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene)
 
-    return { scene, light, camera, sphere, ground }
+    this.scene = scene
+
+    return { light, camera }
+  }
+
+  laodModel(modelUrl) {
+    return new Promise((resolve) => {
+      this.modelUrl = modelUrl
+      const self = this
+      BABYLON.SceneLoader.ImportMesh(
+        '',
+        '',
+        modelUrl,
+        this.scene,
+        function (scene) {
+          const MTN = self.scene.meshes[1]
+          MTN.rotationQuaternion = null
+          MTN.rotation = new BABYLON.Vector3(
+            -Math.PI / 2,
+            -(Math.PI / 4) * 3,
+            0,
+          )
+          MTN.scaling = new BABYLON.Vector3(0.005, 0.005, 0.005)
+          resolve()
+        },
+      )
+    })
   }
 }
 

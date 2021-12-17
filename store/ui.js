@@ -2,6 +2,7 @@ export const state = () => ({
   options: {
     floatingHeader: true,
     footerColor: '#000000',
+    showCode: true,
   },
 })
 

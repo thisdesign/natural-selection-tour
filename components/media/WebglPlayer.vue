@@ -1,6 +1,7 @@
 <template>
   <div class="webgl">
     <div class="wrapper">
+      <h2 v-if="loading" class="loading">Loading...</h2>
       <canvas
         id="canvas"
         ref="canvas"
@@ -16,8 +17,23 @@
 import Viewer from '@/scripts/3d/Viewer'
 export default {
   name: 'WebglViewer',
+  props: {
+    model: {
+      type: String,
+      default: '',
+    },
+  },
+  data() {
+    return {
+      loading: false,
+    }
+  },
   mounted() {
     Viewer.init(this.$refs.canvas)
+    if (this.model !== '') {
+      this.loading = true
+      Viewer.laodModel(this.model).then(() => (this.loading = false))
+    }
   },
 }
 </script>
@@ -26,6 +42,13 @@ export default {
 .webgl {
   // max-width: 500px;
   height: 100%;
+}
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 0;
 }
 .wrapper {
   position: relative;

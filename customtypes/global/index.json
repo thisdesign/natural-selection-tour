@@ -206,6 +206,76 @@
         },
         "type": "StructuredText"
       }
+    },
+    "Footer Code": {
+      "Intro": {
+        "config": {
+          "label": "Intro",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "LocationTitle": {
+        "config": {
+          "label": "LocationTitle",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "Locations": {
+        "config": {
+          "label": "Locations",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "RiderTitle": {
+        "config": {
+          "label": "RiderTitle",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "Footer": {
+        "config": {
+          "label": "Footer",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "ColumnTwo": {
+        "config": {
+          "label": "ColumnTwo",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "ColumnThree": {
+        "config": {
+          "label": "ColumnThree",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "ColumnFour": {
+        "config": {
+          "label": "ColumnFour",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        },
+        "type": "StructuredText"
+      }
     }
   }
 }

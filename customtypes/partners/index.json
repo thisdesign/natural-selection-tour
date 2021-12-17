@@ -5,6 +5,15 @@
   "status": true,
   "json": {
     "Main": {
+      "ShowFooterCode": {
+        "config": {
+          "label": "Show Footer Code",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": true
+        },
+        "type": "Boolean"
+      },
       "FeaturedPartners": {
         "config": {
           "label": "FeaturedPartners",

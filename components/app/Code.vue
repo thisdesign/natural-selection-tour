@@ -1,25 +1,28 @@
 <template>
-  <section class="section site-padding code-slice">
+  <section
+    v-if="$store.state.ui.options.showCode"
+    class="section site-padding code-animation"
+  >
     <div class="columns">
       <div class="col indented">
         <div class="set">
           <div class="title">
-            <prismic-rich-text :field="slice.primary.Intro" />
+            <prismic-rich-text :field="globalData.Intro" />
           </div>
         </div>
         <div class="set">
           <div class="title">
-            <p>{{ slice.primary.LocationTitle }}</p>
+            <p>{{ globalData.LocationTitle }}</p>
           </div>
           <div class="row">
             <div class="loction-rte">
-              <prismic-rich-text :field="slice.primary.Locations" />
+              <prismic-rich-text :field="globalData.Locations" />
             </div>
           </div>
         </div>
         <div class="set">
           <div class="title">
-            <p>{{ slice.primary.RiderTitle }}</p>
+            <p>{{ globalData.RiderTitle }}</p>
           </div>
           <div class="riders">
             <p
@@ -32,7 +35,7 @@
         </div>
         <div class="set">
           <div class="title">
-            <prismic-rich-text :field="slice.primary.Footer" />
+            <prismic-rich-text :field="globalData.Footer" />
           </div>
         </div>
       </div>
@@ -42,7 +45,7 @@
         class="col"
       >
         <div
-          v-for="(set, setIndex) in slice.primary.ColumnTwo"
+          v-for="(set, setIndex) in col"
           :key="`col${colIndex}_set${setIndex}`"
           class="set"
         >
@@ -66,33 +69,28 @@
 
 <script>
 export default {
-  name: 'CodeSlice',
-  props: {
-    slice: {
-      type: Object,
-      required: true,
-      default() {
-        return {}
-      },
-    },
-  },
+  name: 'CodeAnimation',
   computed: {
-    columns() {
-      return [
-        this.slice.primary.ColumnTwo,
-        this.slice.primary.ColumnThree,
-        this.slice.primary.ColumnFour,
-      ]
+    globalData() {
+      return this.$store.state.globals.results.data
     },
-  },
-  mounted() {
-    console.log(this.slice.primary.ColumnTwo)
+    columns() {
+      if (this.globalData.ColumnTwo) {
+        return [
+          this.globalData.ColumnTwo,
+          this.globalData.ColumnThree,
+          this.globalData.ColumnFour,
+        ]
+      } else {
+        return []
+      }
+    },
   },
 }
 </script>
 
 <style lang="scss">
-.code-slice {
+.code-animation {
   p {
     font-size: clamp(8px, 1vw, 12px);
     line-height: 1.1;
@@ -112,7 +110,7 @@ export default {
 }
 .section {
   color: #fff;
-  font-family: 'Sneak';
+  font-family: 'Sneak', sans-serif;
   text-transform: uppercase;
   line-height: 1;
   border-top: 1px solid white;

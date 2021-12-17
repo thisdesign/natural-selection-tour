@@ -129,7 +129,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.riders)
     const section = document.querySelector('.rider-gallery-slice')
     const header = document.querySelector('header')
     section.style.paddingTop = `${header.offsetHeight}px`

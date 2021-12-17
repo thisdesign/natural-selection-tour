@@ -1,12 +1,13 @@
 {
-  "id": "a073043e-b5b7-4398-871f-22c751b0444d",
-  "uid": "aut-sint-culpa",
+  "id": "9c95f7ff-a611-477d-b69f-a442dab7e5c0",
+  "uid": "repellendus-qui-aperiam",
   "type": "page",
   "data": {
-    "FloatingNav": false,
+    "FloatingNav": true,
     "FooterBackground": "#1f2744",
-    "meta_title": "integrate customized e-business",
-    "meta_description": "cultivate cross-media web-readiness",
+    "ShowFooterCode": true,
+    "meta_title": "monetize 24/365 vortals",
+    "meta_description": "benchmark ubiquitous mindshare",
     "social_cards": [
       {
         "social_card_image": {
@@ -16,10 +17,10 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=900&h=500&fit=crop"
         },
-        "social_card_title": "iterate granular eyeballs",
-        "social_card_description": "strategize next-generation platforms"
+        "social_card_title": "transition front-end e-tailers",
+        "social_card_description": "disintermediate customized systems"
       },
       {
         "social_card_image": {
@@ -29,10 +30,10 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb?w=900&h=500&fit=crop"
         },
-        "social_card_title": "productize scalable methodologies",
-        "social_card_description": "streamline B2C action-items"
+        "social_card_title": "aggregate innovative interfaces",
+        "social_card_description": "embrace end-to-end relationships"
       },
       {
         "social_card_image": {
@@ -42,10 +43,10 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117?w=900&h=500&fit=crop"
         },
-        "social_card_title": "repurpose granular architectures",
-        "social_card_description": "visualize 24/365 systems"
+        "social_card_title": "visualize cross-media portals",
+        "social_card_description": "streamline seamless bandwidth"
       }
     ]
   }
