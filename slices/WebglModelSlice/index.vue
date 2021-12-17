@@ -26,6 +26,7 @@
         />
         <media-webgl-player
           v-if="slice.primary.Featured"
+          :model="slice.items[0].Model.url"
           class="webgl-player featured"
         />
         <prismic-rich-text
@@ -53,7 +54,6 @@
         />
         <media-webgl-player
           v-if="!slice.primary.Featured"
-          class="webgl-player"
           :model="slice.items[0].Model.url"
           :class="{ featured: slice.primary.Featured }"
         />

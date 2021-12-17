@@ -22,14 +22,26 @@ export default {
       type: String,
       default: '',
     },
+    items: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
   },
   data() {
     return {
       loading: false,
     }
   },
+  watch: {
+    model(newModel) {
+      console.log('new model', newModel)
+    },
+  },
   mounted() {
     Viewer.init(this.$refs.canvas)
+    console.log('model', this.items)
     if (this.model !== '') {
       this.loading = true
       Viewer.laodModel(this.model).then(() => (this.loading = false))
