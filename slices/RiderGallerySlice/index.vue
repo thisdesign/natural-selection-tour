@@ -1,5 +1,12 @@
 <template>
-  <section class="rider-gallery-slice" @mousemove="updateMouse">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+    }"
+    :class="`rider-gallery-slice waypoint ${waypointActive ? 'active' : ''}`"
+    @mousemove="updateMouse"
+  >
     <div class="site-padding">
       <element-section-bar
         :number="slice.primary.SectionNumber"
@@ -9,7 +16,7 @@
     <div class="site-padding">
       <div class="desktop-gallery">
         <rider
-          v-for="(item, i) in slice.items"
+          v-for="(item, i) in sliceItems"
           :key="`slice-item-${i}`"
           :rider="getRider(item.Rider.id)"
           @update-rider="updateCurrentRider"
@@ -34,21 +41,26 @@
         >
           <option disabled value="" selected>▼ Select A Rider</option>
           <option
-            v-for="(item, i) in slice.items"
+            v-for="(item, i) in sliceItems"
             :key="`slice-item-options-${i}`"
             :value="`${item.Rider.id}, ${i}`"
           >
-            {{ getRider(item.Rider.id).data.Name[0].text }}
+            <span v-if="getRider(item.Rider.id).data">
+              {{ getRider(item.Rider.id).data.Name[0].text }}
+            </span>
           </option>
         </select>
       </div>
       <slider ref="riderSlider" :options="riderSliderOptions" @slide="onSlide">
         <slideritem
-          v-for="(item, i) in slice.items"
+          v-for="(item, i) in sliceItems"
           :key="`slice-item-mobile-${i}`"
         >
           <div class="slider-image">
-            <prismic-image :field="getRider(item.Rider.id).data.Rider" />
+            <prismic-image
+              v-if="getRider(item.Rider.id).data"
+              :field="getRider(item.Rider.id).data.Rider"
+            />
           </div>
         </slideritem>
       </slider>
@@ -92,12 +104,14 @@
 
 <script>
 import { slider, slideritem } from 'vue-concise-slider'
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'RiderGallerySlice',
   components: {
     slider,
     slideritem,
   },
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,
@@ -127,13 +141,17 @@ export default {
     riders() {
       return this.$store.state.riders.results
     },
+    sliceItems() {
+      return this.slice.items.filter((item) => {
+        return item.Rider.id
+      })
+    },
   },
   mounted() {
-    console.log(this.riders)
     const section = document.querySelector('.rider-gallery-slice')
     const header = document.querySelector('header')
     section.style.paddingTop = `${header.offsetHeight}px`
-    this.currentMobileRider = this.getRider(this.slice.items[0].Rider.id)
+    this.currentMobileRider = this.getRider(this.sliceItems[0].Rider.id)
     window.addEventListener('resize', () => {
       this.sliderResize()
     })
@@ -160,11 +178,11 @@ export default {
       this.$refs.riderSlider.$emit('slideTo', parseInt(value[1]))
     },
     onSlide(data) {
-      if (data.currentPage >= 0 && data.currentPage < this.slice.items.length) {
+      if (data.currentPage >= 0 && data.currentPage < this.sliceItems.length) {
         this.currentMobileRider = this.getRider(
-          this.slice.items[data.currentPage].Rider.id,
+          this.sliceItems[data.currentPage].Rider.id,
         )
-        this.selectedRider = `${this.slice.items[data.currentPage].Rider.id}, ${
+        this.selectedRider = `${this.sliceItems[data.currentPage].Rider.id}, ${
           data.currentPage
         }`
       }
@@ -240,7 +258,6 @@ export default {
     font-size: 2vw;
     display: table-caption;
     width: 80%;
-    word-spacing: 500px;
   }
 }
 

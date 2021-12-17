@@ -1,5 +1,14 @@
 <template>
-  <section class="section event-section site-padding">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`section event-section site-padding waypoint ${
+      waypointActive ? 'active' : ''
+    }`"
+  >
     <div class="section-bar site-padding">
       <element-section-bar
         :number="slice.primary.SectionNumber"
@@ -33,6 +42,10 @@
             :field="item.Description"
           />
           <div class="location-stats">
+            <div
+              class="location-snow-symbol"
+              :style="{ height: `${50 + item.SnowPercent / 2}%` }"
+            ></div>
             <prismic-rich-text class="label" :field="item.SnowDescription" />
             <div class="snow-amount">
               <span class="number">{{ item.SnowAmount }}</span>
@@ -49,13 +62,14 @@
 <script>
 import { slider, slideritem } from 'vue-concise-slider'
 import GetStatus from '@/mixins/GetStatus'
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'EventListSlice',
   components: {
     slider,
     slideritem,
   },
-  mixins: [GetStatus],
+  mixins: [GetStatus, WaypointMixin],
   props: {
     slice: {
       type: Object,
@@ -135,7 +149,7 @@ export default {
     border-radius: 100rem;
     font-size: clamp(1.3rem, 2.8vw, 10rem);
     line-height: 1;
-    padding: 0.5em;
+    padding: 0.4em;
     text-align: center;
     width: 100%;
   }
@@ -195,20 +209,30 @@ export default {
   }
   .location-stats {
     width: 100%;
-    background: white;
+    position: relative;
     color: black;
     padding: clamp(0.5rem, 1.5vw, 2rem);
     line-height: 1;
-    min-height: 12%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: clamp(3rem, 5vw, 10rem);
+    padding-top: clamp(3rem, 5vw, 10rem);
+    .location-snow-symbol {
+      position: absolute;
+      background: white;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
     .label {
       margin-bottom: 2vw;
+      padding-top: clamp(3rem, 7.5vw, 7.5vw);
       width: 60%;
       * {
         font-size: clamp(0.85rem, 1.2vw, 3rem);
+        margin-bottom: 0;
       }
     }
     .snow-amount {

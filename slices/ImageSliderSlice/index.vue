@@ -1,22 +1,22 @@
 <template>
-  <section class="section">
-    <!-- <div class="site-padding">
-      <element-section-bar
-        :number="slice.primary.SectionNumber"
-        :title="slice.primary.SectionTitle"
-      />
-    </div> -->
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`section waypoint ${waypointActive ? 'active' : ''}`"
+  >
     <div class="slider-container">
       <div class="slider-wrapper">
         <div ref="slider" class="image-slider">
           <div
-            v-for="(item, i) in mockimages"
+            v-for="(item, i) in slice.items"
             :key="`slice-item-${i}`"
             class="slide"
           >
             <div class="slide-image">
-              <!-- <prismic-image :field="item.Image" /> -->
-              <img src="/mocks/mock-slider-image.jpg" alt="" />
+              <prismic-image :field="item.Image" />
             </div>
           </div>
         </div>
@@ -30,8 +30,10 @@
 
 <script>
 import { CubeSlider } from '@/scripts/CubeSlider'
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'ImageSliderSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,
@@ -125,6 +127,7 @@ export default {
   display: none;
   transform: translateX(-100%);
   &.previous {
+    z-index: 2;
     display: block;
     transform: translateX(-97.5%);
   }
@@ -140,7 +143,7 @@ export default {
   }
   &.next {
     display: block;
-    transform: translateX(97.5%);
+    transform: translateX(100%);
   }
 }
 </style>

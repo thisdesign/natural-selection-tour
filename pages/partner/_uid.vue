@@ -6,20 +6,16 @@ https://www.slicemachine.dev/documentation/nuxt/add-the-slice-zone-to-your-page
   <div class="app">
     <image-content-hero v-if="document" :slice="hero" />
     <partner-logo-grid :slice="grid" />
-    <code-slice :slice="{}" />
   </div>
 </template>
 
 <script>
 import ImageContentHeroSlice from '@/slices/ImageContentHeroSlice'
 import PartnerLogoGridSlice from '@/slices/PartnerLogoGridSlice'
-import CodeSlice from '@/slices/CodeSlice'
-
 export default {
   components: {
     ImageContentHero: ImageContentHeroSlice,
     PartnerLogoGrid: PartnerLogoGridSlice,
-    CodeSlice,
   },
   async asyncData({ store, $prismic, params, error }) {
     const document = await $prismic.api.getByUID('partner', params.uid)
@@ -27,6 +23,7 @@ export default {
       await store.dispatch('ui/setOptions', {
         floatingHeader: false,
         footerColor: '#FFE500',
+        showCode: store.state.partners.results.showCode,
       })
       return { document }
     } else {

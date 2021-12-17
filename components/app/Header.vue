@@ -4,7 +4,12 @@
       <nuxt-link to="/" class="logo">
         <prismic-image :field="globals.data.Logo" />
       </nuxt-link>
-      <button class="close-btn" @click="toggleNav">
+      <button
+        class="hamburger-btn"
+        :class="{ open: navOpen }"
+        @click="toggleNav"
+      >
+        <span></span>
         <span></span>
         <span></span>
       </button>
@@ -150,8 +155,57 @@ header {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.close-btn {
+.hamburger-btn {
+  width: 1.4rem;
+  height: 1.4rem;
+  position: relative;
+  padding: 0;
   z-index: 100;
+  border: none;
+  background: transparent;
+  overflow: hidden;
+  &:focus {
+    outline: none;
+    background: transparent;
+  }
+  span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: white;
+    left: 0;
+    transition: transform 300ms, opacity 500ms;
+    &:first-child {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:last-child {
+      bottom: 0;
+    }
+  }
+  &.open {
+    span {
+      &:first-child {
+        top: 50%;
+        transform: rotate(-45deg);
+        transform-origin: center;
+      }
+      &:nth-child(2) {
+        top: 50%;
+        opacity: 0;
+        transform: translate(100%, -50%);
+      }
+      &:last-child {
+        top: 50%;
+        transform: rotate(45deg);
+        transform-origin: center;
+      }
+    }
+  }
   @include media-breakpoint-up(sm) {
     display: none;
   }
@@ -268,10 +322,10 @@ nav {
       }
     }
     &:hover {
-      font-weight: bold;
+      text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
     }
     &.nuxt-link-active {
-      font-weight: bold;
+      text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
       font-style: italic;
       &:after {
         opacity: 1;

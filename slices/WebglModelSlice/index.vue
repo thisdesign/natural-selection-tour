@@ -1,5 +1,13 @@
 <template>
-  <section class="section webgl" :class="{ featured: slice.primary.Featured }">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    class="section webgl waypoint"
+    :class="{ featured: slice.primary.Featured, active: waypointActive }"
+  >
     <div v-if="!slice.primary.Featured" class="site-padding">
       <element-section-bar
         :number="slice.primary.SectionNumber"
@@ -24,6 +32,11 @@
           class="section-title col-left"
           :field="slice.primary.title"
         />
+        <media-webgl-player
+          v-if="slice.primary.Featured"
+          :model="slice.items[0].Model.url"
+          class="webgl-player featured"
+        />
         <prismic-rich-text
           class="section-description col-left"
           :field="slice.primary.description"
@@ -39,16 +52,17 @@
               <span>{{ indexLetters[i] }}</span>
             </div>
             <prismic-rich-text class="location-title" :field="item.Title" />
-            <!-- <prismic-embed :field="item.Model" /> -->
           </div>
         </div>
         <element-cta-button
           v-if="!slice.primary.Featured"
-          class="section-cta-button"
+          class="btn section-cta-button"
           :link="slice.primary.CtaLink"
           :title="slice.primary.CtaText"
         />
         <media-webgl-player
+          v-if="!slice.primary.Featured"
+          :model="slice.items[0].Model.url"
           class="webgl-player"
           :class="{ featured: slice.primary.Featured }"
         />
@@ -58,8 +72,10 @@
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'WebglModelSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,
@@ -87,23 +103,24 @@ export default {
   &.section.featured {
     padding-bottom: 3rem;
     .section-inner {
-      padding-top: 5rem;
+      padding-top: 10rem;
       padding-bottom: 0;
+      @include media-breakpoint-up(sm) {
+        padding-top: 5rem;
+      }
     }
     .section-description {
-      margin-top: 40vh;
       @include media-breakpoint-up(sm) {
         margin: 2rem 0;
       }
     }
   }
   .webgl-player {
-    position: absolute;
     width: 100%;
-    right: 0;
-    top: 0;
-    z-index: -1;
     @include media-breakpoint-up(sm) {
+      position: absolute;
+      right: 0;
+      top: 0;
       width: 75%;
     }
     &.featured {
@@ -198,13 +215,17 @@ export default {
     }
   }
   .section-cta-button {
-    bottom: 0;
-    width: 100%;
+    position: absolute;
+    width: calc(100% - 4rem);
     margin-top: 8rem;
+    bottom: 1.8rem;
+    left: 2rem;
+
     @include media-breakpoint-up(sm) {
+      bottom: 0;
       margin-top: 0;
+      left: unset;
       width: unset;
-      position: absolute;
       transform: translateY(50%);
     }
   }

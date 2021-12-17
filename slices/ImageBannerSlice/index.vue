@@ -1,5 +1,14 @@
 <template>
-  <section class="section site-padding mobile-full">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`section site-padding mobile-full waypoint ${
+      waypointActive ? 'active' : ''
+    }`"
+  >
     <element-section-bar
       class="section-bar"
       :number="slice.primary.SectionNumber"
@@ -10,6 +19,7 @@
       <prismic-image class="mobile" :field="slice.primary.MobileBanner" />
       <div class="button-container">
         <element-cta-button
+          class="btn"
           :link="slice.primary.CtaLink"
           :title="slice.primary.CtaTitle"
         />
@@ -19,8 +29,10 @@
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'ImageBannerSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,

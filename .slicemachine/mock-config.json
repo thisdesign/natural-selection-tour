@@ -10,30 +10,6 @@
         },
         "items": {}
       }
-    },
-    "HeroVideoSlice": {},
-    "CountdownSlice": {
-      "default-slice": {
-        "primary": {
-          "FooterContent": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
-    "CodeSlice": {
-      "default-slice": {
-        "items": {},
-        "primary": {}
-      }
-    },
-    "EventScheduleSlice": {
-      "default-slice": {
-        "items": {}
-      }
     }
   },
   "_cts": {
@@ -57,7 +33,13 @@
         }
       },
       "main-links": {},
-      "FooterPrimaryLinks": {}
+      "FooterPrimaryLinks": {},
+      "Intro": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
     }
   }
 }

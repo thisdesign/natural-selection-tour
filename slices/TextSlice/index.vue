@@ -1,5 +1,14 @@
 <template>
-  <section class="text-slice site-padding">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`text-slice site-padding waypoint ${
+      waypointActive ? 'active' : ''
+    }`"
+  >
     <element-section-bar
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
@@ -8,6 +17,8 @@
       <prismic-rich-text :field="slice.primary.Text" />
     </div>
     <element-cta-button
+      class="btn"
+      v-if="slice.primary.CtaTitle"
       :link="slice.primary.CtaLink"
       :title="slice.primary.CtaTitle"
     />
@@ -15,8 +26,10 @@
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'TextSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,

@@ -76,6 +76,7 @@ export default {
   data() {
     return {
       active: false,
+      playPromise: null,
     }
   },
   computed: {
@@ -83,23 +84,34 @@ export default {
       return this.$store.state.partners.results.logos
     },
   },
-  mounted() {
-    console.log(this.rider.data)
-  },
   methods: {
     updateCurrentRider() {
       this.$emit('update-rider', this.rider.data)
       if (this.$refs.riderVideo) {
-        this.$refs.riderVideo.play()
-        this.$refs.riderVideo.style.opacity = '1'
+        this.playPromise = this.$refs.riderVideo.play()
+        this.playPromise
+          .then(() => {
+            this.$refs.riderVideo.style.opacity = '1'
+          })
+          .catch((error) => {
+            this.$log(error)
+          })
       }
     },
     onMouseOut() {
       this.$emit('hidename')
       if (this.$refs.riderVideo) {
-        this.$refs.riderVideo.pause()
-        this.$refs.riderVideo.currentTime = 0
-        this.$refs.riderVideo.style.opacity = '0'
+        if (this.playPromise) {
+          this.playPromise
+            .then(() => {
+              this.$refs.riderVideo.pause()
+              this.$refs.riderVideo.currentTime = 0
+              this.$refs.riderVideo.style.opacity = '0'
+            })
+            .catch((error) => {
+              this.$log(error)
+            })
+        }
       }
     },
   },

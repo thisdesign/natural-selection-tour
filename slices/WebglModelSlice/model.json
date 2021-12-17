@@ -94,13 +94,6 @@
         }
       },
       "items": {
-        "Model": {
-          "config": {
-            "label": "Model",
-            "placeholder": ""
-          },
-          "type": "Embed"
-        },
         "Title": {
           "config": {
             "label": "Title",
@@ -118,6 +111,22 @@
             "default_value": true
           },
           "type": "Boolean"
+        },
+        "Model": {
+          "config": {
+            "label": "Model",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
+        },
+        "LinkLetter": {
+          "config": {
+            "label": "LinkLetter",
+            "placeholder": ""
+          },
+          "type": "Text"
         }
       }
     }

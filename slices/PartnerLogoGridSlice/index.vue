@@ -7,7 +7,7 @@
     <div v-if="slice.primary.title" class="partners-title">
       <prismic-rich-text :field="slice.primary.title" />
     </div>
-    <div class="partner-list">
+    <div class="partner-list large">
       <div
         v-for="(item, index) in featured"
         :key="`large-partner${index}`"
@@ -72,16 +72,26 @@ export default {
   @include media-breakpoint-up(sm) {
     padding: 0 10vw;
   }
+  &.large {
+    justify-content: center;
+  }
 }
 .partner {
+  padding: 0 20px;
   img {
     width: 100%;
   }
   &.large {
-    width: calc(100% / 3);
+    width: 50%;
+    @include media-breakpoint-up(sm) {
+      width: calc(100% / 3);
+    }
   }
   &.small {
-    width: calc(100% / 5);
+    width: calc(100% / 3);
+    @include media-breakpoint-up(sm) {
+      width: calc(100% / 5);
+    }
   }
 }
 </style>

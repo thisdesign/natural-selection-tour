@@ -29,6 +29,15 @@
         },
         "type": "Color"
       },
+      "ShowFooterCode": {
+        "config": {
+          "label": "Show Footer Code",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": true
+        },
+        "type": "Boolean"
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

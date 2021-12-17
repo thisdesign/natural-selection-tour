@@ -1,5 +1,15 @@
 <template>
-  <section class="video-hero section">
+  <section
+    ref="videoSection"
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`video-hero section waypoint ${waypointActive ? 'active' : ''}`"
+    @mousemove="onMouseMove"
+    @mouseleave="onMouseLeave"
+  >
     <div class="video-wrapper">
       <video
         :src="slice.primary.VideoLoop.url"
@@ -9,22 +19,26 @@
         playsinline
         loop
       ></video>
-      <button class="btn-play-video" @click="videoModalOpen = true">
+      <button
+        ref="playBtn"
+        class="btn-play-video"
+        @click="videoModalOpen = true"
+      >
         Play
       </button>
-      <div class="video-footer">
-        <div class="video-footer-logo">
-          <prismic-image :field="slice.primary.Logo" />
-        </div>
-        <div class="video-footer-items">
-          <div
-            v-for="(item, i) in slice.items"
-            :key="`video-footer-item-${i}`"
-            class="video-footer-item"
-          >
-            <prismic-rich-text :field="item.TextTop" />
-            <prismic-rich-text :field="item.TextBottom" />
-          </div>
+    </div>
+    <div class="video-footer site-padding">
+      <div class="video-footer-logo">
+        <prismic-image :field="slice.primary.Logo" />
+      </div>
+      <div class="video-footer-items font-sneak">
+        <div
+          v-for="(item, i) in slice.items"
+          :key="`video-footer-item-${i}`"
+          class="video-footer-item"
+        >
+          <prismic-rich-text :field="item.TextTop" />
+          <prismic-rich-text :field="item.TextBottom" />
         </div>
       </div>
     </div>
@@ -41,8 +55,11 @@
 </template>
 
 <script>
+import gsap from 'gsap'
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'HeroVideoSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,
@@ -55,10 +72,11 @@ export default {
   data() {
     return {
       videoModalOpen: false,
+      animationStartPercent: 2.5,
       videoOptions: {
         autoplay: true,
         controls: true,
-        fill: true,
+        fluid: true,
         poster: this.slice.primary.VideoPoster.url,
         sources: [
           {
@@ -69,6 +87,51 @@ export default {
       },
     }
   },
+  mounted() {},
+  methods: {
+    onMouseLeave() {
+      if (window.innerWidth < 1024) {
+        return
+      }
+      gsap.to(this.$refs.videoSection, {
+        paddingLeft: `${this.animationStartPercent}%`,
+        paddingRight: `${this.animationStartPercent}%`,
+        duration: 0.01,
+        ease: 'ease',
+      })
+    },
+
+    onMouseMove(e) {
+      if (window.innerWidth < 1024) {
+        return
+      }
+      const videoSection = this.$refs.videoSection
+      const videoSectionBox = videoSection.getBoundingClientRect()
+      // The pointer relative within the video section
+      const pointer = {
+        x: e.clientX - videoSectionBox.left,
+        y: e.clientY - videoSectionBox.top,
+      }
+      // The normalized values from 0 - 1
+      const normalized = {
+        x: Math.abs(pointer.x / videoSection.offsetWidth - 0.5),
+        y: Math.abs(pointer.y / videoSection.offsetHeight - 0.5),
+        get distance() {
+          return this.x + this.y
+        },
+      }
+      const targetPercent = normalized.distance * this.animationStartPercent
+      const percent =
+        targetPercent > 0.2 ? Math.min(2.5, targetPercent * 1.85) : 0
+
+      gsap.to(videoSection, {
+        paddingLeft: `${percent}%`,
+        paddingRight: `${percent}%`,
+        duration: 0.01,
+        ease: 'ease',
+      })
+    },
+  },
 }
 </script>
 
@@ -76,7 +139,7 @@ export default {
 .video-hero.section {
   p {
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 </style>
@@ -86,6 +149,7 @@ export default {
   color: white;
   position: relative;
   padding-bottom: 3rem;
+  transition: padding 0.5s;
   @include media-breakpoint-up(md) {
     padding: 0 2.5% 3rem;
   }
@@ -96,6 +160,9 @@ export default {
 }
 .video-modal {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -104,11 +171,13 @@ export default {
   background: black;
   padding: 3rem 0;
   @include media-breakpoint-up(md) {
-    padding: 5vw 0;
+    padding: clamp(1rem, 5vw, 5rem) 0;
   }
   .player {
     height: 100%;
     padding: 0;
+    max-width: 1400px;
+    margin: auto;
   }
 }
 .video-wrapper {
@@ -141,7 +210,6 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: none;
   border-radius: 10rem;
   font-size: clamp(2rem, 3.5vw, 3.5vw);
   padding: 4vw 10vw;
@@ -157,11 +225,10 @@ export default {
 }
 .video-footer {
   position: absolute;
-  bottom: 0;
+  bottom: 3rem;
   left: 2rem;
   width: calc(100% - 4rem);
   z-index: 1;
-  font-family: 'Sneak';
   text-transform: uppercase;
   padding-bottom: 2rem;
   @include media-breakpoint-up(md) {
@@ -178,7 +245,6 @@ export default {
   }
 }
 .video-footer-items {
-  // border-top: 1px solid rgba(252, 252, 252, 0.5);
   padding-top: 10px;
   display: flex;
   flex-direction: row;

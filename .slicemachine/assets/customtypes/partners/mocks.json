@@ -1,19 +1,20 @@
 {
-  "id": "70d09ee6-e5ba-4a1a-a3ec-12ee8b9bba0d",
-  "uid": "qui-et-consequatur",
+  "id": "0efba4e0-f6df-4f83-a4eb-38b793ce7823",
+  "uid": "odit-qui-rem",
   "type": "partners",
   "data": {
+    "ShowFooterCode": false,
     "FeaturedPartners": [
       {
         "Partner": {
           "link_type": "Web",
-          "url": "https://prismic.io"
+          "url": "http://twitter.com"
         }
       },
       {
         "Partner": {
           "link_type": "Web",
-          "url": "http://google.com"
+          "url": "https://prismic.io"
         }
       }
     ],
@@ -21,7 +22,7 @@
       {
         "Partner": {
           "link_type": "Web",
-          "url": "https://prismic.io"
+          "url": "http://twitter.com"
         }
       },
       {
@@ -33,25 +34,7 @@
       {
         "Partner": {
           "link_type": "Web",
-          "url": "http://google.com"
-        }
-      },
-      {
-        "Partner": {
-          "link_type": "Web",
           "url": "https://prismic.io"
-        }
-      },
-      {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
-        }
-      },
-      {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
         }
       }
     ]

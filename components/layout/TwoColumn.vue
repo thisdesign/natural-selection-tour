@@ -83,7 +83,10 @@ section {
   }
 }
 .status {
-  margin: 0 auto auto 0;
+  margin: 0 0 3rem 0;
+  @include media-breakpoint-up(sm) {
+    margin: 0 0 auto 0;
+  }
 }
 .status-title {
   display: block;
