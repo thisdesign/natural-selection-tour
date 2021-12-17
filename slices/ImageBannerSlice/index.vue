@@ -10,6 +10,7 @@
       <prismic-image class="mobile" :field="slice.primary.MobileBanner" />
       <div class="button-container">
         <element-cta-button
+          class="btn"
           :link="slice.primary.CtaLink"
           :title="slice.primary.CtaTitle"
         />

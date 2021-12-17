@@ -48,7 +48,7 @@
         </div>
         <element-cta-button
           v-if="!slice.primary.Featured"
-          class="section-cta-button"
+          class="btn section-cta-button"
           :link="slice.primary.CtaLink"
           :title="slice.primary.CtaText"
         />

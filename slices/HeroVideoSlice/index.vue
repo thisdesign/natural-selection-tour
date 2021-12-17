@@ -197,7 +197,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: none;
+  // border: none;
   border-radius: 10rem;
   font-size: clamp(2rem, 3.5vw, 3.5vw);
   padding: 4vw 10vw;

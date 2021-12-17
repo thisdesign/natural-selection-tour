@@ -29,7 +29,7 @@
         <div class="cta-row">
           <div class="button-container">
             <element-cta-button
-              class="cta-button"
+              class="cta-button btn"
               :link="slice.primary.CtaLink"
               :title="slice.primary.CtaTitle"
             />
