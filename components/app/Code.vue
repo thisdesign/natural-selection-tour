@@ -1,7 +1,14 @@
 <template>
   <section
     v-if="$store.state.ui.options.showCode"
-    class="section site-padding code-animation font-sneak"
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`section site-padding code-animation font-sneak waypoint ${
+      waypointActive ? 'active' : ''
+    }`"
   >
     <div class="columns">
       <div class="col indented">
@@ -68,8 +75,10 @@
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'CodeAnimation',
+  mixins: [WaypointMixin],
   computed: {
     globalData() {
       return this.$store.state.globals.results.data

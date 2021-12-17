@@ -1,5 +1,12 @@
 <template>
-  <div class="section countdown">
+  <div
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`section countdown waypoint ${waypointActive ? 'active' : ''}`"
+  >
     <layout-two-column
       :section-number="slice.primary.SectionNumber"
       :section-title="slice.primary.SectionTitle"
@@ -51,8 +58,10 @@
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'CountdownSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,

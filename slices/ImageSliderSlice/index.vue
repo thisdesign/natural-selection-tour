@@ -1,5 +1,12 @@
 <template>
-  <section class="section">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`section waypoint ${waypointActive ? 'active' : ''}`"
+  >
     <div class="slider-container">
       <div class="slider-wrapper">
         <div ref="slider" class="image-slider">
@@ -23,8 +30,10 @@
 
 <script>
 import { CubeSlider } from '@/scripts/CubeSlider'
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'ImageSliderSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,

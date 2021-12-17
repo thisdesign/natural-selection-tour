@@ -1,7 +1,12 @@
 <template>
   <section
-    class="section partners site-padding"
-    :class="{ 'no-image': !slice.primary.Hero }"
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    class="section partners site-padding waypoint"
+    :class="{ 'no-image': !slice.primary.Hero, active: waypointActive }"
   >
     <div class="content-col">
       <prismic-rich-text class="partners-title" :field="slice.primary.title" />
@@ -30,8 +35,10 @@
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'ImageContentHeroSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,

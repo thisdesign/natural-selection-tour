@@ -2,13 +2,7 @@
   <div class="webgl">
     <div class="wrapper">
       <h2 v-if="loading" class="loading">Loading...</h2>
-      <canvas
-        id="canvas"
-        ref="canvas"
-        class="canvas"
-        width="1400"
-        height="1400"
-      />
+      <canvas id="canvas" ref="canvas" class="canvas" />
     </div>
   </div>
 </template>
@@ -34,14 +28,8 @@ export default {
       loading: false,
     }
   },
-  watch: {
-    model(newModel) {
-      console.log('new model', newModel)
-    },
-  },
   mounted() {
     Viewer.init(this.$refs.canvas)
-    console.log('model', this.items)
     if (this.model !== '') {
       this.loading = true
       Viewer.laodModel(this.model).then(() => (this.loading = false))

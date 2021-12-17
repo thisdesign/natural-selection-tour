@@ -1,5 +1,12 @@
 <template>
-  <section class="rider-gallery-slice" @mousemove="updateMouse">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+    }"
+    :class="`rider-gallery-slice waypoint ${waypointActive ? 'active' : ''}`"
+    @mousemove="updateMouse"
+  >
     <div class="site-padding">
       <element-section-bar
         :number="slice.primary.SectionNumber"
@@ -97,12 +104,14 @@
 
 <script>
 import { slider, slideritem } from 'vue-concise-slider'
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'RiderGallerySlice',
   components: {
     slider,
     slideritem,
   },
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,

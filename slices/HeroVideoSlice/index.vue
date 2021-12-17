@@ -1,7 +1,12 @@
 <template>
   <section
     ref="videoSection"
-    class="video-hero section"
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`video-hero section waypoint ${waypointActive ? 'active' : ''}`"
     @mousemove="onMouseMove"
     @mouseleave="onMouseLeave"
   >
@@ -51,8 +56,10 @@
 
 <script>
 import gsap from 'gsap'
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'HeroVideoSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,
