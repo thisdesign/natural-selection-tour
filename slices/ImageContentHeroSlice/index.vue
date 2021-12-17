@@ -1,5 +1,8 @@
 <template>
-  <section class="section partners site-padding">
+  <section
+    class="section partners site-padding"
+    :class="{ 'no-image': !slice.primary.Hero }"
+  >
     <div class="content-col">
       <prismic-rich-text class="partners-title" :field="slice.primary.title" />
       <prismic-rich-text
@@ -7,12 +10,13 @@
         :field="slice.primary.description"
       />
       <element-cta-button
+        v-if="slice.primary.CtaTitle"
         class="partners-cta-btn"
         :link="slice.primary.CtaLink"
         :title="slice.primary.CtaTitle"
       />
     </div>
-    <div class="image-col">
+    <div v-if="slice.primary.Hero" class="image-col">
       <div class="inner">
         <div class="image-wrapper">
           <prismic-image :field="slice.primary.Hero" />
@@ -66,6 +70,22 @@ export default {
   @include media-breakpoint-up(sm) {
     min-height: 600px;
     height: 95vh;
+  }
+  &.no-image {
+    height: auto;
+    min-height: auto;
+    .content-col {
+      width: 100%;
+      @include media-breakpoint-up(sm) {
+        padding: 8rem 0;
+      }
+    }
+    .partners-description {
+      width: 100%;
+      margin: 0;
+      max-width: 800px;
+      margin-top: 3rem;
+    }
   }
 }
 

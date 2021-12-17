@@ -6,8 +6,8 @@
         id="canvas"
         ref="canvas"
         class="canvas"
-        width="500"
-        height="500"
+        width="1400"
+        height="1400"
       />
     </div>
   </div>
@@ -40,7 +40,6 @@ export default {
 
 <style lang="scss" scoped>
 .webgl {
-  // max-width: 500px;
   height: 100%;
 }
 .loading {

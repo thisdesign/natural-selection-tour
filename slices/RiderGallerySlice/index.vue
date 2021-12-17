@@ -38,7 +38,9 @@
             :key="`slice-item-options-${i}`"
             :value="`${item.Rider.id}, ${i}`"
           >
-            {{ getRider(item.Rider.id).data.Name[0].text }}
+            <span v-if="getRider(item.Rider.id).data">
+              {{ getRider(item.Rider.id).data.Name[0].text }}
+            </span>
           </option>
         </select>
       </div>
@@ -48,7 +50,10 @@
           :key="`slice-item-mobile-${i}`"
         >
           <div class="slider-image">
-            <prismic-image :field="getRider(item.Rider.id).data.Rider" />
+            <prismic-image
+              v-if="getRider(item.Rider.id).data"
+              :field="getRider(item.Rider.id).data.Rider"
+            />
           </div>
         </slideritem>
       </slider>
@@ -91,6 +96,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import { slider, slideritem } from 'vue-concise-slider'
 export default {
   name: 'RiderGallerySlice',

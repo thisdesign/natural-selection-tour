@@ -17,7 +17,7 @@
     />
     <template #footer>
       <prismic-rich-text
-        class="two-column-footer"
+        class="two-column-footer font-sneak"
         :field="slice.primary.SidebarFooterText"
       />
     </template>
@@ -77,7 +77,6 @@ export default {
   }
 }
 .two-column-footer {
-  font-family: 'Sneak';
   text-transform: uppercase;
 }
 </style>

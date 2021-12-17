@@ -1,7 +1,7 @@
 <template>
   <section
     v-if="$store.state.ui.options.showCode"
-    class="section site-padding code-animation"
+    class="section site-padding code-animation font-sneak"
   >
     <div class="columns">
       <div class="col indented">
@@ -110,7 +110,6 @@ export default {
 }
 .section {
   color: #fff;
-  font-family: 'Sneak', sans-serif;
   text-transform: uppercase;
   line-height: 1;
   border-top: 1px solid white;

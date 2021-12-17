@@ -35,14 +35,14 @@
             />
           </div>
           <prismic-rich-text
-            class="last-updated"
+            class="last-updated font-sneak"
             :field="slice.primary.FooterContent"
           />
         </div>
       </div>
       <template #footer>
         <prismic-rich-text
-          class="two-column-footer"
+          class="two-column-footer font-sneak"
           :field="slice.primary.SidebarFooterText"
         />
       </template>
@@ -147,6 +147,7 @@ export default {
     margin-left: 5%;
     font-size: 0.1em;
     font-family: 'Sneak';
+    letter-spacing: 0.05em;
     @include media-breakpoint-up(sm) {
       font-family: 'Natural-Selection';
       font-size: 1em;
@@ -163,19 +164,25 @@ export default {
   }
 
   .button-container {
-    width: calc(100% / 3 * 2);
-    margin-right: 20px;
+    width: 100%;
+    margin-top: 2rem;
+    @include media-breakpoint-up(sm) {
+      margin-right: 20px;
+      width: calc(100% / 3 * 2);
+    }
   }
   .cta-button {
-    // text-align: center;
-    // margin: 20vw 0 10vw;
-    // @include media-breakpoint-up(sm) {
-    //   margin: 0 25% 0 0;
-    //   width: 60%;
-    // }
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 3rem;
+    @include media-breakpoint-up(sm) {
+      padding: 0.5rem 0rem;
+      width: 75%;
+      margin-bottom: 0;
+    }
   }
   .two-column-footer {
-    font-family: 'Sneak';
     text-transform: uppercase;
     margin-top: 10vw;
     width: 85%;
@@ -186,12 +193,19 @@ export default {
     }
     p {
       font-size: clamp(0.6rem, 0.8vw, 0.8vw);
+      margin-bottom: 0;
     }
   }
   .last-updated {
     margin-top: 10vw;
+    margin-right: auto;
+    font-size: 10px;
     @include media-breakpoint-up(sm) {
       margin-top: 0;
+    }
+    * {
+      text-transform: uppercase;
+      font-size: clamp(0.6rem, 0.8vw, 0.8vw);
     }
   }
 }

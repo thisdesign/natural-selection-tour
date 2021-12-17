@@ -74,6 +74,7 @@ export default {
   }
 }
 .partner {
+  padding: 0 20px;
   img {
     width: 100%;
   }

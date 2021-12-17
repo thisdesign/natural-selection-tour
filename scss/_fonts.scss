@@ -1,22 +1,22 @@
 // typkit fonts
 // font-family: aktiv-grotesk, sans-serif; 400 normal 400 italic 700 bold 700 italic
-@import url("https://use.typekit.net/plv8mys.css");
+@import url('https://use.typekit.net/plv8mys.css');
 
 // google fonts
 // font-family: 'Sneak Mono', monospace;
 @font-face {
   font-family: 'Sneak';
-  src:  url('assets/fonts/Sneak-Mono.woff2') format('woff2'),
-        url('assets/fonts/Sneak-Mono.woff') format('woff');
+  src: url('assets/fonts/Sneak-Mono.woff2') format('woff2'),
+    url('assets/fonts/Sneak-Mono.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  letter-spacing: 5rem !important;
 }
-
 
 @font-face {
   font-family: 'Natural-Selection';
-  src:  url('assets/fonts/NaturalSelection.woff2') format('woff2'),
-        url('assets/fonts/NaturalSelection.woff') format('woff');
+  src: url('assets/fonts/NaturalSelection.woff2') format('woff2'),
+    url('assets/fonts/NaturalSelection.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
