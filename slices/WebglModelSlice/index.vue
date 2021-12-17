@@ -1,5 +1,13 @@
 <template>
-  <section class="section webgl" :class="{ featured: slice.primary.Featured }">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    class="section webgl waypoint"
+    :class="{ featured: slice.primary.Featured, active: waypointActive }"
+  >
     <div v-if="!slice.primary.Featured" class="site-padding">
       <element-section-bar
         :number="slice.primary.SectionNumber"
@@ -63,8 +71,10 @@
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'WebglModelSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,

@@ -1,5 +1,14 @@
 <template>
-  <section class="section event-section site-padding">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`section event-section site-padding waypoint ${
+      waypointActive ? 'active' : ''
+    }`"
+  >
     <div class="section-bar site-padding">
       <element-section-bar
         :number="slice.primary.SectionNumber"
@@ -53,13 +62,14 @@
 <script>
 import { slider, slideritem } from 'vue-concise-slider'
 import GetStatus from '@/mixins/GetStatus'
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'EventListSlice',
   components: {
     slider,
     slideritem,
   },
-  mixins: [GetStatus],
+  mixins: [GetStatus, WaypointMixin],
   props: {
     slice: {
       type: Object,

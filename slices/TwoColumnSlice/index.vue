@@ -1,32 +1,46 @@
 <template>
-  <layout-two-column
-    :section-number="slice.primary.SectionNumber"
-    :section-title="slice.primary.SectionTitle"
-    :sidebar-status="slice.primary.SidebarStatus"
-    :sidebar-section-number="slice.primary.SidebarSectionNumber"
-    :sidebar-section-title="slice.primary.SidebarSectionTitle"
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`waypoint ${waypointActive ? 'active' : ''}`"
   >
-    <prismic-rich-text class="two-column-title" :field="slice.primary.title" />
-    <prismic-rich-text
-      class="two-column-description"
-      :field="slice.primary.description"
-    />
-    <prismic-rich-text
-      class="two-column-content"
-      :field="slice.primary.Content"
-    />
-    <template #footer>
+    <layout-two-column
+      :section-number="slice.primary.SectionNumber"
+      :section-title="slice.primary.SectionTitle"
+      :sidebar-status="slice.primary.SidebarStatus"
+      :sidebar-section-number="slice.primary.SidebarSectionNumber"
+      :sidebar-section-title="slice.primary.SidebarSectionTitle"
+    >
       <prismic-rich-text
-        class="two-column-footer font-sneak"
-        :field="slice.primary.SidebarFooterText"
+        class="two-column-title"
+        :field="slice.primary.title"
       />
-    </template>
-  </layout-two-column>
+      <prismic-rich-text
+        class="two-column-description"
+        :field="slice.primary.description"
+      />
+      <prismic-rich-text
+        class="two-column-content"
+        :field="slice.primary.Content"
+      />
+      <template #footer>
+        <prismic-rich-text
+          class="two-column-footer font-sneak"
+          :field="slice.primary.SidebarFooterText"
+        />
+      </template>
+    </layout-two-column>
+  </section>
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'TwoColumnSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,

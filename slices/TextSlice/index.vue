@@ -1,5 +1,14 @@
 <template>
-  <section class="text-slice site-padding">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`text-slice site-padding waypoint ${
+      waypointActive ? 'active' : ''
+    }`"
+  >
     <element-section-bar
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
@@ -16,8 +25,10 @@
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'TextSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,
