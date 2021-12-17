@@ -14,7 +14,6 @@ https://www.slicemachine.dev/documentation/nuxt/add-the-slice-zone-to-your-page
 import ImageContentHeroSlice from '@/slices/ImageContentHeroSlice'
 import PartnerLogoGridSlice from '@/slices/PartnerLogoGridSlice'
 import CodeSlice from '@/slices/CodeSlice'
-
 export default {
   components: {
     ImageContentHero: ImageContentHeroSlice,

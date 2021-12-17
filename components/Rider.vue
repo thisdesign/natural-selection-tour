@@ -83,9 +83,6 @@ export default {
       return this.$store.state.partners.results.logos
     },
   },
-  mounted() {
-    console.log(this.rider.data)
-  },
   methods: {
     updateCurrentRider() {
       this.$emit('update-rider', this.rider.data)
