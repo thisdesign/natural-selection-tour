@@ -3,7 +3,6 @@
     v-waypoint="{
       active: true,
       callback: onWaypoint,
-      options: { threshold: [0.15, 0.85] },
     }"
     :class="`rider-gallery-slice waypoint ${waypointActive ? 'active' : ''}`"
     @mousemove="updateMouse"
