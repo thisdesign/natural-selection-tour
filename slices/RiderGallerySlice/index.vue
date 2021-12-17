@@ -9,7 +9,7 @@
     <div class="site-padding">
       <div class="desktop-gallery">
         <rider
-          v-for="(item, i) in slice.items"
+          v-for="(item, i) in sliceItems"
           :key="`slice-item-${i}`"
           :rider="getRider(item.Rider.id)"
           @update-rider="updateCurrentRider"
@@ -34,7 +34,7 @@
         >
           <option disabled value="" selected>▼ Select A Rider</option>
           <option
-            v-for="(item, i) in slice.items"
+            v-for="(item, i) in sliceItems"
             :key="`slice-item-options-${i}`"
             :value="`${item.Rider.id}, ${i}`"
           >
@@ -46,7 +46,7 @@
       </div>
       <slider ref="riderSlider" :options="riderSliderOptions" @slide="onSlide">
         <slideritem
-          v-for="(item, i) in slice.items"
+          v-for="(item, i) in sliceItems"
           :key="`slice-item-mobile-${i}`"
         >
           <div class="slider-image">
@@ -96,7 +96,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 import { slider, slideritem } from 'vue-concise-slider'
 export default {
   name: 'RiderGallerySlice',
@@ -133,12 +132,17 @@ export default {
     riders() {
       return this.$store.state.riders.results
     },
+    sliceItems() {
+      return this.slice.items.filter((item) => {
+        return item.Rider.id
+      })
+    },
   },
   mounted() {
     const section = document.querySelector('.rider-gallery-slice')
     const header = document.querySelector('header')
     section.style.paddingTop = `${header.offsetHeight}px`
-    this.currentMobileRider = this.getRider(this.slice.items[0].Rider.id)
+    this.currentMobileRider = this.getRider(this.sliceItems[0].Rider.id)
     window.addEventListener('resize', () => {
       this.sliderResize()
     })
@@ -165,11 +169,11 @@ export default {
       this.$refs.riderSlider.$emit('slideTo', parseInt(value[1]))
     },
     onSlide(data) {
-      if (data.currentPage >= 0 && data.currentPage < this.slice.items.length) {
+      if (data.currentPage >= 0 && data.currentPage < this.sliceItems.length) {
         this.currentMobileRider = this.getRider(
-          this.slice.items[data.currentPage].Rider.id,
+          this.sliceItems[data.currentPage].Rider.id,
         )
-        this.selectedRider = `${this.slice.items[data.currentPage].Rider.id}, ${
+        this.selectedRider = `${this.sliceItems[data.currentPage].Rider.id}, ${
           data.currentPage
         }`
       }
@@ -245,7 +249,6 @@ export default {
     font-size: 2vw;
     display: table-caption;
     width: 80%;
-    word-spacing: 500px;
   }
 }
 

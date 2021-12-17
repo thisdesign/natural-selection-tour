@@ -7,7 +7,7 @@
     <div v-if="slice.primary.title" class="partners-title">
       <prismic-rich-text :field="slice.primary.title" />
     </div>
-    <div class="partner-list">
+    <!-- <div class="partner-list">
       <div
         v-for="(item, index) in featured"
         :key="`large-partner${index}`"
@@ -17,7 +17,7 @@
           <prismic-image :field="item.logo" />
         </nuxt-link>
       </div>
-    </div>
+    </div> -->
     <div class="partner-list">
       <div
         v-for="(item, index) in partners"
@@ -75,14 +75,20 @@ export default {
 }
 .partner {
   padding: 0 20px;
+  width: calc(100% / 3);
+  @include media-breakpoint-up(sm) {
+    width: calc(100% / 5);
+  }
   img {
     width: 100%;
   }
-  &.large {
-    width: calc(100% / 3);
+  &:nth-child(-n + 2) {
+    width: 50%;
   }
-  &.small {
-    width: calc(100% / 5);
+  &:nth-child(-n + 3) {
+    @include media-breakpoint-up(sm) {
+      width: calc(100% / 3);
+    }
   }
 }
 </style>

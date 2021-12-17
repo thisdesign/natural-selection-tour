@@ -83,6 +83,9 @@ export default {
   mounted() {},
   methods: {
     onMouseLeave() {
+      if (window.innerWidth < 1024) {
+        return
+      }
       gsap.to(this.$refs.videoSection, {
         paddingLeft: `${this.animationStartPercent}%`,
         paddingRight: `${this.animationStartPercent}%`,
@@ -92,6 +95,9 @@ export default {
     },
 
     onMouseMove(e) {
+      if (window.innerWidth < 1024) {
+        return
+      }
       const videoSection = this.$refs.videoSection
       const videoSectionBox = videoSection.getBoundingClientRect()
       // The pointer relative within the video section
@@ -197,7 +203,6 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  // border: none;
   border-radius: 10rem;
   font-size: clamp(2rem, 3.5vw, 3.5vw);
   padding: 4vw 10vw;
@@ -233,7 +238,6 @@ export default {
   }
 }
 .video-footer-items {
-  // border-top: 1px solid rgba(252, 252, 252, 0.5);
   padding-top: 10px;
   display: flex;
   flex-direction: row;
