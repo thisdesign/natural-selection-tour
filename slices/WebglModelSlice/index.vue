@@ -63,6 +63,7 @@
         <media-webgl-player
           v-if="!slice.primary.Featured"
           :model="slice.items[0].Model.url"
+          class="webgl-player"
           :class="{ featured: slice.primary.Featured }"
         />
       </div>
