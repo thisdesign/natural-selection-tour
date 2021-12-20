@@ -4,7 +4,7 @@
     :style="{ 'z-index': index }"
   >
     <img
-      :src="`/riders/${data.fileName}`"
+      :src="`${data.fileName}`"
       :alt="data.name"
       :style="{ transform: `rotate(${data.rotation}deg)` }"
     />

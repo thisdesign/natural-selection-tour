@@ -13,9 +13,19 @@
         :key="`large-partner${index}`"
         class="partner large"
       >
-        <nuxt-link :to="`/partner/${item.uid}`">
+        <nuxt-link
+          v-if="slice.primary.UseExternalLinks !== true"
+          :to="`/partner/${item.uid}`"
+        >
           <prismic-image :field="item.logo" />
         </nuxt-link>
+        <a
+          v-if="slice.primary.UseExternalLinks === true"
+          :href="item.link ? item.link : 'https://prismic.io'"
+          target="_blank"
+        >
+          <prismic-image :field="item.logo" />
+        </a>
       </div>
     </div>
     <div class="partner-list">
@@ -24,9 +34,19 @@
         :key="`small-partner${index}`"
         class="partner small"
       >
-        <nuxt-link :to="`/partner/${item.uid}`">
+        <nuxt-link
+          v-if="slice.primary.UseExternalLinks !== true"
+          :to="`/partner/${item.uid}`"
+        >
           <prismic-image :field="item.logo" />
         </nuxt-link>
+        <a
+          v-if="slice.primary.UseExternalLinks === true"
+          :href="item.link ? item.link : 'https://prismic.io'"
+          target="_blank"
+        >
+          <prismic-image :field="item.logo" />
+        </a>
       </div>
     </div>
   </section>

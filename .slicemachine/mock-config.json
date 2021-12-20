@@ -10,6 +10,11 @@
         },
         "items": {}
       }
+    },
+    "PartnerLogoGridSlice": {
+      "default-slice": {
+        "primary": {}
+      }
     }
   },
   "_cts": {

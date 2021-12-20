@@ -33,6 +33,15 @@
             "allowTargetBlank": false,
             "single": "heading2"
           }
+        },
+        "UseExternalLinks": {
+          "config": {
+            "label": "UseExternalLinks",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          },
+          "type": "Boolean"
         }
       },
       "items": {}

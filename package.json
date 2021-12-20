@@ -28,7 +28,7 @@
     "babylonjs": "^4.2.0",
     "babylonjs-loaders": "^4.2.0",
     "cookies": "^0.8.0",
-    "gsap": "^3.8.0",
+    "gsap": "npm:@gsap/shockingly@^3.9.0",
     "js-logger": "^1.6.1",
     "nuxt": "^2.15.8",
     "nuxt-sm": "^0.0.8",

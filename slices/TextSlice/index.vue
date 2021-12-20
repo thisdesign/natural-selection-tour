@@ -16,9 +16,12 @@
     <div class="rte">
       <prismic-rich-text :field="slice.primary.Text" />
     </div>
+    <!-- <div>
+      <animation-split-text ref="animateText" />
+    </div> -->
     <element-cta-button
-      class="btn"
       v-if="slice.primary.CtaTitle"
+      class="btn"
       :link="slice.primary.CtaLink"
       :title="slice.primary.CtaTitle"
     />
@@ -38,6 +41,18 @@ export default {
         return {}
       },
     },
+  },
+  watch: {
+    waypointActive(newWaypoint) {
+      if (newWaypoint && this.$refs.animateText) {
+        this.$refs.animateText.animate()
+      }
+    },
+  },
+  mounted() {
+    if (this.waypointActive && this.$refs.animateText) {
+      this.$refs.animateText.animate()
+    }
   },
 }
 </script>

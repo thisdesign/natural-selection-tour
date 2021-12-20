@@ -40,26 +40,10 @@
 import gsap from 'gsap'
 import { CSSPlugin } from 'gsap/all'
 import { getRandumNum, shuffle } from './util'
-import { RIDERS, LENGTH } from './constants'
+import { LENGTH } from './constants'
 import Rider from './Rider'
 
 gsap.registerPlugin(CSSPlugin)
-
-const ridersAndPositions = RIDERS.map((item, i) => ({
-  ...item,
-  rotation: getRandumNum(),
-}))
-
-const initialState = {
-  selectedRiders: [],
-  ridersToShuffle: [],
-  unselectedRiders: [...ridersAndPositions],
-  currentSelectedRider: null,
-  ridersRemaining: ridersAndPositions.length,
-  animating: false,
-  ridersSelectedCount: 0,
-  ridersRemainingCount: ridersAndPositions.length,
-}
 
 export default {
   name: 'RiderRandomizerSlice',
@@ -69,7 +53,9 @@ export default {
   data() {
     return {
       tl: gsap.timeline(),
-      state: initialState,
+      ridersAndPositions: [],
+      initialState: {},
+      state: {},
     }
   },
   computed: {
@@ -92,11 +78,36 @@ export default {
     },
   },
   watch: {
-    state(newState, oldState) {
+    state(newState) {
       if (newState.ridersRemainingCount === 0) {
         gsap.set('.js-rider', { opacity: 1 })
       }
     },
+  },
+  created() {
+    const RIDERS = this.$store.state.riders.results
+    const RIDERS_POSITIONS = Object.keys(RIDERS).map((key, i) => {
+      const RIDER = RIDERS[key]
+      return {
+        name: RIDER.data.Name[0].text,
+        fileName: RIDER.data.Rider.url,
+        rotation: getRandumNum(),
+      }
+    })
+
+    this.initialState = {
+      selectedRiders: [],
+      ridersToShuffle: [],
+      unselectedRiders: [...RIDERS_POSITIONS],
+      currentSelectedRider: null,
+      ridersRemaining: RIDERS_POSITIONS.length,
+      animating: false,
+      ridersSelectedCount: 0,
+      ridersRemainingCount: RIDERS_POSITIONS.length,
+    }
+
+    this.ridersAndPositions = RIDERS_POSITIONS
+    this.state = this.initialState
   },
   updated() {
     if (!this.state.currentSelectedRider) return
@@ -145,12 +156,12 @@ export default {
       })
     },
     resetDefaults() {
-      this.state = initialState
+      this.state = this.initialState
     },
     randomlySelectRider() {
       if (this.state.animating) return
       if (this.state.ridersRemainingCount === 0) {
-        this.state = initialState
+        this.state = this.initialState
       }
       const randomnIndex = Math.floor(
         Math.random() * this.state.unselectedRiders.length,
@@ -204,6 +215,8 @@ export default {
   width: 100%;
   height: 100vh;
   opacity: 0.8;
+  list-style: none;
+  padding: 0;
 }
 
 .title {
@@ -218,7 +231,7 @@ export default {
 }
 
 .logo {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);

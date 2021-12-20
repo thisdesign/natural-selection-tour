@@ -13,7 +13,7 @@ export default {
   ssr: false,
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'naturalselectiontour',
+    title: 'Natural Selection Tour',
     htmlAttrs: {
       lang: 'en',
       prefix: 'og: http://ogp.me/ns#',
@@ -29,7 +29,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: '',
+        content: 'Natural Selection Tour to Redefine Snowboarding Competition',
       },
       {
         property: 'og:url',
@@ -37,7 +37,7 @@ export default {
       },
       {
         property: 'og:title',
-        content: 'naturalselectiontour',
+        content: 'Natural Selection Tour',
       },
       {
         property: 'og:type',
@@ -45,19 +45,12 @@ export default {
       },
       {
         property: 'og:description',
-        content: '',
+        content: 'Natural Selection Tour to Redefine Snowboarding Competition',
       },
       {
         property: 'og:image',
-        content: 'https://naturalselectiontour.com/share.jpg',
-      },
-      {
-        property: 'og:height',
-        content: '630',
-      },
-      {
-        property: 'og:width',
-        content: '1200',
+        content:
+          'https://images.prismic.io/naturalselectiontour/68f6a626-23b3-4935-aa1b-2ae18589b5c2_NaturalSelection_Logomark_Horizontal_WhiteTM.png?auto=compress,format',
       },
       {
         name: 'twitter:card',
@@ -65,15 +58,16 @@ export default {
       },
       {
         name: 'twitter:title',
-        content: 'naturalselectiontour',
+        content: 'Natural Selection Tour',
       },
       {
         name: 'twitter:description',
-        content: '',
+        content: 'Natural Selection Tour to Redefine Snowboarding Competition',
       },
       {
         name: 'twitter:image',
-        content: 'https://naturalselectiontour.com/share.jpg',
+        content:
+          'https://images.prismic.io/naturalselectiontour/68f6a626-23b3-4935-aa1b-2ae18589b5c2_NaturalSelection_Logomark_Horizontal_WhiteTM.png?auto=compress,format',
       },
     ],
     link: [
