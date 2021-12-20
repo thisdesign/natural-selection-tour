@@ -7,6 +7,7 @@
       options: { threshold: [0.15, 0.85] },
     }"
     :class="`video-hero section waypoint ${waypointActive ? 'active' : ''}`"
+    :style="[videoModalOpen ? { zIndex: 100 } : '']"
     @mousemove="onMouseMove"
     @mouseleave="onMouseLeave"
   >
@@ -19,11 +20,7 @@
         playsinline
         loop
       ></video>
-      <button
-        ref="playBtn"
-        class="btn-play-video"
-        @click="videoModalOpen = true"
-      >
+      <button ref="playBtn" class="btn-play-video" @click="toggleVideoModal">
         Play
       </button>
     </div>
@@ -42,9 +39,9 @@
         </div>
       </div>
     </div>
-    <div v-if="videoModalOpen" class="video-modal">
+    <div v-if="videoModalOpen" ref="videoModal" class="video-modal">
       <div class="close-btn-wrapper">
-        <button class="close-btn" @click="videoModalOpen = false">
+        <button class="close-btn" @click="toggleVideoModal">
           <span></span>
           <span></span>
         </button>
@@ -89,6 +86,10 @@ export default {
   },
   mounted() {},
   methods: {
+    toggleVideoModal() {
+      this.videoModalOpen = !this.videoModalOpen
+    },
+
     onMouseLeave() {
       if (window.innerWidth < 1024) {
         return
@@ -167,7 +168,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1000;
+  z-index: 10;
   background: black;
   padding: 3rem 0;
   @include media-breakpoint-up(md) {
