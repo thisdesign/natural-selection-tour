@@ -54,7 +54,10 @@
               v-if="item.Partner.uid"
               :to="`/partners/${item.Partner.uid}`"
             >
-              <prismic-image :field="logos[item.Partner.uid]" />
+              <prismic-image
+                v-if="logos[item.Partner.uid]"
+                :field="logos[item.Partner.uid]"
+              />
             </nuxt-link>
           </div>
         </div>

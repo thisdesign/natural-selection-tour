@@ -14,6 +14,7 @@
             v-for="(item, i) in slice.items"
             :key="`slice-item-${i}`"
             class="slide"
+            :class="{ single: slice.items.length < 2 }"
           >
             <div class="slide-image">
               <prismic-image :field="item.Image" />
@@ -21,7 +22,7 @@
           </div>
         </div>
       </div>
-      <div @click="slideNext">
+      <div v-if="slice.items.length > 1" @click="slideNext">
         <element-btn-slide-next class="slide-next-btn" />
       </div>
     </div>
@@ -44,9 +45,7 @@ export default {
     },
   },
   data() {
-    return {
-      mockimages: [1, 2, 3, 4],
-    }
+    return {}
   },
   mounted() {
     this.slider = new CubeSlider(this.$refs.slider)
@@ -139,6 +138,10 @@ export default {
     @include media-breakpoint-up(sm) {
       transform: translateX(1vw);
       width: 99vw;
+    }
+    &.single {
+      width: 100vw;
+      transform: none;
     }
   }
   &.next {

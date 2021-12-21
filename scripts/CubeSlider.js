@@ -6,7 +6,21 @@ export class CubeSlider {
     this.slideDuration = 1000
     this.rotating = false
     this.slides = this.slider.querySelectorAll('.slide')
-    if (this.slides.length < 2) return
+
+    // If only 1 slide, there's nothing to slide
+    if (this.slides.length < 2) {
+      this.slides[0].classList.add('current')
+      return
+    }
+
+    if (this.slides.length < 3) {
+      const slideCopy1 = this.slides[0].cloneNode(true)
+      const slideCopy2 = this.slides[1].cloneNode(true)
+      this.slider.appendChild(slideCopy1)
+      this.slider.appendChild(slideCopy2)
+      this.slides = this.slider.querySelectorAll('.slide')
+    }
+
     this.currentSlide = this.slides[0]
     this.nextSlide = this.slides[1]
     this.prevSlide = this.slides[this.slides.length - 1]
@@ -39,9 +53,9 @@ export class CubeSlider {
     this.nextSlide.classList.remove('next')
     this.currentSlide.classList.remove('current')
     this.prevSlide.classList.remove('previous')
-    this.rotation = 0
-    this.slider.style.transition = `none`
-    this.slider.style.transform = `rotateY(-${this.rotation}deg)`
+    // this.rotation = 0
+    // this.slider.style.transition = `none`
+    // this.slider.style.transform = `rotateY(-${this.rotation}deg)`
 
     //   Update slides
     this.currentSlide = this.slides[this.currentIndex]
