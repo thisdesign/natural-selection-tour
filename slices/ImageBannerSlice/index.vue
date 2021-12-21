@@ -10,6 +10,7 @@
     }`"
   >
     <element-section-bar
+      ref="bar"
       class="section-bar"
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
@@ -40,6 +41,13 @@ export default {
       default() {
         return {}
       },
+    },
+  },
+  watch: {
+    waypointActive() {
+      if (this.$refs.bar) {
+        this.$refs.bar.show()
+      }
     },
   },
 }

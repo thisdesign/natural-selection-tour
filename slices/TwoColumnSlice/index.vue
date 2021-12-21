@@ -13,6 +13,7 @@
       :sidebar-status="slice.primary.SidebarStatus"
       :sidebar-section-number="slice.primary.SidebarSectionNumber"
       :sidebar-section-title="slice.primary.SidebarSectionTitle"
+      :should-show="waypointActive"
     >
       <prismic-rich-text
         class="two-column-title"

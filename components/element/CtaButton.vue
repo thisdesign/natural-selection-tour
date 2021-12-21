@@ -1,5 +1,6 @@
 <template>
-  <prismic-link :field="link">{{ title }}</prismic-link>
+  <a v-if="url !== ''" class="btn" :href="url" target="_blank">{{ title }}</a>
+  <prismic-link v-else :field="link">{{ title }}</prismic-link>
 </template>
 <script>
 export default {
@@ -7,6 +8,10 @@ export default {
     link: {
       default: () => {},
       type: Object,
+    },
+    url: {
+      default: '',
+      type: String,
     },
     title: {
       default: '',

@@ -10,6 +10,7 @@
     }`"
   >
     <element-section-bar
+      ref="bar"
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
@@ -48,6 +49,9 @@ export default {
     waypointActive(newWaypoint) {
       if (newWaypoint && this.$refs.animateText) {
         this.$refs.animateText.animate()
+      }
+      if (newWaypoint && this.$refs.bar) {
+        this.$refs.bar.show()
       }
     },
   },

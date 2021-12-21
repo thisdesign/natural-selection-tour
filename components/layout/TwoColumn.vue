@@ -1,11 +1,16 @@
 <template>
   <section class="section site-padding">
     <div class="col col-left">
-      <element-section-bar :number="sectionNumber" :title="sectionTitle" />
+      <element-section-bar
+        ref="mainBar"
+        :number="sectionNumber"
+        :title="sectionTitle"
+      />
       <slot></slot>
     </div>
-    <div class="col col-right">
+    <div :class="`col col-right ${shouldShow ? 'show' : ''}`">
       <element-section-bar
+        ref="sideBar"
         :number="sidebarSectionNumber"
         :title="sidebarSectionTitle"
       />
@@ -14,7 +19,6 @@
         <element-status-icon class="status-icon" :status="sidebarStatus" />
       </div>
       <slot name="footer"></slot>
-      <!-- <prismic-rich-text :field="slice.primary.SidebarFooterText" /> -->
     </div>
   </section>
 </template>
@@ -44,6 +48,10 @@ export default {
       type: String,
       default: '',
     },
+    shouldShow: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -53,6 +61,18 @@ export default {
   computed: {
     statusTitle() {
       return this.sidebarStatus ? this.sidebarStatus.replace('-', ' ') : ''
+    },
+  },
+  watch: {
+    shouldShow() {
+      if (this.$refs.mainBar) {
+        this.$refs.mainBar.show()
+      }
+      if (this.$refs.sideBar) {
+        setTimeout(() => {
+          this.$refs.sideBar.show()
+        }, 500)
+      }
     },
   },
   methods: {},
@@ -75,6 +95,13 @@ section {
   }
 }
 .col-right {
+  transition: opacity 0.5s ease-out 0.5s, transform 0.5s ease-out 0.5s;
+  opacity: 0;
+  transform: translateY(5vh);
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
   @include media-breakpoint-up(sm) {
     width: 25%;
     display: flex;

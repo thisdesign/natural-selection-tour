@@ -1,11 +1,13 @@
 <template lang="pug">
-  .section-bar.font-sneak
+  .section-bar.font-sneak(ref='bar')
     <div class="section-title">{{number}}_{{title}}</div>
-    <div  class="section-number">{{number}}</div>
+    <div class="section-number">{{number}}</div>
 </template>
 
 <script>
+import gsap, { SplitText } from 'gsap/all'
 export default {
+  name: 'SectionBar',
   props: {
     title: {
       type: String,
@@ -14,6 +16,47 @@ export default {
     number: {
       type: String,
       default: '',
+    },
+  },
+  data() {
+    return {
+      timeline: null,
+    }
+  },
+  mounted() {
+    this.timeline = gsap.timeline({ paused: true })
+    const titleSpitText = new SplitText(
+      this.$refs.bar.querySelector('.section-title'),
+      { type: 'chars' },
+    )
+    const numberSpitText = new SplitText(
+      this.$refs.bar.querySelector('.section-number'),
+      { type: 'chars' },
+    )
+    this.timeline.fromTo(
+      titleSpitText.chars,
+      { opacity: 0 },
+      {
+        duration: 0.2,
+        opacity: 1,
+        stagger: 0.05,
+      },
+      0.5,
+    )
+    this.timeline.fromTo(
+      numberSpitText.chars,
+      { opacity: 0 },
+      {
+        duration: 0.2,
+        opacity: 1,
+        stagger: 0.05,
+      },
+      1,
+    )
+  },
+  methods: {
+    show() {
+      this.timeline.play()
     },
   },
 }

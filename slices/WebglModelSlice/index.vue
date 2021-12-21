@@ -10,6 +10,7 @@
   >
     <div v-if="!slice.primary.Featured" class="site-padding">
       <element-section-bar
+        ref="bar"
         :number="slice.primary.SectionNumber"
         :title="slice.primary.SectionTitle"
       />
@@ -89,6 +90,13 @@ export default {
     return {
       indexLetters: ['A', 'B', 'C', 'D'],
     }
+  },
+  watch: {
+    waypointActive() {
+      if (this.$refs.bar) {
+        this.$refs.bar.show()
+      }
+    },
   },
 }
 </script>

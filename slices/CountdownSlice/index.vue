@@ -13,6 +13,7 @@
       :sidebar-status="slice.primary.SidebarStatus"
       :sidebar-section-number="slice.primary.SidebarSectionNumber"
       :sidebar-section-title="slice.primary.SidebarSectionTitle"
+      :should-show="waypointActive"
     >
       <div class="countdown">
         <prismic-rich-text
@@ -37,7 +38,7 @@
           <div class="button-container">
             <element-cta-button
               class="cta-button btn"
-              :link="slice.primary.CtaLink"
+              :url="slice.primary.CtaLink.url"
               :title="slice.primary.CtaTitle"
             />
           </div>
