@@ -11,7 +11,19 @@
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
-    <div v-if="!isLoading" class="events">
+    <div class="events">
+      <div class="event">
+        <div class="event-image"></div>
+        <div class="event-date">
+          <span class="month"> 12 </span>
+          <span class="day"> 02 </span>
+        </div>
+        <div class="event-description">
+          <h5>12, 06 23rd</h5>
+          <div>event title</div>
+        </div>
+      </div>
+
       <div
         v-for="(event, index) in eventItems"
         :key="`event${index}`"
@@ -19,14 +31,16 @@
         :class="{ hidden: index >= amountToShow && collapsed }"
       >
         <div class="event-image">
-          <img :src="event.image" />
+          <img v-if="event.image" :src="event.image" />
         </div>
         <div class="event-date">
           <span class="month">
-            {{ eventMonth(event.start) }}
+            <!-- {{ eventMonth(event.start) }} -->
+            12
           </span>
           <span class="day">
-            {{ eventDay(event.start) }}
+            02
+            <!-- {{ eventDay(event.start) }} -->
           </span>
         </div>
         <div class="event-description">
@@ -176,6 +190,9 @@ a {
     font-size: 20vw;
     @include media-breakpoint-up(sm) {
       font-size: 5vw;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 4.3vw;
     }
   }
 }
