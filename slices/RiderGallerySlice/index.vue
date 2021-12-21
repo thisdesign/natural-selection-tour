@@ -39,7 +39,7 @@
           class="select-rider"
           @change="onRiderSelect"
         >
-          <option disabled value="" selected>▼ Select A Rider</option>
+          <option disabled value="" selected>▼ Select Rider</option>
           <option
             v-for="(item, i) in sliceItems"
             :key="`slice-item-options-${i}`"
@@ -173,6 +173,7 @@ export default {
       }
     },
     onRiderSelect(data) {
+      this.selectedRider = ''
       const value = data.target.value.split(',')
       this.currentMobileRider = this.getRider(value[0])
       this.$refs.riderSlider.$emit('slideTo', parseInt(value[1]))
@@ -182,9 +183,9 @@ export default {
         this.currentMobileRider = this.getRider(
           this.sliceItems[data.currentPage].Rider.id,
         )
-        this.selectedRider = `${this.sliceItems[data.currentPage].Rider.id}, ${
-          data.currentPage
-        }`
+        // this.selectedRider = `${this.sliceItems[data.currentPage].Rider.id}, ${
+        //   data.currentPage
+        // }`
       }
     },
     getRider(key) {
@@ -348,5 +349,8 @@ export default {
   span {
     display: block;
   }
+}
+.rider-description {
+  padding-bottom: 60px;
 }
 </style>
