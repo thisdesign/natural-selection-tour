@@ -37,17 +37,17 @@ class Viewer {
     // camera.setPosition(new BABYLON.Vector3(0, Math.PI, 11))
     camera.attachControl(this.canvas, false)
     camera.inputs.remove(camera.inputs.attached.mousewheel)
-    camera.alpha = 0
+    camera.alpha = Math.PI * 0.15
     camera.lowerAlphaLimit = -Math.PI * 0.25
     camera.upperAlphaLimit = Math.PI * 0.25
 
-    camera.beta = Math.PI * 0.3
+    camera.beta = Math.PI * 0.4
     camera.lowerBetaLimit = Math.PI * 0.2
     camera.upperBetaLimit = Math.PI * 0.45
 
-    camera.radius = 11
-    camera.lowerRadiusLimit = 11
-    camera.upperRadiusLimit = 11
+    camera.radius = 10
+    camera.lowerRadiusLimit = 10
+    camera.upperRadiusLimit = 10
 
     const light = new BABYLON.HemisphericLight(
       'light1',

@@ -8,6 +8,7 @@
     :class="`section site-padding waypoint ${waypointActive ? 'active' : ''}`"
   >
     <element-section-bar
+      ref="bar"
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
@@ -75,6 +76,13 @@ export default {
     },
     eventItems() {
       return this.$store.state.events.items
+    },
+  },
+  watch: {
+    waypointActive(active) {
+      if (this.$refs.bar) {
+        this.$refs.bar.show()
+      }
     },
   },
   methods: {

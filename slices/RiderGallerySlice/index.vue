@@ -9,6 +9,7 @@
   >
     <div class="site-padding">
       <element-section-bar
+        ref="bar"
         :number="slice.primary.SectionNumber"
         :title="slice.primary.SectionTitle"
       />
@@ -145,6 +146,13 @@ export default {
       return this.slice.items.filter((item) => {
         return item.Rider.id
       })
+    },
+  },
+  watch: {
+    waypointActive(active) {
+      if (this.$refs.bar) {
+        this.$refs.bar.show()
+      }
     },
   },
   mounted() {

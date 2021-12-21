@@ -1,6 +1,14 @@
 <template>
-  <section class="section site-padding">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    :class="`section site-padding waypoint ${waypointActive ? 'active' : ''}`"
+  >
     <element-section-bar
+      ref="bar"
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
@@ -53,8 +61,10 @@
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'PartnerLogoGridSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,
@@ -72,6 +82,13 @@ export default {
       return this.$store.state.partners.results.partners
     },
   },
+  watch: {
+    waypointActive(active) {
+      if (this.$refs.bar) {
+        this.$refs.bar.show()
+      }
+    },
+  },
 }
 </script>
 <style lang="scss">
@@ -85,15 +102,27 @@ export default {
 .section {
   color: #fff;
   padding-bottom: 10vh;
+
+  &.active {
+    .partner-list {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 .partner-list {
   display: flex;
   flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(5vh);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition-delay: 0.75s;
   @include media-breakpoint-up(sm) {
     padding: 0 10vw;
   }
   &.large {
     justify-content: center;
+    transition-delay: 0.5s;
   }
 }
 .partner {

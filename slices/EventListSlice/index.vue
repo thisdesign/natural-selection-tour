@@ -11,6 +11,7 @@
   >
     <div class="section-bar site-padding">
       <element-section-bar
+        ref="bar"
         :number="slice.primary.SectionNumber"
         :title="slice.primary.SectionTitle"
       />
@@ -22,7 +23,7 @@
       @slide="onSlide"
     >
       <slideritem v-for="(item, i) in slice.items" :key="`event-item-${i}`">
-        <div :class="`event-item ${item.Active ? '' : 'disable'}`">
+        <div :class="`event-item event-${i} ${item.Active ? '' : 'disable'}`">
           <div class="event-date">
             <span class="month">{{ item.Month }}</span>
             <span class="day">{{ item.Start }}</span>
@@ -90,6 +91,13 @@ export default {
       },
     }
   },
+  watch: {
+    waypointActive() {
+      if (this.$refs.bar) {
+        this.$refs.bar.show()
+      }
+    },
+  },
   mounted() {},
   methods: {
     onSlide(data) {},
@@ -99,6 +107,15 @@ export default {
 
 <style lang="scss">
 .event-section {
+  &.active {
+    .event-item {
+      opacity: 1;
+      transform: translateY(0);
+      &.disable {
+        opacity: 0.2;
+      }
+    }
+  }
   padding-bottom: 3rem;
   &.site-padding {
     padding-right: 0;
@@ -130,6 +147,19 @@ export default {
     }
   }
   .event-item {
+    opacity: 0;
+    transform: translateY(5vh);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    &.event-1 {
+      transition-delay: 0.5s;
+    }
+    &.event-2 {
+      transition-delay: 0.75s;
+    }
+    &.event-3 {
+      transition-delay: 1s;
+    }
+
     height: 100%;
     width: 100%;
     color: $white;
@@ -140,7 +170,6 @@ export default {
       padding-right: 2rem;
     }
     &.disable {
-      opacity: 0.2;
       pointer-events: none;
     }
   }
