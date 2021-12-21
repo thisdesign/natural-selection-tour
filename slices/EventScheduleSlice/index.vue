@@ -12,31 +12,29 @@
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
-    <div v-if="!isLoading" class="events">
-      <div
-        v-for="(event, index) in eventItems"
-        :key="`event${index}`"
-        class="event"
-        :class="{ hidden: index >= amountToShow && collapsed }"
-      >
-        <div class="event-image">
-          <img :src="event.image" />
-        </div>
-        <div class="event-date">
-          <span class="month">
-            {{ eventMonth(event.start) }}
-          </span>
-          <span class="day">
-            {{ eventDay(event.start) }}
-          </span>
-        </div>
-        <div class="event-description">
-          <h5>
-            {{ eventWeekday(event.start) }},
-            {{ eventMonth(event.start, 'short') }} {{ eventDay(event.start) }}rd
-          </h5>
-          <div v-html="event.title" />
-        </div>
+    <div
+      v-for="(event, index) in eventItems"
+      :key="`event${index}`"
+      class="event"
+      :class="{ hidden: index >= amountToShow && collapsed }"
+    >
+      <div class="event-image">
+        <img v-if="event.image" :src="event.image" />
+      </div>
+      <div class="event-date">
+        <span class="month">
+          {{ eventMonth(event.start) }}
+        </span>
+        <span class="day">
+          {{ eventDay(event.start) }}
+        </span>
+      </div>
+      <div class="event-description">
+        <h5>
+          {{ eventWeekday(event.start) }},
+          {{ eventMonth(event.start, 'short') }} {{ eventDay(event.start) }}rd
+        </h5>
+        <div v-html="event.title"></div>
       </div>
     </div>
     <button v-if="collapsed" class="btn-show-more" @click="expandEvents()">
@@ -184,6 +182,9 @@ a {
     font-size: 20vw;
     @include media-breakpoint-up(sm) {
       font-size: 5vw;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 4.3vw;
     }
   }
 }

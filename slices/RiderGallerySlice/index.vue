@@ -23,12 +23,26 @@
           @update-rider="updateCurrentRider"
           @hidename="hideCursorName"
         />
-        <div id="mouse-pointer" :class="{ active: pointer.showPointer }">
+        <div
+          ref="mousePointer"
+          class="mouse-pointer"
+          :class="{ active: pointer.showPointer }"
+        >
           <div class="inner">
             <span class="pointer"></span>
-            <span v-if="pointer.currentRider" class="rider-name">{{
-              pointer.currentRider.Name[0].text
-            }}</span>
+            <div class="name-wrapper">
+              <transition name="vt-fade" mode="out-in">
+                <span
+                  v-if="pointer.currentRider"
+                  :key="pointer.currentRider.Name[0].text"
+                  class="rider-name"
+                >
+                  {{ formatName(pointer.currentRider.Name[0].text).firstName }}
+                  <br />
+                  {{ formatName(pointer.currentRider.Name[0].text).lastName }}
+                </span>
+              </transition>
+            </div>
           </div>
         </div>
       </div>
@@ -165,6 +179,15 @@ export default {
     })
   },
   methods: {
+    formatName(name) {
+      const nameArray = name.split(' ')
+      const firstName = nameArray[0]
+      const lastName = nameArray.slice(1, nameArray.length)
+      return {
+        firstName,
+        lastName: lastName.join(' '),
+      }
+    },
     sliderResize() {
       const slider = this.$refs.riderSlider
       if (slider) {
@@ -204,12 +227,14 @@ export default {
       }
     },
     updateMouse(event) {
-      const pointer = document.getElementById('mouse-pointer')
-      pointer.style.left = event.pageX + 'px'
-      pointer.style.top = event.pageY + 'px'
+      const pointer = this.$refs.mousePointer
+      pointer.style.transform = `translate(${event.pageX}px, ${event.pageY}px)`
     },
     hideCursorName() {
+      // setTimeout(() => {
       this.pointer.showPointer = false
+      this.pointer.currentRider = null
+      // }, 100)
     },
     updateCurrentRider(rider) {
       this.pointer.currentRider = rider
@@ -220,6 +245,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.rider-gallery-slice {
+  overflow: hidden;
+}
 .mobile-gallery {
   color: white;
   @include media-breakpoint-up(sm) {
@@ -235,13 +263,16 @@ export default {
   }
 }
 
-#mouse-pointer {
+.mouse-pointer {
   position: fixed;
   z-index: 1000;
   cursor: none;
   pointer-events: none;
+  top: -0.5rem;
+  left: -0.5rem;
   opacity: 0;
-  transition: opacity 300ms;
+  transition: opacity 300ms, transform 150ms ease-out;
+  min-width: max-content;
   &.active {
     opacity: 1;
   }
@@ -259,6 +290,11 @@ export default {
     border-radius: 1rem;
     height: 1rem;
     margin-right: 1rem;
+    display: block;
+  }
+  .name-wrapper {
+    flex: 1 1 calc(100% - 2rem);
+    position: relative;
   }
   .rider-name {
     font-family: 'Natural-Selection';
@@ -266,7 +302,11 @@ export default {
     line-height: 0.8;
     font-size: 2vw;
     display: table-caption;
-    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    white-space: nowrap;
   }
 }
 
