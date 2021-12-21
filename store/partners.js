@@ -27,18 +27,18 @@ export const getters = {
 export const actions = {
   async loadPartners({ commit }, $prismic) {
     const partnerResults = await $prismic.api.getSingle('partners', {
-      fetchLinks: ['partner.Logo'],
+      fetchLinks: ['partner.Logo', 'partner.Link'],
     })
     const uids = []
     const logos = {}
     const mapItem = (item) => {
       const {
         uid,
-        data: { Logo },
+        data: { Logo, Link },
       } = item.Partner
       uids.push(uid)
       logos[uid] = Logo
-      return { uid, logo: Logo }
+      return { uid, logo: Logo, link: Link ? Link.url : undefined }
     }
     const featured = partnerResults.data.FeaturedPartners.map(mapItem)
     const partners = partnerResults.data.Partners.map(mapItem)

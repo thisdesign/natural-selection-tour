@@ -3,6 +3,7 @@
     <div
       class="rider-image"
       @mouseenter="updateCurrentRider(rider)"
+      @mousemove="updateCurrentRider(rider)"
       @mouseleave="onMouseOut"
       @click="active = true"
     >
@@ -54,7 +55,10 @@
               v-if="item.Partner.uid"
               :to="`/partners/${item.Partner.uid}`"
             >
-              <prismic-image :field="logos[item.Partner.uid]" />
+              <prismic-image
+                v-if="logos[item.Partner.uid]"
+                :field="logos[item.Partner.uid]"
+              />
             </nuxt-link>
           </div>
         </div>

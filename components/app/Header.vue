@@ -223,6 +223,8 @@ header {
 .logo {
   position: relative;
   z-index: 100;
+  display: block;
+  height: 73px;
 }
 
 .main-menu {

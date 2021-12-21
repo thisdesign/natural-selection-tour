@@ -26,7 +26,9 @@ export default {
     this.player = videojs(
       this.$refs.videoPlayer,
       this.options,
-      function onPlayerReady() {},
+      function onPlayerReady() {
+        document.querySelector('.vjs-big-play-button').innerHTML = 'Play'
+      },
     )
 
     const playerWrapper = this.$refs.playerWrapper
@@ -54,19 +56,46 @@ export default {
     window.addEventListener('resize', setHeight)
   },
   beforeDestroy() {
-    if (this.player) {
-      this.player.dispose()
-    }
+    setTimeout(() => {
+      if (this.player) {
+        this.player.dispose()
+      }
+    }, 1000)
   },
 }
 </script>
 <style lang="scss">
 .video-js {
+  &:hover {
+    .vjs-big-play-button {
+      background: black;
+      color: white;
+    }
+  }
   .vjs-big-play-button {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    height: unset;
+    font-family: 'aktiv-grotesk', sans-serif;
+    border: 1 px solid white;
+    background: white;
+    color: black;
+    transition: 0.2s;
+    border-radius: 10rem;
+    font-size: clamp(2rem, 3.5vw, 3.5vw);
+    padding: 4vw 10vw;
+    width: calc(100% - 4rem);
+    line-height: 1;
+
+    @include media-breakpoint-up(sm) {
+      padding: 2vw 10vw;
+      width: unset;
+    }
+    @include media-breakpoint-up(md) {
+      padding: 1vw 5vw;
+    }
   }
   .vjs-control-bar {
     background: transparent;

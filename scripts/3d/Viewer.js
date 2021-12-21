@@ -17,14 +17,14 @@ class Viewer {
   createScene() {
     const scene = new BABYLON.Scene(this.engine)
     scene.clearColor = new BABYLON.Color4(0, 0, 0, 0)
+    scene.imageProcessingConfiguration.toneMappingEnabled = true
+    scene.imageProcessingConfiguration.contrast = 1.2
+    scene.imageProcessingConfiguration.exposure = 3
 
-    // const camera = new BABYLON.FreeCamera(
-    //   'camera1',
-    //   new BABYLON.Vector3(0, 5, -10),
-    //   scene,
-    // )
-    // camera.setTarget(BABYLON.Vector3.Zero())
-    // camera.attachControl(this.canvas, false)
+    // scene.debugLayer.show({
+    //   embedMode: true,
+    //   globalRootSearch: document.getElementsByClassName('.app'),
+    // })
 
     const camera = new BABYLON.ArcRotateCamera(
       'Camera',
@@ -41,7 +41,7 @@ class Viewer {
     camera.lowerAlphaLimit = -Math.PI * 0.25
     camera.upperAlphaLimit = Math.PI * 0.25
 
-    camera.beta = Math.PI * 0.2
+    camera.beta = Math.PI * 0.3
     camera.lowerBetaLimit = Math.PI * 0.2
     camera.upperBetaLimit = Math.PI * 0.45
 

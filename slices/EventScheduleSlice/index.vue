@@ -19,7 +19,7 @@
         :class="{ hidden: index >= amountToShow && collapsed }"
       >
         <div class="event-image">
-          <img :src="event.image" />
+          <img v-if="event.image" :src="event.image" />
         </div>
         <div class="event-date">
           <span class="month">
@@ -34,7 +34,7 @@
             {{ eventWeekday(event.start) }},
             {{ eventMonth(event.start, 'short') }} {{ eventDay(event.start) }}rd
           </h5>
-          <div v-html="event.title" />
+          <div v-html="event.title"></div>
         </div>
       </div>
     </div>
@@ -106,6 +106,10 @@ a {
 }
 
 .btn-show-more {
+  width: 100%;
+  border-radius: 10rem;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
   @include media-breakpoint-up(sm) {
     display: none;
   }
@@ -176,6 +180,9 @@ a {
     font-size: 20vw;
     @include media-breakpoint-up(sm) {
       font-size: 5vw;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 4.3vw;
     }
   }
 }
