@@ -28,6 +28,10 @@ body {
   }
 }
 
+.app {
+  min-height: 100vh;
+}
+
 .site-padding {
   padding: 0 2rem;
   @include media-breakpoint-up(md) {

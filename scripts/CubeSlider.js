@@ -6,6 +6,7 @@ export class CubeSlider {
     this.slideDuration = 1000
     this.rotating = false
     this.slides = this.slider.querySelectorAll('.slide')
+    if (this.slides.length < 2) return
     this.currentSlide = this.slides[0]
     this.nextSlide = this.slides[1]
     this.prevSlide = this.slides[this.slides.length - 1]

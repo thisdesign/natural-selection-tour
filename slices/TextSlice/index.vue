@@ -13,12 +13,14 @@
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
-    <div class="rte">
+    <!-- <div class="rte">
       <prismic-rich-text :field="slice.primary.Text" />
-    </div>
-    <!-- <div>
-      <animation-split-text ref="animateText" />
     </div> -->
+    <div class="rte">
+      <animation-split-text ref="animateText">
+        <prismic-rich-text :field="slice.primary.Text" />
+      </animation-split-text>
+    </div>
     <element-cta-button
       v-if="slice.primary.CtaTitle"
       class="btn"
@@ -63,7 +65,7 @@ export default {
   color: $white;
   p {
     font-size: $font-large;
-    line-height: 1.1;
+    line-height: 1.65;
   }
   .rte {
     margin-bottom: 10vw;

@@ -2,7 +2,7 @@
   <section
     v-if="$store.state.ui.options.showCode"
     v-waypoint="{
-      active: true,
+      active: delayActive,
       callback: onWaypoint,
       options: { threshold: [0.15, 0.85] },
     }"
@@ -75,10 +75,17 @@
 </template>
 
 <script>
+import gsap, { SplitText } from 'gsap/all'
 import WaypointMixin from '@/mixins/Waypoint'
+
 export default {
   name: 'CodeAnimation',
   mixins: [WaypointMixin],
+  data() {
+    return {
+      delayActive: false,
+    }
+  },
   computed: {
     globalData() {
       return this.$store.state.globals.results.data
@@ -94,6 +101,43 @@ export default {
         return []
       }
     },
+  },
+  watch: {
+    waypointActive(isActive) {
+      if (isActive) {
+        const COLS = document.querySelectorAll('.code-animation .col')
+        COLS.forEach((el, index) => {
+          const splitText = new SplitText(el.querySelectorAll('p'), {
+            type: 'chars',
+          })
+          gsap.fromTo(
+            el,
+            { opacity: 0 },
+            {
+              opacity: 1,
+              duration: 2,
+              delay: 0.35 + index * 0.35,
+              ease: 'Power1.easeInOut',
+            },
+          )
+          gsap.fromTo(
+            splitText.chars,
+            { opacity: 0 },
+            {
+              duration: 0.01,
+              opacity: 1,
+              stagger: 0.005,
+              delay: 0.35 + index * 0.35,
+            },
+          )
+        })
+      }
+    },
+  },
+  mounted() {
+    setTimeout(() => {
+      this.delayActive = true
+    }, 300)
   },
 }
 </script>

@@ -1,7 +1,6 @@
 <template>
   <div ref="text" class="split-text">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea
-    adipisci.
+    <slot></slot>
   </div>
 </template>
 <script>
@@ -16,7 +15,8 @@ export default {
   },
   mounted() {
     this.timeline = gsap.timeline({ paused: true })
-    this.splitText = new SplitText(this.$refs.text, { type: 'lines, chars' })
+    const els = this.$refs.text.querySelectorAll('p')
+    this.splitText = new SplitText(els, { type: 'lines, chars' })
     this.splitText.lines.forEach((line, index) => {
       gsap.set(line, { overflow: 'hidden', marginTop: '-30px' })
       const children = line.children
@@ -46,9 +46,3 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-.split-text {
-  font-size: 10vw;
-  line-height: 1.2;
-}
-</style>
