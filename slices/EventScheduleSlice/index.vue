@@ -11,45 +11,29 @@
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
-    <div class="events">
-      <div class="event">
-        <div class="event-image"></div>
-        <div class="event-date">
-          <span class="month"> 12 </span>
-          <span class="day"> 02 </span>
-        </div>
-        <div class="event-description">
-          <h5>12, 06 23rd</h5>
-          <div>event title</div>
-        </div>
+    <div
+      v-for="(event, index) in eventItems"
+      :key="`event${index}`"
+      class="event"
+      :class="{ hidden: index >= amountToShow && collapsed }"
+    >
+      <div class="event-image">
+        <img v-if="event.image" :src="event.image" />
       </div>
-
-      <div
-        v-for="(event, index) in eventItems"
-        :key="`event${index}`"
-        class="event"
-        :class="{ hidden: index >= amountToShow && collapsed }"
-      >
-        <div class="event-image">
-          <img v-if="event.image" :src="event.image" />
-        </div>
-        <div class="event-date">
-          <span class="month">
-            <!-- {{ eventMonth(event.start) }} -->
-            12
-          </span>
-          <span class="day">
-            02
-            <!-- {{ eventDay(event.start) }} -->
-          </span>
-        </div>
-        <div class="event-description">
-          <h5>
-            {{ eventWeekday(event.start) }},
-            {{ eventMonth(event.start, 'short') }} {{ eventDay(event.start) }}rd
-          </h5>
-          <div v-html="event.title" />
-        </div>
+      <div class="event-date">
+        <span class="month">
+          {{ eventMonth(event.start) }}
+        </span>
+        <span class="day">
+          {{ eventDay(event.start) }}
+        </span>
+      </div>
+      <div class="event-description">
+        <h5>
+          {{ eventWeekday(event.start) }},
+          {{ eventMonth(event.start, 'short') }} {{ eventDay(event.start) }}rd
+        </h5>
+        <div v-html="event.title"></div>
       </div>
     </div>
     <button v-if="collapsed" class="btn-show-more" @click="expandEvents()">
