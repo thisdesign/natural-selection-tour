@@ -3,6 +3,7 @@
     <div
       class="rider-image"
       @mouseenter="updateCurrentRider(rider)"
+      @mousemove="updateCurrentRider(rider)"
       @mouseleave="onMouseOut"
       @click="active = true"
     >

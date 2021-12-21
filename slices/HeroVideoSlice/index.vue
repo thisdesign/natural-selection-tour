@@ -39,15 +39,17 @@
         </div>
       </div>
     </div>
-    <div v-if="videoModalOpen" ref="videoModal" class="video-modal">
-      <div class="close-btn-wrapper">
-        <button class="close-btn" @click="toggleVideoModal">
-          <span></span>
-          <span></span>
-        </button>
+    <transition name="slow-fade" mode="out-in">
+      <div v-if="videoModalOpen" ref="videoModal" class="video-modal">
+        <div class="close-btn-wrapper">
+          <button class="close-btn" @click="toggleVideoModal">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <media-video-player class="player" :options="videoOptions" />
       </div>
-      <media-video-player class="player" :options="videoOptions" />
-    </div>
+    </transition>
   </section>
 </template>
 
@@ -205,6 +207,11 @@ export default {
     right: 2.5vw;
     top: 2.5vw;
   }
+  .close-btn:hover,
+  .close-btn:focus {
+    border: none;
+    outline: none;
+  }
 }
 .btn-play-video {
   position: absolute;
@@ -216,6 +223,7 @@ export default {
   padding: 4vw 10vw;
   width: calc(100% - 4rem);
   line-height: 1;
+
   @include media-breakpoint-up(sm) {
     padding: 2vw 10vw;
     width: unset;
