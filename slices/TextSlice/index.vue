@@ -14,13 +14,8 @@
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
-    <!-- <div class="rte">
-      <prismic-rich-text :field="slice.primary.Text" />
-    </div> -->
     <div class="rte">
-      <animation-split-text ref="animateText">
-        <prismic-rich-text :field="slice.primary.Text" />
-      </animation-split-text>
+      <prismic-rich-text :field="slice.primary.Text" />
     </div>
     <element-cta-button
       v-if="slice.primary.CtaTitle"
@@ -47,18 +42,10 @@ export default {
   },
   watch: {
     waypointActive(newWaypoint) {
-      if (newWaypoint && this.$refs.animateText) {
-        this.$refs.animateText.animate()
-      }
       if (newWaypoint && this.$refs.bar) {
         this.$refs.bar.show()
       }
     },
-  },
-  mounted() {
-    if (this.waypointActive && this.$refs.animateText) {
-      this.$refs.animateText.animate()
-    }
   },
 }
 </script>
@@ -69,7 +56,7 @@ export default {
   color: $white;
   p {
     font-size: $font-large;
-    line-height: 1.65;
+    line-height: 1.2;
   }
   .rte {
     margin-bottom: 10vw;

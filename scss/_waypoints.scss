@@ -1,5 +1,5 @@
 .waypoint {
-  transition: opacity .5s ease-out, transform .5s ease-out;
+  transition: opacity 1s ease-out, transform 1s ease-out;
   opacity: 0;
   transform: translateY(5vh);
   &.active {

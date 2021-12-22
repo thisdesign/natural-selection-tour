@@ -20,7 +20,7 @@
           class="countdown-title"
           :field="slice.primary.title"
         />
-        <div class="countdown-time">
+        <div ref="countdown" class="countdown-time">
           <div class="countdown-row">
             <span>{{ timer.days }}</span>
             <span class="countdown-designation">Days</span>
@@ -59,6 +59,7 @@
 </template>
 
 <script>
+import gsap, { SplitText } from 'gsap/all'
 import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'CountdownSlice',
@@ -81,33 +82,75 @@ export default {
       },
     }
   },
+  watch: {
+    waypointActive() {
+      this.animate().then(() => {
+        this.countdown()
+      })
+    },
+  },
   mounted() {
-    this.countdown()
+    this.updateTime()
   },
   methods: {
-    countdown() {
-      setInterval(() => {
-        const times = {}
-        const eventDate = new Date(this.slice.primary.TargetDate)
-        const currentTime = Date.now()
-        let deltaTime = Math.abs(eventDate - currentTime) / 1000
-        const timeUnitsInSeconds = {
-          days: 86400,
-          hours: 3600,
-          minutes: 60,
-        }
-
-        Object.keys(timeUnitsInSeconds).forEach((key) => {
-          times[key] = Math.floor(deltaTime / timeUnitsInSeconds[key])
-          deltaTime -= times[key] * timeUnitsInSeconds[key]
-
-          times[key] = times[key].toLocaleString('en-US', {
-            minimumIntegerDigits: 2,
-          })
+    animate() {
+      let count = 0
+      return new Promise((resolve) => {
+        const rows = this.$refs.countdown.querySelectorAll('.countdown-row')
+        rows.forEach((row, index) => {
+          const st = new SplitText(row, { type: 'chars' })
+          gsap.fromTo(
+            st.chars,
+            {
+              opacity: 0,
+              y: '100%',
+              rotate: '-20deg',
+              transformOrigin: '0% 100%',
+            },
+            {
+              opacity: 1,
+              y: 0,
+              rotate: 0,
+              delay: 0.5 + index * 0.3,
+              duration: 0.4,
+              stagger: 0.05,
+              onComplete: () => {
+                st.revert()
+                count++
+                if (count === 3) {
+                  resolve()
+                }
+              },
+            },
+          )
         })
+      })
+    },
+    updateTime() {
+      const times = {}
+      const eventDate = new Date(this.slice.primary.TargetDate)
+      const currentTime = Date.now()
+      let deltaTime = Math.abs(eventDate - currentTime) / 1000
+      const timeUnitsInSeconds = {
+        days: 86400,
+        hours: 3600,
+        minutes: 60,
+      }
 
-        this.timer = times
-      }, 1000)
+      Object.keys(timeUnitsInSeconds).forEach((key) => {
+        times[key] = Math.floor(deltaTime / timeUnitsInSeconds[key])
+        deltaTime -= times[key] * timeUnitsInSeconds[key]
+
+        times[key] = times[key].toLocaleString('en-US', {
+          minimumIntegerDigits: 2,
+        })
+      })
+
+      this.timer = times
+    },
+    countdown() {
+      this.updateTime()
+      setInterval(() => this.updateTime(), 1000)
     },
   },
 }
@@ -144,6 +187,9 @@ export default {
     }
   }
   .countdown-row {
+    overflow: hidden;
+    line-height: 0.75;
+    margin-bottom: 1rem;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
