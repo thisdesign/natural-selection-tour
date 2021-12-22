@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import gsap from 'gsap'
+import gsap, { SplitText } from 'gsap/all'
 import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'HeroVideoSlice',
@@ -86,7 +86,41 @@ export default {
       },
     }
   },
-  mounted() {},
+  watch: {
+    waypointActive(isActive) {
+      if (isActive) {
+        const COLS = document.querySelectorAll('.video-footer-item')
+        COLS.forEach((el, index) => {
+          const splitText = new SplitText(el.querySelectorAll('p'), {
+            type: 'chars',
+          })
+          gsap.fromTo(
+            el,
+            { opacity: 0 },
+            {
+              opacity: 1,
+              duration: 2,
+              delay: 0.35 + index * 0.35,
+              ease: 'Power1.easeInOut',
+            },
+          )
+          gsap.fromTo(
+            splitText.chars,
+            { opacity: 0 },
+            {
+              duration: 0.01,
+              opacity: 1,
+              stagger: 0.05,
+              delay: 0.35 + index * 0.35,
+              onComplete: () => {
+                splitText.revert()
+              },
+            },
+          )
+        })
+      }
+    },
+  },
   methods: {
     toggleVideoModal() {
       this.videoModalOpen = !this.videoModalOpen

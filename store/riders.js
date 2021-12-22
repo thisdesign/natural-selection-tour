@@ -12,7 +12,10 @@ export const actions = {
   async loadRiders({ commit }, $prismic) {
     // get results
     const riders = await $prismic.api.query(
-      this.$prismic.predicates.at('document.type', 'rider'),
+      [this.$prismic.predicates.at('document.type', 'rider')],
+      {
+        pageSize: 50,
+      },
     )
     // format data
     const results = {}
