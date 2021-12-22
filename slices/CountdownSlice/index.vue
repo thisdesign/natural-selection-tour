@@ -36,6 +36,7 @@
         </div>
         <div class="cta-row">
           <div class="button-container">
+            <button @click="openModal">Text Signup</button>
             <element-cta-button
               class="cta-button btn"
               :url="slice.primary.CtaLink.url"
@@ -55,6 +56,9 @@
         />
       </template>
     </layout-two-column>
+    <div v-if="modalOpen" class="optin-modal">
+      <TextSignup />
+    </div>
   </div>
 </template>
 
@@ -75,6 +79,7 @@ export default {
   },
   data() {
     return {
+      modalOpen: false,
       timer: {
         days: '00',
         hours: '00',
@@ -93,6 +98,9 @@ export default {
     this.updateTime()
   },
   methods: {
+    openModal() {
+      this.modalOpen = true
+    },
     animate() {
       let count = 0
       return new Promise((resolve) => {
@@ -164,6 +172,21 @@ export default {
   p {
     margin-bottom: 0;
   }
+}
+</style>
+
+<style lang="scss" scoped>
+.optin-modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
 }
 </style>
 
