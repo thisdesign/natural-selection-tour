@@ -1,5 +1,6 @@
 <template>
   <section
+    v-if="slice.primary.Active === true"
     v-waypoint="{
       active: true,
       callback: onWaypoint,
@@ -12,32 +13,34 @@
       :number="slice.primary.SectionNumber"
       :title="slice.primary.SectionTitle"
     />
-    <div v-if="!isLoading" class="events">
-      <div
+    <div class="events">
+      <a
         v-for="(event, index) in eventItems"
         :key="`event${index}`"
+        :href="event.Link.url"
+        target="_blank"
         class="event"
         :class="{ hidden: index >= amountToShow && collapsed }"
       >
         <div class="event-image">
-          <img v-if="event.image" :src="event.image" />
+          <prismic-image v-if="event.Image" :field="event.Image" />
         </div>
         <div class="event-date">
           <span class="month">
-            {{ eventMonth(event.start) }}
+            {{ eventMonth(event.Date) }}
           </span>
           <span class="day">
-            {{ eventDay(event.start) }}
+            {{ eventDay(event.Date) }}
           </span>
         </div>
         <div class="event-description">
           <h5>
-            {{ eventWeekday(event.start) }},
-            {{ eventMonth(event.start, 'short') }} {{ eventDay(event.start) }}rd
+            {{ eventWeekday(event.Date) }},
+            {{ eventMonth(event.Date, 'short') }} {{ eventDay(event.Date) }}rd
           </h5>
-          <div v-html="event.title"></div>
+          <prismic-rich-text :field="event.Description" />
         </div>
-      </div>
+      </a>
     </div>
     <button
       v-if="collapsed & (eventItems.length > amountToShow)"
@@ -79,7 +82,7 @@ export default {
       return this.$store.getters['events/isLoading']
     },
     eventItems() {
-      return this.$store.state.events.items
+      return this.slice.items
     },
   },
   watch: {
@@ -140,6 +143,8 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 10vw;
+  color: white;
+  text-decoration: none;
   @include media-breakpoint-up(sm) {
     padding-right: 1vw;
     width: 48%;

@@ -42,9 +42,16 @@
             class="event-description"
             :field="item.Description"
           />
-          <div class="location-stats">
+          <div
+            v-waypoint="{
+              active: true,
+              callback: onShowSnow,
+              options: { threshold: [0.45, 0.55] },
+            }"
+            class="location-stats"
+          >
             <div
-              class="location-snow-symbol"
+              :class="`location-snow-symbol item-${i}`"
               :style="{ height: `${50 + item.SnowPercent / 2}%` }"
             ></div>
             <prismic-rich-text class="label" :field="item.SnowDescription" />
@@ -53,7 +60,11 @@
               <span class="unit">{{ item.SnowUnits }}</span>
             </div>
           </div>
-          <button class="event-btn">Explore</button>
+          <element-cta-button
+            class="event-btn"
+            :link="{ url: '/events' }"
+            title="Explore"
+          />
         </div>
       </slideritem>
     </slider>
@@ -98,8 +109,12 @@ export default {
       }
     },
   },
-  mounted() {},
   methods: {
+    onShowSnow({ el, going }) {
+      if (going === 'in') {
+        el.classList.add('show')
+      }
+    },
     onSlide(data) {},
   },
 }
@@ -248,12 +263,30 @@ export default {
     padding-top: clamp(3rem, 5vw, 10rem);
     .location-snow-symbol {
       position: absolute;
-      background: white;
       bottom: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: -1;
+      background: white;
+      transform: scaleY(0);
+      transition: transform 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transform-origin: bottom left;
+      &.item-0 {
+        transition-delay: 0.1s;
+      }
+      &.item-1 {
+        transition-delay: 0.2s;
+      }
+      &.item-2 {
+        transition-delay: 0.3s;
+      }
+      transition-delay: 0.4s;
+    }
+    &.show {
+      .location-snow-symbol {
+        transform: scaleY(1);
+      }
     }
     .label {
       margin-bottom: 2vw;

@@ -15,6 +15,18 @@
       "default-slice": {
         "primary": {}
       }
+    },
+    "EventScheduleSlice": {
+      "default-slice": {
+        "items": {
+          "Description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
     }
   },
   "_cts": {
