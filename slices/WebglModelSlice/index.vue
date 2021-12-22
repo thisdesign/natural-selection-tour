@@ -16,7 +16,7 @@
       />
     </div>
     <div class="section-inner">
-      <div class="background-video">
+      <div class="background-video" :class="{ active: modelLoaded }">
         <div class="video-wrapper">
           <video
             :src="slice.primary.VideoLoop.url"
@@ -37,6 +37,7 @@
           v-if="slice.primary.Featured"
           :model="slice.items[0].Model.url"
           class="webgl-player featured"
+          @model-loaded="handleModelLoaded"
         />
         <prismic-rich-text
           class="section-description col-left"
@@ -66,6 +67,7 @@
           :model="slice.items[0].Model.url"
           class="webgl-player"
           :class="{ featured: slice.primary.Featured }"
+          @model-loaded="handleModelLoaded"
         />
       </div>
     </div>
@@ -89,6 +91,7 @@ export default {
   data() {
     return {
       indexLetters: ['A', 'B', 'C', 'D'],
+      modelLoaded: false,
     }
   },
   watch: {
@@ -96,6 +99,11 @@ export default {
       if (this.$refs.bar) {
         this.$refs.bar.show()
       }
+    },
+  },
+  methods: {
+    handleModelLoaded() {
+      this.modelLoaded = true
     },
   },
 }
@@ -144,6 +152,11 @@ export default {
     left: 0;
     height: 100%;
     width: 100%;
+    opacity: 0;
+    transition: opacity 1500ms ease;
+    &.active {
+      opacity: 1;
+    }
     .video-wrapper {
       position: relative;
       width: 100%;
