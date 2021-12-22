@@ -69,7 +69,7 @@ export default {
   border-top: 1px solid $white;
   text-transform: uppercase;
   color: $white;
-  font-size: 12px;
+  font-size: 10px;
   padding: 20px 0;
   margin-bottom: 1vw;
 }

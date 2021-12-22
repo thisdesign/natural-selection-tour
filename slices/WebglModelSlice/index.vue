@@ -226,15 +226,13 @@ export default {
     position: absolute;
     width: calc(100% - 4rem);
     margin-top: 8rem;
-    bottom: 1.8rem;
+    bottom: 3.5rem;
     left: 2rem;
 
     @include media-breakpoint-up(sm) {
-      bottom: 0;
       margin-top: 0;
       left: unset;
       width: unset;
-      transform: translateY(50%);
     }
   }
 }

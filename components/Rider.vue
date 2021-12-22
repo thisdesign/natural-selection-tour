@@ -216,9 +216,13 @@ export default {
   font-weight: 700;
 }
 .rider-stats {
-  columns: 2;
+  display: flex;
   span {
     display: block;
+  }
+  > div {
+    width: 50%;
+    padding-right: 0.5rem;
   }
 }
 .rider-overlay {
