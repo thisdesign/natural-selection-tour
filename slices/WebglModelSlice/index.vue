@@ -230,11 +230,9 @@ export default {
     left: 2rem;
 
     @include media-breakpoint-up(sm) {
-      bottom: 0;
       margin-top: 0;
       left: unset;
       width: unset;
-      transform: translateY(50%);
     }
   }
 }

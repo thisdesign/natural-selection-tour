@@ -39,7 +39,11 @@
         </div>
       </div>
     </div>
-    <button v-if="collapsed" class="btn-show-more" @click="expandEvents()">
+    <button
+      v-if="collapsed & (eventItems.length > amountToShow)"
+      class="btn-show-more"
+      @click="expandEvents()"
+    >
       More
     </button>
   </section>
@@ -62,7 +66,7 @@ export default {
   data() {
     return {
       collapsed: true,
-      amountToShow: 2,
+      amountToShow: 3,
     }
   },
   async fetch() {

@@ -279,7 +279,7 @@ nav {
   text-align: right;
   @include media-breakpoint-up(sm) {
     height: 100%;
-    justify-content: space-between;
+    // justify-content: space-between;
     text-align: left;
     align-items: center;
     flex-direction: row;
@@ -292,6 +292,7 @@ nav {
     margin-bottom: clamp(1rem, 4vh, 3rem);
     @include media-breakpoint-up(sm) {
       margin-bottom: 0;
+      margin-right: 7vw;
     }
   }
   .menu-link a {
@@ -303,9 +304,6 @@ nav {
       display: flex;
       font-size: 20px;
       margin-bottom: 0;
-    }
-    @include media-breakpoint-up(md) {
-      margin-right: 7vw;
     }
     &:after {
       @include media-breakpoint-up(sm) {
