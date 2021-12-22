@@ -25,14 +25,14 @@
           v-if="slice.primary.UseExternalLinks !== true"
           :to="`/partner/${item.uid}`"
         >
-          <prismic-image :field="item.logo" />
+          <prismic-image v-if="item.logo" :field="item.logo" />
         </nuxt-link>
         <a
           v-if="slice.primary.UseExternalLinks === true"
           :href="item.link ? item.link : 'https://prismic.io'"
           target="_blank"
         >
-          <prismic-image :field="item.logo" />
+          <prismic-image v-if="item.logo" :field="item.logo" />
         </a>
       </div>
     </div>
@@ -46,7 +46,7 @@
           v-if="slice.primary.UseExternalLinks !== true"
           :to="`/partner/${item.uid}`"
         >
-          <prismic-image :field="item.logo" />
+          <prismic-image v-if="item.logo" :field="item.logo" />
         </nuxt-link>
         <a
           v-if="slice.primary.UseExternalLinks === true"

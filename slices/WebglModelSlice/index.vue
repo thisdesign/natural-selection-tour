@@ -226,7 +226,7 @@ export default {
     position: absolute;
     width: calc(100% - 4rem);
     margin-top: 8rem;
-    bottom: 1.8rem;
+    bottom: 3.5rem;
     left: 2rem;
 
     @include media-breakpoint-up(sm) {
