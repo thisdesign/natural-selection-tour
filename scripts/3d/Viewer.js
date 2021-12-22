@@ -19,7 +19,7 @@ class Viewer {
     scene.clearColor = new BABYLON.Color4(0, 0, 0, 0)
     scene.imageProcessingConfiguration.toneMappingEnabled = true
     scene.imageProcessingConfiguration.contrast = 1.2
-    scene.imageProcessingConfiguration.exposure = 2
+    scene.imageProcessingConfiguration.exposure = 3
 
     // scene.debugLayer.show({
     //   embedMode: true,
@@ -37,17 +37,17 @@ class Viewer {
     // camera.setPosition(new BABYLON.Vector3(0, Math.PI, 11))
     camera.attachControl(this.canvas, false)
     camera.inputs.remove(camera.inputs.attached.mousewheel)
-    camera.alpha = Math.PI * 0.15
+    camera.alpha = 0
     camera.lowerAlphaLimit = -Math.PI * 0.25
     camera.upperAlphaLimit = Math.PI * 0.25
 
-    camera.beta = Math.PI * 0.4
+    camera.beta = Math.PI * 0.3
     camera.lowerBetaLimit = Math.PI * 0.2
     camera.upperBetaLimit = Math.PI * 0.45
 
-    camera.radius = 9
-    camera.lowerRadiusLimit = 9
-    camera.upperRadiusLimit = 9
+    camera.radius = 11
+    camera.lowerRadiusLimit = 11
+    camera.upperRadiusLimit = 11
 
     const light = new BABYLON.HemisphericLight(
       'light1',
@@ -84,12 +84,11 @@ class Viewer {
         function (scene) {
           const MTN = self.scene.meshes[1]
           MTN.rotationQuaternion = null
-          // MTN.rotation = new BABYLON.Vector3(
-          //   -Math.PI / 2,
-          //   -(Math.PI / 4) * 3,
-          //   0,
-          // )
-          MTN.rotation = new BABYLON.Vector3(0, Math.PI * 1.25, 0)
+          MTN.rotation = new BABYLON.Vector3(
+            -Math.PI / 2,
+            -(Math.PI / 4) * 3,
+            0,
+          )
           MTN.scaling = new BABYLON.Vector3(0.005, 0.005, 0.005)
           resolve()
         },

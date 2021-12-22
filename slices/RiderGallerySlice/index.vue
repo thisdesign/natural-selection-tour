@@ -19,7 +19,13 @@
         <rider
           v-for="(item, i) in sliceItems"
           :key="`slice-item-${i}`"
+          v-waypoint="{
+            active: true,
+            callback: onShowRider,
+            options: { threshold: [0.25, 0.75] },
+          }"
           :rider="getRider(item.Rider.id)"
+          class="rider-item"
           @update-rider="updateCurrentRider"
           @hidename="hideCursorName"
         />
@@ -179,6 +185,11 @@ export default {
     })
   },
   methods: {
+    onShowRider({ el, going }) {
+      if (going === 'in') {
+        el.classList.add('show')
+      }
+    },
     formatName(name) {
       const nameArray = name.split(' ')
       const firstName = nameArray[0]
@@ -247,6 +258,21 @@ export default {
 <style scoped lang="scss">
 .rider-gallery-slice {
   overflow: hidden;
+}
+.rider-item {
+  transition: opacity 0.75s ease-out, transform 0.75s ease-out;
+  opacity: 0;
+  transform: translateY(5vh);
+  &:nth-child(3n + 2) {
+    transition-delay: 0.15s;
+  }
+  &:nth-child(3n + 3) {
+    transition-delay: 0.3s;
+  }
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .mobile-gallery {
   color: white;
