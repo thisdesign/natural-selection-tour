@@ -9,11 +9,19 @@
     :class="{ 'no-image': !slice.primary.Hero, active: waypointActive }"
   >
     <div class="content-col">
-      <prismic-rich-text class="partners-title" :field="slice.primary.title" />
-      <prismic-rich-text
-        class="partners-description"
-        :field="slice.primary.description"
-      />
+      <div v-if="slice.primary.Logo" class="partner-logo">
+        <prismic-image :field="slice.primary.Logo" />
+      </div>
+      <div>
+        <prismic-rich-text
+          class="partners-title"
+          :field="slice.primary.title"
+        />
+        <prismic-rich-text
+          class="partners-description"
+          :field="slice.primary.description"
+        />
+      </div>
       <element-cta-button
         v-if="slice.primary.CtaTitle"
         class="partners-cta-btn"
@@ -50,12 +58,14 @@ export default {
   },
   mounted() {
     const section = document.querySelector('.section.partners')
-    const header = document.querySelector('header')
-    section.style.paddingTop = `${header.offsetHeight}px`
+    if (section) {
+      const header = document.querySelector('header')
+      section.style.paddingTop = `${header.offsetHeight}px`
+    }
   },
   methods: {
     handleNext() {
-      this.$router.push('/partner/' + this.slice.NextUid)
+      this.$router.push('/partners/' + this.slice.NextUid)
     },
   },
 }
@@ -71,6 +81,11 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+.partner-logo {
+  img {
+    width: 100%;
+  }
+}
 .section {
   color: #fff;
   position: relative;
@@ -96,10 +111,20 @@ export default {
   }
 }
 
-.partners-description {
-  margin: 2rem 0;
+.partner-logo,
+.partners-title {
   @include media-breakpoint-up(sm) {
-    margin: 14vh 0;
+    width: 50%;
+  }
+  @include media-breakpoint-up(md) {
+    width: calc(95vw / 4);
+  }
+}
+
+.partners-description {
+  margin: 0rem 0 2rem;
+  @include media-breakpoint-up(sm) {
+    margin: 0 0 14vh;
     width: 50%;
   }
   @include media-breakpoint-up(md) {

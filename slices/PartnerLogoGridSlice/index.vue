@@ -23,7 +23,7 @@
       >
         <nuxt-link
           v-if="slice.primary.UseExternalLinks !== true"
-          :to="`/partner/${item.uid}`"
+          :to="`/partners/${item.uid}`"
         >
           <prismic-image v-if="item.logo" :field="item.logo" />
         </nuxt-link>
@@ -44,7 +44,7 @@
       >
         <nuxt-link
           v-if="slice.primary.UseExternalLinks !== true"
-          :to="`/partner/${item.uid}`"
+          :to="`/partners/${item.uid}`"
         >
           <prismic-image v-if="item.logo" :field="item.logo" />
         </nuxt-link>

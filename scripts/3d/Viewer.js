@@ -45,15 +45,16 @@ class Viewer {
     camera.lowerBetaLimit = Math.PI * 0.2
     camera.upperBetaLimit = Math.PI * 0.45
 
-    camera.radius = 11
-    camera.lowerRadiusLimit = 11
-    camera.upperRadiusLimit = 11
+    camera.radius = 8
+    camera.lowerRadiusLimit = 8
+    camera.upperRadiusLimit = 8
 
     const light = new BABYLON.HemisphericLight(
       'light1',
       new BABYLON.Vector3(0, 1, 0),
       scene,
     )
+    light.position = BABYLON.Vector3(0, 0, 10)
 
     // const sphere = BABYLON.Mesh.CreateSphere(
     //   'sphere1',
@@ -74,21 +75,20 @@ class Viewer {
 
   laodModel(modelUrl) {
     return new Promise((resolve) => {
-      this.modelUrl = modelUrl
+      this.modelUrl =
+        'https://prismic-io.s3.amazonaws.com/naturalselectiontour/86e0915e-fe1f-40ef-b6b5-f4a4eeb64a47_3098_Mountain_v03.glb' // modelUrl
+
       const self = this
       BABYLON.SceneLoader.ImportMesh(
         '',
         '',
-        modelUrl,
+        this.modelUrl,
         this.scene,
         function (scene) {
           const MTN = self.scene.meshes[1]
           MTN.rotationQuaternion = null
-          MTN.rotation = new BABYLON.Vector3(
-            -Math.PI / 2,
-            -(Math.PI / 4) * 3,
-            0,
-          )
+          // MTN.position = new BABYLON.Vector3(0, -1, 0)
+          MTN.rotation = new BABYLON.Vector3(0, 0, Math.PI * 1.25)
           MTN.scaling = new BABYLON.Vector3(0.005, 0.005, 0.005)
           resolve()
         },
