@@ -18,8 +18,8 @@ class Viewer {
     const scene = new BABYLON.Scene(this.engine)
     scene.clearColor = new BABYLON.Color4(0, 0, 0, 0)
     scene.imageProcessingConfiguration.toneMappingEnabled = true
-    scene.imageProcessingConfiguration.contrast = 1.2
-    scene.imageProcessingConfiguration.exposure = 3
+    scene.imageProcessingConfiguration.contrast = 1
+    scene.imageProcessingConfiguration.exposure = 3.5
 
     // scene.debugLayer.show({
     //   embedMode: true,
@@ -54,7 +54,7 @@ class Viewer {
       new BABYLON.Vector3(0, 1, 0),
       scene,
     )
-    light.position = BABYLON.Vector3(0, 0, 10)
+    light.position = BABYLON.Vector3(0, 0, 1)
 
     // const sphere = BABYLON.Mesh.CreateSphere(
     //   'sphere1',
@@ -75,21 +75,22 @@ class Viewer {
 
   laodModel(modelUrl) {
     return new Promise((resolve) => {
-      this.modelUrl =
-        'https://prismic-io.s3.amazonaws.com/naturalselectiontour/86e0915e-fe1f-40ef-b6b5-f4a4eeb64a47_3098_Mountain_v03.glb' // modelUrl
+      this.modelUrl = modelUrl
+      // this.modelUrl = 'http://localhost:8888/mountain.glb'
 
-      const self = this
+      const SCALE = 0.005
+
       BABYLON.SceneLoader.ImportMesh(
         '',
         '',
         this.modelUrl,
         this.scene,
         function (scene) {
-          const MTN = self.scene.meshes[1]
+          const MTN = scene[1]
           MTN.rotationQuaternion = null
           // MTN.position = new BABYLON.Vector3(0, -1, 0)
-          MTN.rotation = new BABYLON.Vector3(0, 0, Math.PI * 1.25)
-          MTN.scaling = new BABYLON.Vector3(0.005, 0.005, 0.005)
+          MTN.rotation = new BABYLON.Vector3(-Math.PI * 0.5, Math.PI * 1.25, 0)
+          MTN.scaling = new BABYLON.Vector3(SCALE, SCALE, SCALE)
           resolve()
         },
       )
