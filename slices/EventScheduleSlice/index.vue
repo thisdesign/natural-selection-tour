@@ -102,7 +102,7 @@ export default {
     },
     eventDay(eventDate) {
       const date = new Date(eventDate)
-      return date.getDate()
+      return date.getDate() + 1
     },
     eventWeekday(eventDate, length = 'long') {
       const date = new Date(eventDate)
