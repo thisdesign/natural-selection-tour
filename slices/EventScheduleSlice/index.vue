@@ -36,7 +36,7 @@
         <div class="event-description">
           <h5>
             {{ eventWeekday(event.Date) }},
-            {{ eventMonth(event.Date, 'short') }} {{ eventDay(event.Date) }}rd
+            {{ eventMonth(event.Date, 'short') }} {{ eventDay(event.Date) }}
           </h5>
           <prismic-rich-text :field="event.Description" />
         </div>
