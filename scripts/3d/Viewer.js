@@ -42,12 +42,12 @@ class Viewer {
     camera.upperAlphaLimit = Math.PI * 0.25
 
     camera.beta = Math.PI * 0.45
-    camera.lowerBetaLimit = Math.PI * 0.2
+    camera.lowerBetaLimit = Math.PI * 0.3
     camera.upperBetaLimit = Math.PI * 0.45
 
-    camera.radius = 7
-    camera.lowerRadiusLimit = 7
-    camera.upperRadiusLimit = 7
+    camera.radius = 6
+    camera.lowerRadiusLimit = 6
+    camera.upperRadiusLimit = 6
 
     const light = new BABYLON.HemisphericLight(
       'light1',

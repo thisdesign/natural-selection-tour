@@ -133,9 +133,11 @@ export default {
     }
   }
   .webgl-player {
-    width: 100%;
+    width: 150%;
+    margin-left: -25%;
     @include media-breakpoint-up(sm) {
       position: absolute;
+      margin-left: 0;
       right: 0;
       top: 0;
       width: 75%;
