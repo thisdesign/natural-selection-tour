@@ -15,76 +15,78 @@
       </button>
     </div>
     <div class="main-menu" :class="{ open: navOpen }">
-      <nav class="nav">
-        <div
-          v-for="(item, index) in globals.data['main-links']"
-          :key="`mainLink${index}`"
-          :class="`menu-link ${item.Active ? 'active' : ''}`"
-        >
-          <nuxt-link
-            v-if="item.link.link_type === 'Document'"
-            :to="`${item.link.type === 'page' ? '/' : '/partner/'}${
-              item.link.uid
-            }`"
-          >
-            <prismic-rich-text
-              :field="item.label"
-              :html-serializer="htmlSerializer"
-            />
-          </nuxt-link>
-          <a
-            v-if="item.link.link_type === 'Web'"
-            :href="item.link.url"
-            target="_blank"
-          >
-            <prismic-rich-text
-              :field="item.label"
-              :html-serializer="htmlSerializer"
-            />
-          </a>
-        </div>
-      </nav>
-      <div class="nav-footer">
-        <div class="nav-footer-links">
+      <div class="main-menu-inner">
+        <nav class="nav">
           <div
-            v-for="(item, index) in globals.data.MobileSecondaryLinks"
-            :key="`mobileSecondary${index}`"
-            class="footer-link"
+            v-for="(item, index) in globals.data['main-links']"
+            :key="`mainLink${index}`"
+            :class="`menu-link ${item.Active ? 'active' : ''}`"
           >
             <nuxt-link
-              v-if="item.Link.link_type === 'Document'"
-              :to="`${item.Link.type === 'page' ? '/' : '/partner/'}${
-                item.Link.uid
+              v-if="item.link.link_type === 'Document'"
+              :to="`${item.link.type === 'page' ? '/' : '/partner/'}${
+                item.link.uid
               }`"
-              class="link"
             >
               <prismic-rich-text
-                :field="item.LinkLabel"
+                :field="item.label"
                 :html-serializer="htmlSerializer"
               />
             </nuxt-link>
             <a
-              v-if="item.Link.link_type === 'Web'"
-              :href="item.Link.url"
+              v-if="item.link.link_type === 'Web'"
+              :href="item.link.url"
               target="_blank"
-              class="link"
             >
               <prismic-rich-text
-                :field="item.LinkLabel"
+                :field="item.label"
                 :html-serializer="htmlSerializer"
               />
             </a>
           </div>
-        </div>
-        <div class="nav-social">
-          <a
-            v-for="(item, index) in globals.data.SocialLinks"
-            :key="`headerSocialLink${index}`"
-            :href="item.Link.url"
-            target="_blank"
-          >
-            <prismic-image :field="item.IconAlt" />
-          </a>
+        </nav>
+        <div class="nav-footer">
+          <div class="nav-footer-links">
+            <div
+              v-for="(item, index) in globals.data.MobileSecondaryLinks"
+              :key="`mobileSecondary${index}`"
+              class="footer-link"
+            >
+              <nuxt-link
+                v-if="item.Link.link_type === 'Document'"
+                :to="`${item.Link.type === 'page' ? '/' : '/partner/'}${
+                  item.Link.uid
+                }`"
+                class="link"
+              >
+                <prismic-rich-text
+                  :field="item.LinkLabel"
+                  :html-serializer="htmlSerializer"
+                />
+              </nuxt-link>
+              <a
+                v-if="item.Link.link_type === 'Web'"
+                :href="item.Link.url"
+                target="_blank"
+                class="link"
+              >
+                <prismic-rich-text
+                  :field="item.LinkLabel"
+                  :html-serializer="htmlSerializer"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="nav-social">
+            <a
+              v-for="(item, index) in globals.data.SocialLinks"
+              :key="`headerSocialLink${index}`"
+              :href="item.Link.url"
+              target="_blank"
+            >
+              <prismic-image :field="item.IconAlt" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -228,12 +230,8 @@ header {
 }
 
 .main-menu {
-  opacity: 0;
-  visibility: hidden;
   position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -241,7 +239,11 @@ header {
   z-index: 10;
   padding: 6rem 2rem 0rem;
   background: rgba(0, 0, 0, 0.7);
-  transition: opacity 600ms, visibility 600ms;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 700ms, visibility 700ms, max-height 1000ms;
   @include media-breakpoint-up(sm) {
     background: transparent;
     visibility: visible;
@@ -249,6 +251,7 @@ header {
     position: relative;
     width: unset;
     height: unset;
+    max-height: unset;
     padding: 0;
   }
   @include media-breakpoint-up(sm) {
@@ -256,6 +259,7 @@ header {
   }
   &.open {
     opacity: 1;
+    max-height: 100vh;
     visibility: visible;
   }
   &:after {
@@ -269,6 +273,15 @@ header {
     z-index: -1;
     @include media-breakpoint-up(sm) {
       display: none;
+    }
+  }
+  .main-menu-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(85vh - 6rem);
+    @include media-breakpoint-up(sm) {
+      height: 100%;
     }
   }
 }
