@@ -189,6 +189,7 @@ export default {
   transition: padding 0.5s;
   @include media-breakpoint-up(md) {
     padding: 0 2.5% 3rem;
+    min-height: 100vh;
   }
   p {
     margin-bottom: 0;
