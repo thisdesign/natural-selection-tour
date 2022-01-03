@@ -34,8 +34,8 @@ export default {
     return {
       grid: {
         primary: {
-          SectionNumber: '00',
-          SectionTitle: 'SECTION',
+          SectionNumber: '01',
+          SectionTitle: 'Partners',
         },
       },
     }
@@ -44,6 +44,7 @@ export default {
     hero() {
       return {
         primary: {
+          Logo: this.document.data.Logo,
           title: this.document.data.Title,
           description: this.document.data.Content,
           Hero: this.document.data.Hero,
@@ -55,6 +56,9 @@ export default {
         ),
       }
     },
+  },
+  mounted() {
+    console.log(this.document.data.Logo)
   },
 }
 </script>

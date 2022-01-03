@@ -24,9 +24,52 @@
             "placeholder": ""
           },
           "type": "Text"
+        },
+        "Active": {
+          "config": {
+            "label": "Active",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          },
+          "type": "Boolean"
         }
       },
-      "items": {}
+      "items": {
+        "Image": {
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
+        "Date": {
+          "config": {
+            "label": "Date",
+            "placeholder": ""
+          },
+          "type": "Date"
+        },
+        "Description": {
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          },
+          "type": "StructuredText"
+        },
+        "Link": {
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
+        }
+      }
     }
   ]
 }

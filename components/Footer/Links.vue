@@ -12,9 +12,11 @@
       >
         <nuxt-link
           v-if="item.Link.link_type === 'Document'"
-          :to="`${item.Link.type === 'page' ? '/' : '/partner/'}${
-            item.Link.uid
-          }`"
+          :to="`${
+            item.Link.type === 'page' || item.Link.type === 'partners'
+              ? '/'
+              : '/partner/'
+          }${item.Link.uid}`"
         >
           <prismic-rich-text
             :field="item.LinkLabel"

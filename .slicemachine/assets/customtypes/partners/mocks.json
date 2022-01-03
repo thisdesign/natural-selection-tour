@@ -1,14 +1,20 @@
 {
-  "id": "0efba4e0-f6df-4f83-a4eb-38b793ce7823",
-  "uid": "odit-qui-rem",
+  "id": "0b8c6b13-5589-4b82-ac92-6dec02fd4603",
+  "uid": "nostrum-voluptas-aspernatur",
   "type": "partners",
   "data": {
-    "ShowFooterCode": false,
+    "ShowFooterCode": true,
     "FeaturedPartners": [
       {
         "Partner": {
           "link_type": "Web",
           "url": "http://twitter.com"
+        }
+      },
+      {
+        "Partner": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
         }
       },
       {
@@ -22,13 +28,31 @@
       {
         "Partner": {
           "link_type": "Web",
-          "url": "http://twitter.com"
+          "url": "https://prismic.io"
+        }
+      },
+      {
+        "Partner": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
         }
       },
       {
         "Partner": {
           "link_type": "Web",
           "url": "http://twitter.com"
+        }
+      },
+      {
+        "Partner": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "Partner": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
         }
       },
       {

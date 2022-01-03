@@ -120,7 +120,7 @@ export default {
               y: 0,
               rotate: 0,
               delay: 0.5 + index * 0.3,
-              duration: 0.4,
+              duration: 0.7,
               stagger: 0.05,
               onComplete: () => {
                 st.revert()

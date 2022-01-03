@@ -18,8 +18,8 @@ class Viewer {
     const scene = new BABYLON.Scene(this.engine)
     scene.clearColor = new BABYLON.Color4(0, 0, 0, 0)
     scene.imageProcessingConfiguration.toneMappingEnabled = true
-    scene.imageProcessingConfiguration.contrast = 1.2
-    scene.imageProcessingConfiguration.exposure = 3
+    scene.imageProcessingConfiguration.contrast = 1
+    scene.imageProcessingConfiguration.exposure = 3.5
 
     // scene.debugLayer.show({
     //   embedMode: true,
@@ -37,23 +37,24 @@ class Viewer {
     // camera.setPosition(new BABYLON.Vector3(0, Math.PI, 11))
     camera.attachControl(this.canvas, false)
     camera.inputs.remove(camera.inputs.attached.mousewheel)
-    camera.alpha = Math.PI * 0.15
+    camera.alpha = Math.PI * 0.25
     camera.lowerAlphaLimit = -Math.PI * 0.25
     camera.upperAlphaLimit = Math.PI * 0.25
 
-    camera.beta = Math.PI * 0.4
+    camera.beta = Math.PI * 0.45
     camera.lowerBetaLimit = Math.PI * 0.2
     camera.upperBetaLimit = Math.PI * 0.45
 
-    camera.radius = 10
-    camera.lowerRadiusLimit = 10
-    camera.upperRadiusLimit = 10
+    camera.radius = 7
+    camera.lowerRadiusLimit = 7
+    camera.upperRadiusLimit = 7
 
     const light = new BABYLON.HemisphericLight(
       'light1',
       new BABYLON.Vector3(0, 1, 0),
       scene,
     )
+    light.position = BABYLON.Vector3(0, 0, 1)
 
     // const sphere = BABYLON.Mesh.CreateSphere(
     //   'sphere1',
@@ -75,21 +76,21 @@ class Viewer {
   laodModel(modelUrl) {
     return new Promise((resolve) => {
       this.modelUrl = modelUrl
-      const self = this
+      // this.modelUrl = 'http://localhost:8888/mountain.glb'
+
+      const SCALE = 0.005
+
       BABYLON.SceneLoader.ImportMesh(
         '',
         '',
-        modelUrl,
+        this.modelUrl,
         this.scene,
         function (scene) {
-          const MTN = self.scene.meshes[1]
+          const MTN = scene[1]
           MTN.rotationQuaternion = null
-          MTN.rotation = new BABYLON.Vector3(
-            -Math.PI / 2,
-            -(Math.PI / 4) * 3,
-            0,
-          )
-          MTN.scaling = new BABYLON.Vector3(0.005, 0.005, 0.005)
+          MTN.position = new BABYLON.Vector3(0, 0.7, 0)
+          MTN.rotation = new BABYLON.Vector3(-Math.PI * 0.5, Math.PI * 1.25, 0)
+          MTN.scaling = new BABYLON.Vector3(SCALE, SCALE, SCALE)
           resolve()
         },
       )

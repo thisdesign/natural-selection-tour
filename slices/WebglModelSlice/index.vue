@@ -111,7 +111,8 @@ export default {
 
 <style lang="scss">
 .webgl {
-  position: inherit;
+  position: relative;
+  z-index: 10;
   &.section {
     color: #fff;
     padding-bottom: 6rem;

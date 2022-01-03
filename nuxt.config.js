@@ -73,7 +73,7 @@ export default {
     link: [
       {
         rel: 'icon',
-        href: '/favicon.ico',
+        href: 'https://images.prismic.io/naturalselectiontour/f43b8cf0-599f-4133-ac70-8b802ec59726_NaturalSelection_FAVICON.png?auto=compress,format',
       },
     ],
   },
