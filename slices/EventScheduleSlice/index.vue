@@ -96,17 +96,24 @@ export default {
     expandEvents() {
       this.collapsed = false
     },
-    eventMonth(eventDate, length = 'long') {
+    eventUTC(eventDate) {
       const date = new Date(eventDate)
+      const utc = new Date(date.getTime() + date.getTimezoneOffset() * 60000)
+      return utc
+    },
+    eventMonth(eventDate, length = 'long') {
+      const date = this.eventUTC(eventDate)
       return date.toLocaleString('default', { month: length })
     },
     eventDay(eventDate) {
-      const date = new Date(eventDate)
-      return date.getDate() + 1
+      const date = this.eventUTC(eventDate)
+      return date.getDate()
     },
     eventWeekday(eventDate, length = 'long') {
-      const date = new Date(eventDate)
-      return date.toLocaleString('default', { weekday: length })
+      const date = this.eventUTC(eventDate)
+      return date.toLocaleString('en-US', {
+        weekday: length,
+      })
     },
   },
 }
