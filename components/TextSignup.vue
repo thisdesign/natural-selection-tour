@@ -86,7 +86,7 @@
             </div>
             <div class="st-terms-and-conditions-caption st-font-caption">
               I agree to receive promotional messages sent via an autodialer,
-              and this agreement isn’t a condition of any purchase. I also agree
+              and this agreement isn't a condition of any purchase. I also agree
               to the
               <a
                 :href="`https://app2.simpletexting.com/web-forms/terms/${formID}`"
@@ -136,7 +136,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 import { joinWebForm } from '@/scripts/SimpleTexting'
 export default {
   data() {
@@ -182,7 +181,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'https://app2.simpletexting.com/join-web-form/style-new.css';
+// @import 'https://app2.simpletexting.com/join-web-form/style-new.css';
 
 .signup-form {
   --primary-color: black;
@@ -252,14 +251,14 @@ export default {
   justify-content: center;
 }
 .st-signupform-content {
-  max-width: 540px;
-  box-sizing: border-box;
-  padding: 32px;
+  // max-width: 540px;
+  // box-sizing: border-box;
+  // padding: 32px;
   color: var(--text-primary);
   line-height: 1.5;
-  background: white;
-  box-shadow: var(--card-box-shadow);
-  border-radius: var(--controls-border-radius);
+  // background: white;
+  // box-shadow: var(--card-box-shadow);
+  // border-radius: var(--controls-border-radius);
 }
 
 .st-signupform__label {
@@ -315,7 +314,7 @@ export default {
 .st-signupform input[type='text'],
 textarea {
   width: 100%;
-  background-color: white;
+  // background-color: white;
   border: 1px solid var(--controls-border-color);
   border-radius: var(--controls-border-radius);
   box-sizing: border-box;
@@ -340,7 +339,7 @@ textarea:focus {
   width: 18px;
   height: 18px;
   border-radius: 4px;
-  background-color: var(--st-color-white);
+  // background-color: var(--st-color-white);
   border: 1px solid var(--st-color-text-disabled);
   box-shadow: inset 0 0 3px rgb(0 0 0 / 15%);
   position: relative;
@@ -374,7 +373,7 @@ textarea:focus {
   width: 10px;
   height: 2px;
   border-radius: 2px;
-  background-color: var(--st-color-white);
+  // background-color: var(--st-color-white);
   opacity: 0;
   transition: 0.3s all;
   top: 7px;

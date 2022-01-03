@@ -36,11 +36,12 @@
         </div>
         <div class="cta-row">
           <div class="button-container">
-            <button @click="openModal">Text Signup</button>
             <element-cta-button
+              type="button"
               class="cta-button btn"
               :url="slice.primary.CtaLink.url"
               :title="slice.primary.CtaTitle"
+              @click="openModal"
             />
           </div>
           <prismic-rich-text
@@ -56,9 +57,16 @@
         />
       </template>
     </layout-two-column>
-    <div v-if="modalOpen" class="optin-modal">
-      <TextSignup />
-    </div>
+    <transition name="vt-fade" mode="out-in">
+      <div v-if="modalOpen" class="optin-modal">
+        <div class="optin-modal-inner">
+          <button class="close-modal-btn" @click="closeModal">
+            <span></span><span></span>
+          </button>
+          <TextSignup />
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -100,6 +108,9 @@ export default {
   methods: {
     openModal() {
       this.modalOpen = true
+    },
+    closeModal() {
+      this.modalOpen = false
     },
     animate() {
       let count = 0
@@ -186,7 +197,44 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
+  .optin-modal-inner {
+    background: white;
+    max-width: 620px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+  }
+  .close-modal-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 0.7rem;
+    margin-right: 0.7rem;
+    width: 1rem;
+    height: 1rem;
+    background: none;
+    border: none;
+    padding: 0;
+    transform: rotate(45deg);
+    &:focus {
+      outline: none;
+    }
+    span {
+      border-radius: 10px;
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: black;
+      &:first-child {
+        transform: rotate(90deg) translate(1px, 0);
+      }
+      &:last-child {
+        transform: translate(0, -1px);
+      }
+    }
+  }
 }
 </style>
 
