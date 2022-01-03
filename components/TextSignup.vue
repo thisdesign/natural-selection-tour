@@ -2,7 +2,7 @@
   <div class="signup-form">
     <div class="st-signupform">
       <form
-        id="st-join-web-form-61c383a2c2fff36caf08e94e"
+        :id="`st-join-web-form-${formID}`"
         class="st-signupform-content"
         action="https://app2.simpletexting.com/join/joinContact"
         method="POST"
@@ -10,7 +10,7 @@
         <div class="step1-form">
           <div class="required">
             <label class="st-signupform__label" for="firstname">
-              Contact first name
+              First Name
 
               <span class="required-mark">
                 <svg
@@ -73,13 +73,13 @@
           <div class="st-terms-and-conditions">
             <div class="st-checkbox terms-checkbox">
               <input
-                id="terms-agreed-checkbox-61c383a2c2fff36caf08e94e"
+                :id="`terms-agreed-checkbox-${formID}`"
                 type="checkbox"
                 name="terms-agreed"
               />
               <label
                 class="st-terms-and-conditions-text"
-                for="terms-agreed-checkbox-61c383a2c2fff36caf08e94e"
+                :for="`terms-agreed-checkbox-${formID}`"
               >
                 Terms and conditions
               </label>
@@ -89,13 +89,13 @@
               and this agreement isn’t a condition of any purchase. I also agree
               to the
               <a
-                href="https://app2.simpletexting.com/web-forms/terms/61c383a2c2fff36caf08e94e"
+                :href="`https://app2.simpletexting.com/web-forms/terms/${formID}`"
                 target="_blank"
                 >Terms of Service</a
               >
               and&nbsp;
               <a
-                href="https://app2.simpletexting.com/web-forms/privacy-policy/61c383a2c2fff36caf08e94e"
+                :href="`https://app2.simpletexting.com/web-forms/privacy-policy/${formID}`"
                 target="_blank"
                 >Privacy Policy</a
               >
@@ -116,8 +116,20 @@
         </div>
 
         <div class="step2-confirmationText" style="display: none">
-          <p>Thank you for signing up!</p>
+          <p>
+            Thank you for signing up! You will receive messages from Natural
+            Selection Tour.
+          </p>
         </div>
+
+        <!-- <footer>
+          SMS marketing powered by
+          <a
+            href="https://www.simpletexting.com"
+            title="SMS marketing - SimpleTexting.com"
+            >SimpleTexting</a
+          >
+        </footer> -->
       </form>
     </div>
   </div>
@@ -126,8 +138,47 @@
 <script>
 /* eslint-disable */
 export default {
+  data() {
+    return {
+      formID: '61d34ab945df49512708553b',
+    }
+  },
   mounted() {
-    ;(function joinWebForm(
+    this.joinWebForm(
+      window,
+      document,
+      this.formID,
+      [
+        {
+          type: 'text',
+          name: 'firstname',
+          label: 'First name',
+          required: true,
+          maxLength: 10,
+          format: null,
+          options: null,
+          value: '',
+          placeholder: 'John',
+        },
+        {
+          type: 'phone',
+          name: 'phone',
+          label: 'Phone',
+          required: true,
+          maxLength: 10,
+          format: null,
+          options: null,
+          value: '',
+          placeholder: '(XXX) XXX-XXXX',
+        },
+      ],
+      'DuplicateContactPhoneException',
+      'DuplicateContactEmailException',
+      'CustomFieldsValidationException',
+    )
+  },
+  methods: {
+    joinWebForm(
       win,
       doc,
       webFormId,
@@ -469,39 +520,8 @@ export default {
         })
       }
 
-      win.addEventListener('load', handleLoad)
-    })(
-      window,
-      document,
-      '61c383a2c2fff36caf08e94e',
-      [
-        {
-          type: 'text',
-          name: 'firstname',
-          label: 'Contact first name',
-          required: true,
-          maxLength: 10,
-          format: null,
-          options: null,
-          value: '',
-          placeholder: 'John',
-        },
-        {
-          type: 'phone',
-          name: 'phone',
-          label: 'Phone',
-          required: true,
-          maxLength: 10,
-          format: null,
-          options: null,
-          value: '',
-          placeholder: '(XXX) XXX-XXXX',
-        },
-      ],
-      'DuplicateContactPhoneException',
-      'DuplicateContactEmailException',
-      'CustomFieldsValidationException',
-    )
+      handleLoad()
+    },
   },
 }
 </script>
