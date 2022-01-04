@@ -113,6 +113,10 @@ export default {
 .webgl {
   position: relative;
   z-index: 10;
+  overflow: hidden;
+  @include media-breakpoint-up(sm) {
+    overflow: initial;
+  }
   &.section {
     color: #fff;
     padding-bottom: 6rem;
@@ -135,9 +139,29 @@ export default {
   .webgl-player {
     width: 150%;
     margin-left: -25%;
-    overflow: hidden;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-top: 20%;
+      content: '';
+      z-index: 10;
+    }
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding-top: 25%;
+      content: '';
+      z-index: 10;
+    }
     @include media-breakpoint-up(sm) {
-      overflow: initial;
+      &:before,
+      &:after {
+        display: none;
+      }
       position: absolute;
       margin-left: 0;
       right: 0;
