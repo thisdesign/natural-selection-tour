@@ -135,7 +135,9 @@ export default {
   .webgl-player {
     width: 150%;
     margin-left: -25%;
+    overflow: hidden;
     @include media-breakpoint-up(sm) {
+      overflow: initial;
       position: absolute;
       margin-left: 0;
       right: 0;
