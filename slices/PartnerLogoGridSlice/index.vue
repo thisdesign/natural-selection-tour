@@ -132,9 +132,9 @@ export default {
   }
   &.large {
     width: 50%;
-    @include media-breakpoint-up(sm) {
-      width: calc(100% / 3);
-    }
+    // @include media-breakpoint-up(sm) {
+    //   width: calc(100% / 3);
+    // }
   }
   &.small {
     width: calc(100% / 3);
