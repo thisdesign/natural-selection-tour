@@ -1,5 +1,8 @@
 <template>
   <a v-if="url !== ''" class="btn" :href="url" target="_blank">{{ title }}</a>
+  <button v-else-if="type === 'button'" class="btn" @click="onClick">
+    {{ title }}
+  </button>
   <prismic-link v-else :field="link">{{ title }}</prismic-link>
 </template>
 <script>
@@ -17,12 +20,22 @@ export default {
       default: '',
       type: String,
     },
+    type: {
+      default: '',
+      type: String,
+    },
+  },
+  methods: {
+    onClick() {
+      this.$emit('click')
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-a {
+a,
+button {
   display: inline-block;
   background: $white;
   color: $black;
