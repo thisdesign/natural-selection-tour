@@ -8,7 +8,7 @@
       <span class="pointer"></span>
       <div class="name-wrapper">
         <transition name="vt-fade" mode="out-in">
-          <span v-if="line1" :key="line1" class="rider-name">
+          <span v-if="line1" :key="line1 + line2 + line3" class="rider-name">
             <span>{{ line1 }}</span>
             <br />
             <span v-if="line2">{{ line2 }}</span>
@@ -41,11 +41,11 @@ export default {
       default: null,
     },
   },
-  data() {
-    return {}
-  },
   mounted() {
     window.addEventListener('mousemove', this.onMouseMove)
+  },
+  destroy() {
+    window.removeEventListener('mousemove', this.onMouseMove)
   },
   methods: {
     onMouseMove(event) {
