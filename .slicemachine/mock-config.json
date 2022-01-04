@@ -28,7 +28,8 @@
         }
       }
     },
-    "Streams": {}
+    "Streams": {},
+    "BracketSlice": {}
   },
   "_cts": {
     "rider": {
