@@ -3,12 +3,14 @@
     <button class="open-ratings" @click="open = true">
       {{ results.average }}
     </button>
-    <div v-if="open" class="rating-details">
-      <element-btn-close class="close-btn" @click="open = false" />
-      <span v-for="(result, index) in results.scores" :key="index">
-        {{ result }}
-      </span>
-    </div>
+    <transition name="vt-fade" mode="out-in">
+      <div v-if="open" class="rating-details">
+        <element-btn-close class="close-btn" @click="open = false" />
+        <span v-for="(result, index) in results.scores" :key="index">
+          {{ result }}
+        </span>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -31,6 +33,21 @@ export default {
 <style lang="scss" scoped>
 .close-btn {
   color: white;
+  width: 10px;
+  margin-top: 0.2rem;
+  margin-right: 0.3rem;
+  @include media-breakpoint-up(sm) {
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    width: 15px;
+  }
+}
+* {
+  font-family: 'Sneak', sans-serif;
+  font-size: 0.7rem;
+  @include media-breakpoint-up(sm) {
+    font-size: 0.8rem;
+  }
 }
 .rating {
   flex: 1 1 auto;
@@ -40,7 +57,7 @@ export default {
   border-left: 1px solid white;
   button.open-ratings {
     background: transparent;
-    padding: 0;
+    padding: 0 0.2rem;
     border: none;
     height: 100%;
     width: 100%;

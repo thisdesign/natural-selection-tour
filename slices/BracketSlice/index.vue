@@ -137,7 +137,6 @@ export default {
     },
   },
   mounted() {
-    window.bracket = this.$refs.bracket
     gsap.registerPlugin(ScrollToPlugin)
     this.setCurrentRound()
   },
@@ -146,6 +145,11 @@ export default {
       return this.$refs.bracket.scrollWidth / 4
     },
     setCurrentRound() {
+      if (this.currentRound > this.rounds.length) {
+        this.currentRound = this.rounds.length
+      } else if (this.currentRound < 1) {
+        this.currentRound = 1
+      }
       gsap.to(this.$refs.bracket, {
         duration: 0.5,
         scrollTo: {
@@ -183,14 +187,19 @@ export default {
     },
     mouseUpHandler() {
       this.grabbing = false
+
+      const columnsSwiped = Math.round(
+        Math.abs(this.distanceX) / this.getColumnWidth(),
+      )
+
       this.$refs.bracket.style.cursor = 'grab'
       if (this.swipeDirection === 'LEFT') {
         if (this.currentRound < this.totalRounds) {
-          this.currentRound++
+          this.currentRound += Math.max(columnsSwiped, 1)
         }
       } else if (this.swipeDirection === 'RIGHT') {
         if (this.currentRound > 1) {
-          this.currentRound--
+          this.currentRound -= Math.max(columnsSwiped, 1)
         }
       }
       this.setCurrentRound()
@@ -287,16 +296,22 @@ export default {
   &:nth-child(n + 3) {
     .connector-line {
       width: 1px;
-      height: 384px;
       top: 50%;
+      height: 256px;
       transform: translateY(-50%);
       background: white;
       position: absolute;
+      @include media-breakpoint-up(sm) {
+        height: 384px;
+      }
     }
   }
   &:nth-child(n + 4) {
     .connector-line {
-      height: 768px;
+      height: 512px;
+      @include media-breakpoint-up(sm) {
+        height: 768px;
+      }
     }
   }
 }

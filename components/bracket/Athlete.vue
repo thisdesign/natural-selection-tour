@@ -2,7 +2,7 @@
   <div class="bracket-rider">
     <div class="rider-info">
       <h3 class="rider-name">{{ rider.name }}</h3>
-      <img src="/mocks/flag-mock.jpg" alt="" />
+      <img class="rider-nationality" src="/mocks/us-flag.png" alt="" />
     </div>
     <div class="rider-ratings">
       <bracket-athlete-rating
@@ -53,25 +53,35 @@ export default {
   min-width: 320px;
   background: rgba(41, 41, 41, 0.76);
   border: 1px solid #ffffff;
-  height: 5rem;
+  height: 3rem;
   display: flex;
   margin-bottom: 0.5rem;
   position: relative;
+  @include media-breakpoint-up(sm) {
+    height: 5rem;
+  }
 }
 .rider-info {
   display: flex;
   align-items: center;
-  width: 65%;
-  padding: 0.5rem;
+  justify-content: space-between;
+  width: 60%;
+  padding: 2%;
 }
 .rider-name {
   font-family: 'Natural-Selection', sans-serif;
-  font-size: 2vw;
-  line-height: 0.7;
+  font-size: clamp(0.8rem, 2vw, 2.2rem);
+  line-height: 0.75;
   margin-bottom: 0;
+  width: 80%;
 }
 .rider-ratings {
   display: flex;
-  width: 35%;
+  width: 40%;
+}
+.rider-nationality {
+  height: 90%;
+  max-height: 2.8rem;
+  width: auto;
 }
 </style>
