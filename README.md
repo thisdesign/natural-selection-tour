@@ -2,6 +2,7 @@
  - Make sure you are running nvm of at least 14, for ease of use there is an .nvmrc in the project.
  - The eventbright api requireds a .env file, so make sure to copy the example env and update the token from 1password.
  - Use the command `npm run netlify` instead of `npm run dev`.  This will run the dev command for you and proxy it under port 8888 so you can access any api functions that are created.
+ 
 
 # Prismic Slice Machine & Nuxt.js Boilerplate
 > [Nuxt.js](https://nuxtjs.org/) & Slice Machine boilerplate project with content managed in [Prismic](https://prismic.io) and components built with Slice Machine
