@@ -134,12 +134,19 @@ export default {
     mouseMoveHandler(e) {
       if (this.grabbing) {
         const dx = e.clientX - this.scrollPosition.x
-        this.$refs.bracket.scrollLeft = this.scrollPosition.left - dx
+        if (Math.abs(dx) > 100) {
+          // TODO: add a way to set the current column.
+          // Add animation for the scroll
+          this.$refs.bracket.scrollLeft = this.scrollPosition.left - dx
+        }
       }
     },
     mouseUpHandler() {
       this.grabbing = false
       this.$refs.bracket.style.cursor = 'grab'
+    },
+    getColumnWidth() {
+      return document.querySelector('.bracket-column').offsetWidth
     },
   },
 }
