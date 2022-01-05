@@ -19,10 +19,10 @@ export default {
   position: absolute;
   right: 0;
   top: 0;
-  margin-top: 0.7rem;
-  margin-right: 0.7rem;
-  width: 1rem;
-  height: 1rem;
+  // margin-top: 0.7rem;
+  // margin-right: 0.7rem;
+  // width: 1rem;
+  // height: 1rem;
   background: none;
   border: none;
   padding: 0;

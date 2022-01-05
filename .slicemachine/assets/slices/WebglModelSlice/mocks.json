@@ -8,37 +8,22 @@
         "Title": [
           {
             "type": "paragraph",
-            "text": "Sint quis incididunt consequat eu dolor quis laboris ullamco reprehenderit. Non nostrud nisi quis aute sint eu ut aliquip ullamco.",
-            "spans": []
-          }
-        ],
-        "Active": true,
-        "Model": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        },
-        "LinkLetter": "morph visionary mindshare"
-      },
-      {
-        "Title": [
-          {
-            "type": "paragraph",
-            "text": "Aliquip qui dolor amet amet Lorem ad laboris consequat aute deserunt exercitation. Cupidatat dolore velit minim fugiat sunt adipisicing.",
+            "text": "Sunt ipsum cupidatat excepteur et proident nisi in Lorem proident. Voluptate id ad nostrud pariatur enim fugiat ullamco dolore in.",
             "spans": []
           }
         ],
         "Active": false,
         "Model": {
           "link_type": "Web",
-          "url": "http://google.com"
+          "url": "https://prismic.io"
         },
-        "LinkLetter": "morph intuitive e-business"
+        "LinkLetter": "optimize integrated networks"
       },
       {
         "Title": [
           {
             "type": "paragraph",
-            "text": "Sit amet sint exercitation. Voluptate sit ex qui est veniam nulla dolor.",
+            "text": "Consequat cupidatat dolore incididunt ullamco sunt officia qui. Tempor adipisicing et amet anim ipsum aliqua eu est adipisicing nulla enim ullamco sit. Ad minim consectetur dolore laborum consequat eu.",
             "spans": []
           }
         ],
@@ -47,45 +32,45 @@
           "link_type": "Web",
           "url": "http://twitter.com"
         },
-        "LinkLetter": "orchestrate B2B channels"
+        "LinkLetter": "incentivize rich solutions"
       },
       {
         "Title": [
           {
             "type": "paragraph",
-            "text": "Consequat aute minim ut in cillum aliqua.",
+            "text": "Exercitation consectetur sit ut eu ipsum adipisicing magna esse exercitation eu deserunt. Amet amet consectetur veniam ad in cupidatat ipsum elit. Aliqua ut Lorem et commodo proident ipsum aliqua dolor fugiat amet.",
             "spans": []
           }
         ],
         "Active": false,
         "Model": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "http://twitter.com"
         },
-        "LinkLetter": "syndicate vertical relationships"
+        "LinkLetter": "strategize granular blockchains"
       }
     ],
     "primary": {
-      "SectionNumber": "architect impactful mindshare",
-      "SectionTitle": "syndicate B2B e-services",
+      "SectionNumber": "exploit end-to-end bandwidth",
+      "SectionTitle": "synergize rich schemas",
       "Type": "Hero",
       "title": [
         {
           "type": "heading1",
-          "text": "Monetize back-end web services",
+          "text": "Architect plug-and-play communities",
           "spans": []
         }
       ],
       "description": [
         {
           "type": "paragraph",
-          "text": "Minim laborum dolore enim anim tempor ullamco veniam. Sunt mollit adipisicing reprehenderit ad tempor.",
+          "text": "Id Lorem proident minim laborum amet nulla in anim dolor proident.",
           "spans": []
         }
       ],
       "VideoLoop": {
         "link_type": "Web",
-        "url": "http://google.com"
+        "url": "https://slicemachine.dev"
       },
       "VideoPoster": {
         "dimensions": {
@@ -94,13 +79,13 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?w=900&h=500&fit=crop"
       },
       "CtaLink": {
         "link_type": "Web",
-        "url": "https://www.google.com"
+        "url": "https://slicemachine.dev"
       },
-      "CtaText": "recontextualize front-end synergies",
+      "CtaText": "incentivize wireless partnerships",
       "Featured": true
     }
   }

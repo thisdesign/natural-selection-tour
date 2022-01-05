@@ -58,9 +58,6 @@
             "hero_video_slice": {
               "type": "SharedSlice"
             },
-            "code_slice": {
-              "type": "SharedSlice"
-            },
             "countdown_slice": {
               "type": "SharedSlice"
             },
@@ -83,6 +80,9 @@
               "type": "SharedSlice"
             },
             "rider_randomizer_slice": {
+              "type": "SharedSlice"
+            },
+            "bracket_slice": {
               "type": "SharedSlice"
             }
           }

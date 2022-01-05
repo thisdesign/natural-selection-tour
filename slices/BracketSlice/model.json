@@ -11,23 +11,22 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "BracketSlice",
       "primary": {
-        "title": {
-          "type": "StructuredText",
+        "SectionTitle": {
           "config": {
-            "single": "heading1",
-            "label": "Title",
-            "placeholder": "This is where it all begins..."
-          }
+            "label": "SectionTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
         },
-        "description": {
-          "type": "StructuredText",
+        "SectionNumber": {
           "config": {
-            "single": "paragraph",
-            "label": "Description",
-            "placeholder": "A nice description of your product"
-          }
+            "label": "SectionNumber",
+            "placeholder": ""
+          },
+          "type": "Text"
         }
-      }
+      },
+      "items": {}
     }
   ]
 }

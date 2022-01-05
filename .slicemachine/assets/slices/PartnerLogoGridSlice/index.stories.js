@@ -18,7 +18,7 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"partner_logo_grid_slice","items":[],"primary":{"SectionTitle":"engage extensible action-items","SectionNumber":"transition transparent partnerships","title":[{"type":"heading2","text":"Mesh e-business web-readiness","spans":[]}],"UseExternalLinks":true},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","name":"Default slice","slice_type":"partner_logo_grid_slice","items":[],"primary":{"SectionTitle":"optimize compelling architectures","SectionNumber":"maximize mission-critical interfaces","title":[{"type":"heading2","text":"Transition revolutionary web-readiness","spans":[]}],"UseExternalLinks":false},"id":"_DefaultSlice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
