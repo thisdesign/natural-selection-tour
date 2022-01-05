@@ -15,11 +15,23 @@
           "link_type": "Web",
           "url": "http://twitter.com"
         }
+      },
+      {
+        "Rider": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "Rider": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
       }
     ],
     "primary": {
-      "SectionNumber": "strategize e-business solutions",
-      "SectionTitle": "empower dynamic web-readiness"
+      "SectionNumber": "reinvent plug-and-play convergence",
+      "SectionTitle": "cultivate intuitive supply-chains"
     }
   }
 ]
