@@ -5,7 +5,6 @@
       callback: onWaypoint,
     }"
     :class="`rider-gallery-slice waypoint ${waypointActive ? 'active' : ''}`"
-    @mousemove="updateMouse"
   >
     <div class="site-padding">
       <element-section-bar
@@ -29,28 +28,11 @@
           @update-rider="updateCurrentRider"
           @hidename="hideCursorName"
         />
-        <div
-          ref="mousePointer"
-          class="mouse-pointer"
-          :class="{ active: pointer.showPointer }"
-        >
-          <div class="inner">
-            <span class="pointer"></span>
-            <div class="name-wrapper">
-              <transition name="vt-fade" mode="out-in">
-                <span
-                  v-if="pointer.currentRider"
-                  :key="pointer.currentRider.Name[0].text"
-                  class="rider-name"
-                >
-                  {{ formatName(pointer.currentRider.Name[0].text).firstName }}
-                  <br />
-                  {{ formatName(pointer.currentRider.Name[0].text).lastName }}
-                </span>
-              </transition>
-            </div>
-          </div>
-        </div>
+        <element-mouse-pointer
+          :show-pointer="pointer.showPointer"
+          :line1="pointerLine1"
+          :line2="pointerLine2"
+        />
       </div>
     </div>
     <div class="mobile-gallery">
@@ -167,6 +149,16 @@ export default {
         return item.Rider.id
       })
     },
+    pointerLine1() {
+      return this.pointer.currentRider
+        ? this.formatName(this.pointer.currentRider.Name[0].text).firstName
+        : null
+    },
+    pointerLine2() {
+      return this.pointer.currentRider
+        ? this.formatName(this.pointer.currentRider.Name[0].text).lastName
+        : null
+    },
   },
   watch: {
     waypointActive(active) {
@@ -190,7 +182,7 @@ export default {
         el.classList.add('show')
       }
     },
-    formatName(name) {
+    formatName(name = '') {
       const nameArray = name.split(' ')
       const firstName = nameArray[0]
       const lastName = nameArray.slice(1, nameArray.length)
@@ -237,15 +229,15 @@ export default {
         return {}
       }
     },
-    updateMouse(event) {
-      const pointer = this.$refs.mousePointer
-      pointer.style.transform = `translate(${event.pageX}px, ${event.pageY}px)`
-    },
+    // updateMouse(event) {
+    //   const pointer = this.$refs.mousePointer
+    //   if (pointer) {
+    //     // pointer.style.transform = `translate(${event.pageX}px, ${event.pageY}px)`
+    //   }
+    // },
     hideCursorName() {
-      // setTimeout(() => {
       this.pointer.showPointer = false
       this.pointer.currentRider = null
-      // }, 100)
     },
     updateCurrentRider(rider) {
       this.pointer.currentRider = rider
@@ -286,53 +278,6 @@ export default {
   flex-wrap: wrap;
   @include media-breakpoint-up(sm) {
     display: flex;
-  }
-}
-
-.mouse-pointer {
-  position: fixed;
-  z-index: 1000;
-  cursor: none;
-  pointer-events: none;
-  top: -0.5rem;
-  left: -0.5rem;
-  opacity: 0;
-  transition: opacity 300ms, transform 150ms ease-out;
-  min-width: max-content;
-  &.active {
-    opacity: 1;
-  }
-  * {
-    cursor: none;
-    pointer-events: none;
-  }
-  .inner {
-    display: flex;
-    align-items: flex-start;
-  }
-  .pointer {
-    background: white;
-    width: 1rem;
-    border-radius: 1rem;
-    height: 1rem;
-    margin-right: 1rem;
-    display: block;
-  }
-  .name-wrapper {
-    flex: 1 1 calc(100% - 2rem);
-    position: relative;
-  }
-  .rider-name {
-    font-family: 'Natural-Selection';
-    color: white;
-    line-height: 0.8;
-    font-size: 2vw;
-    display: table-caption;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    white-space: nowrap;
   }
 }
 

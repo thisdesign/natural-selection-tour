@@ -40,6 +40,37 @@
           <div id="js-error-firstname" class="st-error-message"></div>
 
           <div class="required">
+            <label class="st-signupform__label" for="email">
+              Email
+
+              <span class="required-mark">
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.84534 5.66669H1.00004C0.631851 5.66669 0.333374 5.36821 0.333374 5.00002C0.333374 4.63183 0.631851 4.33335 1.00004 4.33335H3.84534L2.42269 1.86925C2.2386 1.55039 2.34785 1.14266 2.66671 0.958568C2.98557 0.774473 3.3933 0.883724 3.57739 1.20259L5.00004 3.66669L6.42269 1.20259C6.60679 0.883724 7.01451 0.774473 7.33337 0.958568C7.65224 1.14266 7.76149 1.55039 7.57739 1.86925L6.15474 4.33335H9.00004C9.36823 4.33335 9.66671 4.63183 9.66671 5.00002C9.66671 5.36821 9.36823 5.66669 9.00004 5.66669H6.15474L7.57739 8.13079C7.76149 8.44965 7.65224 8.85738 7.33337 9.04147C7.01451 9.22557 6.60679 9.11632 6.42269 8.79745L5.00004 6.33335L3.57739 8.79745C3.3933 9.11632 2.98557 9.22557 2.66671 9.04147C2.34785 8.85738 2.2386 8.44965 2.42269 8.13079L3.84534 5.66669Z"
+                    fill="#E63655"
+                  ></path>
+                </svg>
+              </span>
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="text"
+              placeholder="email@address.com"
+              maxlength="1600"
+              data-type="text"
+            />
+          </div>
+          <div id="js-error-email" class="st-error-message"></div>
+
+          <div class="required">
             <label class="st-signupform__label" for="phone">
               Phone
 
@@ -159,6 +190,17 @@ export default {
           options: null,
           value: '',
           placeholder: 'John',
+        },
+        {
+          type: 'text',
+          name: 'email',
+          label: 'Email',
+          required: true,
+          maxLength: 30,
+          format: null,
+          options: null,
+          value: '',
+          placeholder: 'email@address.com',
         },
         {
           type: 'phone',
