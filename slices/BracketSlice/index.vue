@@ -13,6 +13,9 @@
       @mousedown="mouseDownHandler"
       @mousemove="mouseMoveHandler"
       @mouseup="mouseUpHandler"
+      @touchstart="mouseDownHandler"
+      @touchmove="mouseMoveHandler"
+      @touchend="mouseUpHandler"
     >
       <div v-for="(round, index) in rounds" :key="index" class="bracket-column">
         <div
@@ -38,6 +41,9 @@
 </template>
 
 <script>
+import gsap from 'gsap/all'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+
 export default {
   name: 'BracketSlice',
   props: {
@@ -115,44 +121,88 @@ export default {
         },
       ],
       grabbing: false,
+      currentRound: 1,
+      distanceX: 0,
+      swipeDirection: null,
+      bracket: this.$refs.bracket,
       scrollPosition: {
         left: 0,
         x: 0,
       },
     }
   },
+  computed: {
+    totalRounds() {
+      return this.rounds.length
+    },
+  },
   mounted() {
     window.bracket = this.$refs.bracket
+    gsap.registerPlugin(ScrollToPlugin)
+    this.setCurrentRound()
   },
   methods: {
+    getColumnWidth() {
+      return this.$refs.bracket.scrollWidth / 4
+    },
+    setCurrentRound() {
+      gsap.to(this.$refs.bracket, {
+        duration: 0.5,
+        scrollTo: {
+          x: this.getColumnWidth() * (this.currentRound - 1),
+          ease: 'power4',
+        },
+      })
+    },
+
     mouseDownHandler(e) {
       this.grabbing = true
       this.$refs.bracket.style.cursor = 'grabbing'
       this.scrollPosition.left = this.$refs.bracket.scrollLeft
-      this.scrollPosition.x = e.clientX
+      this.scrollPosition.x = e.clientX ?? e.touches[0].clientX
     },
     mouseMoveHandler(e) {
       if (this.grabbing) {
-        const dx = e.clientX - this.scrollPosition.x
-        if (Math.abs(dx) > 100) {
-          // TODO: add a way to set the current column.
-          // Add animation for the scroll
-          this.$refs.bracket.scrollLeft = this.scrollPosition.left - dx
+        if (e.clientX) {
+          this.distanceX = e.clientX - this.scrollPosition.x
+        } else {
+          this.distanceX = e.touches[0].clientX - this.scrollPosition.x
+        }
+
+        this.$refs.bracket.scrollLeft =
+          this.scrollPosition.left - this.distanceX
+
+        if (this.distanceX < -100) {
+          this.swipeDirection = 'LEFT'
+        } else if (this.distanceX > 100) {
+          this.swipeDirection = 'RIGHT'
+        } else {
+          this.swipeDirection = null
         }
       }
     },
     mouseUpHandler() {
       this.grabbing = false
       this.$refs.bracket.style.cursor = 'grab'
-    },
-    getColumnWidth() {
-      return document.querySelector('.bracket-column').offsetWidth
+      if (this.swipeDirection === 'LEFT') {
+        if (this.currentRound < this.totalRounds) {
+          this.currentRound++
+        }
+      } else if (this.swipeDirection === 'RIGHT') {
+        if (this.currentRound > 1) {
+          this.currentRound--
+        }
+      }
+      this.setCurrentRound()
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+* {
+  user-select: none;
+}
 .section {
   position: relative;
   padding-right: 0;

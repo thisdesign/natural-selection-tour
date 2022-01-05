@@ -50,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 .bracket-rider {
   width: 43vw;
-  min-width: 285px;
+  min-width: 320px;
   background: rgba(41, 41, 41, 0.76);
   border: 1px solid #ffffff;
   height: 5rem;
