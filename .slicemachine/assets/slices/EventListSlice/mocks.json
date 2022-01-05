@@ -5,10 +5,10 @@
     "slice_type": "event_list_slice",
     "items": [
       {
-        "Active": true,
-        "Month": "strategize B2B convergence",
-        "Start": 1912,
-        "End": 5327,
+        "Active": false,
+        "Month": "grow vertical e-commerce",
+        "Start": 4035,
+        "End": 9578,
         "Graphic": {
           "dimensions": {
             "width": 900,
@@ -16,46 +16,93 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
         },
         "Title": [
           {
             "type": "heading2",
-            "text": "Reinvent plug-and-play technologies",
+            "text": "Embrace dot-com interfaces",
             "spans": []
           }
         ],
         "Location": [
           {
             "type": "paragraph",
-            "text": "Ut mollit aliquip mollit consectetur est mollit do laboris deserunt est non nostrud. Lorem anim veniam nisi irure.",
+            "text": "Mollit reprehenderit minim exercitation adipisicing Lorem proident velit minim. Minim cillum deserunt enim elit non.",
             "spans": []
           }
         ],
         "Description": [
           {
             "type": "paragraph",
-            "text": "Non qui ad voluptate Lorem.",
+            "text": "Voluptate minim tempor amet sit sint.",
             "spans": []
           }
         ],
-        "Status": "terrain-prep",
+        "Status": "archived",
         "SnowDescription": [
           {
             "type": "paragraph",
-            "text": "Laborum officia Lorem eu adipisicing duis amet sint aute ut excepteur excepteur sint. Ipsum adipisicing fugiat qui nulla eu esse nulla magna commodo consectetur.",
+            "text": "Excepteur esse nulla dolor laborum quis ex aute aliquip ea do ad sunt tempor deserunt. Quis adipisicing tempor eiusmod occaecat Lorem velit excepteur cillum irure ullamco Lorem ad commodo occaecat. Reprehenderit proident officia mollit sunt ex anim cillum enim mollit culpa fugiat fugiat nisi in.",
             "spans": []
           }
         ],
-        "SnowAmount": 2251,
+        "SnowAmount": 7854,
+        "SnowUnits": "in",
+        "SnowPercent": 4916
+      },
+      {
+        "Active": false,
+        "Month": "optimize virtual initiatives",
+        "Start": 4603,
+        "End": 7261,
+        "Graphic": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
+        },
+        "Title": [
+          {
+            "type": "heading2",
+            "text": "Synergize B2C deliverables",
+            "spans": []
+          }
+        ],
+        "Location": [
+          {
+            "type": "paragraph",
+            "text": "Adipisicing pariatur in non voluptate mollit sit culpa tempor eiusmod sunt incididunt fugiat. Qui ipsum voluptate enim exercitation consequat.",
+            "spans": []
+          }
+        ],
+        "Description": [
+          {
+            "type": "paragraph",
+            "text": "Nostrud irure ea cillum irure.",
+            "spans": []
+          }
+        ],
+        "Status": "wx-hold",
+        "SnowDescription": [
+          {
+            "type": "paragraph",
+            "text": "Irure excepteur irure consectetur consequat incididunt officia veniam non.",
+            "spans": []
+          }
+        ],
+        "SnowAmount": 9050,
         "SnowUnits": "c",
-        "SnowPercent": 8906
+        "SnowPercent": 1174
       },
       {
         "Active": false,
-        "Month": "facilitate back-end convergence",
-        "Start": 5000,
-        "End": 7747,
+        "Month": "cultivate next-generation communities",
+        "Start": 1596,
+        "End": 7153,
         "Graphic": {
           "dimensions": {
             "width": 900,
@@ -63,26 +110,120 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=500&fit=crop"
         },
         "Title": [
           {
             "type": "heading2",
-            "text": "Streamline scalable partnerships",
+            "text": "Deliver extensible blockchains",
             "spans": []
           }
         ],
         "Location": [
           {
             "type": "paragraph",
-            "text": "Commodo sunt et qui.",
+            "text": "Est ea proident quis occaecat velit ad anim mollit ipsum ut.",
             "spans": []
           }
         ],
         "Description": [
           {
             "type": "paragraph",
-            "text": "In mollit veniam tempor do exercitation officia nulla sunt dolore officia.",
+            "text": "Ullamco culpa eu qui fugiat pariatur.",
+            "spans": []
+          }
+        ],
+        "Status": "wx-hold",
+        "SnowDescription": [
+          {
+            "type": "paragraph",
+            "text": "Labore irure ut anim aute adipisicing culpa fugiat non officia. Aliqua commodo ea non sunt pariatur officia ea anim culpa reprehenderit id ipsum. Exercitation irure mollit ullamco sit magna sit laborum irure occaecat non elit.",
+            "spans": []
+          }
+        ],
+        "SnowAmount": 4041,
+        "SnowUnits": "in",
+        "SnowPercent": 6105
+      },
+      {
+        "Active": true,
+        "Month": "generate proactive models",
+        "Start": 3009,
+        "End": 6926,
+        "Graphic": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
+        },
+        "Title": [
+          {
+            "type": "heading2",
+            "text": "Matrix efficient platforms",
+            "spans": []
+          }
+        ],
+        "Location": [
+          {
+            "type": "paragraph",
+            "text": "Aliqua aliqua tempor laboris aliquip ullamco amet nulla.",
+            "spans": []
+          }
+        ],
+        "Description": [
+          {
+            "type": "paragraph",
+            "text": "Mollit exercitation qui id excepteur magna irure culpa esse consectetur reprehenderit veniam nostrud.",
+            "spans": []
+          }
+        ],
+        "Status": "archived",
+        "SnowDescription": [
+          {
+            "type": "paragraph",
+            "text": "Ea ex duis ullamco pariatur occaecat nisi do elit veniam consectetur sit commodo aute non eiusmod. Cillum laborum et et ut culpa sunt enim ullamco cupidatat consequat qui velit proident.",
+            "spans": []
+          }
+        ],
+        "SnowAmount": 3408,
+        "SnowUnits": "in",
+        "SnowPercent": 6870
+      },
+      {
+        "Active": false,
+        "Month": "iterate scalable portals",
+        "Start": 7722,
+        "End": 3365,
+        "Graphic": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da?w=900&h=500&fit=crop"
+        },
+        "Title": [
+          {
+            "type": "heading2",
+            "text": "Aggregate best-of-breed applications",
+            "spans": []
+          }
+        ],
+        "Location": [
+          {
+            "type": "paragraph",
+            "text": "Laborum reprehenderit excepteur veniam aute. Commodo et laboris veniam ipsum nisi eu labore pariatur minim nulla.",
+            "spans": []
+          }
+        ],
+        "Description": [
+          {
+            "type": "paragraph",
+            "text": "Anim ipsum in officia dolor culpa adipisicing deserunt nisi incididunt sint. Cupidatat elit veniam excepteur mollit ex fugiat nostrud qui non ad id commodo. Proident sit reprehenderit occaecat excepteur.",
             "spans": []
           }
         ],
@@ -90,112 +231,18 @@
         "SnowDescription": [
           {
             "type": "paragraph",
-            "text": "Id Lorem ex ipsum dolore.",
+            "text": "Ullamco ea culpa exercitation eu veniam anim quis enim amet do proident consectetur labore sint. Officia ipsum consequat reprehenderit tempor magna proident culpa tempor magna enim. Incididunt laboris enim laborum minim.",
             "spans": []
           }
         ],
-        "SnowAmount": 8929,
+        "SnowAmount": 5789,
         "SnowUnits": "in",
-        "SnowPercent": 8071
-      },
-      {
-        "Active": false,
-        "Month": "architect B2B applications",
-        "Start": 6522,
-        "End": 9278,
-        "Graphic": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?w=900&h=500&fit=crop"
-        },
-        "Title": [
-          {
-            "type": "heading2",
-            "text": "Target value-added applications",
-            "spans": []
-          }
-        ],
-        "Location": [
-          {
-            "type": "paragraph",
-            "text": "Ipsum laborum Lorem labore labore qui aliquip consequat non laborum ipsum. Enim et tempor aliqua aliqua. Ea do qui veniam ut ea excepteur laborum sunt amet do adipisicing.",
-            "spans": []
-          }
-        ],
-        "Description": [
-          {
-            "type": "paragraph",
-            "text": "Fugiat duis velit eiusmod exercitation veniam.",
-            "spans": []
-          }
-        ],
-        "Status": "wx-hold",
-        "SnowDescription": [
-          {
-            "type": "paragraph",
-            "text": "Veniam eu sint laboris dolore ad fugiat magna et laboris incididunt sunt id aliquip.",
-            "spans": []
-          }
-        ],
-        "SnowAmount": 2468,
-        "SnowUnits": "in",
-        "SnowPercent": 914
-      },
-      {
-        "Active": true,
-        "Month": "orchestrate open-source e-business",
-        "Start": 9695,
-        "End": 7416,
-        "Graphic": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f?w=900&h=500&fit=crop"
-        },
-        "Title": [
-          {
-            "type": "heading2",
-            "text": "Integrate end-to-end vortals",
-            "spans": []
-          }
-        ],
-        "Location": [
-          {
-            "type": "paragraph",
-            "text": "Laboris reprehenderit dolore est esse consequat culpa adipisicing qui nulla sit ex laboris. Ullamco ex proident nisi reprehenderit labore dolore consectetur ipsum quis proident consectetur occaecat sunt. Et deserunt quis deserunt cupidatat sit ullamco ullamco esse do id commodo.",
-            "spans": []
-          }
-        ],
-        "Description": [
-          {
-            "type": "paragraph",
-            "text": "Non in excepteur do.",
-            "spans": []
-          }
-        ],
-        "Status": "wx-hold",
-        "SnowDescription": [
-          {
-            "type": "paragraph",
-            "text": "Enim id deserunt in occaecat.",
-            "spans": []
-          }
-        ],
-        "SnowAmount": 9653,
-        "SnowUnits": "in",
-        "SnowPercent": 7113
+        "SnowPercent": 4937
       }
     ],
     "primary": {
-      "SectionTitle": "engage seamless niches",
-      "SectionNumber": "visualize mission-critical bandwidth"
+      "SectionTitle": "generate revolutionary web services",
+      "SectionNumber": "redefine holistic supply-chains"
     }
   }
 ]

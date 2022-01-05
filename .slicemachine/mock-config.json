@@ -1,33 +1,6 @@
 {
   "slices": {
     "PartnerHeroSlice": {},
-    "WebglModelSlice": {
-      "default-slice": {
-        "primary": {
-          "CtaLink": {
-            "content": "https://www.google.com"
-          }
-        },
-        "items": {}
-      }
-    },
-    "PartnerLogoGridSlice": {
-      "default-slice": {
-        "primary": {}
-      }
-    },
-    "EventScheduleSlice": {
-      "default-slice": {
-        "items": {
-          "Description": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
     "Streams": {}
   },
   "_cts": {

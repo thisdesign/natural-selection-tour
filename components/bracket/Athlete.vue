@@ -1,0 +1,87 @@
+<template>
+  <div class="bracket-rider">
+    <div class="rider-info">
+      <h3 class="rider-name">{{ rider.name }}</h3>
+      <img class="rider-nationality" src="/mocks/us-flag.png" alt="" />
+    </div>
+    <div class="rider-ratings">
+      <bracket-athlete-rating
+        v-for="(results, index) in rider.results"
+        :key="index"
+        :results="results"
+      />
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    rider: {
+      type: Object,
+      default: () => {
+        return {
+          name: 'Sage Kotsenburg',
+          nationality: '',
+          results: [
+            {
+              average: 90.5,
+              scores: ['J1_ 91.6', 'J2_88.4', 'J3_ 99.9'],
+            },
+            {
+              average: 90.5,
+              scores: ['J1_ 90.2', 'J2_80.3', 'J3_ 79.8'],
+            },
+            {
+              average: 90.5,
+              scores: ['J1_ 97.8', 'J2_98.1', 'J3_ 69.5'],
+            },
+          ],
+        }
+      },
+    },
+  },
+  data() {
+    return {}
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.bracket-rider {
+  width: 43vw;
+  min-width: 320px;
+  background: rgba(41, 41, 41, 0.76);
+  border: 1px solid #ffffff;
+  height: 3rem;
+  display: flex;
+  margin-bottom: 0.5rem;
+  position: relative;
+  @include media-breakpoint-up(sm) {
+    height: 5rem;
+  }
+}
+.rider-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  padding: 2%;
+}
+.rider-name {
+  font-family: 'Natural-Selection', sans-serif;
+  font-size: clamp(0.8rem, 2vw, 2.2rem);
+  line-height: 0.75;
+  margin-bottom: 0;
+  width: 80%;
+}
+.rider-ratings {
+  display: flex;
+  width: 40%;
+}
+.rider-nationality {
+  height: 90%;
+  max-height: 2.8rem;
+  width: auto;
+}
+</style>

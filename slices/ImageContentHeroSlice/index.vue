@@ -60,7 +60,9 @@ export default {
     const section = document.querySelector('.section.partners')
     if (section) {
       const header = document.querySelector('header')
-      section.style.paddingTop = `${header.offsetHeight}px`
+      if (header) {
+        section.style.paddingTop = `${header.offsetHeight}px`
+      }
     }
   },
   methods: {
