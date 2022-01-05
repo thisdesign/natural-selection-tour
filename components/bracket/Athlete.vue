@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+* {
+  color: white;
+}
 .bracket-rider {
   width: 43vw;
   min-width: 320px;
