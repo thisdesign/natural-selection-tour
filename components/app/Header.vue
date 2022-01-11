@@ -326,22 +326,26 @@ nav {
         left: 0;
         display: block;
         margin-bottom: -10px;
-        width: 8px;
+        width: 0;
         height: 3px;
         background: $white;
         transform: skew(-25deg);
-        opacity: 0;
         pointer-events: none;
+        transition: width 300ms;
       }
     }
     &:hover {
-      text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
+      &:after {
+        width: 10px;
+      }
+      // text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
     }
     &.nuxt-link-active {
-      text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
+      // text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
       font-style: italic;
       &:after {
-        opacity: 1;
+        width: 10px;
+        // opacity: 1;
       }
     }
   }

@@ -288,6 +288,7 @@ export default {
 }
 .rider-logo {
   width: 25%;
+  padding-right: 10px;
   img {
     width: 100%;
     height: auto;
