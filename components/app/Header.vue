@@ -238,7 +238,7 @@ header {
   height: 100%;
   z-index: 10;
   padding: 6rem 2rem 0rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 1);
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
@@ -261,20 +261,24 @@ header {
     opacity: 1;
     max-height: 100vh;
     visibility: visible;
-  }
-  &:after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    background: black;
-    z-index: -1;
-    @include media-breakpoint-up(sm) {
-      display: none;
+    .menu-link,
+    .footer-link {
+      opacity: 1;
     }
   }
+  // &:after {
+  //   content: '';
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: black;
+  //   z-index: -1;
+  //   @include media-breakpoint-up(sm) {
+  //     display: none;
+  //   }
+  // }
   .main-menu-inner {
     display: flex;
     flex-direction: column;
@@ -283,6 +287,17 @@ header {
     @include media-breakpoint-up(sm) {
       height: 100%;
     }
+  }
+}
+.menu-link,
+.footer-link {
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-delay: 300ms;
+  transition-duration: 500ms;
+  @include media-breakpoint-up(sm) {
+    opacity: 1;
   }
 }
 nav {
@@ -326,22 +341,25 @@ nav {
         left: 0;
         display: block;
         margin-bottom: -10px;
-        width: 8px;
+        width: 0;
         height: 3px;
         background: $white;
         transform: skew(-25deg);
-        opacity: 0;
         pointer-events: none;
+        transition: width 300ms;
       }
     }
     &:hover {
-      text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
+      &:after {
+        width: 100%;
+      }
+      // text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
     }
     &.nuxt-link-active {
-      text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
+      // text-shadow: -0.05ex 0 currentColor, 0.05ex 0 currentColor;
       font-style: italic;
       &:after {
-        opacity: 1;
+        width: 10px;
       }
     }
   }

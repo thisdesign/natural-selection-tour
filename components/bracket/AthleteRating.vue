@@ -48,6 +48,9 @@ export default {
   @include media-breakpoint-up(sm) {
     font-size: 0.8rem;
   }
+  @include media-breakpoint-up(md) {
+    font-size: 1rem;
+  }
 }
 .rating {
   flex: 1 1 auto;
