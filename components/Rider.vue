@@ -15,6 +15,7 @@
         playsinline
       ></video>
     </div>
+    <prismic-rich-text class="rider-name tablet" :field="rider.data.Name" />
     <div class="rider-info">
       <div class="rider-flag">
         <div class="flag-wrapper">
@@ -254,6 +255,15 @@ export default {
 }
 .rider-name {
   font-weight: 700;
+  &.tablet {
+    color: white;
+    font-family: 'Natural-Selection', sans-serif;
+    line-height: 1;
+    margin: 1rem 0;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
 }
 .rider-description {
   position: relative;
@@ -281,6 +291,16 @@ export default {
   img {
     width: 100%;
     height: auto;
+  }
+}
+</style>
+
+<style lang="scss">
+.rider-name {
+  &.tablet {
+    * {
+      font-size: 3vw;
+    }
   }
 }
 </style>
