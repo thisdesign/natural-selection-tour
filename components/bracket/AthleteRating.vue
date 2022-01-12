@@ -1,13 +1,13 @@
 <template>
   <div class="rating">
     <button class="open-ratings" @click="open = true">
-      {{ results.average }}
+      {{ run.average }}
     </button>
     <transition name="vt-fade" mode="out-in">
       <div v-if="open" class="rating-details">
         <element-btn-close class="close-btn" @click="open = false" />
-        <span v-for="(result, index) in results.scores" :key="index">
-          {{ result }}
+        <span v-for="(scores, index) in run.scores" :key="index">
+          {{ scores.judge }}_ {{ scores.score }}
         </span>
       </div>
     </transition>
@@ -17,9 +17,14 @@
 <script>
 export default {
   props: {
-    results: {
+    run: {
       type: Object,
-      default: () => {},
+      default: () => {
+        return {
+          average: '',
+          scores: [],
+        }
+      },
     },
   },
   data() {

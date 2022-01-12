@@ -24,6 +24,7 @@
           v-for="(athlete, atheleteIndex) in heat"
           :key="atheleteIndex"
           :rider="athlete"
+          :all-results="round.results"
         />
         <div class="bracket-lines">
           <span class="line"></span>
@@ -48,69 +49,6 @@ export default {
   },
   data() {
     return {
-      //   rounds: [
-      //     {
-      //       heats: [
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       heats: [
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       heats: [
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       heats: [
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //       ],
-      //     },
-      //   ],
       grabbing: false,
       currentRound: 1,
       distanceX: 0,
@@ -130,8 +68,6 @@ export default {
   mounted() {
     gsap.registerPlugin(ScrollToPlugin)
     this.setCurrentRound()
-    // console.log('rounds', this.rounds)
-    // console.log('heats', this.heats)
   },
   methods: {
     getHeats(round, roundIndex) {
@@ -155,6 +91,7 @@ export default {
         }
         return 0
       })
+      //   Grouping the athletes by heat
       const heats = []
       const numberOfHeats = entries.length / 2
       for (let i = 0; i < numberOfHeats; i++) {

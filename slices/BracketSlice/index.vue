@@ -26,19 +26,36 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+      eventId: '4197b641-63ee-11eb-8590-0fa6623371ce',
+      contests: [],
+      polling: false,
+    }
   },
   async fetch() {
     if (this.isLoading) {
-      await this.$store.dispatch('results/loadResults', fetch)
+      await this.fetchResults()
     }
   },
   computed: {
     isLoading() {
       return this.$store.getters['results/isLoading']
     },
-    contests() {
-      return this.$store.state.results.items
+  },
+  mounted() {
+    if (this.polling) {
+      setInterval(() => {
+        this.fetchResults()
+      }, 5000)
+    }
+  },
+  methods: {
+    async fetchResults() {
+      await this.$store.dispatch('results/loadResults', {
+        fetch,
+        eventId: this.eventId,
+      })
+      this.contests = this.$store.state.results.items[this.eventId]
     },
   },
 }
