@@ -1,7 +1,7 @@
 <template>
   <div class="bracket-rider">
     <div class="rider-info">
-      <h3 class="rider-name">{{ rider.name }}</h3>
+      <h3 class="rider-name">{{ rider.athlete.fullName }} {{ rider.order }}</h3>
       <img class="rider-nationality" src="/mocks/us-flag.png" alt="" />
     </div>
     <div class="rider-ratings">
@@ -43,6 +43,9 @@ export default {
   },
   data() {
     return {}
+  },
+  mounted() {
+    // console.log(this.rider)
   },
 }
 </script>
