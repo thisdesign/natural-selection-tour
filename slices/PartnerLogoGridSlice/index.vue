@@ -148,10 +148,10 @@ export default {
     width: 50%;
     padding-top: 20%;
     @include media-breakpoint-up(sm) {
-      padding-top: 20%;
+      padding-top: 17%;
     }
     img {
-      width: 80%;
+      width: 60%;
       margin: 0 auto;
     }
   }
