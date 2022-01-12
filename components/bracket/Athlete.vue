@@ -2,7 +2,11 @@
   <div class="bracket-rider">
     <div class="rider-info">
       <h3 class="rider-name">{{ rider.athlete.fullName }}</h3>
-      <img class="rider-nationality" src="/mocks/us-flag.png" alt="" />
+      <img
+        class="rider-nationality"
+        :src="flag"
+        :alt="rider.athlete.nationality"
+      />
     </div>
     <div class="rider-ratings">
       <bracket-athlete-rating
@@ -51,6 +55,13 @@ export default {
           }),
         }
       })
+    },
+    flag() {
+      try {
+        return require(`@/assets/svg/flags/${this.rider.athlete.nationality.toLowerCase()}.svg`)
+      } catch {
+        return require(`@/assets/svg/flags/_black.svg`)
+      }
     },
   },
   mounted() {},
