@@ -340,13 +340,13 @@ nav {
         bottom: 0;
         left: 0;
         display: block;
-        margin-bottom: -10px;
+        margin-bottom: -8px;
         width: 0;
-        height: 3px;
+        height: 1px;
         background: $white;
         transform: skew(-25deg);
         pointer-events: none;
-        transition: width 300ms;
+        transition: width 350ms ease-in-out;
       }
     }
     &:hover {

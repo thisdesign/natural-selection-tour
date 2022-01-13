@@ -1,14 +1,18 @@
 <template>
   <div class="bracket-rider">
     <div class="rider-info">
-      <h3 class="rider-name">{{ rider.name }}</h3>
-      <img class="rider-nationality" src="/mocks/us-flag.png" alt="" />
+      <h3 class="rider-name">{{ rider.athlete.fullName }}</h3>
+      <img
+        class="rider-nationality"
+        :src="flag"
+        :alt="rider.athlete.nationality"
+      />
     </div>
     <div class="rider-ratings">
       <bracket-athlete-rating
-        v-for="(results, index) in rider.results"
+        v-for="(run, index) in runs"
         :key="index"
-        :results="results"
+        :run="run"
       />
     </div>
   </div>
@@ -21,29 +25,46 @@ export default {
       type: Object,
       default: () => {
         return {
-          name: 'Sage Kotsenburg',
+          fullName: 'Sage Kotsenburg',
           nationality: '',
-          results: [
-            {
-              average: 90.5,
-              scores: ['J1_ 91.6', 'J2_88.4', 'J3_ 99.9'],
-            },
-            {
-              average: 90.5,
-              scores: ['J1_ 90.2', 'J2_80.3', 'J3_ 79.8'],
-            },
-            {
-              average: 90.5,
-              scores: ['J1_ 97.8', 'J2_98.1', 'J3_ 69.5'],
-            },
-          ],
         }
       },
+    },
+    allResults: {
+      type: Array,
+      default: () => {},
     },
   },
   data() {
     return {}
   },
+  computed: {
+    runs() {
+      const resultRider = this.allResults.find(
+        (rider) => this.rider.athlete.externalId === rider.externalAthleteId,
+      )
+      return resultRider.details[0].details.map((detail) => {
+        return {
+          average: detail.values[1],
+          scores: detail.groups[0].details.map((scores) => {
+            return {
+              judge: scores.values[0],
+              score: scores.values[1],
+              discard: scores.values[2],
+            }
+          }),
+        }
+      })
+    },
+    flag() {
+      try {
+        return require(`@/assets/svg/flags/${this.rider.athlete.nationality.toLowerCase()}.svg`)
+      } catch {
+        return require(`@/assets/svg/flags/_black.svg`)
+      }
+    },
+  },
+  mounted() {},
 }
 </script>
 
@@ -73,7 +94,7 @@ export default {
 }
 .rider-name {
   font-family: 'Natural-Selection', sans-serif;
-  font-size: clamp(0.8rem, 2vw, 2.2rem);
+  font-size: clamp(0.8rem, 2vw, 2rem);
   line-height: 0.75;
   margin-bottom: 0;
   width: 80%;

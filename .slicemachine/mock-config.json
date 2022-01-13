@@ -1,7 +1,8 @@
 {
   "slices": {
     "PartnerHeroSlice": {},
-    "Streams": {}
+    "Streams": {},
+    "BracketSlice": {}
   },
   "_cts": {
     "rider": {
