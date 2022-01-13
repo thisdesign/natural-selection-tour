@@ -8,7 +8,7 @@
     class="section"
     :class="`waypoint ${waypointActive ? 'active' : ''}`"
   >
-    <div v-for="contest in contests" :key="contest.externalID">
+    <div v-for="contest in contests" :key="contest.externalID" class="contest">
       <bracket-contest
         :rounds="contest.categories[0].rounds"
         :number="slice.primary.SectionNumber"
@@ -64,6 +64,7 @@ export default {
         eventId: this.eventId,
       })
       this.contests = this.$store.state.results.items[this.eventId]
+      console.log(this.contests)
     },
   },
 }
@@ -73,5 +74,8 @@ export default {
 .section {
   position: relative;
   padding-right: 0;
+}
+.contest {
+  padding-bottom: 2rem;
 }
 </style>

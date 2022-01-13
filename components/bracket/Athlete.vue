@@ -13,7 +13,6 @@
         v-for="(run, index) in runs"
         :key="index"
         :run="run"
-        :class="`runs-${runs.length}`"
       />
     </div>
   </div>
@@ -73,16 +72,16 @@ export default {
 * {
   color: white;
 }
-.runs-2 {
-  width: 50%;
-}
-.runs-3 {
-  width: calc(100% / 3);
-}
+// .runs-2 {
+//   width: 50%;
+// }
+// .runs-3 {
+//   width: calc(100% / 3);
+// }
 .bracket-rider {
   width: 43vw;
   min-width: 320px;
-  background: rgba(41, 41, 41, 0.76);
+  // background: rgba(41, 41, 41, 0.76);
   border: 1px solid #ffffff;
   height: 3rem;
   display: flex;
@@ -96,7 +95,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // width: 60%;
+  background: rgba(41, 41, 41, 0.76);
   flex: 1 1 60%;
   padding: 2%;
 }

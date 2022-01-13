@@ -58,12 +58,14 @@ export default {
   }
 }
 .rating {
-  // flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   border-left: 1px solid white;
   border-right: 1px solid white;
+  background: rgba(41, 41, 41, 0.76);
+  flex: 1 1 calc(100% / 3);
+  max-width: 50%;
   button.open-ratings {
     background: transparent;
     padding: 0 0.2rem;
