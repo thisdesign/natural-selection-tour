@@ -8,11 +8,12 @@
         :alt="rider.athlete.nationality"
       />
     </div>
-    <div class="rider-ratings">
+    <div v-if="runs.length" class="rider-ratings">
       <bracket-athlete-rating
         v-for="(run, index) in runs"
         :key="index"
         :run="run"
+        :class="`runs-${runs.length}`"
       />
     </div>
   </div>
@@ -72,6 +73,12 @@ export default {
 * {
   color: white;
 }
+.runs-2 {
+  width: 50%;
+}
+.runs-3 {
+  width: calc(100% / 3);
+}
 .bracket-rider {
   width: 43vw;
   min-width: 320px;
@@ -89,7 +96,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60%;
+  // width: 60%;
+  flex: 1 1 60%;
   padding: 2%;
 }
 .rider-name {
