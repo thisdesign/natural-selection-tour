@@ -36,7 +36,7 @@ export default {
     return {
       eventId: this.slice.primary.EventID,
       contests: [],
-      polling: false,
+      polling: this.slice.primary.PollingEnabled,
     }
   },
   async fetch() {
@@ -64,7 +64,6 @@ export default {
         eventId: this.eventId,
       })
       this.contests = this.$store.state.results.items[this.eventId]
-      console.log(this.contests)
     },
   },
 }
