@@ -1,21 +1,28 @@
 <template>
-  <section class="section">
+  <section
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
+    class="section"
+    :class="`waypoint ${waypointActive ? 'active' : ''}`"
+  >
     <div v-for="contest in contests" :key="contest.externalID">
-      <div class="site-padding">
-        <element-section-bar
-          ref="bar"
-          :number="slice.primary.SectionNumber"
-          :title="slice.primary.SectionTitle"
-        />
-      </div>
-      <bracket-contest :rounds="contest.categories[0].rounds" />
+      <bracket-contest
+        :rounds="contest.categories[0].rounds"
+        :number="slice.primary.SectionNumber"
+        :title="`${slice.primary.SectionTitle}_${contest.name}_Bracket`"
+      />
     </div>
   </section>
 </template>
 
 <script>
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
   name: 'BracketSlice',
+  mixins: [WaypointMixin],
   props: {
     slice: {
       type: Object,
@@ -27,7 +34,7 @@ export default {
   },
   data() {
     return {
-      eventId: '4197b641-63ee-11eb-8590-0fa6623371ce',
+      eventId: this.slice.primary.EventID,
       contests: [],
       polling: false,
     }
@@ -49,6 +56,7 @@ export default {
       }, 5000)
     }
   },
+
   methods: {
     async fetchResults() {
       await this.$store.dispatch('results/loadResults', {

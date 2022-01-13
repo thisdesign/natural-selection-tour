@@ -94,7 +94,7 @@ export default {
 }
 .rider-name {
   font-family: 'Natural-Selection', sans-serif;
-  font-size: clamp(0.8rem, 2vw, 2.2rem);
+  font-size: clamp(0.8rem, 2vw, 2rem);
   line-height: 0.75;
   margin-bottom: 0;
   width: 80%;

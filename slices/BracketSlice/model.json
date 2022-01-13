@@ -24,6 +24,20 @@
             "placeholder": ""
           },
           "type": "Text"
+        },
+        "EventID": {
+          "config": {
+            "label": "EventID",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "EventName": {
+          "config": {
+            "label": "EventName",
+            "placeholder": ""
+          },
+          "type": "Text"
         }
       },
       "items": {}

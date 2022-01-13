@@ -56,6 +56,7 @@ export default {
   },
   methods: {
     show() {
+      console.log('playing')
       this.timeline.play()
     },
   },
