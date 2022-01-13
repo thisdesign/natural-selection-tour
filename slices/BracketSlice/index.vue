@@ -8,7 +8,7 @@
     class="section"
     :class="`waypoint ${waypointActive ? 'active' : ''}`"
   >
-    <div v-for="contest in contests" :key="contest.externalID">
+    <div v-for="contest in contests" :key="contest.externalID" class="contest">
       <bracket-contest
         :rounds="contest.categories[0].rounds"
         :number="slice.primary.SectionNumber"
@@ -36,7 +36,7 @@ export default {
     return {
       eventId: this.slice.primary.EventID,
       contests: [],
-      polling: false,
+      polling: this.slice.primary.PollingEnabled,
     }
   },
   async fetch() {
@@ -73,5 +73,8 @@ export default {
 .section {
   position: relative;
   padding-right: 0;
+}
+.contest {
+  padding-bottom: 2rem;
 }
 </style>

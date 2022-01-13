@@ -38,6 +38,15 @@
             "placeholder": ""
           },
           "type": "Text"
+        },
+        "PollingEnabled": {
+          "config": {
+            "label": "PollingEnabled",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          },
+          "type": "Boolean"
         }
       },
       "items": {}

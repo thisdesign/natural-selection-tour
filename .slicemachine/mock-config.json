@@ -2,7 +2,11 @@
   "slices": {
     "PartnerHeroSlice": {},
     "Streams": {},
-    "BracketSlice": {}
+    "BracketSlice": {
+      "default-slice": {
+        "primary": {}
+      }
+    }
   },
   "_cts": {
     "rider": {
