@@ -177,9 +177,10 @@ export default {
   }
   .background-video {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
-    height: 100%;
+    transform: translateY(-50%);
+    height: 60%;
     width: 100%;
     opacity: 0;
     transition: opacity 1500ms ease;
