@@ -1,7 +1,10 @@
 <template>
   <div class="bracket-rider">
     <div class="rider-info">
-      <h3 class="rider-name">{{ rider.athlete.fullName }}</h3>
+      <h3 class="rider-name">
+        {{ rider.athlete.firstName }} <br />
+        {{ rider.athlete.lastName }}
+      </h3>
       <img
         class="rider-nationality"
         :src="flag"
@@ -104,7 +107,7 @@ export default {
   font-size: clamp(0.8rem, 2vw, 2rem);
   line-height: 0.75;
   margin-bottom: 0;
-  width: 80%;
+  width: 95%;
 }
 .rider-ratings {
   display: flex;
