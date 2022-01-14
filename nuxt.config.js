@@ -98,6 +98,7 @@ export default {
     '@nuxtjs/svg', // https://www.npmjs.com/package/@nuxtjs/robots
     '@nuxtjs/robots', // https://www.npmjs.com/package/@nuxtjs/sitemap
     '@nuxtjs/sitemap',
+    'nuxt-facebook-pixel-module',
     [
       '@nuxtjs/prismic',
       {
@@ -114,6 +115,14 @@ export default {
     ],
     ['nuxt-sm'],
   ],
+
+  facebook: {
+    track: 'PageView',
+    pixelId: '2991615347835610',
+    autoPageView: true,
+    disabled: false,
+  },
+
   generate: {
     fallback: true,
   },
