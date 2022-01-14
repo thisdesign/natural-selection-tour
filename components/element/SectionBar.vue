@@ -77,6 +77,7 @@ export default {
 
 .section-title {
   display: flex;
+  align-items: center;
   &:before {
     content: '';
     display: inline-block;
