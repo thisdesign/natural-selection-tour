@@ -2,6 +2,18 @@
   "slices": {
     "PartnerHeroSlice": {},
     "Streams": {},
+    "TextSlice": {
+      "default-slice": {
+        "primary": {
+          "Text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
     "BracketSlice": {
       "default-slice": {
         "primary": {}

@@ -92,6 +92,8 @@ export default {
         name: RIDER.data.Name[0].text,
         fileName: RIDER.data.Rider.url,
         rotation: getRandumNum(),
+        xOffset: getRandumNum(40),
+        yOffset: getRandumNum(40),
       }
     })
 
@@ -181,7 +183,12 @@ export default {
         .map(() => [...unselectedRiders, randomlySelectedRider])
         .reduce((acc, cur) => [...cur, ...acc], [])
         .slice(0, LENGTH)
-        .map((r) => ({ ...r, rotation: getRandumNum() }))
+        .map((r) => ({
+          ...r,
+          rotation: getRandumNum(),
+          xOffset: getRandumNum(120),
+          yOffset: getRandumNum(60),
+        }))
 
       const ridersSelectedCount = selectedRiders.length
       const ridersRemainingCount = unselectedRiders.length
