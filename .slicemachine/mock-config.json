@@ -1,7 +1,19 @@
 {
   "slices": {
     "PartnerHeroSlice": {},
-    "Streams": {}
+    "Streams": {},
+    "TextSlice": {
+      "default-slice": {
+        "primary": {
+          "Text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
   },
   "_cts": {
     "rider": {

@@ -3,7 +3,9 @@
     v-waypoint="{
       active: true,
       callback: onWaypoint,
-      options: { threshold: [0.15, 0.85] },
+      options: {
+        threshold: $route.params.uid === 'faq' ? [0, 1] : [0.15, 0.85],
+      },
     }"
     :class="`text-slice site-padding waypoint ${
       waypointActive ? 'active' : ''
@@ -57,6 +59,9 @@ export default {
   p {
     font-size: $font-large;
     line-height: 1.2;
+    strong {
+      font-weight: bold;
+    }
   }
   .rte {
     margin-bottom: 10vw;

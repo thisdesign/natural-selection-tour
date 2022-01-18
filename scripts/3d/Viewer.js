@@ -2,6 +2,10 @@ import * as BABYLON from 'babylonjs'
 import 'babylonjs-loaders'
 
 class Viewer {
+  constructor() {
+    this.data = {}
+  }
+
   init(canvas) {
     this.canvas = canvas
     this.engine = new BABYLON.Engine(canvas, true, {
@@ -21,11 +25,6 @@ class Viewer {
     scene.imageProcessingConfiguration.contrast = 1
     scene.imageProcessingConfiguration.exposure = 3.5
 
-    // scene.debugLayer.show({
-    //   embedMode: true,
-    //   globalRootSearch: document.getElementsByClassName('.app'),
-    // })
-
     const camera = new BABYLON.ArcRotateCamera(
       'Camera',
       0,
@@ -34,7 +33,6 @@ class Viewer {
       new BABYLON.Vector3(0, 0, 0),
       scene,
     )
-    // camera.setPosition(new BABYLON.Vector3(0, Math.PI, 11))
     camera.attachControl(this.canvas, false)
     camera.inputs.remove(camera.inputs.attached.mousewheel)
     camera.alpha = Math.PI * 0.25
@@ -45,9 +43,9 @@ class Viewer {
     camera.lowerBetaLimit = Math.PI * 0.3
     camera.upperBetaLimit = Math.PI * 0.45
 
-    camera.radius = 6
-    camera.lowerRadiusLimit = 6
-    camera.upperRadiusLimit = 6
+    camera.radius = 4.5
+    camera.lowerRadiusLimit = 4.5
+    camera.upperRadiusLimit = 4.5
 
     const light = new BABYLON.HemisphericLight(
       'light1',
@@ -55,46 +53,66 @@ class Viewer {
       scene,
     )
     light.position = BABYLON.Vector3(0, 0, 1)
-
-    // const sphere = BABYLON.Mesh.CreateSphere(
-    //   'sphere1',
-    //   16,
-    //   2,
-    //   scene,
-    //   false,
-    //   BABYLON.Mesh.FRONTSIDE,
-    // )
-    // sphere.position.y = 1
-
-    // const ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene)
+    light.intensity = 0.45
 
     this.scene = scene
 
     return { light, camera }
   }
 
-  laodModel(modelUrl) {
+  laodModel(key, modelUrl) {
     return new Promise((resolve) => {
+      if (key === this.key) {
+        resolve()
+        return
+      }
+
+      if (this.data[this.key]) {
+        this.hideModel(this.key)
+      }
+
+      this.key = key
       this.modelUrl = modelUrl
-      // this.modelUrl = 'http://localhost:8888/mountain.glb'
+      // this.modelUrl =
+      // 'http://storage.googleapis.com/nst_media/GLB/3098_Mountain_v11.glb'
+      // 'http://storage.googleapis.com/nst_media/GLB/3098_Mountain_v08.glb'
+      // 'https://storage.googleapis.com/nst_media/GLB/3098_Mountain_v12.glb'
 
-      const SCALE = 0.005
+      if (this.data[this.key]) {
+        this.showModel(this.key)
+        resolve()
+      } else {
+        const SELF = this
+        BABYLON.SceneLoader.ImportMesh(
+          '',
+          '',
+          this.modelUrl,
+          this.scene,
+          function (scene) {
+            SELF.COT = new BABYLON.TransformNode('COT')
+            scene[0].parent = SELF.COT
 
-      BABYLON.SceneLoader.ImportMesh(
-        '',
-        '',
-        this.modelUrl,
-        this.scene,
-        function (scene) {
-          const MTN = scene[1]
-          MTN.rotationQuaternion = null
-          MTN.position = new BABYLON.Vector3(0, 0.7, 0)
-          MTN.rotation = new BABYLON.Vector3(-Math.PI * 0.5, Math.PI * 1.25, 0)
-          MTN.scaling = new BABYLON.Vector3(SCALE, SCALE, SCALE)
-          resolve()
-        },
-      )
+            // const MTN = scene[0]
+            const SCALE = 0.005
+            SELF.COT.rotationQuaternion = null
+            SELF.COT.position = new BABYLON.Vector3(0, 0.7, 0)
+            SELF.COT.rotation = new BABYLON.Vector3(0, Math.PI * 0.75, 0)
+            SELF.COT.scaling = new BABYLON.Vector3(SCALE, SCALE, SCALE)
+            // SELF.data[SELF.key] = MTN
+            resolve()
+          },
+        )
+      }
     })
+  }
+
+  showModel(key) {
+    // show model
+    // reset camera
+  }
+
+  hideModel(key) {
+    // hide model
   }
 }
 
