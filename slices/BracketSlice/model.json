@@ -24,6 +24,29 @@
             "placeholder": ""
           },
           "type": "Text"
+        },
+        "EventID": {
+          "config": {
+            "label": "EventID",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "EventName": {
+          "config": {
+            "label": "EventName",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "PollingEnabled": {
+          "config": {
+            "label": "PollingEnabled",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          },
+          "type": "Boolean"
         }
       },
       "items": {}

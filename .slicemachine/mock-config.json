@@ -13,6 +13,11 @@
           }
         }
       }
+    },
+    "BracketSlice": {
+      "default-slice": {
+        "primary": {}
+      }
     }
   },
   "_cts": {

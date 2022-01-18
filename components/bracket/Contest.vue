@@ -1,35 +1,48 @@
 <template>
   <div
-    ref="bracket"
-    class="bracket-columns site-padding"
-    @mousedown="mouseDownHandler"
-    @mousemove="mouseMoveHandler"
-    @mouseup="mouseUpHandler"
-    @touchstart="mouseDownHandler"
-    @touchmove="mouseMoveHandler"
-    @touchend="mouseUpHandler"
+    v-waypoint="{
+      active: true,
+      callback: onWaypoint,
+      options: { threshold: [0.15, 0.85] },
+    }"
   >
+    <div class="site-padding">
+      <element-section-bar ref="bar" :number="number" :title="title" />
+    </div>
+
     <div
-      v-for="(round, roundIndex) in rounds"
-      :key="roundIndex"
-      class="bracket-column"
+      ref="bracket"
+      class="bracket-columns site-padding"
+      @mousedown="mouseDownHandler"
+      @mousemove="mouseMoveHandler"
+      @mouseup="mouseUpHandler"
+      @touchstart="mouseDownHandler"
+      @touchmove="mouseMoveHandler"
+      @touchend="mouseUpHandler"
     >
       <div
-        v-for="(heat, heatIndex) in getHeats(round, roundIndex)"
-        :key="heatIndex"
-        class="bracket-set"
+        v-for="(round, roundIndex) in rounds"
+        :key="roundIndex"
+        class="bracket-column"
       >
-        <div class="connector-line"></div>
-        <bracket-athlete
-          v-for="(athlete, atheleteIndex) in heat"
-          :key="atheleteIndex"
-          :rider="athlete"
-        />
-        <div class="bracket-lines">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
+        <div
+          v-for="(heat, heatIndex) in getHeats(round, roundIndex)"
+          :key="heatIndex"
+          class="bracket-set"
+        >
+          <div class="connector-line"></div>
+          <bracket-athlete
+            v-for="(athlete, atheleteIndex) in heat"
+            :key="atheleteIndex"
+            :rider="athlete"
+            :all-results="round.results"
+          />
+          <div class="bracket-lines">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -39,78 +52,25 @@
 <script>
 import gsap from 'gsap/all'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import WaypointMixin from '@/mixins/Waypoint'
 export default {
+  mixins: [WaypointMixin],
   props: {
     rounds: {
       type: Array,
       default: () => {},
     },
+    number: {
+      type: String,
+      default: '',
+    },
+    title: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {
-      //   rounds: [
-      //     {
-      //       heats: [
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       heats: [
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       heats: [
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       heats: [
-      //         {
-      //           athletes: [1, 2],
-      //         },
-      //       ],
-      //     },
-      //   ],
       grabbing: false,
       currentRound: 1,
       distanceX: 0,
@@ -127,11 +87,16 @@ export default {
       return this.rounds.length
     },
   },
+  watch: {
+    waypointActive() {
+      if (this.$refs.bar) {
+        this.$refs.bar.show()
+      }
+    },
+  },
   mounted() {
     gsap.registerPlugin(ScrollToPlugin)
     this.setCurrentRound()
-    // console.log('rounds', this.rounds)
-    // console.log('heats', this.heats)
   },
   methods: {
     getHeats(round, roundIndex) {
@@ -155,6 +120,7 @@ export default {
         }
         return 0
       })
+      //   Grouping the athletes by heat
       const heats = []
       const numberOfHeats = entries.length / 2
       for (let i = 0; i < numberOfHeats; i++) {

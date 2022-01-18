@@ -1,14 +1,21 @@
 <template>
   <div class="bracket-rider">
     <div class="rider-info">
-      <h3 class="rider-name">{{ rider.athlete.fullName }} {{ rider.order }}</h3>
-      <img class="rider-nationality" src="/mocks/us-flag.png" alt="" />
+      <h3 class="rider-name">
+        {{ rider.athlete.firstName }} <br />
+        {{ rider.athlete.lastName }}
+      </h3>
+      <img
+        class="rider-nationality"
+        :src="flag"
+        :alt="rider.athlete.nationality"
+      />
     </div>
-    <div class="rider-ratings">
+    <div v-if="runs.length" class="rider-ratings">
       <bracket-athlete-rating
-        v-for="(results, index) in rider.results"
+        v-for="(run, index) in runs"
         :key="index"
-        :results="results"
+        :run="run"
       />
     </div>
   </div>
@@ -21,32 +28,46 @@ export default {
       type: Object,
       default: () => {
         return {
-          name: 'Sage Kotsenburg',
+          fullName: 'Sage Kotsenburg',
           nationality: '',
-          results: [
-            {
-              average: 90.5,
-              scores: ['J1_ 91.6', 'J2_88.4', 'J3_ 99.9'],
-            },
-            {
-              average: 90.5,
-              scores: ['J1_ 90.2', 'J2_80.3', 'J3_ 79.8'],
-            },
-            {
-              average: 90.5,
-              scores: ['J1_ 97.8', 'J2_98.1', 'J3_ 69.5'],
-            },
-          ],
         }
       },
+    },
+    allResults: {
+      type: Array,
+      default: () => {},
     },
   },
   data() {
     return {}
   },
-  mounted() {
-    // console.log(this.rider)
+  computed: {
+    runs() {
+      const resultRider = this.allResults.find(
+        (rider) => this.rider.athlete.externalId === rider.externalAthleteId,
+      )
+      return resultRider.details[0].details.map((detail) => {
+        return {
+          average: detail.values[1],
+          scores: detail.groups[0].details.map((scores) => {
+            return {
+              judge: scores.values[0],
+              score: scores.values[1],
+              discard: scores.values[2],
+            }
+          }),
+        }
+      })
+    },
+    flag() {
+      try {
+        return require(`@/assets/svg/flags/${this.rider.athlete.nationality.toLowerCase()}.svg`)
+      } catch {
+        return require(`@/assets/svg/flags/_black.svg`)
+      }
+    },
   },
+  mounted() {},
 }
 </script>
 
@@ -54,10 +75,16 @@ export default {
 * {
   color: white;
 }
+// .runs-2 {
+//   width: 50%;
+// }
+// .runs-3 {
+//   width: calc(100% / 3);
+// }
 .bracket-rider {
   width: 43vw;
   min-width: 320px;
-  background: rgba(41, 41, 41, 0.76);
+  // background: rgba(41, 41, 41, 0.76);
   border: 1px solid #ffffff;
   height: 3rem;
   display: flex;
@@ -71,15 +98,16 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60%;
+  background: rgba(41, 41, 41, 0.76);
+  flex: 1 1 60%;
   padding: 2%;
 }
 .rider-name {
   font-family: 'Natural-Selection', sans-serif;
-  font-size: clamp(0.8rem, 2vw, 2.2rem);
+  font-size: clamp(0.8rem, 2vw, 2rem);
   line-height: 0.75;
   margin-bottom: 0;
-  width: 80%;
+  width: 95%;
 }
 .rider-ratings {
   display: flex;
