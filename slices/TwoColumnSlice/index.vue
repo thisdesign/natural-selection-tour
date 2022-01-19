@@ -16,8 +16,14 @@
       :should-show="waypointActive"
     >
       <prismic-rich-text
+        v-if="!slice.primary.TitleImage"
         class="two-column-title"
         :field="slice.primary.title"
+      />
+      <prismic-image
+        v-if="slice.primary.TitleImage"
+        class="two-column-title"
+        :field="slice.primary.TitleImage"
       />
       <prismic-rich-text
         class="two-column-description"
@@ -67,6 +73,12 @@ export default {
     @include media-breakpoint-up(sm) {
       font-size: 3.9vw;
     }
+  }
+}
+img.two-column-title {
+  width: 90%;
+  @include media-breakpoint-up(sm) {
+    width: 50%;
   }
 }
 .two-column-description {
