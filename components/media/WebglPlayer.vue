@@ -41,7 +41,7 @@ export default {
     Viewer.init(this.$refs.canvas)
     if (this.model !== '') {
       this.loading = true
-      Viewer.laodModel(this.model).then(() => {
+      Viewer.laodModel('modelA', this.model).then(() => {
         this.loading = false
         this.$emit('model-loaded')
       })

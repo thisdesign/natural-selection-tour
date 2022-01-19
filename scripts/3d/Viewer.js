@@ -78,7 +78,7 @@ class Viewer {
       // 'http://storage.googleapis.com/nst_media/GLB/3098_Mountain_v08.glb'
       // 'https://storage.googleapis.com/nst_media/GLB/3098_Mountain_v12.glb'
 
-      if (this.data[this.key]) {
+      if (this.data[this.key] !== undefined) {
         this.showModel(this.key)
         resolve()
       } else {
@@ -98,7 +98,7 @@ class Viewer {
             SELF.COT.position = new BABYLON.Vector3(0, 0.7, 0)
             SELF.COT.rotation = new BABYLON.Vector3(0, Math.PI * 0.75, 0)
             SELF.COT.scaling = new BABYLON.Vector3(SCALE, SCALE, SCALE)
-            // SELF.data[SELF.key] = MTN
+            SELF.data[SELF.key] = SELF.COT
             resolve()
           },
         )
