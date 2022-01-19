@@ -12,7 +12,7 @@
       <bracket-contest
         :rounds="contest.categories[0].rounds"
         :number="slice.primary.SectionNumber"
-        :title="`${slice.primary.SectionTitle}_${contest.name}_Bracket`"
+        :title="`${sectionTitle}${contest.name}_Bracket`"
       />
     </div>
   </section>
@@ -20,6 +20,7 @@
 
 <script>
 import WaypointMixin from '@/mixins/Waypoint'
+import ContestModel from '@/scripts/ContestModel'
 export default {
   name: 'BracketSlice',
   mixins: [WaypointMixin],
@@ -48,6 +49,11 @@ export default {
     isLoading() {
       return this.$store.getters['results/isLoading']
     },
+    sectionTitle() {
+      return this.slice.primary.SectionTitle
+        ? this.slice.primary.SectionTitle + '_'
+        : ''
+    },
   },
   mounted() {
     if (this.polling) {
@@ -64,6 +70,7 @@ export default {
         eventId: this.eventId,
       })
       this.contests = this.$store.state.results.items[this.eventId]
+      if (this.contests.length === 0) this.contests = ContestModel
     },
   },
 }
