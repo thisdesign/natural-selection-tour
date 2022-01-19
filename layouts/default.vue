@@ -52,7 +52,7 @@ export default {
     },
     handleCtrlD() {
       if (this.globals.data.mediaKit) {
-        console.log(this.globals.data.mediaKit.url)
+        window.location = this.globals.data.mediaKit.url
       }
     },
   },

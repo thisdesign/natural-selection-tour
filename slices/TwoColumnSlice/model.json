@@ -34,6 +34,14 @@
             "single": "heading1"
           }
         },
+        "TitleImage": {
+          "config": {
+            "label": "TitleImage",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
         "description": {
           "type": "StructuredText",
           "config": {

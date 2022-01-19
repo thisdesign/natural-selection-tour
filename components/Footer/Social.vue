@@ -6,14 +6,16 @@
         :html-serializer="htmlSerializer"
       />
     </div>
-    <a
-      v-for="(item, index) in globals.data.SocialLinks"
-      :key="`headerSocialLink${index}`"
-      :href="item.Link.url"
-      target="_blank"
-    >
-      <prismic-image :field="item.Icon" />
-    </a>
+    <div class="footer-icons">
+      <a
+        v-for="(item, index) in globals.data.SocialLinks"
+        :key="`headerSocialLink${index}`"
+        :href="item.Link.url"
+        target="_blank"
+      >
+        <prismic-image :field="item.Icon" />
+      </a>
+    </div>
   </div>
 </template>
 <script>
@@ -50,8 +52,18 @@ export default {
   div {
     margin-bottom: 5px;
   }
+  .footer-icons {
+    display: flex;
+    align-items: center;
+  }
   a {
     padding-right: 4px;
+    display: block;
+    width: 2.3rem;
+    margin-right: 0.2rem;
+    img {
+      width: 100%;
+    }
   }
 }
 </style>
