@@ -5,7 +5,8 @@ export default {
     }
   },
   methods: {
-    onWaypoint({ going }) {
+    onWaypoint(props) {
+      const { going } = props
       if (going === 'in') {
         this.waypointActive = true
       }

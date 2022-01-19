@@ -22,6 +22,15 @@
           "single": "heading1"
         }
       },
+      "mediaKit": {
+        "config": {
+          "label": "mediaKit",
+          "placeholder": "",
+          "select": "web",
+          "allowTargetBlank": false
+        },
+        "type": "Link"
+      },
       "main-links": {
         "type": "Group",
         "config": {

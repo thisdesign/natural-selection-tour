@@ -6,12 +6,13 @@
         {{ rider.athlete.lastName }}
       </h3>
       <img
+        v-if="rider.athlete.nationality"
         class="rider-nationality"
         :src="flag"
         :alt="rider.athlete.nationality"
       />
     </div>
-    <div v-if="runs.length" class="rider-ratings">
+    <div v-if="runs" class="rider-ratings">
       <bracket-athlete-rating
         v-for="(run, index) in runs"
         :key="index"
@@ -43,21 +44,31 @@ export default {
   },
   computed: {
     runs() {
-      const resultRider = this.allResults.find(
-        (rider) => this.rider.athlete.externalId === rider.externalAthleteId,
-      )
-      return resultRider.details[0].details.map((detail) => {
-        return {
-          average: detail.values[1],
-          scores: detail.groups[0].details.map((scores) => {
+      // console.log(this.allResults.length)
+      if (this.allResults) {
+        if (this.allResults.length > 0) {
+          const resultRider = this.allResults.find(
+            (rider) =>
+              this.rider.athlete.externalId === rider.externalAthleteId,
+          )
+          return resultRider.details[0].details.map((detail) => {
             return {
-              judge: scores.values[0],
-              score: scores.values[1],
-              discard: scores.values[2],
+              average: detail.values[1],
+              scores: detail.groups[0].details.map((scores) => {
+                return {
+                  judge: scores.values[0],
+                  score: scores.values[1],
+                  discard: scores.values[2],
+                }
+              }),
             }
-          }),
+          })
+        } else {
+          return null
         }
-      })
+      } else {
+        return null
+      }
     },
     flag() {
       try {
