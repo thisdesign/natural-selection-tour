@@ -30,7 +30,7 @@
             "label": "Text",
             "placeholder": "Main Text Content",
             "allowTargetBlank": true,
-            "multi": "paragraph"
+            "multi": "paragraph,strong,em"
           },
           "type": "StructuredText"
         },

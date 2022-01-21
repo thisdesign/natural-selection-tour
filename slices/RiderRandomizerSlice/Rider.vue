@@ -6,7 +6,9 @@
     <img
       :src="`${data.fileName}`"
       :alt="data.name"
-      :style="{ transform: `rotate(${data.rotation}deg)` }"
+      :style="{
+        transform: `rotate(${data.rotation}deg) translate(${data.xOffset}px, ${data.yOffset}px)`,
+      }"
     />
   </li>
 </template>

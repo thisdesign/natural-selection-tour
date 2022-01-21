@@ -1,13 +1,13 @@
 <template>
   <div class="rating">
     <button class="open-ratings" @click="open = true">
-      {{ results.average }}
+      {{ run.average }}
     </button>
     <transition name="vt-fade" mode="out-in">
       <div v-if="open" class="rating-details">
         <element-btn-close class="close-btn" @click="open = false" />
-        <span v-for="(result, index) in results.scores" :key="index">
-          {{ result }}
+        <span v-for="(scores, index) in run.scores" :key="index">
+          {{ scores.judge }}_ {{ scores.score }}
         </span>
       </div>
     </transition>
@@ -17,9 +17,14 @@
 <script>
 export default {
   props: {
-    results: {
+    run: {
       type: Object,
-      default: () => {},
+      default: () => {
+        return {
+          average: '',
+          scores: [],
+        }
+      },
     },
   },
   data() {
@@ -48,13 +53,19 @@ export default {
   @include media-breakpoint-up(sm) {
     font-size: 0.8rem;
   }
+  @include media-breakpoint-up(md) {
+    font-size: 1rem;
+  }
 }
 .rating {
-  flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   border-left: 1px solid white;
+  border-right: 1px solid white;
+  background: rgba(41, 41, 41, 0.76);
+  flex: 1 1 calc(100% / 3);
+  max-width: 50%;
   button.open-ratings {
     background: transparent;
     padding: 0 0.2rem;
@@ -62,6 +73,9 @@ export default {
     height: 100%;
     width: 100%;
     color: white;
+    &:hover {
+      background: #111;
+    }
     &:focus {
       outline: none;
     }

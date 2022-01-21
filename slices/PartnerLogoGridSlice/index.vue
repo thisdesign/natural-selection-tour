@@ -126,20 +126,41 @@ export default {
   }
 }
 .partner {
-  padding: 0 20px;
+  width: 20%;
+  position: relative;
+  a {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 12px;
+    @include media-breakpoint-up(sm) {
+      padding: 0 25px;
+    }
+  }
   img {
     width: 100%;
   }
   &.large {
     width: 50%;
-    // @include media-breakpoint-up(sm) {
-    //   width: calc(100% / 3);
-    // }
+    padding-top: 20%;
+    @include media-breakpoint-up(sm) {
+      padding-top: 17%;
+    }
+    img {
+      width: 60%;
+      margin: 0 auto;
+    }
   }
   &.small {
     width: calc(100% / 3);
+    padding-top: 20%;
     @include media-breakpoint-up(sm) {
       width: calc(100% / 5);
+      padding-top: 15%;
     }
   }
 }

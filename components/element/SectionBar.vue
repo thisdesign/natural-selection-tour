@@ -56,6 +56,7 @@ export default {
   },
   methods: {
     show() {
+      console.log('playing')
       this.timeline.play()
     },
   },
@@ -76,6 +77,7 @@ export default {
 
 .section-title {
   display: flex;
+  align-items: center;
   &:before {
     content: '';
     display: inline-block;
