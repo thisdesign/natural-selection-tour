@@ -6,8 +6,9 @@ class Viewer {
     this.data = {}
   }
 
-  init(canvas) {
+  init(canvas, callback) {
     this.canvas = canvas
+    this.callback = callback
     this.engine = new BABYLON.Engine(canvas, true, {
       preserveDrawingBuffer: true,
       stencil: true,
@@ -24,6 +25,7 @@ class Viewer {
     scene.imageProcessingConfiguration.toneMappingEnabled = true
     scene.imageProcessingConfiguration.contrast = 1
     scene.imageProcessingConfiguration.exposure = 3.5
+    scene.doNotHandleCursors = true
 
     const camera = new BABYLON.ArcRotateCamera(
       'Camera',
@@ -57,7 +59,10 @@ class Viewer {
 
     this.scene = scene
 
-    return { light, camera }
+    return {
+      light,
+      camera,
+    }
   }
 
   laodModel(key, modelUrl) {
@@ -72,38 +77,71 @@ class Viewer {
       }
 
       this.key = key
-      this.modelUrl = modelUrl
-      // this.modelUrl =
-      // 'http://storage.googleapis.com/nst_media/GLB/3098_Mountain_v11.glb'
-      // 'http://storage.googleapis.com/nst_media/GLB/3098_Mountain_v08.glb'
-      // 'https://storage.googleapis.com/nst_media/GLB/3098_Mountain_v12.glb'
+      // this.modelUrl = modelUrl
+      this.modelUrl =
+        'https://storage.googleapis.com/nst_media/GLB/3098_Mountain_v12.glb'
 
-      if (this.data[this.key] !== undefined) {
-        this.showModel(this.key)
-        resolve()
-      } else {
-        const SELF = this
-        BABYLON.SceneLoader.ImportMesh(
-          '',
-          '',
-          this.modelUrl,
-          this.scene,
-          function (scene) {
-            SELF.COT = new BABYLON.TransformNode('COT')
-            scene[0].parent = SELF.COT
+      // if (false === false) {
+      //   // this.data[this.key] !== undefined) {
+      //   this.showModel(this.key)
+      //   resolve()
+      // } else {
+      const SELF = this
+      BABYLON.SceneLoader.ImportMesh(
+        '',
+        '',
+        this.modelUrl,
+        this.scene,
+        function (scene) {
+          SELF.COT = new BABYLON.TransformNode('COT')
+          scene[0].parent = SELF.COT
 
-            // const MTN = scene[0]
-            const SCALE = 0.005
-            SELF.COT.rotationQuaternion = null
-            SELF.COT.position = new BABYLON.Vector3(0, 0.7, 0)
-            SELF.COT.rotation = new BABYLON.Vector3(0, Math.PI * 0.75, 0)
-            SELF.COT.scaling = new BABYLON.Vector3(SCALE, SCALE, SCALE)
-            SELF.data[SELF.key] = SELF.COT
-            resolve()
-          },
-        )
-      }
+          SELF.registerActions(scene)
+
+          const SCALE = 0.005
+          SELF.COT.rotationQuaternion = null
+          SELF.COT.position = new BABYLON.Vector3(0, 0.7, 0)
+          SELF.COT.rotation = new BABYLON.Vector3(0, Math.PI * 0.75, 0)
+          SELF.COT.scaling = new BABYLON.Vector3(SCALE, SCALE, SCALE)
+          SELF.data[SELF.key] = SELF.COT
+          resolve()
+        },
+      )
+      // }
     })
+  }
+
+  registerActions(scene) {
+    const SELF = this
+    for (let i = 1; i < scene.length - 1; i++) {
+      const item = scene[i]
+      item.actionManager = new BABYLON.ActionManager(this.scene)
+      item.actionManager.registerAction(
+        new BABYLON.ExecuteCodeAction(
+          BABYLON.ActionManager.OnPointerOverTrigger,
+          function (e) {
+            SELF.updateId(e.source.id)
+          },
+        ),
+      )
+      item.actionManager.registerAction(
+        new BABYLON.ExecuteCodeAction(
+          BABYLON.ActionManager.OnPointerOutTrigger,
+          function (e) {
+            SELF.updateId('')
+          },
+        ),
+      )
+    }
+  }
+
+  updateId(value) {
+    if (this.callback) {
+      this.callback({
+        name: 'update',
+        value,
+      })
+    }
   }
 
   showModel(key) {

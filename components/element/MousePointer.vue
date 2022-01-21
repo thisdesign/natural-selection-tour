@@ -24,6 +24,14 @@
 <script>
 export default {
   props: {
+    offsetX: {
+      type: Number,
+      default: 0,
+    },
+    offsetY: {
+      type: Number,
+      default: 0,
+    },
     showPointer: {
       type: Boolean,
       default: false,
@@ -50,7 +58,15 @@ export default {
   methods: {
     onMouseMove(event) {
       if (this.$refs.mousePointer) {
-        this.$refs.mousePointer.style.transform = `translate(${event.pageX}px, ${event.pageY}px)`
+        console.log(event)
+
+        this.$refs.mousePointer.style.transform = `translate(${
+          event.pageX
+        }px, ${event.pageY - this.offsetY}px)`
+
+        // this.$refs.mousePointer.style.transform = `translate(${
+        //   event.pageX + this.offsetX
+        // }px, ${event.pageY + this.offsetY}px)`
       }
     },
   },
