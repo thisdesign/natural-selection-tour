@@ -1,5 +1,11 @@
 <template>
-  <div class="webgl">
+  <div
+    id="webgl-player"
+    class="webgl"
+    @mouseenter="handleMouseEnter"
+    @mousemove="handleMouseMove"
+    @mouseleave="handleMouseLeave"
+  >
     <div class="wrapper">
       <div v-if="loading" class="loading">
         <video
@@ -13,6 +19,13 @@
       </div>
       <canvas id="canvas" ref="canvas" class="canvas" />
     </div>
+    <element-mouse-pointer
+      :show-pointer="show"
+      :line1="line1"
+      :line2="line2"
+      :line3="line3"
+      :offset-y="offsetY"
+    />
   </div>
 </template>
 
@@ -35,10 +48,28 @@ export default {
   data() {
     return {
       loading: false,
+      offsetX: 0,
+      offsetY: 0,
+      show: false,
+      name: '',
     }
   },
+  computed: {
+    line1() {
+      const NAME = this.name.split(' ')
+      return NAME[0] ? NAME[0] : ''
+    },
+    line2() {
+      const NAME = this.name.split(' ')
+      return NAME[1] ? NAME[1] : ''
+    },
+    line3() {
+      const NAME = this.name.split(' ')
+      return NAME[2] ? NAME[2] : ''
+    },
+  },
   mounted() {
-    Viewer.init(this.$refs.canvas)
+    Viewer.init(this.$refs.canvas, this.viewerCallback)
     if (this.model !== '') {
       this.loading = true
       Viewer.laodModel('modelA', this.model).then(() => {
@@ -47,12 +78,36 @@ export default {
       })
     }
   },
+  methods: {
+    handleMouseEnter() {
+      this.calculateOffset()
+      this.show = true
+    },
+    handleMouseMove() {
+      this.calculateOffset()
+    },
+    handleMouseLeave() {
+      this.show = false
+    },
+    calculateOffset() {
+      const container = document.getElementById('webgl-player')
+      const bounds = container.getBoundingClientRect()
+      this.offsetY = bounds.top + window.scrollY - 80
+      this.offsetX = 0
+    },
+    viewerCallback({ name, value }) {
+      if (name === 'update') {
+        this.name = value
+      }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .webgl {
   height: 100%;
+  cursor: none;
 }
 .loading {
   position: absolute;
