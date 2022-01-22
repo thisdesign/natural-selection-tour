@@ -37,7 +37,9 @@
     "vue-essential-slices": "^0.3.0",
     "vue-slicezone": "^0.1.0",
     "vue-waypoint": "^3.5.2",
-    "vue-youtube": "^1.4.0"
+    "vue-youtube": "^1.4.0",
+    "node-fetch": "^2.3.0",
+    "@google-cloud/storage": "^5.16.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^6.0.1",
