@@ -37,7 +37,7 @@ const handler = async function (event) {
       credentials: creds
     });
     const myBucket = storage.bucket('nst_media');
-    const file = myBucket.file('results-test.json');
+    const file = myBucket.file('results.json');
 
     // save
     file.save(JSON.stringify(data)).then(() => file.makePublic());
