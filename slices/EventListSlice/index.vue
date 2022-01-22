@@ -19,22 +19,28 @@
     <slider
       ref="slider"
       :options="sliderOptions"
-      class="events-list"
+      :class="`events-list ${
+        slice.primary.CenterItems === true ? 'center' : ''
+      }`"
       @slide="onSlide"
     >
       <slideritem v-for="(item, i) in slice.items" :key="`event-item-${i}`">
         <div :class="`event-item event-${i} ${item.Active ? '' : 'disable'}`">
           <div class="event-date">
             <span class="month">{{ item.Month }}</span>
-            <span class="day">{{ item.Start }}</span>
+            <span :style="{ color: item.StartColor }" class="day">{{
+              item.Start
+            }}</span>
             <span class="divider"></span>
-            <span class="day">{{ item.End }}</span>
+            <span :style="{ color: item.EndColor }" class="day">{{
+              item.End
+            }}</span>
           </div>
-          <div class="event-graphic">
+          <div v-if="item.Graphic.url" class="event-graphic">
             <prismic-image :field="item.Graphic" />
           </div>
           <prismic-rich-text class="event-title" :field="item.Title" />
-          <div class="status-row">
+          <div v-if="item.Status !== 'blank'" class="status-row">
             <prismic-rich-text class="event-location" :field="item.Location" />
             <element-status-icon class="status-icon" :status="item.Status" />
           </div>
@@ -43,6 +49,7 @@
             :field="item.Description"
           />
           <div
+            v-if="item.Status !== 'blank'"
             v-waypoint="{
               active: true,
               callback: onShowSnow,
@@ -61,6 +68,7 @@
             </div>
           </div>
           <element-cta-button
+            v-if="item.Status !== 'blank'"
             class="event-btn"
             :link="{ url: '/events' }"
             title="Explore"
@@ -94,6 +102,7 @@ export default {
   data() {
     return {
       sliderOptions: {
+        centeredSlides: false,
         preventRebound: true,
         pagination: false,
         threshold: 100,
@@ -143,6 +152,11 @@ export default {
   .slider-wrapper {
     align-items: stretch;
   }
+  // &.center {
+  //   .slider-wrapper {
+  //     justify-content: center;
+  //   }
+  // }
   .slider-item {
     width: calc(100vw - 4rem);
     margin-right: 20px;
@@ -210,6 +224,7 @@ export default {
   }
   .event-date {
     width: 100%;
+    margin-bottom: 3rem;
     .divider {
       display: block;
       height: 1px;

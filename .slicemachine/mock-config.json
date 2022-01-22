@@ -30,6 +30,30 @@
           }
         }
       }
+    },
+    "EventListSlice": {
+      "default-slice": {
+        "items": {
+          "StartColor": {
+            "content": "#ffffff"
+          },
+          "EndColor": {
+            "content": "#ffffff"
+          },
+          "Title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "HeroVideoSlice": {},
+    "CountdownSlice": {
+      "default-slice": {
+        "primary": {}
+      }
     }
   },
   "_cts": {
