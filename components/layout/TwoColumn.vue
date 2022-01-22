@@ -14,7 +14,7 @@
         :number="sidebarSectionNumber"
         :title="sidebarSectionTitle"
       />
-      <div>
+      <div v-if="sidebarStatus === 'video-loop'">
         <div class="video-wrapper">
           <video
             :src="sidebarMedia.url"
