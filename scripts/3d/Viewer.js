@@ -67,19 +67,19 @@ class Viewer {
 
   laodModel(key, modelUrl) {
     return new Promise((resolve) => {
-      if (key === this.key) {
-        resolve()
-        return
-      }
+      // if (key === this.key) {
+      //   resolve()
+      //   return
+      // }
 
-      if (this.data[this.key]) {
-        this.hideModel(this.key)
-      }
+      // if (this.data[this.key]) {
+      //   this.hideModel(this.key)
+      // }
 
       this.key = key
-      // this.modelUrl = modelUrl
-      this.modelUrl =
-        'https://storage.googleapis.com/nst_media/GLB/3098_Mountain_v12.glb'
+      this.modelUrl = modelUrl
+      // this.modelUrl =
+      //   'https://storage.googleapis.com/nst_media/GLB/3098_Mountain_v12.glb'
 
       // if (false === false) {
       //   // this.data[this.key] !== undefined) {
