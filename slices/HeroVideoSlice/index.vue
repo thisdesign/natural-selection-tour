@@ -11,6 +11,12 @@
     @mousemove="onMouseMove"
     @mouseleave="onMouseLeave"
   >
+    <element-section-bar
+      v-if="slice.primary.SectionNumber && slice.primary.SectionTitle"
+      ref="bar"
+      :number="slice.primary.SectionNumber"
+      :title="slice.primary.SectionTitle"
+    />
     <div class="video-wrapper">
       <video
         :src="slice.primary.VideoLoop.url"
@@ -20,7 +26,12 @@
         playsinline
         loop
       ></video>
-      <button ref="playBtn" class="btn-play-video" @click="toggleVideoModal">
+      <button
+        v-if="slice.primary.LoopOnly !== true"
+        ref="playBtn"
+        class="btn-play-video"
+        @click="toggleVideoModal"
+      >
         Play
       </button>
     </div>
@@ -86,9 +97,13 @@ export default {
       },
     }
   },
+
   watch: {
     waypointActive(isActive) {
       if (isActive) {
+        if (this.$refs.bar) {
+          this.$refs.bar.show()
+        }
         const COLS = document.querySelectorAll('.video-footer-item')
         COLS.forEach((el, index) => {
           const splitText = new SplitText(el.querySelectorAll('p'), {
@@ -120,6 +135,9 @@ export default {
         })
       }
     },
+  },
+  mounted() {
+    console.log('Test', this.slice.primary.LoopOnly)
   },
   methods: {
     toggleVideoModal() {

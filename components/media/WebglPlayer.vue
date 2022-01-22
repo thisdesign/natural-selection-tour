@@ -1,6 +1,7 @@
 <template>
   <div
     id="webgl-player"
+    :key="`webgl${Math.floor(Math.random() * 10000000)}`"
     class="webgl"
     @mouseenter="handleMouseEnter"
     @mousemove="handleMouseMove"
