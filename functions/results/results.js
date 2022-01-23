@@ -37,10 +37,13 @@ const handler = async function (event) {
       credentials: creds
     });
     const myBucket = storage.bucket('nst_media');
-    const file = myBucket.file('results.json');
+    const file = myBucket.file('results-two.json');
 
     // save
-    file.save(JSON.stringify(data)).then(() => file.makePublic());
+    // file.save(JSON.stringify(data)).then(() => file.makePublic());
+
+    file.save(JSON.stringify(data)).then(() => file.setMetadata({cacheControl: 'public, max-age=60'}));
+    // file.setMetadata({cacheControl: 'public, max-age=60'});
 
     return {
       statusCode: 200,      
