@@ -255,7 +255,7 @@ header {
     padding: 0;
   }
   @include media-breakpoint-up(sm) {
-    width: 50%;
+    width: 100%;
   }
   &.open {
     opacity: 1;
