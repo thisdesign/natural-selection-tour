@@ -22,7 +22,7 @@ creds.private_key = GOOGLE_KEY
 
 const handler = async function (event) {
   try {
-    const response = await fetch('https://live.rawmotion.com/api/v1/event/4197b641-63ee-11eb-8590-0fa6623371ce/contests')
+    const response = await fetch('https://live.rawmotion.com/api/v1/event/e7947511-7bc6-11ec-9e31-9f89d1715064/contests')
 
     if (!response.ok) {
       // NOT res.status >= 200 && res.status < 300
