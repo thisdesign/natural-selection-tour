@@ -58,8 +58,6 @@ export default {
   methods: {
     onMouseMove(event) {
       if (this.$refs.mousePointer) {
-        console.log(event)
-
         this.$refs.mousePointer.style.transform = `translate(${
           event.pageX
         }px, ${event.pageY - this.offsetY}px)`
