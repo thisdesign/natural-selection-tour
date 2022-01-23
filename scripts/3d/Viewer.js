@@ -62,6 +62,7 @@ class Viewer {
     return {
       light,
       camera,
+      scene,
     }
   }
 
@@ -95,6 +96,8 @@ class Viewer {
         function (scene) {
           SELF.COT = new BABYLON.TransformNode('COT')
           scene[0].parent = SELF.COT
+
+          // console.log(scene)
 
           SELF.registerActions(scene)
 
