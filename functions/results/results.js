@@ -18,7 +18,7 @@ let creds = {
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/results%40spring-gift-336003.iam.gserviceaccount.com"
 }
 
-creds.private_key = GOOGLE_KEY
+creds.private_key = GOOGLE_KEY.split("\\n").join("\n")
 
 const handler = async function (event) {
   try {
