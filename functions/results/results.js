@@ -6,7 +6,7 @@ const { Storage } = storagePackage;
 const { EVENTBRITE_TOKEN } = process.env
 const { GOOGLE_KEY } = process.env
 
-let creds = {
+const creds = {
   "type": "service_account",
   "projectId": "spring-gift-336003",
   "private_key_id": "c9647f756ac86e1a069adf6d8d7f82a95dd48ce2",    
