@@ -43,7 +43,7 @@ const handler = async function (event) {
     // save
     // file.save(JSON.stringify(data)).then(() => file.makePublic());
 
-    file.save(JSON.stringify(data)).then(() => file.setMetadata({cacheControl: 'public, max-age=60'}));
+    await file.save(JSON.stringify(data)).then(() => file.setMetadata({cacheControl: 'public, max-age=60'}));
     // file.setMetadata({cacheControl: 'public, max-age=60'});
 
     return {
