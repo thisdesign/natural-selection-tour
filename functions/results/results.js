@@ -35,7 +35,8 @@ const handler = async function (event) {
 
     // setup storage
     const storage = new Storage({
-      credentials: creds
+      credentials: creds,
+      projectId: 'spring-gift-336003'
     });
     const myBucket = storage.bucket('nst_media');
     const file = myBucket.file('results-two.json');
