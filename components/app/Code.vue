@@ -145,7 +145,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.columns)
+    // console.log(this.columns)
     setTimeout(() => {
       this.delayActive = true
     }, 300)
