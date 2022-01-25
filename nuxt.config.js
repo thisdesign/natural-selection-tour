@@ -98,6 +98,8 @@ export default {
     '@nuxtjs/svg', // https://www.npmjs.com/package/@nuxtjs/robots
     '@nuxtjs/robots', // https://www.npmjs.com/package/@nuxtjs/sitemap
     '@nuxtjs/sitemap',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     'nuxt-facebook-pixel-module',
     [
       '@nuxtjs/prismic',
@@ -155,5 +157,22 @@ export default {
   // https://www.npmjs.com/package/@nuxtjs/style-resources
   styleResources: {
     scss: ['scss/global.scss'],
+  },
+
+  auth: {
+    redirect: {
+      login: '/', // redirect user when not connected
+      callback: '/auth/signed-in', // callback after auth
+      home: '/gallery/home', // iframe gallery with middleware
+    },
+    strategies: {
+      local: false,
+      auth0: {
+        domain: process.env.AUTH0_DOMAIN,
+        clientId: process.env.AUTH0_CLIENT_ID,
+        logoutRedirectUri: process.env.NUXT_ENV_BASE_URL,
+        audience: process.env.AUTH0_AUDIENCE,
+      },
+    },
   },
 }

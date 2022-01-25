@@ -2,7 +2,7 @@
   <div class="randomizer" :style="{ cursor: 'pointer' }" @click="handleClick">
     <img
       v-if="state.ridersSelectedCount === 0"
-      :src="require('./logo.svg')"
+      :src="require('./Draftkings_Natural_Logos.svg')"
       class="logo"
     />
 
