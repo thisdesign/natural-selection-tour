@@ -42,12 +42,13 @@ export default {
 .gallery {
   .iframe-wrapper {
     position: relative;
-    height: 56.25vw;
+    height: 65vw;
     width: 100%;
     max-width: 1920px;
     margin: 0 auto 4rem;
     @media (min-width: 2020px) {
-      height: 1080px;
+      width: 1920px;
+      height: 1200px;
     }
   }
   iframe {
