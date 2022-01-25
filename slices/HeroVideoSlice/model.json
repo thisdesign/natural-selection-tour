@@ -40,6 +40,15 @@
           },
           "type": "Text"
         },
+        "CtaLink": {
+          "config": {
+            "label": "CtaLink",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
+        },
         "VideoPoster": {
           "config": {
             "label": "VideoPoster",

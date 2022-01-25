@@ -162,27 +162,29 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     z-index: 100;
+    align-items: center;
+    justify-content: center;
     display: none;
     @include media-breakpoint-up(xs) {
-      display: block;
+      display: flex;
     }
   }
   .arrow-prev {
-    left: -16px;
+    left: -24px;
     @include media-breakpoint-up(sm) {
-      left: 0;
+      left: -8px;
     }
     transform: translate(0%, -50%) rotate(180deg);
   }
   .arrow-next {
-    right: -16px;
+    right: -24px;
     @include media-breakpoint-up(sm) {
-      right: 0;
+      right: 0px;
     }
-    transform: translate(-100%, -50%);
+    transform: translate(-50%, -50%);
   }
 }
 .event-section {

@@ -32,7 +32,7 @@
         class="btn-play-video"
         @click="toggleVideoModal"
       >
-        Play
+        {{ slice.primary.CtaText ? slice.primary.CtaText : 'Play' }}
       </button>
     </div>
     <div class="video-footer site-padding">
@@ -141,7 +141,11 @@ export default {
   },
   methods: {
     toggleVideoModal() {
-      this.videoModalOpen = !this.videoModalOpen
+      if (this.slice.primary.CtaLink.url) {
+        window.open(this.slice.primary.CtaLink.url)
+      } else {
+        this.videoModalOpen = !this.videoModalOpen
+      }
     },
 
     onMouseLeave() {
