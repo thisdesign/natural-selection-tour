@@ -1,60 +1,7 @@
 {
   "slices": {
     "PartnerHeroSlice": {},
-    "Streams": {},
-    "TextSlice": {
-      "default-slice": {
-        "primary": {
-          "Text": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
-    "BracketSlice": {
-      "default-slice": {
-        "primary": {}
-      }
-    },
-    "TwoColumnSlice": {
-      "default-slice": {
-        "primary": {
-          "title": {
-            "config": {
-              "patternType": "HEADING",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
-    "EventListSlice": {
-      "default-slice": {
-        "items": {
-          "StartColor": {
-            "content": "#ffffff"
-          },
-          "EndColor": {
-            "content": "#ffffff"
-          },
-          "Title": {
-            "config": {
-              "patternType": "HEADING",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
-    "HeroVideoSlice": {},
-    "CountdownSlice": {
-      "default-slice": {
-        "primary": {}
-      }
-    }
+    "Streams": {}
   },
   "_cts": {
     "rider": {

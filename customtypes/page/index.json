@@ -84,6 +84,9 @@
             },
             "bracket_slice": {
               "type": "SharedSlice"
+            },
+            "image_carousel_slice": {
+              "type": "SharedSlice"
             }
           }
         }

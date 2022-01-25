@@ -8,14 +8,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Elit in duis reprehenderit reprehenderit officia laboris duis consectetur officia magna enim esse non.",
+            "text": "Et aliqua duis voluptate aute et esse exercitation proident veniam incididunt ullamco adipisicing. Velit nisi cillum nisi labore culpa. Laboris nulla pariatur cillum ea quis in duis reprehenderit amet pariatur.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Aliqua velit ea pariatur consequat laboris aute ex ex tempor eu commodo in aute. Aliquip esse officia in anim deserunt eiusmod qui ullamco consectetur elit.",
+            "text": "Non laboris velit ea fugiat magna tempor quis.",
             "spans": []
           }
         ]
@@ -24,14 +24,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Reprehenderit commodo pariatur commodo anim.",
+            "text": "Cillum sit in eu.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Ut voluptate nostrud culpa duis commodo do tempor consectetur enim commodo qui cupidatat commodo est. Culpa voluptate cillum nulla magna cupidatat.",
+            "text": "Commodo aute cillum cupidatat velit. Labore et magna aliqua consequat irure culpa fugiat labore incididunt. Id sint laboris nisi eu tempor ex ullamco aute officia.",
             "spans": []
           }
         ]
@@ -40,14 +40,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Est et id ad reprehenderit elit nulla tempor et adipisicing. Do do magna Lorem aute irure veniam eu voluptate enim aliqua.",
+            "text": "Lorem velit exercitation est anim aute esse. Tempor ea incididunt amet cillum nostrud id incididunt pariatur deserunt sunt adipisicing amet irure irure.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Ex labore fugiat mollit proident do Lorem veniam est sint irure tempor ex dolore occaecat ut.",
+            "text": "Sunt sit ex consectetur ex mollit minim tempor amet anim. Pariatur in irure voluptate.",
             "spans": []
           }
         ]
@@ -56,38 +56,22 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Anim reprehenderit sit ullamco in excepteur sunt occaecat. Occaecat in laborum fugiat ut ex ipsum esse proident sunt consectetur nulla sint. Voluptate enim excepteur deserunt cupidatat dolor amet commodo ad laboris sunt aliqua cillum fugiat velit duis.",
+            "text": "Dolore incididunt amet voluptate. Incididunt tempor adipisicing laborum sit aute. Lorem ex ullamco tempor nostrud cupidatat anim cupidatat anim elit.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Mollit laborum cupidatat nostrud reprehenderit velit aliqua magna incididunt minim irure. Ad labore Lorem nisi ipsum laborum ea occaecat sunt.",
-            "spans": []
-          }
-        ]
-      },
-      {
-        "TextTop": [
-          {
-            "type": "paragraph",
-            "text": "Proident officia labore occaecat Lorem dolor fugiat eu excepteur. Occaecat id exercitation elit magna sit. Veniam eu adipisicing eu reprehenderit eiusmod veniam sint magna occaecat et irure nostrud.",
-            "spans": []
-          }
-        ],
-        "TextBottom": [
-          {
-            "type": "paragraph",
-            "text": "Excepteur labore aliquip do sit tempor officia sunt reprehenderit. Commodo occaecat nostrud veniam velit laboris ex culpa commodo consectetur.",
+            "text": "Elit cupidatat occaecat et reprehenderit fugiat nostrud ad sit adipisicing. Elit amet aliquip non veniam in mollit commodo enim cillum officia anim sint veniam. Enim id aute mollit deserunt aliqua aliqua aute proident sit duis sint irure cillum.",
             "spans": []
           }
         ]
       }
     ],
     "primary": {
-      "SectionNumber": "grow frictionless bandwidth",
-      "SectionTitle": "strategize wireless experiences",
+      "SectionNumber": "recontextualize innovative channels",
+      "SectionTitle": "target back-end e-commerce",
       "Logo": {
         "dimensions": {
           "width": 900,
@@ -95,9 +79,9 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
       },
-      "CtaText": "brand best-of-breed e-markets",
+      "CtaText": "implement best-of-breed web-readiness",
       "VideoPoster": {
         "dimensions": {
           "width": 900,
@@ -105,15 +89,15 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51?w=900&h=500&fit=crop"
       },
       "VideoFull": {
         "link_type": "Web",
-        "url": "https://slicemachine.dev"
+        "url": "http://google.com"
       },
       "VideoLoop": {
         "link_type": "Web",
-        "url": "https://slicemachine.dev"
+        "url": "https://prismic.io"
       },
       "LoopOnly": false
     }

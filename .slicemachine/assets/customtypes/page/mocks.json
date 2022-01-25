@@ -1,13 +1,13 @@
 {
-  "id": "6daa06e3-8d7d-47a7-a606-3a4fd56ab173",
-  "uid": "quis-officia-enim",
+  "id": "c70387ed-f19d-4a8c-99fb-890d4baf2912",
+  "uid": "velit-alias-eaque",
   "type": "page",
   "data": {
     "FloatingNav": false,
     "FooterBackground": "#1f2744",
-    "ShowFooterCode": true,
-    "meta_title": "facilitate customized web services",
-    "meta_description": "transition collaborative metrics",
+    "ShowFooterCode": false,
+    "meta_title": "syndicate web-enabled e-business",
+    "meta_description": "streamline revolutionary infomediaries",
     "social_cards": [
       {
         "social_card_image": {
@@ -19,8 +19,8 @@
           "copyright": null,
           "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
         },
-        "social_card_title": "cultivate B2C deliverables",
-        "social_card_description": "repurpose back-end partnerships"
+        "social_card_title": "utilize one-to-one mindshare",
+        "social_card_description": "unleash killer networks"
       },
       {
         "social_card_image": {
@@ -30,10 +30,10 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
         },
-        "social_card_title": "expedite collaborative e-business",
-        "social_card_description": "target viral deliverables"
+        "social_card_title": "transform sexy networks",
+        "social_card_description": "disintermediate mission-critical mindshare"
       },
       {
         "social_card_image": {
@@ -43,10 +43,36 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=900&h=500&fit=crop"
         },
-        "social_card_title": "maximize B2B systems",
-        "social_card_description": "deploy one-to-one networks"
+        "social_card_title": "target frictionless e-business",
+        "social_card_description": "revolutionize vertical applications"
+      },
+      {
+        "social_card_image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=900&h=500&fit=crop"
+        },
+        "social_card_title": "expedite e-business deliverables",
+        "social_card_description": "incubate cutting-edge channels"
+      },
+      {
+        "social_card_image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=900&h=500&fit=crop"
+        },
+        "social_card_title": "architect 24/7 blockchains",
+        "social_card_description": "envisioneer strategic partnerships"
       }
     ]
   }

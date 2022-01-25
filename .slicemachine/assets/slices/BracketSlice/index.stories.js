@@ -18,7 +18,7 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"bracket_slice","items":[],"primary":{"SectionTitle":"e-enable best-of-breed content","SectionNumber":"strategize killer supply-chains","EventID":"morph scalable channels","EventName":"grow world-class technologies","PollingEnabled":true},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","name":"Default slice","slice_type":"bracket_slice","items":[],"primary":{"SectionTitle":"integrate interactive mindshare","SectionNumber":"leverage user-centric functionalities","EventID":"leverage B2C architectures","EventName":"evolve compelling markets","PollingEnabled":true},"id":"_DefaultSlice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
