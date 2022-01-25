@@ -35,7 +35,7 @@
             v-for="(athlete, atheleteIndex) in heat"
             :key="atheleteIndex"
             :rider="athlete"
-            :all-results="round.results"
+            :all-results="round.heats[0].results"
           />
           <div class="bracket-lines">
             <span class="line"></span>
@@ -100,6 +100,7 @@ export default {
   },
   methods: {
     getHeats(round, roundIndex) {
+      // console.log('RESULTS', round.heats[0].results)
       const entries = Array.from(round.entries)
       //   Have to find what the previous Heat each athlete was in
       entries.forEach((entry) => {
