@@ -56,7 +56,8 @@ export default {
 .text-slice {
   margin-bottom: 40px;
   color: $white;
-  p {
+  p,
+  a {
     font-size: $font-large;
     line-height: 1.2;
     strong {
