@@ -81,7 +81,7 @@
           @tap="handleTap"
         >
           <div :class="`event-item event-${i}`">
-            <div v-if="item.Image.url" class="event-graphic">
+            <div v-if="item.Image.url" class="slider-image">
               <prismic-image :field="item.Image" />
             </div>
             <div class="content">
@@ -252,7 +252,7 @@ export default {
       padding: 0 8px;
     }
   }
-  .event-graphic {
+  .slider-image {
     margin-bottom: 10px;
     img {
       width: 100%;
