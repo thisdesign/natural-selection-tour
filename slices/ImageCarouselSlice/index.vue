@@ -83,6 +83,14 @@
           <div :class="`event-item event-${i}`">
             <div v-if="item.Image.url" class="slider-image">
               <prismic-image :field="item.Image" />
+              <video
+                v-if="item.Video.url"
+                :src="item.Video.url"
+                muted
+                loop
+                autoplay
+                playsinline
+              ></video>
             </div>
             <div class="content">
               <prismic-rich-text class="event-title" :field="item.Title" />
@@ -253,9 +261,18 @@ export default {
     }
   }
   .slider-image {
+    position: relative;
     margin-bottom: 10px;
     img {
       width: 100%;
+    }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
   .event-title {

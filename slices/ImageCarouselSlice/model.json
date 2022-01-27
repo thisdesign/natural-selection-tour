@@ -35,6 +35,15 @@
           },
           "type": "Image"
         },
+        "Video": {
+          "config": {
+            "label": "Video",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
+        },
         "Link": {
           "config": {
             "label": "Link",
