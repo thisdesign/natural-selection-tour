@@ -208,7 +208,7 @@ header {
       }
     }
   }
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     display: none;
   }
 }
@@ -217,7 +217,7 @@ header {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     width: unset;
   }
 }
@@ -231,7 +231,6 @@ header {
 
 .main-menu {
   position: fixed;
-
   top: 0;
   left: 0;
   width: 100%;
@@ -239,12 +238,12 @@ header {
   z-index: 10;
   padding: 6rem 2rem 0rem;
   background: rgba(0, 0, 0, 1);
-  overflow: hidden;
+  overflow-y: scroll;
   visibility: hidden;
   opacity: 0;
   max-height: 0;
   transition: opacity 700ms, visibility 700ms, max-height 1000ms;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     background: transparent;
     visibility: visible;
     opacity: 1;
@@ -254,7 +253,7 @@ header {
     max-height: unset;
     padding: 0;
   }
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     width: 100%;
   }
   &.open {
@@ -275,7 +274,7 @@ header {
   //   height: 100%;
   //   background: black;
   //   z-index: -1;
-  //   @include media-breakpoint-up(sm) {
+  //   @include media-breakpoint-up(md) {
   //     display: none;
   //   }
   // }
@@ -284,7 +283,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     height: calc(85vh - 6rem);
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
       height: 100%;
     }
   }
@@ -296,7 +295,7 @@ header {
   transition-timing-function: ease-in-out;
   transition-delay: 300ms;
   transition-duration: 500ms;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     opacity: 1;
   }
 }
@@ -305,7 +304,7 @@ nav {
   flex-direction: column;
   justify-content: right;
   text-align: right;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     height: 100%;
     // justify-content: space-between;
     text-align: left;
@@ -318,7 +317,7 @@ nav {
       display: block;
     }
     margin-bottom: clamp(1rem, 4vh, 3rem);
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
       margin-bottom: 0;
       margin-right: 7vw;
     }
@@ -328,13 +327,13 @@ nav {
     text-decoration: none;
     line-height: 1;
     position: relative;
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
       display: flex;
       font-size: 20px;
       margin-bottom: 0;
     }
     &:after {
-      @include media-breakpoint-up(sm) {
+      @include media-breakpoint-up(md) {
         content: '';
         position: absolute;
         bottom: 0;
@@ -369,7 +368,7 @@ nav {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     display: none;
   }
 }
@@ -385,8 +384,15 @@ nav {
 }
 .nav-social {
   padding-bottom: 1.7rem;
-  a:first-child {
-    margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  a {
+    display: block;
+    width: 2rem;
+    margin-left: 0.7rem;
+    img {
+      width: 100%;
+    }
   }
 }
 </style>
