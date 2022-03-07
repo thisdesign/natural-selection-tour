@@ -29,7 +29,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Natural Selection Tour to Redefine Snowboarding Competition',
+        content: 'Natural Selection Tour',
       },
       {
         property: 'og:url',
@@ -45,7 +45,7 @@ export default {
       },
       {
         property: 'og:description',
-        content: 'Natural Selection Tour to Redefine Snowboarding Competition',
+        content: 'Natural Selection Tour',
       },
       {
         property: 'og:image',
@@ -62,7 +62,7 @@ export default {
       },
       {
         name: 'twitter:description',
-        content: 'Natural Selection Tour to Redefine Snowboarding Competition',
+        content: 'Natural Selection Tour',
       },
       {
         name: 'twitter:image',
@@ -168,6 +168,9 @@ export default {
     strategies: {
       local: false,
       auth0: {
+        login: {
+            'description': 'Natural Selection Tour',
+        },
         domain: process.env.AUTH0_DOMAIN,
         clientId: process.env.AUTH0_CLIENT_ID,
         logoutRedirectUri: process.env.NUXT_ENV_BASE_URL,
