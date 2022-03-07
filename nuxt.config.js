@@ -169,7 +169,7 @@ export default {
       local: false,
       auth0: {
         login: {
-            'description': 'Natural Selection Tour',
+            description: 'Natural Selection Tour',
         },
         domain: process.env.AUTH0_DOMAIN,
         clientId: process.env.AUTH0_CLIENT_ID,
