@@ -5,6 +5,11 @@ export default [
       {
         rounds: [
           {
+            heats: [
+              {
+                results: [],
+              },
+            ],
             entries: [
               {
                 category: '1',
@@ -50,6 +55,11 @@ export default [
       {
         rounds: [
           {
+            heats: [
+              {
+                results: [],
+              },
+            ],
             entries: [
               {
                 category: '1',

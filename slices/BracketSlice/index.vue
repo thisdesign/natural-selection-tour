@@ -10,6 +10,7 @@
   >
     <div v-for="contest in contests" :key="contest.externalID" class="contest">
       <bracket-contest
+        :event-id="eventId"
         :rounds="contest.categories[0].rounds"
         :number="slice.primary.SectionNumber"
         :title="`${sectionTitle}${contest.name}_Bracket`"
@@ -36,6 +37,7 @@ export default {
   data() {
     return {
       eventId: this.slice.primary.EventID,
+      endPoint: this.slice.primary.EventEndpoint.url,
       contests: [],
       polling: this.slice.primary.PollingEnabled,
     }
@@ -56,6 +58,7 @@ export default {
     },
   },
   mounted() {
+    console.log(this.slice.primary)
     if (this.polling) {
       setInterval(() => {
         this.fetchResults()
@@ -68,6 +71,7 @@ export default {
       await this.$store.dispatch('results/loadResults', {
         fetch,
         eventId: this.eventId,
+        endPoint: this.endPoint,
       })
       this.contests = this.$store.state.results.items[this.eventId]
       if (this.contests.length === 0) this.contests = ContestModel

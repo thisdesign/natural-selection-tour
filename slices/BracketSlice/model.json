@@ -47,6 +47,15 @@
             "default_value": false
           },
           "type": "Boolean"
+        },
+        "EventEndpoint": {
+          "config": {
+            "label": "EventEndpoint",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
         }
       },
       "items": {}
