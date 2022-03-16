@@ -1,6 +1,7 @@
 <template>
   <div
     id="webgl-player"
+    :key="`webgl${$route.params.uid}`"
     class="webgl"
     @mouseenter="handleMouseEnter"
     @mousemove="handleMouseMove"
@@ -69,14 +70,12 @@ export default {
     },
   },
   mounted() {
-    Viewer.init(this.$refs.canvas, this.viewerCallback)
-    if (this.model !== '') {
-      this.loading = true
-      Viewer.laodModel('modelA', this.model).then(() => {
-        this.loading = false
-        this.$emit('model-loaded')
-      })
-    }
+    Viewer.init(document.getElementById('canvas'), this.viewerCallback)
+    this.loading = true
+    Viewer.laodModel('modelA', this.model).then(() => {
+      this.loading = false
+      this.$emit('model-loaded')
+    })
   },
   methods: {
     handleMouseEnter() {
@@ -140,5 +139,6 @@ canvas {
   width: 100%;
   height: 100%;
   outline: 0;
+  z-index: 999;
 }
 </style>

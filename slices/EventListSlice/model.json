@@ -24,6 +24,15 @@
             "placeholder": ""
           },
           "type": "Text"
+        },
+        "CenterItems": {
+          "config": {
+            "label": "CenterItems",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          },
+          "type": "Boolean"
         }
       },
       "items": {
@@ -48,14 +57,28 @@
             "label": "Start",
             "placeholder": ""
           },
-          "type": "Number"
+          "type": "Text"
+        },
+        "StartColor": {
+          "config": {
+            "label": "StartColor",
+            "placeholder": ""
+          },
+          "type": "Color"
         },
         "End": {
           "config": {
             "label": "End",
             "placeholder": ""
           },
-          "type": "Number"
+          "type": "Text"
+        },
+        "EndColor": {
+          "config": {
+            "label": "EndColor",
+            "placeholder": ""
+          },
+          "type": "Color"
         },
         "Graphic": {
           "config": {
@@ -70,7 +93,7 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": false,
-            "single": "heading2,heading1,heading3,heading4,heading5,heading6"
+            "single": "heading1,heading2,heading3,heading4,heading5,heading6"
           },
           "type": "StructuredText"
         },
@@ -100,7 +123,8 @@
               "terrain-prep",
               "live",
               "wx-hold",
-              "archived"
+              "archived",
+              "blank"
             ],
             "default_value": "terrain-prep"
           },

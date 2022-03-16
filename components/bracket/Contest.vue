@@ -23,7 +23,7 @@
       <div
         v-for="(round, roundIndex) in rounds"
         :key="roundIndex"
-        class="bracket-column"
+        :class="`bracket-column ${eventId} rounds-${rounds.length}`"
       >
         <div
           v-for="(heat, heatIndex) in getHeats(round, roundIndex)"
@@ -35,7 +35,7 @@
             v-for="(athlete, atheleteIndex) in heat"
             :key="atheleteIndex"
             :rider="athlete"
-            :all-results="round.results"
+            :all-results="round.heats[0].results"
           />
           <div class="bracket-lines">
             <span class="line"></span>
@@ -56,6 +56,10 @@ import WaypointMixin from '@/mixins/Waypoint'
 export default {
   mixins: [WaypointMixin],
   props: {
+    eventId: {
+      type: String,
+      default: '',
+    },
     rounds: {
       type: Array,
       default: () => {},
@@ -97,6 +101,7 @@ export default {
   mounted() {
     gsap.registerPlugin(ScrollToPlugin)
     this.setCurrentRound()
+    console.log(this.rounds)
   },
   methods: {
     getHeats(round, roundIndex) {
@@ -300,6 +305,41 @@ export default {
       height: 512px;
       @include media-breakpoint-up(sm) {
         height: 768px;
+      }
+    }
+  }
+
+  &.event-two {
+    .bracket-set {
+      &:nth-child(odd) {
+        .bracket-lines span.line {
+          &:last-child {
+            width: 3rem;
+          }
+        }
+      }
+      &:nth-child(even) {
+        .bracket-lines span.line {
+          &:first-child {
+            width: 3rem;
+          }
+        }
+      }
+    }
+    &:not(:first-child) {
+      .bracket-set span.line {
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+
+    &:first-child {
+      display: none;
+    }
+    &:nth-child(n + 2) {
+      .connector-line {
+        display: none !important;
       }
     }
   }

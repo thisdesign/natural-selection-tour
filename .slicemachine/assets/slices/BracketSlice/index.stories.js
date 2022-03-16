@@ -18,7 +18,7 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"bracket_slice","items":[],"primary":{"SectionTitle":"e-enable best-of-breed content","SectionNumber":"strategize killer supply-chains","EventID":"morph scalable channels","EventName":"grow world-class technologies","PollingEnabled":true},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","name":"Default slice","slice_type":"bracket_slice","items":[],"primary":{"SectionTitle":"harness strategic web services","SectionNumber":"orchestrate cross-platform technologies","EventID":"enable holistic partnerships","EventName":"cultivate distributed metrics","PollingEnabled":false,"EventEndpoint":{"link_type":"Web","url":"http://twitter.com"}},"id":"_DefaultSlice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'

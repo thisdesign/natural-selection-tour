@@ -40,6 +40,15 @@
           },
           "type": "Text"
         },
+        "CtaLink": {
+          "config": {
+            "label": "CtaLink",
+            "placeholder": "",
+            "select": "web",
+            "allowTargetBlank": false
+          },
+          "type": "Link"
+        },
         "VideoPoster": {
           "config": {
             "label": "VideoPoster",
@@ -65,6 +74,15 @@
             "allowTargetBlank": false
           },
           "type": "Link"
+        },
+        "LoopOnly": {
+          "config": {
+            "label": "LoopOnly",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          },
+          "type": "Boolean"
         }
       },
       "items": {

@@ -7,7 +7,13 @@
       {
         "Rider": {
           "link_type": "Web",
-          "url": "https://prismic.io"
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "Rider": {
+          "link_type": "Web",
+          "url": "http://google.com"
         }
       },
       {
@@ -19,19 +25,13 @@
       {
         "Rider": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
-        }
-      },
-      {
-        "Rider": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "http://google.com"
         }
       }
     ],
     "primary": {
-      "SectionNumber": "reinvent plug-and-play convergence",
-      "SectionTitle": "cultivate intuitive supply-chains"
+      "SectionNumber": "reinvent real-time solutions",
+      "SectionTitle": "repurpose open-source mindshare"
     }
   }
 ]

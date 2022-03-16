@@ -17,7 +17,7 @@
     "license": "MIT",
     "dependencies": {
       "node-fetch": "^2.3.0",
-      "@google-cloud/storage": "^5.16.1",
+      "@google-cloud/storage": "^5.16.1"
     }
   }
   

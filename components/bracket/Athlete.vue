@@ -46,12 +46,13 @@ export default {
     runs() {
       // console.log(this.allResults.length)
       if (this.allResults) {
-        if (this.allResults.length > 0) {
-          const resultRider = this.allResults.find(
-            (rider) =>
-              this.rider.athlete.externalId === rider.externalAthleteId,
-          )
-          return resultRider.details[0].details.map((detail) => {
+        const resultRider = this.allResults.find(
+          (rider) => this.rider.athlete.externalId === rider.externalAthleteId,
+          // (rider) => this.rider.externalId === rider.externalAthleteId,
+        )
+        // console.log('RESULT RIDER', resultRider)
+        if (resultRider) {
+          return resultRider.details[1].details.map((detail) => {
             return {
               average: detail.values[1],
               scores: detail.groups[0].details.map((scores) => {
@@ -78,7 +79,30 @@ export default {
       }
     },
   },
-  mounted() {},
+  mounted() {
+    // console.log('RUNS', this.runs)
+    // // console.log('ALL RESULTS', this.allResults)
+    // const resultRider = this.allResults.find(
+    //   (rider) => this.rider.athlete.externalId === rider.externalAthleteId,
+    //   // (rider) => this.rider.externalId === rider.externalAthleteId,
+    // )
+    // // console.log('RESULT RIDER', resultRider)
+    // if (resultRider) {
+    //   const newRider = resultRider.details[1].details.map((detail) => {
+    //     return {
+    //       average: detail.values[1],
+    //       scores: detail.groups[0].details.map((scores) => {
+    //         return {
+    //           judge: scores.values[0],
+    //           score: scores.values[1],
+    //           discard: scores.values[2],
+    //         }
+    //       }),
+    //     }
+    //   })
+    //   console.log('NEW RIDER', newRider)
+    // }
+  },
 }
 </script>
 

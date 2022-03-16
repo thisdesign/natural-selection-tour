@@ -14,10 +14,26 @@ button,
   color: black;
   transition: $durationFast;
 
-  @include hocus {
+  &:hover {
     border: 1px solid black;
     background: black;
     border-color: white;
     color: white;
+    outline: none;
+  }
+
+  &:focus {
+    border: 1px solid white;
+    background: white;
+    border-color: black;
+    color: black;
+    outline: none;
+    &:hover {
+      border: 1px solid black;
+      background: black;
+      border-color: white;
+      color: white;
+      outline: none;
+    }
   }
 }

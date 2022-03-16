@@ -2,35 +2,9 @@
   "slices": {
     "PartnerHeroSlice": {},
     "Streams": {},
-    "TextSlice": {
-      "default-slice": {
-        "primary": {
-          "Text": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
-    "BracketSlice": {
-      "default-slice": {
-        "primary": {}
-      }
-    },
-    "TwoColumnSlice": {
-      "default-slice": {
-        "primary": {
-          "title": {
-            "config": {
-              "patternType": "HEADING",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    }
+    "HeroVideoSlice": {},
+    "ImageCarouselSlice": {},
+    "BracketSlice": {}
   },
   "_cts": {
     "rider": {

@@ -14,7 +14,22 @@
         :number="sidebarSectionNumber"
         :title="sidebarSectionTitle"
       />
-      <div class="status" :class="getStatus(sidebarStatus).color">
+      <div v-if="sidebarStatus === 'video-loop'">
+        <div class="video-wrapper">
+          <video
+            :src="sidebarMedia.url"
+            autoplay
+            muted
+            playsinline
+            loop
+          ></video>
+        </div>
+      </div>
+      <div
+        v-if="sidebarStatus !== 'video-loop'"
+        class="status"
+        :class="getStatus(sidebarStatus).color"
+      >
         <span class="status-title">{{ statusTitle }}</span>
         <element-status-icon class="status-icon" :status="sidebarStatus" />
       </div>
@@ -47,6 +62,12 @@ export default {
     sidebarStatus: {
       type: String,
       default: '',
+    },
+    sidebarMedia: {
+      type: Object,
+      default() {
+        return {}
+      },
     },
     shouldShow: {
       type: Boolean,
@@ -107,6 +128,21 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+}
+.video-wrapper {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-top: 175%;
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 .status {

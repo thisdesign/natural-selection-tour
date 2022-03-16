@@ -29,6 +29,14 @@
         </div>
         <div class="set">
           <div class="title">
+            <prismic-rich-text :field="globalData.Footer" />
+          </div>
+        </div>
+      </div>
+
+      <div class="col indented">
+        <div class="set">
+          <div class="title">
             <p>{{ globalData.RiderTitle }}</p>
           </div>
           <div class="riders">
@@ -46,10 +54,12 @@
           </div>
         </div>
       </div>
+
       <div
         v-for="(col, colIndex) in columns"
         :key="`col${colIndex}`"
         class="col"
+        :class="{ hidden: col[0].text === '' }"
       >
         <div
           v-for="(set, setIndex) in col"
@@ -135,6 +145,7 @@ export default {
     },
   },
   mounted() {
+    // console.log(this.columns)
     setTimeout(() => {
       this.delayActive = true
     }, 300)
@@ -193,6 +204,9 @@ p {
 .col {
   width: 25%;
   padding: 0 1rem;
+  &.hidden {
+    display: none;
+  }
 }
 .indented {
   .riders,

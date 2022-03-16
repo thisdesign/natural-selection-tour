@@ -8,14 +8,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Sunt officia laborum enim deserunt elit dolor mollit cillum ad ad ipsum.",
+            "text": "Reprehenderit commodo fugiat cupidatat eu ut culpa non exercitation. Eiusmod exercitation excepteur cillum magna voluptate consequat officia minim est irure ea quis.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Cillum minim pariatur veniam incididunt culpa eiusmod irure laboris tempor culpa aute. Culpa irure ea commodo dolor culpa excepteur est elit officia eiusmod sint.",
+            "text": "Consectetur aliquip consequat magna est labore laboris exercitation minim eiusmod id officia cillum irure sunt. Velit et ea laborum officia adipisicing elit dolore magna. Ad sit do ullamco nulla ut cillum aliqua quis laborum pariatur eiusmod reprehenderit.",
             "spans": []
           }
         ]
@@ -24,14 +24,14 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Lorem minim laboris labore nostrud commodo amet ut voluptate officia mollit cillum nostrud.",
+            "text": "Est culpa irure incididunt ipsum velit enim enim nisi est.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Sunt aliqua non ipsum eu dolore aliquip laboris.",
+            "text": "Voluptate proident exercitation ad commodo id pariatur sint ex. Eu consequat voluptate ea et occaecat sint cillum ad id incididunt aliqua esse ad. Ad esse anim nostrud fugiat ad laborum culpa sunt minim pariatur aute amet.",
             "spans": []
           }
         ]
@@ -40,54 +40,22 @@
         "TextTop": [
           {
             "type": "paragraph",
-            "text": "Ea do magna minim reprehenderit tempor occaecat aliquip tempor tempor dolor ad velit. Nulla in velit minim reprehenderit laborum.",
+            "text": "Amet nisi voluptate quis tempor cupidatat nisi occaecat anim eiusmod voluptate laborum. Minim nostrud mollit ex nisi ullamco sit occaecat commodo occaecat officia occaecat.",
             "spans": []
           }
         ],
         "TextBottom": [
           {
             "type": "paragraph",
-            "text": "Veniam nulla proident exercitation non adipisicing labore. Ex labore aute eiusmod.",
-            "spans": []
-          }
-        ]
-      },
-      {
-        "TextTop": [
-          {
-            "type": "paragraph",
-            "text": "Nostrud aute ea reprehenderit ipsum voluptate. Sunt culpa minim officia. Sint aliqua ut in amet proident est anim voluptate veniam do.",
-            "spans": []
-          }
-        ],
-        "TextBottom": [
-          {
-            "type": "paragraph",
-            "text": "Ullamco elit laboris enim excepteur enim nisi esse dolor duis occaecat cupidatat irure qui amet.",
-            "spans": []
-          }
-        ]
-      },
-      {
-        "TextTop": [
-          {
-            "type": "paragraph",
-            "text": "Dolore occaecat sint culpa in id mollit aliqua esse culpa fugiat voluptate. Officia cupidatat Lorem occaecat excepteur aliqua esse excepteur eiusmod duis duis. Duis magna et commodo.",
-            "spans": []
-          }
-        ],
-        "TextBottom": [
-          {
-            "type": "paragraph",
-            "text": "Ullamco nulla pariatur tempor ullamco velit mollit aliquip.",
+            "text": "Eiusmod do occaecat ullamco quis ut mollit do pariatur. Consectetur officia dolore qui non quis.",
             "spans": []
           }
         ]
       }
     ],
     "primary": {
-      "SectionNumber": "expedite best-of-breed functionalities",
-      "SectionTitle": "aggregate virtual functionalities",
+      "SectionNumber": "revolutionize cross-media schemas",
+      "SectionTitle": "exploit intuitive markets",
       "Logo": {
         "dimensions": {
           "width": 900,
@@ -95,9 +63,13 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=900&h=500&fit=crop"
       },
-      "CtaText": "engineer magnetic methodologies",
+      "CtaText": "cultivate sticky technologies",
+      "CtaLink": {
+        "link_type": "Web",
+        "url": "https://prismic.io"
+      },
       "VideoPoster": {
         "dimensions": {
           "width": 900,
@@ -105,16 +77,17 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=900&h=500&fit=crop"
       },
       "VideoFull": {
         "link_type": "Web",
-        "url": "https://slicemachine.dev"
+        "url": "http://google.com"
       },
       "VideoLoop": {
         "link_type": "Web",
         "url": "http://twitter.com"
-      }
+      },
+      "LoopOnly": true
     }
   }
 ]

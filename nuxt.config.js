@@ -73,7 +73,7 @@ export default {
     link: [
       {
         rel: 'icon',
-        href: 'https://images.prismic.io/naturalselectiontour/f43b8cf0-599f-4133-ac70-8b802ec59726_NaturalSelection_FAVICON.png?auto=compress,format',
+        href: 'https://images.prismic.io/naturalselectiontour/5b26bdef-4467-4749-a9db-0fa3471f0c05_NaturalSelection_Logo_White.png?auto=compress,format',
       },
     ],
   },
@@ -98,6 +98,8 @@ export default {
     '@nuxtjs/svg', // https://www.npmjs.com/package/@nuxtjs/robots
     '@nuxtjs/robots', // https://www.npmjs.com/package/@nuxtjs/sitemap
     '@nuxtjs/sitemap',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     'nuxt-facebook-pixel-module',
     [
       '@nuxtjs/prismic',
@@ -136,7 +138,7 @@ export default {
   },
 
   sitemap: {
-    hostname: 'https://natural-selection.netlify.com',
+    hostname: 'https://www.naturalselectiontour.com',
     gzip: true,
     exclude: [],
   },
@@ -155,5 +157,22 @@ export default {
   // https://www.npmjs.com/package/@nuxtjs/style-resources
   styleResources: {
     scss: ['scss/global.scss'],
+  },
+
+  auth: {
+    redirect: {
+      login: '/', // redirect user when not connected
+      callback: '/auth/signed-in', // callback after auth
+      home: '/gallery/home', // iframe gallery with middleware
+    },
+    strategies: {
+      local: false,
+      auth0: {
+        domain: process.env.AUTH0_DOMAIN,
+        clientId: process.env.AUTH0_CLIENT_ID,
+        logoutRedirectUri: process.env.NUXT_ENV_BASE_URL,
+        audience: process.env.AUTH0_AUDIENCE,
+      },
+    },
   },
 }

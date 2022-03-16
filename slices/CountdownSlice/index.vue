@@ -11,6 +11,7 @@
       :section-number="slice.primary.SectionNumber"
       :section-title="slice.primary.SectionTitle"
       :sidebar-status="slice.primary.SidebarStatus"
+      :sidebar-media="slice.primary.SidebarMedia"
       :sidebar-section-number="slice.primary.SidebarSectionNumber"
       :sidebar-section-title="slice.primary.SidebarSectionTitle"
       :should-show="waypointActive"
@@ -35,7 +36,7 @@
           </div>
         </div>
         <div class="cta-row">
-          <div class="button-container">
+          <div v-if="slice.primary.CtaLink.url" class="button-container">
             <element-cta-button
               type="button"
               class="cta-button btn"

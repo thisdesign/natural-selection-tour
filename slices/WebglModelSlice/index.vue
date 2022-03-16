@@ -139,29 +139,9 @@ export default {
   .webgl-player {
     width: 150%;
     margin-left: -25%;
-    &:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding-top: 20%;
-      content: '';
-      z-index: 10;
-    }
-    &:after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding-top: 25%;
-      content: '';
-      z-index: 10;
-    }
+    pointer-events: none;
     @include media-breakpoint-up(sm) {
-      &:before,
-      &:after {
-        display: none;
-      }
+      pointer-events: all;
       position: absolute;
       margin-left: 0;
       right: 0;

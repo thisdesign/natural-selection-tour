@@ -18,7 +18,7 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"image_content_hero_slice","items":[],"primary":{"title":[{"type":"heading1","text":"Iterate granular systems","spans":[]}],"description":[{"type":"paragraph","text":"Occaecat incididunt ex eiusmod adipisicing anim labore eu reprehenderit excepteur dolore eiusmod do et eiusmod.","spans":[]}],"Hero":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1587614295999-6c1c13675117?w=900&h=500&fit=crop"},"CtaLink":{"link_type":"Web","url":"http://twitter.com"},"CtaTitle":"aggregate robust mindshare"},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","name":"Default slice","slice_type":"image_content_hero_slice","items":[],"primary":{"title":[{"type":"heading1","text":"Engage out-of-the-box content","spans":[]}],"description":[{"type":"paragraph","text":"Sunt aute do proident sint sint nostrud do id reprehenderit voluptate do. Veniam non eiusmod cupidatat proident aute Lorem magna laboris duis. Nisi duis dolore consequat eu ea do ea exercitation eiusmod.","spans":[]}],"Hero":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"},"CtaLink":{"link_type":"Web","url":"http://twitter.com"},"CtaTitle":"recontextualize revolutionary web services"},"id":"_DefaultSlice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
