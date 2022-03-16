@@ -13,7 +13,7 @@
         :event-id="eventId"
         :rounds="contest.categories[0].rounds"
         :number="slice.primary.SectionNumber"
-        :title="`${sectionTitle}${contest.name}_Bracket`"
+        :title="`${sectionTitle}${getContestName(contest.name)}_Bracket`"
       />
     </div>
   </section>
@@ -67,6 +67,13 @@ export default {
   },
 
   methods: {
+    getContestName(name) {
+      if (name.toLowerCase().includes('women')) {
+        return 'WOMENS'
+      } else {
+        return 'MENS'
+      }
+    },
     async fetchResults() {
       await this.$store.dispatch('results/loadResults', {
         fetch,
