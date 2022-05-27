@@ -50,6 +50,9 @@ export default {
       width: 1920px;
       height: 1200px;
     }
+    @media (max-width: 800px) {
+      height: 100vh;
+    }
   }
   iframe {
     position: absolute;
