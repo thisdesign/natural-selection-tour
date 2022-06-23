@@ -8,7 +8,7 @@
         "Title": [
           {
             "type": "paragraph",
-            "text": "Sit cillum aliquip nostrud tempor officia qui.",
+            "text": "Nulla exercitation aliquip dolore laboris. Ipsum est labore amet aute in ad sint nostrud qui eu. Aliquip sunt esse cillum nisi.",
             "spans": []
           }
         ],
@@ -17,54 +17,54 @@
           "link_type": "Web",
           "url": "http://google.com"
         },
-        "LinkLetter": "syndicate strategic infrastructures"
+        "LinkLetter": "aggregate B2C deliverables"
       },
       {
         "Title": [
           {
             "type": "paragraph",
-            "text": "Occaecat ex Lorem enim nostrud quis enim.",
+            "text": "Minim Lorem mollit proident deserunt ullamco esse minim cillum. Culpa esse est ea duis dolor quis ut non amet qui est culpa.",
             "spans": []
           }
         ],
-        "Active": false,
+        "Active": true,
         "Model": {
           "link_type": "Web",
-          "url": "http://twitter.com"
+          "url": "https://slicemachine.dev"
         },
-        "LinkLetter": "grow plug-and-play convergence"
+        "LinkLetter": "mesh cross-media blockchains"
       },
       {
         "Title": [
           {
             "type": "paragraph",
-            "text": "Aliquip sit enim consequat velit exercitation exercitation laboris occaecat dolore eu dolor. Mollit qui ex ipsum fugiat mollit id et ullamco dolor excepteur aliquip adipisicing sit cillum. Sint consequat cillum ullamco labore aliquip labore tempor exercitation.",
+            "text": "Aliquip duis elit ad aute reprehenderit do esse sit sint proident consequat nostrud est. Ut tempor voluptate ipsum. Duis et magna occaecat amet anim pariatur nostrud.",
             "spans": []
           }
         ],
-        "Active": false,
+        "Active": true,
         "Model": {
           "link_type": "Web",
           "url": "https://prismic.io"
         },
-        "LinkLetter": "exploit global e-markets"
+        "LinkLetter": "monetize customized web services"
       }
     ],
     "primary": {
-      "SectionNumber": "mesh efficient vortals",
-      "SectionTitle": "aggregate B2C web-readiness",
+      "SectionNumber": "deliver cutting-edge e-commerce",
+      "SectionTitle": "recontextualize vertical interfaces",
       "Type": "Default",
       "title": [
         {
           "type": "heading1",
-          "text": "Leverage enterprise functionalities",
+          "text": "Redefine turn-key systems",
           "spans": []
         }
       ],
       "description": [
         {
           "type": "paragraph",
-          "text": "Aliquip cillum enim veniam. Aliquip dolor eiusmod qui aute.",
+          "text": "Occaecat commodo duis est fugiat excepteur ullamco voluptate quis commodo et nostrud sunt. Mollit elit laboris pariatur est irure. Aliquip voluptate ad voluptate aute incididunt do ipsum esse quis in non sit.",
           "spans": []
         }
       ],
@@ -79,14 +79,14 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da?w=900&h=500&fit=crop"
       },
       "CtaLink": {
         "link_type": "Web",
-        "url": "http://google.com"
+        "url": "https://slicemachine.dev"
       },
-      "CtaText": "deliver killer functionalities",
-      "Featured": true
+      "CtaText": "synthesize magnetic metrics",
+      "Featured": false
     }
   }
 ]

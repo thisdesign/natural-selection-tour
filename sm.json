@@ -1,5 +1,5 @@
 {
-  "apiEndpoint": "https://naturalselectiontour.prismic.io/api/v2",
+  "apiEndpoint": "https://natural-selection-2021.prismic.io/api/v2",
   "libraries": [
     "@/slices"
   ],

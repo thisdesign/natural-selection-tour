@@ -7,6 +7,12 @@
       {
         "Rider": {
           "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      },
+      {
+        "Rider": {
+          "link_type": "Web",
           "url": "https://slicemachine.dev"
         }
       },
@@ -19,19 +25,19 @@
       {
         "Rider": {
           "link_type": "Web",
-          "url": "http://twitter.com"
+          "url": "https://prismic.io"
         }
       },
       {
         "Rider": {
           "link_type": "Web",
-          "url": "http://google.com"
+          "url": "https://prismic.io"
         }
       }
     ],
     "primary": {
-      "SectionNumber": "reinvent real-time solutions",
-      "SectionTitle": "repurpose open-source mindshare"
+      "SectionNumber": "enable seamless web services",
+      "SectionTitle": "disintermediate turn-key applications"
     }
   }
 ]
