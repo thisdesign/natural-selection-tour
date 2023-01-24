@@ -17,13 +17,11 @@ https://www.slicemachine.dev/documentation/nuxt/add-the-slice-zone-to-your-page
 export default {
   async asyncData({ store, $prismic, params, error }) {
     await store.dispatch('ui/setOptions', {
+      pageType: document.data.page_type || 'Default',
       floatingHeader: false,
       footerColor: 'rgb(255, 230, 0)',
       showCode: false,
     })
-  },
-  mounted() {
-    console.log('Auth', this.$auth)
   },
 }
 </script>

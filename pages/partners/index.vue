@@ -16,6 +16,7 @@ export default {
   },
   async asyncData({ store, $prismic, params, error }) {
     await store.dispatch('ui/setOptions', {
+      pageType: document.data.page_type || 'Default',
       floatingHeader: false,
       footerColor: '#FFE500',
       showCode: store.state.partners.results.showCode,

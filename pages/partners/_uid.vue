@@ -21,6 +21,7 @@ export default {
     const document = await $prismic.api.getByUID('partner', params.uid)
     if (document) {
       await store.dispatch('ui/setOptions', {
+        pageType: document.data.page_type || 'Default',
         floatingHeader: false,
         footerColor: '#FFE500',
         showCode: store.state.partners.results.showCode,
@@ -56,9 +57,6 @@ export default {
         ),
       }
     },
-  },
-  mounted() {
-    console.log(this.document.data.Logo)
   },
 }
 </script>

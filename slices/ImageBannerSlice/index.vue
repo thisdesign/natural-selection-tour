@@ -18,7 +18,10 @@
     <div class="banner">
       <prismic-image class="desktop" :field="slice.primary.Banner" />
       <prismic-image class="mobile" :field="slice.primary.MobileBanner" />
-      <div class="button-container">
+      <div
+        v-if="slice.primary.CtaLink && slice.primary.CtaTitle"
+        class="button-container"
+      >
         <element-cta-button
           class="btn"
           :link="slice.primary.CtaLink"

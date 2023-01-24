@@ -22,6 +22,7 @@ export default {
   middleware: 'auth',
   async asyncData({ store, $prismic, params, error }) {
     await store.dispatch('ui/setOptions', {
+      pageType: document.data.page_type || 'Default',
       floatingHeader: false,
       footerColor: 'rgb(255, 230, 0)',
       showCode: false,

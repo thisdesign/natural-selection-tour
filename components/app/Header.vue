@@ -18,7 +18,7 @@
       <div class="main-menu-inner">
         <nav class="nav">
           <div
-            v-for="(item, index) in globals.data['main-links']"
+            v-for="(item, index) in mainMenu"
             :key="`mainLink${index}`"
             :class="`menu-link ${item.Active ? 'active' : ''}`"
           >
@@ -48,7 +48,7 @@
         <div class="nav-footer">
           <div class="nav-footer-links">
             <div
-              v-for="(item, index) in globals.data.MobileSecondaryLinks"
+              v-for="(item, index) in mobileLinks"
               :key="`mobileSecondary${index}`"
               class="footer-link"
             >
@@ -107,7 +107,20 @@ export default {
     floatingHeader() {
       return this.$store.state.ui.options.floatingHeader
     },
+    mainMenu() {
+      const $state = this.$store.state
+      return $state.ui.options.pageType === 'Proving Grounds'
+        ? this.globals.data['main-links-pg']
+        : this.globals.data['main-links']
+    },
+    mobileLinks() {
+      const $state = this.$store.state
+      return $state.ui.options.pageType === 'Proving Grounds'
+        ? this.globals.data['MobileSecondaryLinks-pg']
+        : this.globals.data.MobileSecondaryLinks
+    },
   },
+
   watch: {
     $route() {
       this.navOpen = false

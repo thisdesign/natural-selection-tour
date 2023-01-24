@@ -42,13 +42,22 @@ export default {
   name: 'FooterLinks',
   computed: {
     linkLists() {
-      return [
-        this.globals.data.FooterPrimaryLinks,
-        this.globals.data.FooterSecondaryLinks,
-      ]
+      return [this.primaryLinks, this.secondaryLinks]
     },
     globals() {
       return this.$store.state.globals.results
+    },
+    primaryLinks() {
+      const $state = this.$store.state
+      return $state.ui.options.pageType === 'Proving Grounds'
+        ? this.globals.data['FooterPrimaryLinks-pg']
+        : this.globals.data.FooterPrimaryLinks
+    },
+    secondaryLinks() {
+      const $state = this.$store.state
+      return $state.ui.options.pageType === 'Proving Grounds'
+        ? this.globals.data['FooterSecondaryLinks-pg']
+        : this.globals.data.FooterSecondaryLinks
     },
   },
   methods: {

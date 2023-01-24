@@ -19,6 +19,7 @@ export default {
     const document = await $prismic.api.getByUID('page', 'home')
     if (document) {
       await store.dispatch('ui/setOptions', {
+        pageType: document.data.page_type || 'Default',
         floatingHeader: document.data.FloatingNav,
         footerColor: document.data.FooterBackground || '#1f2744',
         showCode: document.data.ShowFooterCode,

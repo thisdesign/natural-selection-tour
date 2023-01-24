@@ -3,6 +3,7 @@ export const state = () => ({
     floatingHeader: true,
     footerColor: '#000000',
     showCode: true,
+    pageType: 'Default',
   },
 })
 
