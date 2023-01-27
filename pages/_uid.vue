@@ -15,8 +15,13 @@ export default {
   components: {
     SliceZone,
   },
-  async asyncData({ store, $prismic, params, error }) {
+  async asyncData({ redirect, route, store, $prismic, params, error }) {
     const document = await $prismic.api.getByUID('page', params.uid)
+    if (!$prismic.isPreview) {
+      redirect('/')
+    } else {
+      console.log($prismic)
+    }
 
     if (document) {
       await store.dispatch('ui/setOptions', {
