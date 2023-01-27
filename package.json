@@ -33,7 +33,7 @@
     "babylonjs": "^4.2.0",
     "babylonjs-loaders": "^4.2.0",
     "cookies": "^0.8.0",
-    "gsap": "npm:@gsap/shockingly@^3.9.0",
+    "gsap": "file:./packages/gsap",
     "js-logger": "^1.6.1",
     "node-fetch": "^2.3.0",
     "nuxt": "^2.15.8",
