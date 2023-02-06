@@ -1,0 +1,45 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "SectionTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "must",
+        "type": "Text"
+      },
+      "SectionNumber": {
+        "__TYPE__": "FieldContent",
+        "value": "share",
+        "type": "Text"
+      },
+      "EventID": {
+        "__TYPE__": "FieldContent",
+        "value": "given",
+        "type": "Text"
+      },
+      "EventName": {
+        "__TYPE__": "FieldContent",
+        "value": "seven",
+        "type": "Text"
+      },
+      "PollingEnabled": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      },
+      "EventEndpoint": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "https://prismic.io"
+        }
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

@@ -1,83 +1,125 @@
 {
-  "id": "44eb59bd-ade2-457d-b7a7-e7f3f2a70922",
-  "uid": "qui-perferendis-aut",
-  "type": "rider",
-  "data": {
-    "Name": [
+  "Name": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "paragraph",
-        "text": "Adipisicing qui adipisicing fugiat ea in duis proident ea sunt et consequat proident eiusmod. Tempor deserunt nisi ullamco ex dolor in magna esse dolor.",
-        "spans": []
-      }
-    ],
-    "Location": [
-      {
-        "type": "paragraph",
-        "text": "Dolor reprehenderit dolor ad ex sit labore ea dolore sit voluptate reprehenderit velit ullamco in duis. Eu et aliquip cillum et aliqua velit dolore fugiat est eiusmod minim occaecat.",
-        "spans": []
-      }
-    ],
-    "InformationLeft": [
-      {
-        "type": "paragraph",
-        "text": "Aute mollit adipisicing velit aliquip incididunt reprehenderit qui mollit cillum dolor.",
-        "spans": []
-      }
-    ],
-    "InformationRight": [
-      {
-        "type": "paragraph",
-        "text": "Laboris dolor sint ipsum voluptate velit reprehenderit aliqua incididunt aute adipisicing sint esse laborum.",
-        "spans": []
-      }
-    ],
-    "Bio": [
-      {
-        "type": "paragraph",
-        "text": "Proident irure eu magna eiusmod reprehenderit dolor excepteur amet proident aute amet cillum laborum eu ut. Laborum enim eiusmod sunt enim enim voluptate.",
-        "spans": []
-      }
-    ],
-    "Flag": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
-      },
-      "alt": "Placeholder image",
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?w=900&h=500&fit=crop"
-    },
-    "Video": {
-      "link_type": "Web",
-      "url": "https://slicemachine.dev"
-    },
-    "Rider": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
-      },
-      "alt": "Placeholder image",
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f?w=900&h=500&fit=crop"
-    },
-    "Sponsors": [
-      {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
+        "content": {
+          "text": "Officia nulla consectetur mollit pariatur irure minim aliqua ad anim amet esse ipsum. Esse aliquip cillum consectetur exercitation consequat sit veniam elit mollit sunt proident labore labore elit. Irure mollit sint elit minim labore exercitation eiusmod velit."
         }
-      },
+      }
+    ]
+  },
+  "Location": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
+        "type": "paragraph",
+        "content": {
+          "text": "In aliquip Lorem enim labore dolor. Sunt nulla irure do proident do ullamco exercitation proident esse consectetur reprehenderit mollit consequat laboris. Culpa nisi ea sit."
         }
-      },
+      }
+    ]
+  },
+  "InformationLeft": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
+        "type": "paragraph",
+        "content": {
+          "text": "Velit mollit occaecat mollit et enim esse in esse in cillum cillum consequat aliqua proident est. Ex in ut ullamco tempor eu id fugiat voluptate proident consequat fugiat duis Lorem incididunt."
         }
+      }
+    ]
+  },
+  "InformationRight": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Nulla veniam laboris eu mollit incididunt culpa fugiat minim velit laboris."
+        }
+      }
+    ]
+  },
+  "Bio": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Aliquip ad tempor culpa adipisicing sit labore in ex non minim irure."
+        }
+      }
+    ]
+  },
+  "Flag": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+      "width": 4272,
+      "height": 2848
+    },
+    "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+    "width": 4272,
+    "height": 2848,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "Video": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "http://google.com"
+    }
+  },
+  "Rider": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+      "width": 5616,
+      "height": 3744
+    },
+    "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+    "width": 5616,
+    "height": 3744,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "Sponsors": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "Partner",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
       }
     ]
   }

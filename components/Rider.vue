@@ -1,11 +1,14 @@
 <template>
-  <div v-if="rider.data" class="rider">
+  <div v-if="rider.data" :class="`rider${duels ? ' duels' : ''}`">
+    <div v-if="duels === true" class="rider-stats">
+      <prismic-rich-text class="rider-name" :field="rider.data.Name" />
+    </div>
     <div
       class="rider-image"
       @mouseenter="updateCurrentRider(rider)"
       @mousemove="updateCurrentRider(rider)"
       @mouseleave="onMouseOut"
-      @click="active = true"
+      @click="active = duels ? false : true"
     >
       <prismic-image :field="rider.data.Rider" />
       <video
@@ -27,7 +30,7 @@
           class="rider-location"
           :field="rider.data.Location"
         />
-        <div class="rider-stats">
+        <div v-if="duels === false" class="rider-stats">
           <prismic-rich-text :field="rider.data.InformationLeft" />
           <prismic-rich-text :field="rider.data.InformationRight" />
         </div>
@@ -41,7 +44,7 @@
           <prismic-rich-text :field="rider.data.Bio" />
         </div>
       </div>
-      <div class="rider-sponsors">
+      <!-- <div class="rider-sponsors">
         <div class="rider-sponsors-title">
           <h4>Industry Alliance Sponsors</h4>
           <span>0{{ rider.data.Sponsors.length }}</span>
@@ -63,7 +66,7 @@
             </nuxt-link>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -75,6 +78,12 @@ export default {
       type: Object,
       default() {
         return {}
+      },
+    },
+    duels: {
+      type: Boolean,
+      default() {
+        return false
       },
     },
   },
@@ -91,6 +100,9 @@ export default {
   },
   methods: {
     updateCurrentRider() {
+      if (this.duels) {
+        return false
+      }
       this.$emit('update-rider', this.rider.data)
       if (this.$refs.riderVideo) {
         this.playPromise = this.$refs.riderVideo.play()
@@ -164,6 +176,29 @@ export default {
   @include media-breakpoint-up(md) {
     width: calc(100% / 3);
   }
+  &.duels {
+    padding: 10px;
+    .rider-image {
+      cursor: default;
+      border: 1px solid white;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+    .rider-name {
+      background: white;
+      color: black;
+      width: 100%;
+      text-align: center;
+      padding: 5px 0;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      &::v-deep p {
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+    }
+  }
 }
 .rider-image {
   cursor: none;
@@ -210,6 +245,31 @@ export default {
     }
   }
 }
+
+.duels {
+  .rider-location ::v-deep p {
+    @include media-breakpoint-down(xs) {
+      font-size: 14px;
+      padding-top: 5px;
+    }
+  }
+  .rider-flag {
+    @include media-breakpoint-down(xs) {
+      width: 24px;
+      margin-top: 5px;
+    }
+  }
+  .rider-name {
+    &::v-deep p {
+      @include media-breakpoint-down(xs) {
+        font-size: 12px;
+      }
+    }
+    &.tablet {
+      display: none;
+    }
+  }
+}
 .rider-info-col {
   width: 82%;
 }
@@ -253,6 +313,7 @@ export default {
     font-family: 'Sneak', sans-serif;
   }
 }
+
 .rider-name {
   font-weight: 700;
   &.tablet {

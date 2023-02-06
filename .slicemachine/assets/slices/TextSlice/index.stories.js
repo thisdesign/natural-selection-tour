@@ -18,9 +18,9 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"text_slice","items":[],"primary":{"SectionNumber":"whiteboard user-centric infomediaries","SectionTitle":"brand dynamic web services","Text":[{"type":"paragraph","text":"Qui incididunt est duis aliquip ullamco. Incididunt ex nostrud sint est eu sint sint veniam.","spans":[]}],"CtaTitle":"empower out-of-the-box mindshare","CtaLink":{"link_type":"Web","url":"http://twitter.com"}},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"SectionNumber":"result","SectionTitle":"nervous","Text":[{"type":"paragraph","text":"Adipisicing quis nostrud cupidatat cillum culpa do. Non veniam nisi do eiusmod occaecat.","spans":[]}],"CtaTitle":"younger","CtaLink":{"id":"mock_document_id","link_type":"Document","type":"mock","tags":[],"lang":"en-us","slug":null,"first_publication_date":"1970-01-01T00:00:01+0000","last_publication_date":"1970-01-01T01:00:00+0000"}},"id":"_DefaultSlice","slice_type":"text_slice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
 })
-_DefaultSlice.storyName = 'Default slice'
+_DefaultSlice.storyName = ''

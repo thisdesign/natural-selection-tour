@@ -1,0 +1,96 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "SectionNumber": {
+        "__TYPE__": "FieldContent",
+        "value": "term",
+        "type": "Text"
+      },
+      "SectionTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "famous",
+        "type": "Text"
+      },
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Found"
+            }
+          }
+        ]
+      },
+      "TargetDate": {
+        "__TYPE__": "FieldContent",
+        "type": "Timestamp",
+        "value": "2018-07-29T23:41:07Z"
+      },
+      "CtaTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "zero",
+        "type": "Text"
+      },
+      "CtaLink": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "https://prismic.io"
+        }
+      },
+      "FooterContent": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Officia consectetur minim minim qui ad ex dolore veniam excepteur sunt deserunt."
+            }
+          }
+        ]
+      },
+      "SidebarSectionNumber": {
+        "__TYPE__": "FieldContent",
+        "value": "yard",
+        "type": "Text"
+      },
+      "SidebarSectionTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "job",
+        "type": "Text"
+      },
+      "SidebarStatus": {
+        "__TYPE__": "FieldContent",
+        "value": "terrain-prep",
+        "type": "Select"
+      },
+      "SidebarFooterText": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Esse nostrud velit dolor nulla elit dolor elit anim id duis ut commodo. Laborum sit ipsum aliqua consequat adipisicing eiusmod labore nostrud voluptate anim cillum deserunt excepteur aute irure. In ullamco Lorem nulla labore ea culpa Lorem duis nisi exercitation laborum sint."
+            }
+          }
+        ]
+      },
+      "SidebarMedia": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "http://twitter.com"
+        }
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

@@ -36,7 +36,7 @@
         </a>
       </div>
     </div>
-    <div class="partner-list">
+    <div v-if="slice.primary.FeaturedOnly === false" class="partner-list">
       <div
         v-for="(item, index) in partners"
         :key="`small-partner${index}`"
@@ -76,10 +76,16 @@ export default {
   },
   computed: {
     featured() {
-      return this.$store.state.partners.results.featured
+      const $state = this.$store.state
+      return $state.ui.options.pageType === 'Proving Grounds'
+        ? this.$store.state.partners.results.featuredPG
+        : this.$store.state.partners.results.featured
     },
     partners() {
-      return this.$store.state.partners.results.partners
+      const $state = this.$store.state
+      return $state.ui.options.pageType === 'Proving Grounds'
+        ? this.$store.state.partners.results.partnersPG
+        : this.$store.state.partners.results.partners
     },
   },
   watch: {
@@ -123,6 +129,7 @@ export default {
   &.large {
     justify-content: center;
     transition-delay: 0.5s;
+    margin-bottom: 7vw;
   }
 }
 .partner {

@@ -14,6 +14,19 @@
         :number="sidebarSectionNumber"
         :title="sidebarSectionTitle"
       />
+      <div class="middle-content">
+        <PrismicRichText
+          v-if="sidebarContent"
+          :field="sidebarContent"
+          class="sidebar-content"
+        />
+        <element-cta-button
+          v-if="sidebarCta !== '' && sidebarCtaLink !== ''"
+          class="partners-cta-btn"
+          :link="{ url: sidebarCtaLink }"
+          :title="sidebarCta"
+        />
+      </div>
       <div v-if="sidebarStatus === 'video-loop'">
         <div class="video-wrapper">
           <video
@@ -26,14 +39,16 @@
         </div>
       </div>
       <div
-        v-if="sidebarStatus !== 'video-loop'"
+        v-if="sidebarStatusAvailable === true && sidebarStatus !== 'video-loop'"
         class="status"
         :class="getStatus(sidebarStatus).color"
       >
         <span class="status-title">{{ statusTitle }}</span>
         <element-status-icon class="status-icon" :status="sidebarStatus" />
       </div>
-      <slot name="footer"></slot>
+      <div class="footer">
+        <slot name="footer"></slot>
+      </div>
     </div>
   </section>
 </template>
@@ -62,6 +77,22 @@ export default {
     sidebarStatus: {
       type: String,
       default: '',
+    },
+    sidebarStatusAvailable: {
+      type: Boolean,
+      default: true,
+    },
+    sidebarCtaLink: {
+      type: String,
+      default: '',
+    },
+    sidebarCta: {
+      type: String,
+      default: '',
+    },
+    sidebarContent: {
+      type: Array,
+      default: undefined,
     },
     sidebarMedia: {
       type: Object,
@@ -96,6 +127,9 @@ export default {
       }
     },
   },
+  mounted() {
+    console.log(this.props)
+  },
   methods: {},
 }
 </script>
@@ -106,6 +140,7 @@ section {
     display: flex;
   }
 }
+
 .col {
   flex: 1 1 auto;
 }
@@ -167,5 +202,14 @@ section {
 .status-icon {
   margin-bottom: auto;
   width: 100%;
+}
+.footer {
+  margin-top: 15px;
+}
+.sidebar-content {
+  margin-bottom: 20px;
+  &::v-deep em {
+    font-style: italic;
+  }
 }
 </style>

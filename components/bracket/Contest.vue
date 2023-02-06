@@ -101,7 +101,7 @@ export default {
   mounted() {
     gsap.registerPlugin(ScrollToPlugin)
     this.setCurrentRound()
-    console.log(this.rounds)
+    // console.log(this.rounds)
   },
   methods: {
     getHeats(round, roundIndex) {

@@ -11,21 +11,34 @@
       :section-number="slice.primary.SectionNumber"
       :section-title="slice.primary.SectionTitle"
       :sidebar-status="slice.primary.SidebarStatus"
+      :sidebar-status-available="slice.primary.SidebarStatusAvailable"
+      :sidebar-cta="slice.primary.SidebarCTA"
+      :sidebar-cta-link="slice.primary.SidebarCTALink?.url"
+      :sidebar-content="slice.primary.SidebarContent"
       :sidebar-section-number="slice.primary.SidebarSectionNumber"
       :sidebar-section-title="slice.primary.SidebarSectionTitle"
       :should-show="waypointActive"
     >
       <prismic-rich-text
-        v-if="!slice.primary.TitleImage"
+        v-if="slice.primary.title"
         class="two-column-title"
         :field="slice.primary.title"
       />
       <prismic-image
         v-if="slice.primary.TitleImage"
-        class="two-column-title"
+        :class="`two-column-title${
+          slice.primary.ImageFullWidth ? ' wide' : ' narrow'
+        }`"
         :field="slice.primary.TitleImage"
       />
       <prismic-rich-text
+        v-if="
+          !(
+            slice.primary.description === [] ||
+            (slice.primary.description.length === 1 &&
+              slice.primary.description[0].text === '')
+          )
+        "
         class="two-column-description"
         :field="slice.primary.description"
       />
@@ -57,6 +70,9 @@ export default {
       },
     },
   },
+  mounted() {
+    console.log(this.slice)
+  },
 }
 </script>
 
@@ -76,9 +92,18 @@ export default {
   }
 }
 img.two-column-title {
-  width: 90%;
-  @include media-breakpoint-up(sm) {
-    width: 50%;
+  &.wide {
+    width: 100%;
+    max-width: unset;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: center;
+  }
+  &.narrow {
+    width: 90%;
+    @include media-breakpoint-up(sm) {
+      width: 50%;
+    }
   }
 }
 .two-column-description {
@@ -105,5 +130,8 @@ img.two-column-title {
 }
 .two-column-footer {
   text-transform: uppercase;
+  p {
+    font-size: 14px;
+  }
 }
 </style>

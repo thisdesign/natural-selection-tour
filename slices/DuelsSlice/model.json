@@ -1,0 +1,54 @@
+{
+  "id": "duels_slice",
+  "type": "SharedSlice",
+  "name": "DuelsSlice",
+  "description": "DuelsSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "DuelsSlice",
+      "primary": {
+        "sectionTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Section Title",
+            "placeholder": ""
+          }
+        },
+        "sectionNumber": {
+          "type": "Text",
+          "config": {
+            "label": "Section Number",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "player1": {
+          "type": "Link",
+          "config": {
+            "label": "Player1",
+            "select": "document",
+            "customtypes": [
+              "rider"
+            ]
+          }
+        },
+        "player2": {
+          "type": "Link",
+          "config": {
+            "label": "Player2",
+            "select": "document",
+            "customtypes": [
+              "rider"
+            ]
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

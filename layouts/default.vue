@@ -10,8 +10,15 @@
 <script>
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import { SplitText } from 'gsap/SplitText'
+
+if (process.client) {
+  gsap.registerPlugin(ScrollToPlugin)
+  gsap.registerPlugin(SplitText)
+}
+
 export default {
-  async middleware({ store, $prismic }) {
+  async middleware({ route, store, $prismic }) {
     await Promise.all([
       store.dispatch('globals/loadGlobals', $prismic),
       store.dispatch('riders/loadRiders', $prismic),
@@ -29,7 +36,6 @@ export default {
     },
   },
   mounted() {
-    gsap.registerPlugin(ScrollToPlugin)
     window.addEventListener('keydown', this.onKeydown)
     window.addEventListener('keyup', this.onKeyup)
   },

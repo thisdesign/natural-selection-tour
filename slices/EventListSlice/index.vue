@@ -26,7 +26,7 @@
     >
       <slideritem v-for="(item, i) in slice.items" :key="`event-item-${i}`">
         <div :class="`event-item event-${i} ${item.Active ? '' : 'disable'}`">
-          <div class="event-date">
+          <div v-if="item.HideDate === false" class="event-date">
             <span class="month">{{ item.Month }}</span>
             <span :style="{ color: item.StartColor }" class="day">{{
               item.Start
@@ -40,9 +40,13 @@
             <prismic-image :field="item.Graphic" />
           </div>
           <prismic-rich-text class="event-title" :field="item.Title" />
-          <div v-if="item.Status !== 'blank'" class="status-row">
+          <div class="status-row">
             <prismic-rich-text class="event-location" :field="item.Location" />
-            <element-status-icon class="status-icon" :status="item.Status" />
+            <element-status-icon
+              v-if="item.Status !== 'blank'"
+              class="status-icon"
+              :status="item.Status"
+            />
           </div>
           <prismic-rich-text
             class="event-description"
@@ -68,10 +72,10 @@
             </div>
           </div>
           <element-cta-button
-            v-if="item.Status !== 'blank'"
+            v-if="item.cta !== undefined && item.ctalink.url !== undefined"
             class="event-btn"
-            :link="{ url: '/events' }"
-            title="Explore"
+            :link="item.ctalink"
+            :title="item.cta"
           />
         </div>
       </slideritem>
@@ -117,6 +121,9 @@ export default {
         this.$refs.bar.show()
       }
     },
+  },
+  mounted() {
+    console.log(this.slice)
   },
   methods: {
     onShowSnow({ el, going }) {
@@ -213,12 +220,8 @@ export default {
   }
   .event-graphic {
     position: relative;
-    padding-top: 50%;
+    margin-bottom: 15px;
     img {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
       width: 100%;
     }
   }

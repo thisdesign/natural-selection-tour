@@ -1,65 +1,89 @@
 {
-  "id": "0b8c6b13-5589-4b82-ac92-6dec02fd4603",
-  "uid": "nostrum-voluptas-aspernatur",
-  "type": "partners",
-  "data": {
-    "ShowFooterCode": true,
-    "FeaturedPartners": [
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "cow"
+  },
+  "ShowFooterCode": {
+    "__TYPE__": "BooleanContent",
+    "value": true
+  },
+  "FeaturedPartners": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "Partner": {
-          "link_type": "Web",
-          "url": "http://twitter.com"
-        }
-      },
-      {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
-        }
-      },
-      {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        }
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "Partner",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
       }
-    ],
-    "Partners": [
+    ]
+  },
+  "Partners": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        }
-      },
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "Partner",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "FeaturedPartnersPG": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
-        }
-      },
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "Partner",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "PartnersPG": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "Partner": {
-          "link_type": "Web",
-          "url": "http://twitter.com"
-        }
-      },
-      {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
-        }
-      },
-      {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        }
-      },
-      {
-        "Partner": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        }
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "Partner",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
       }
     ]
   }

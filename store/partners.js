@@ -42,12 +42,20 @@ export const actions = {
     }
     const featured = partnerResults.data.FeaturedPartners.map(mapItem)
     const partners = partnerResults.data.Partners.map(mapItem)
+    const featuredPG = partnerResults.data.FeaturedPartnersPG
+      ? partnerResults.data.FeaturedPartnersPG.map(mapItem)
+      : undefined
+    const partnersPG = partnerResults.data.PartnersPG
+      ? partnerResults.data.PartnersPG.map(mapItem)
+      : undefined
 
     commit('setPartners', {
       uids,
       logos,
       featured,
       partners,
+      featuredPG,
+      partnersPG,
       showCode: partnerResults.data.ShowFooterCode,
     })
   },

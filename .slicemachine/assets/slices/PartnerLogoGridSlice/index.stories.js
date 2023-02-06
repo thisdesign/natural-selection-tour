@@ -18,9 +18,9 @@ export const _DefaultSlice = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default-slice","name":"Default slice","slice_type":"partner_logo_grid_slice","items":[],"primary":{"SectionTitle":"optimize enterprise e-commerce","SectionNumber":"cultivate rich metrics","title":[{"type":"heading2","text":"Drive sexy architectures","spans":[]}],"UseExternalLinks":false},"id":"_DefaultSlice"}
+      mock: {"variation":"default-slice","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"SectionTitle":"themselves","SectionNumber":"accurate","title":[{"type":"heading2","text":"Quiet","spans":[]}],"UseExternalLinks":true,"FeaturedOnly":true},"id":"_DefaultSlice","slice_type":"partner_logo_grid_slice"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
 })
-_DefaultSlice.storyName = 'Default slice'
+_DefaultSlice.storyName = ''

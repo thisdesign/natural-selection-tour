@@ -1,0 +1,135 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "SectionNumber": {
+        "__TYPE__": "FieldContent",
+        "value": "laid",
+        "type": "Text"
+      },
+      "SectionTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "brush",
+        "type": "Text"
+      },
+      "Type": {
+        "__TYPE__": "FieldContent",
+        "value": "Default",
+        "type": "Select"
+      },
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Supper"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Sunt quis reprehenderit mollit. Occaecat non consectetur tempor do minim qui velit et irure nisi velit mollit do dolore velit."
+            }
+          }
+        ]
+      },
+      "VideoLoop": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "http://twitter.com"
+        }
+      },
+      "VideoPoster": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+          "width": 8640,
+          "height": 8640
+        },
+        "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+        "width": 8640,
+        "height": 8640,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      },
+      "CtaLink": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      "CtaText": {
+        "__TYPE__": "FieldContent",
+        "value": "modern",
+        "type": "Text"
+      },
+      "Featured": {
+        "__TYPE__": "BooleanContent",
+        "value": false
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "Title",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Ea magna ullamco magna reprehenderit consectetur magna anim. Et deserunt quis cillum anim laborum deserunt ex sunt cupidatat incididunt in culpa veniam voluptate nisi. Reprehenderit dolore cillum ut consequat ut cupidatat enim esse eu cillum pariatur pariatur cillum."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "Active",
+            {
+              "__TYPE__": "BooleanContent",
+              "value": true
+            }
+          ],
+          [
+            "Model",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "http://google.com"
+              }
+            }
+          ],
+          [
+            "LinkLetter",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "shake",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

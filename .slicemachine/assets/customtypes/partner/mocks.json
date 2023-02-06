@@ -1,44 +1,82 @@
 {
-  "id": "797b46fb-44af-49d1-a3b4-494128fb3a25",
-  "uid": "officia-accusamus-modi",
-  "type": "partner",
-  "data": {
-    "Hero": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
-      },
-      "alt": "Placeholder image",
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=900&h=500&fit=crop"
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "citizen"
+  },
+  "Hero": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      "width": 3882,
+      "height": 2584
     },
-    "Title": [
+    "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    "width": 3882,
+    "height": 2584,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "Title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "paragraph",
-        "text": "Est anim id quis non velit incididunt fugiat anim sunt nostrud amet minim. Aliqua dolore sunt occaecat laborum sunt occaecat amet veniam ullamco irure nulla pariatur mollit. Amet anim dolor mollit enim anim.",
-        "spans": []
+        "content": {
+          "text": "Proident aliquip eu ex et anim incididunt. Non ut velit irure non ea ad Lorem nisi excepteur ut aliqua eiusmod magna. Ipsum laborum labore eu esse excepteur enim ut."
+        }
       }
-    ],
-    "Content": [
+    ]
+  },
+  "Content": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "paragraph",
-        "text": "Commodo elit id duis qui voluptate nisi ut exercitation duis adipisicing exercitation sint mollit sit mollit. Fugiat ea consectetur commodo minim dolore minim laboris amet occaecat irure duis quis proident aliquip sunt.",
-        "spans": []
+        "content": {
+          "text": "Ea officia exercitation magna labore."
+        }
       }
-    ],
-    "Logo": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
+    ]
+  },
+  "Logo": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+      "width": 4752,
+      "height": 3168
+    },
+    "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+    "width": 4752,
+    "height": 3168,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
       },
-      "alt": "Placeholder image",
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?w=900&h=500&fit=crop"
+      "background": "transparent"
     },
-    "Link": {
-      "link_type": "Web",
-      "url": "https://slicemachine.dev"
-    },
-    "LinkTitle": "architect compelling architectures"
+    "thumbnails": {}
+  },
+  "Link": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "https://prismic.io"
+    }
+  },
+  "LinkTitle": {
+    "__TYPE__": "FieldContent",
+    "value": "finger",
+    "type": "Text"
   }
 }

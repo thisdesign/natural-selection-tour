@@ -131,6 +131,7 @@ export default {
         currentPage: 0,
         infinite: 4,
         loopedSlides: 4,
+        slidesToScroll: 1,
         loop: true,
         pagination: false,
       },

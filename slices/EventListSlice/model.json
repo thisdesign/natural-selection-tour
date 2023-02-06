@@ -45,6 +45,15 @@
           },
           "type": "Boolean"
         },
+        "HideDate": {
+          "type": "Boolean",
+          "config": {
+            "label": "Hide Date",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
         "Month": {
           "config": {
             "label": "Month",
@@ -110,8 +119,8 @@
           "config": {
             "label": "Description",
             "placeholder": "",
-            "allowTargetBlank": false,
-            "multi": "paragraph"
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
           },
           "type": "StructuredText"
         },
@@ -129,6 +138,15 @@
             "default_value": "terrain-prep"
           },
           "type": "Select"
+        },
+        "SnowAvailable": {
+          "type": "Boolean",
+          "config": {
+            "label": "Snow Available",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          }
         },
         "SnowDescription": {
           "config": {
@@ -164,8 +182,24 @@
             "placeholder": ""
           },
           "type": "Number"
+        },
+        "cta": {
+          "type": "Text",
+          "config": {
+            "label": "Cta",
+            "placeholder": ""
+          }
+        },
+        "ctalink": {
+          "type": "Link",
+          "config": {
+            "label": "CtaLink",
+            "placeholder": "",
+            "select": null
+          }
         }
-      }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]
 }

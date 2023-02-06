@@ -14,7 +14,7 @@ export const actions = {
     const riders = await $prismic.api.query(
       [this.$prismic.predicates.at('document.type', 'rider')],
       {
-        pageSize: 50,
+        pageSize: 100,
       },
     )
     // format data

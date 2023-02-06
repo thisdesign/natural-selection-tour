@@ -6,11 +6,10 @@
   "json": {
     "Main": {
       "uid": {
+        "type": "UID",
         "config": {
-          "label": "uid",
-          "placeholder": ""
-        },
-        "type": "UID"
+          "label": "uid"
+        }
       },
       "ShowFooterCode": {
         "config": {
@@ -24,7 +23,6 @@
       "FeaturedPartners": {
         "config": {
           "label": "FeaturedPartners",
-          "placeholder": "",
           "fields": {
             "Partner": {
               "config": {
@@ -43,7 +41,44 @@
       "Partners": {
         "config": {
           "label": "Partners",
-          "placeholder": "",
+          "fields": {
+            "Partner": {
+              "config": {
+                "label": "Partner",
+                "customtypes": [
+                  "partner"
+                ],
+                "select": "document"
+              },
+              "type": "Link"
+            }
+          }
+        },
+        "type": "Group"
+      }
+    },
+    "Proving Grounds": {
+      "FeaturedPartnersPG": {
+        "config": {
+          "label": "FeaturedPartners",
+          "fields": {
+            "Partner": {
+              "config": {
+                "label": "Partner",
+                "customtypes": [
+                  "partner"
+                ],
+                "select": "document"
+              },
+              "type": "Link"
+            }
+          }
+        },
+        "type": "Group"
+      },
+      "PartnersPG": {
+        "config": {
+          "label": "Partners",
           "fields": {
             "Partner": {
               "config": {

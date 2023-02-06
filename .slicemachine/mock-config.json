@@ -4,7 +4,39 @@
     "Streams": {},
     "HeroVideoSlice": {},
     "ImageCarouselSlice": {},
-    "BracketSlice": {}
+    "BracketSlice": {},
+    "DuelsSlice": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "FaqSlice": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "EventListSlice": {
+      "default-slice": {
+        "items": {}
+      }
+    },
+    "PartnerLogoGridSlice": {
+      "default-slice": {
+        "primary": {}
+      }
+    },
+    "TwoColumnSlice": {
+      "default-slice": {
+        "primary": {}
+      }
+    },
+    "TextSlice": {
+      "default-slice": {
+        "primary": {}
+      }
+    }
   },
   "_cts": {
     "rider": {
@@ -17,7 +49,8 @@
     },
     "partner": {},
     "partners": {
-      "FeaturedPartners": {}
+      "FeaturedPartners": {},
+      "Partners": {}
     },
     "global": {
       "Title": {

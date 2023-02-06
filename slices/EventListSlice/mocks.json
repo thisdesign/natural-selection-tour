@@ -1,0 +1,222 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "SectionTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "full",
+        "type": "Text"
+      },
+      "SectionNumber": {
+        "__TYPE__": "FieldContent",
+        "value": "exciting",
+        "type": "Text"
+      },
+      "CenterItems": {
+        "__TYPE__": "BooleanContent",
+        "value": false
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "Active",
+            {
+              "__TYPE__": "BooleanContent",
+              "value": true
+            }
+          ],
+          [
+            "Month",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "exist",
+              "type": "Text"
+            }
+          ],
+          [
+            "Start",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "electric",
+              "type": "Text"
+            }
+          ],
+          [
+            "StartColor",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "#e9537f",
+              "type": "Color"
+            }
+          ],
+          [
+            "End",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "eaten",
+              "type": "Text"
+            }
+          ],
+          [
+            "EndColor",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "#4efd5b",
+              "type": "Color"
+            }
+          ],
+          [
+            "Graphic",
+            {
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+                "width": 5848,
+                "height": 3899
+              },
+              "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+              "width": 5848,
+              "height": 3899,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ],
+          [
+            "Title",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Which"
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "Location",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Cillum dolore in voluptate proident cillum laboris enim sint velit non id laboris voluptate ullamco consequat."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "Description",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Excepteur irure quis sunt deserunt magna. Id ipsum incididunt culpa. Quis voluptate ipsum enim non deserunt amet ea anim irure deserunt labore mollit laboris consectetur laboris."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "Status",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "terrain-prep",
+              "type": "Select"
+            }
+          ],
+          [
+            "SnowDescription",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Ipsum proident laboris incididunt sint magna occaecat consequat in consequat est culpa amet sint. Mollit occaecat irure do id aliquip eu reprehenderit. Sint ipsum voluptate dolore."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "SnowAmount",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "45",
+              "type": "Number"
+            }
+          ],
+          [
+            "SnowUnits",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "in",
+              "type": "Select"
+            }
+          ],
+          [
+            "SnowPercent",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "58",
+              "type": "Number"
+            }
+          ],
+          [
+            "SnowAvailable",
+            {
+              "__TYPE__": "BooleanContent",
+              "value": true
+            }
+          ],
+          [
+            "HideDate",
+            {
+              "__TYPE__": "BooleanContent",
+              "value": true
+            }
+          ],
+          [
+            "cta",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "won",
+              "type": "Text"
+            }
+          ],
+          [
+            "ctalink",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://slicemachine.dev"
+              }
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

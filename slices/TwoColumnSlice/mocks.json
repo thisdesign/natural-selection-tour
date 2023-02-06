@@ -1,0 +1,137 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "SectionNumber": {
+        "__TYPE__": "FieldContent",
+        "value": "write",
+        "type": "Text"
+      },
+      "SectionTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "origin",
+        "type": "Text"
+      },
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Proper"
+            }
+          }
+        ]
+      },
+      "TitleImage": {
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+          "width": 3810,
+          "height": 5715
+        },
+        "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+        "width": 3810,
+        "height": 5715,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Cupidatat aliqua amet culpa Lorem sit anim nostrud elit."
+            }
+          }
+        ]
+      },
+      "Content": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Sint irure eu sint adipisicing dolore nulla commodo eiusmod culpa. Velit velit laborum commodo ad ea ipsum occaecat."
+            }
+          }
+        ]
+      },
+      "SidebarSectionNumber": {
+        "__TYPE__": "FieldContent",
+        "value": "expect",
+        "type": "Text"
+      },
+      "SidebarSectionTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "meat",
+        "type": "Text"
+      },
+      "SidebarStatus": {
+        "__TYPE__": "FieldContent",
+        "value": "terrain-prep",
+        "type": "Select"
+      },
+      "SidebarFooterText": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Laborum incididunt velit esse pariatur duis. Ut deserunt pariatur ex et veniam ipsum."
+            }
+          }
+        ]
+      },
+      "SidebarStatusAvailable": {
+        "__TYPE__": "BooleanContent",
+        "value": false
+      },
+      "SidebarContent": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Eiusmod nostrud mollit laboris mollit ut labore quis exercitation quis cillum ex adipisicing mollit. Adipisicing qui enim cillum esse in ad nostrud sunt amet nisi voluptate aliquip non exercitation."
+            }
+          }
+        ]
+      },
+      "SidebarCTA": {
+        "__TYPE__": "FieldContent",
+        "value": "bowl",
+        "type": "Text"
+      },
+      "SidebarCTALink": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "https://prismic.io"
+        }
+      },
+      "ImageFullWidth": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]
