@@ -13,7 +13,7 @@
       :sidebar-status="slice.primary.SidebarStatus"
       :sidebar-status-available="slice.primary.SidebarStatusAvailable"
       :sidebar-cta="slice.primary.SidebarCTA"
-      :sidebar-cta-link="slice.primary.SidebarCTALink?.url"
+      :sidebar-cta-link="slice.primary.SidebarCTALink"
       :sidebar-content="slice.primary.SidebarContent"
       :sidebar-section-number="slice.primary.SidebarSectionNumber"
       :sidebar-section-title="slice.primary.SidebarSectionTitle"
@@ -71,7 +71,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.slice)
+    // console.log(this.slice)
   },
 }
 </script>

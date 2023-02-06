@@ -137,7 +137,7 @@ export default {
     },
   },
   mounted() {
-    console.log('Test', this.slice.primary.LoopOnly)
+    // console.log('Test', this.slice.primary.LoopOnly)
   },
   methods: {
     toggleVideoModal() {

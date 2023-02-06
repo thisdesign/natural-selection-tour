@@ -123,7 +123,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.slice)
+    // console.log(this.slice)
   },
   methods: {
     onShowSnow({ el, going }) {

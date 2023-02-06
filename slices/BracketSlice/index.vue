@@ -58,7 +58,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.slice.primary)
+    // console.log(this.slice.primary)
     if (this.polling) {
       setInterval(() => {
         this.fetchResults()

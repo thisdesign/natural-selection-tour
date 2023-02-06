@@ -25,6 +25,9 @@ export default {
       type: String,
     },
   },
+  mounted() {
+    // console.log('link', this.link)
+  },
   methods: {
     onClick() {
       this.$emit('click')

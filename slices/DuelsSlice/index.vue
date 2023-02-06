@@ -137,7 +137,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.slice)
+    // console.log(this.slice)
   },
   methods: {
     onPrev() {

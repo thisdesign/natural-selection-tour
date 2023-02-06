@@ -23,7 +23,7 @@
         <element-cta-button
           v-if="sidebarCta !== '' && sidebarCtaLink !== ''"
           class="partners-cta-btn"
-          :link="{ url: sidebarCtaLink }"
+          :link="sidebarCtaLink"
           :title="sidebarCta"
         />
       </div>
@@ -83,8 +83,8 @@ export default {
       default: true,
     },
     sidebarCtaLink: {
-      type: String,
-      default: '',
+      type: Object,
+      default: () => {},
     },
     sidebarCta: {
       type: String,
