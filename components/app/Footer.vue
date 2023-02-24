@@ -12,7 +12,10 @@
       </div>
       <div class="links-social-row">
         <footer-links />
-        <footer-social />
+        <div>
+          <element-email />
+          <footer-social />
+        </div>
       </div>
       <footer-copy />
     </div>
@@ -30,6 +33,7 @@
       </div>
       <div class="column col4">
         <footer-feature-text />
+        <element-email />
         <footer-social />
       </div>
     </div>

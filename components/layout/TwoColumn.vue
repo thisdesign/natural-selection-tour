@@ -21,7 +21,7 @@
           class="sidebar-content"
         />
         <element-cta-button
-          v-if="sidebarCta !== '' && sidebarCtaLink !== ''"
+          v-if="sidebarCta && sidebarCtaLink"
           class="partners-cta-btn"
           :link="sidebarCtaLink"
           :title="sidebarCta"
@@ -126,9 +126,6 @@ export default {
         }, 500)
       }
     },
-  },
-  mounted() {
-    console.log(this.props)
   },
   methods: {},
 }
