@@ -2,13 +2,16 @@
   <div class="randomizer" :style="{ cursor: 'pointer' }" @click="handleClick">
     <img
       v-if="state.ridersSelectedCount === 0"
-      :src="require('./Draftkings_Natural_Logos.svg')"
+      :src="slice.primary.logo.url"
       class="logo"
     />
 
     <div class="title">
       <div class="js-title">
-        <div v-for="item in currentRiderName" :key="item">
+        <div
+          v-for="(item, index) in currentRiderName"
+          :key="`item-${item.id}-${index}`"
+        >
           {{ item }}
         </div>
       </div>
@@ -50,6 +53,15 @@ export default {
   components: {
     Rider,
   },
+  props: {
+    slice: {
+      type: Object,
+      required: true,
+      default() {
+        return {}
+      },
+    },
+  },
   data() {
     return {
       tl: gsap.timeline(),
@@ -86,8 +98,9 @@ export default {
   },
   created() {
     const RIDERS = this.$store.state.riders.results
-    const RIDERS_POSITIONS = Object.keys(RIDERS).map((key, i) => {
-      const RIDER = RIDERS[key]
+    const RIDERS_POSITIONS = this.slice.items.map((el, index) => {
+      const RIDER_ID = el.rider.id
+      const RIDER = RIDERS[RIDER_ID]
       return {
         name: RIDER.data.Name[0].text,
         fileName: RIDER.data.Rider.url,
