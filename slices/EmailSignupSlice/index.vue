@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .section {
   display: flex;
   align-items: center;
@@ -25,6 +25,11 @@ export default {
   color: white;
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .text {
   width: 100%;
