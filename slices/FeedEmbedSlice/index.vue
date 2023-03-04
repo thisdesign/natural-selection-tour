@@ -3,7 +3,7 @@
     <div v-if="slice.primary.feedActive === true">
       <blockquote
         style="width: 100%"
-        :cite="slice.primary.feedurl"
+        :cite="slice.primary.feedurl.url"
         class="caffeine-embed"
       ></blockquote>
     </div>
