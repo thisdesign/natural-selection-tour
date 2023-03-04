@@ -1,7 +1,7 @@
 <template>
   <header :class="`header ${floatingHeader ? 'floating' : ''}`">
     <div
-      v-if="globals.data.status_active"
+      v-if="globals.data.status_active && navOpen === false"
       class="status"
       :style="`background-color:${globals.data.status_background_color}; color:${globals.data.status_text_color};`"
     >
