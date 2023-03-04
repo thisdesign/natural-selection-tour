@@ -1,5 +1,5 @@
 <template>
-  <div id="mc_embed_signup">
+  <div id="mc_embed_signup" :class="theme">
     <p class="title">Sign-up for updates</p>
     <form
       id="mc-embedded-subscribe-form"
@@ -46,18 +46,31 @@
 <script lang="js">
 export default {
   name: 'Email',
+  props: {
+    theme: {
+      type: String,
+      default: "dark",
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+.light {
+  input.email {
+    border: 1px solid white;
+    padding: 3px 6px;
+  }
+}
 .title {
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 input.email {
   background-color: transparent;
   border: 0;
   border-bottom: 1px solid black;
   border-radius: 0;
+  padding: 3px 0;
   width: 100%;
   &::placeholder {
     color: #666;

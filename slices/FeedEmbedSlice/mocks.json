@@ -1,0 +1,36 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "feedurl": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "http://google.com"
+        }
+      },
+      "feedActive": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      },
+      "inactiveDescription": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Laboris ea officia adipisicing consequat nulla nisi ullamco in nostrud officia anim cupidatat irure nostrud. Adipisicing est nisi enim consequat elit consectetur fugiat laboris dolore consequat velit elit id qui excepteur."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

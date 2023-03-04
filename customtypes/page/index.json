@@ -104,6 +104,12 @@
             },
             "faq_slice": {
               "type": "SharedSlice"
+            },
+            "email_signup_slice": {
+              "type": "SharedSlice"
+            },
+            "feed_embed_slice": {
+              "type": "SharedSlice"
             }
           }
         }

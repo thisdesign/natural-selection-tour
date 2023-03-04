@@ -1,28 +1,38 @@
 <template>
-  <section class="section">
-    <PrismicRichText :field="slice.primary.title" class="title" />
-    <PrismicRichText :field="slice.primary.description" />
+  <section class="faq-slice site-padding">
+    <element-section-bar
+      ref="bar"
+      :number="slice.primary.sectionNumber"
+      :title="slice.primary.sectionTitle"
+    />
+    <div v-for="(item, index) in slice.items" :key="`faq-item-${index}`">
+      <panel :question="item.question" :answer="item.answer" />
+    </div>
   </section>
 </template>
 
 <script>
-import { getSliceComponentProps } from '@prismicio/vue/components'
-
+import FaqPanel from './FaqPanel'
 export default {
   name: 'FaqSlice',
-  // The array passed to `getSliceComponentProps` is purely optional and acts as a visual hint for you
-  props: getSliceComponentProps(['slice', 'index', 'slices', 'context']),
+  components: {
+    panel: FaqPanel,
+  },
+  props: {
+    slice: {
+      type: Object,
+      required: true,
+      default() {
+        return {}
+      },
+    },
+  },
 }
 </script>
 
-<style scoped>
-.section {
-  background: #f7f7f7;
-  color: #111;
-  padding: 4em;
-  text-align: center;
-}
-.title {
-  margin-bottom: 2em;
+<style lang="scss">
+.faq-slice {
+  margin-bottom: 40px;
+  color: $white;
 }
 </style>

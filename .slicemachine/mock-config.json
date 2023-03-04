@@ -36,6 +36,21 @@
       "default-slice": {
         "primary": {}
       }
+    },
+    "EmailSignupSlice": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "FeedEmbedSlice": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "RiderRandomizerSlice": {
+      "default-slice": {
+        "items": {}
+      }
     }
   },
   "_cts": {

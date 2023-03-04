@@ -33,7 +33,7 @@
       </div>
       <div class="column col4">
         <footer-feature-text />
-        <element-email />
+        <element-email theme="dark" />
         <footer-social />
       </div>
     </div>

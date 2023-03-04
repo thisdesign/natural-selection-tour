@@ -18,12 +18,20 @@ if (process.client) {
 }
 
 export default {
-  async middleware({ route, store, $prismic }) {
+  async middleware({ route, redirect, store, $prismic }) {
     await Promise.all([
       store.dispatch('globals/loadGlobals', $prismic),
       store.dispatch('riders/loadRiders', $prismic),
       store.dispatch('partners/loadPartners', $prismic),
     ])
+    const DATA = store.state.globals.results.data
+    if (
+      DATA.redirect_active === true &&
+      DATA.redirect_url.url &&
+      DATA.redirect_url.url.length > 0
+    ) {
+      window.location.href = DATA.redirect_url.url
+    }
   },
   data() {
     return {

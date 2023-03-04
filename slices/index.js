@@ -3,9 +3,11 @@
 import BracketSlice from './BracketSlice';
 import CountdownSlice from './CountdownSlice';
 import DuelsSlice from './DuelsSlice';
+import EmailSignupSlice from './EmailSignupSlice';
 import EventListSlice from './EventListSlice';
 import EventScheduleSlice from './EventScheduleSlice';
 import FaqSlice from './FaqSlice';
+import FeedEmbedSlice from './FeedEmbedSlice';
 import HeroVideoSlice from './HeroVideoSlice';
 import ImageBannerSlice from './ImageBannerSlice';
 import ImageCarouselSlice from './ImageCarouselSlice';
@@ -23,9 +25,11 @@ export {
 	BracketSlice,
 	CountdownSlice,
 	DuelsSlice,
+	EmailSignupSlice,
 	EventListSlice,
 	EventScheduleSlice,
 	FaqSlice,
+	FeedEmbedSlice,
 	HeroVideoSlice,
 	ImageBannerSlice,
 	ImageCarouselSlice,
@@ -44,9 +48,11 @@ export const components = {
 	bracket_slice: BracketSlice,
 	countdown_slice: CountdownSlice,
 	duels_slice: DuelsSlice,
+	email_signup_slice: EmailSignupSlice,
 	event_list_slice: EventListSlice,
 	event_schedule_slice: EventScheduleSlice,
 	faq_slice: FaqSlice,
+	feed_embed_slice: FeedEmbedSlice,
 	hero_video_slice: HeroVideoSlice,
 	image_banner_slice: ImageBannerSlice,
 	image_carousel_slice: ImageCarouselSlice,

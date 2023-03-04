@@ -15,18 +15,24 @@ export default {
   components: {
     SliceZone,
   },
-  async asyncData({ store, $prismic, params, error }) {
-    const document = await $prismic.api.getByUID('page', params.uid)
-    if (document) {
-      await store.dispatch('ui/setOptions', {
-        pageType: document.data.page_type || 'Default',
-        floatingHeader: document.data.FloatingNav,
-        footerColor: document.data.FooterBackground || '#1f2744',
-        showCode: document.data.ShowFooterCode,
-      })
-      return { document }
+  async asyncData(props) {
+    const { store, $prismic, params, error, route } = props
+    if (route.path === '/nft') {
+      window.location.href =
+        'https://nft.naturalselectiontour.com/collection/naturalselectiontour'
     } else {
-      error({ statusCode: 404, message: 'Page not found' })
+      const document = await $prismic.api.getByUID('page', params.uid)
+      if (document) {
+        await store.dispatch('ui/setOptions', {
+          pageType: document.data.page_type || 'Default',
+          floatingHeader: document.data.FloatingNav,
+          footerColor: document.data.FooterBackground || '#1f2744',
+          showCode: document.data.ShowFooterCode,
+        })
+        return { document }
+      } else {
+        error({ statusCode: 404, message: 'Page not found' })
+      }
     }
   },
 }

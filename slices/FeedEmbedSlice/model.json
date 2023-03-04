@@ -1,0 +1,45 @@
+{
+  "id": "feed_embed_slice",
+  "type": "SharedSlice",
+  "name": "FeedEmbedSlice",
+  "description": "FeedEmbedSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "FeedEmbedSlice",
+      "primary": {
+        "feedurl": {
+          "type": "Link",
+          "config": {
+            "label": "Feed Url",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "feedActive": {
+          "type": "Boolean",
+          "config": {
+            "label": "Feed Active",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          }
+        },
+        "inactiveDescription": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Inactive Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
