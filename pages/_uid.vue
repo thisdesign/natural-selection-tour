@@ -16,23 +16,18 @@ export default {
     SliceZone,
   },
   async asyncData(props) {
-    const { store, $prismic, params, error, route } = props
-    if (route.path === '/nft') {
-      window.location.href =
-        'https://nft.naturalselectiontour.com/collection/naturalselectiontour'
+    const { store, $prismic, params, error } = props
+    const document = await $prismic.api.getByUID('page', params.uid)
+    if (document) {
+      await store.dispatch('ui/setOptions', {
+        pageType: document.data.page_type || 'Default',
+        floatingHeader: document.data.FloatingNav,
+        footerColor: document.data.FooterBackground || '#1f2744',
+        showCode: document.data.ShowFooterCode,
+      })
+      return { document }
     } else {
-      const document = await $prismic.api.getByUID('page', params.uid)
-      if (document) {
-        await store.dispatch('ui/setOptions', {
-          pageType: document.data.page_type || 'Default',
-          floatingHeader: document.data.FloatingNav,
-          footerColor: document.data.FooterBackground || '#1f2744',
-          showCode: document.data.ShowFooterCode,
-        })
-        return { document }
-      } else {
-        error({ statusCode: 404, message: 'Page not found' })
-      }
+      error({ statusCode: 404, message: 'Page not found' })
     }
   },
 }
