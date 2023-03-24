@@ -354,6 +354,9 @@ nav {
     margin-bottom: clamp(1rem, 4vh, 3rem);
     @include media-breakpoint-up(md) {
       margin-bottom: 0;
+      margin-right: 5.5vw;
+    }
+    @include media-breakpoint-up(lg) {
       margin-right: 7vw;
     }
   }

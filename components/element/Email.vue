@@ -1,6 +1,6 @@
 <template>
   <div id="mc_embed_signup" :class="theme">
-    <p class="title">Sign-up for updates</p>
+    <p v-if="theme !== 'light'" class="title">Sign-up for updates</p>
     <form
       id="mc-embedded-subscribe-form"
       action="https://naturalselectiontour.us20.list-manage.com/subscribe/post?u=3294d1d5508027146b45591c0&amp;id=baca33db60&amp;f_id=00184ae9f0"
@@ -15,7 +15,11 @@
             id="mce-EMAIL"
             type="email"
             value=""
-            placeholder="email address"
+            :placeholder="
+              theme === 'light'
+                ? 'Enter your email to follow the tour'
+                : 'email address'
+            "
             name="EMAIL"
             class="required email"
             required
@@ -57,9 +61,29 @@ export default {
 
 <style lang="scss" scoped>
 .light {
+  .email-container {
+    position: relative;
+    margin-bottom: 50px;
+  }
   input.email {
     border: 1px solid white;
-    padding: 3px 6px;
+    padding: 6px 35px 6px 6px;
+    text-transform: uppercase;
+    color: white;
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 10px;
+    }
+  }
+  .submit-button {
+    background-image: url('../../assets/svg/mail.svg');
+    background-color: transparent;
+    background-size: contain;
+  }
+  .submit-container {
+    position: absolute;
+    right: 6px;
+    top: 2px;
   }
 }
 .title {

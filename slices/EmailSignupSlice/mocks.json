@@ -13,6 +13,16 @@
             }
           }
         ]
+      },
+      "sectionNumber": {
+        "__TYPE__": "FieldContent",
+        "value": "cast",
+        "type": "Text"
+      },
+      "sectionTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "due",
+        "type": "Text"
       }
     },
     "items": [

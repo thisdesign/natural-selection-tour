@@ -11,6 +11,20 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "EmailSignupSlice",
       "primary": {
+        "sectionNumber": {
+          "type": "Text",
+          "config": {
+            "label": "Section Number",
+            "placeholder": ""
+          }
+        },
+        "sectionTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Section Title",
+            "placeholder": ""
+          }
+        },
         "content": {
           "type": "StructuredText",
           "config": {
