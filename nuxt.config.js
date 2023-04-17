@@ -23,6 +23,10 @@ export default {
         charset: 'utf-8',
       },
       {
+        name: 'facebook-domain-verification',
+        content: 'o2qwcl4wp2zq0ojhiezwqshwcmt5aq',
+      },
+      {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
