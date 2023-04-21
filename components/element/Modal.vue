@@ -40,10 +40,8 @@ export default {
 <style lang="scss" scoped>
 .modal-outer {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  bottom: 0;
+  right: 0;
   z-index: 9999;
   cursor: pointer;
 }
@@ -90,14 +88,16 @@ export default {
 .modal {
   overflow: hidden;
   position: absolute;
-  bottom: 25%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  bottom: 20px;
+  right: 20px;
   width: 360px;
   background: black;
   border: 1px solid white;
   border-radius: 12px;
   filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.6));
+  @media (max-width: 415px) {
+    width: calc(100vw - 40px);
+  }
   .modal-content {
     padding: 12px 14px;
   }
