@@ -4,6 +4,7 @@ export const state = () => ({
     footerColor: '#000000',
     showCode: true,
     pageType: 'Default',
+    emailModal: localStorage.getItem('ns_emo') !== 'true',
   },
 })
 

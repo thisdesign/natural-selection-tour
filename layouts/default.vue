@@ -4,6 +4,8 @@
     <Nuxt />
     <app-code />
     <app-footer />
+    <element-modal v-if="showModal" />
+    <element-mailCta v-if="!showModal" />
   </div>
 </template>
 
@@ -41,6 +43,9 @@ export default {
   computed: {
     globals() {
       return this.$store.state.globals.results
+    },
+    showModal() {
+      return this.$store.state.ui.options.emailModal === true
     },
   },
   mounted() {

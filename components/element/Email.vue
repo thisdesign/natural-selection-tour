@@ -1,5 +1,8 @@
 <template>
-  <div id="mc_embed_signup" :class="theme">
+  <div
+    id="mc_embed_signup"
+    :class="`${theme} ${modal ? 'has-modal' : 'no-modal'}`"
+  >
     <p v-if="theme !== 'light'" class="title">Sign-up for updates</p>
     <form
       id="mc-embedded-subscribe-form"
@@ -8,6 +11,7 @@
       name="mc-embedded-subscribe-form"
       class="validate"
       target="_self"
+      @submit="handleSubmit"
     >
       <div id="mc_embed_signup_scroll" class="email-container">
         <div class="mc-field-group flex-grow">
@@ -54,6 +58,17 @@ export default {
     theme: {
       type: String,
       default: "dark",
+    },
+    modal: {
+      type: Boolean,
+      default: false,
+    }
+  },
+  methods: {
+    handleSubmit(e) {
+      if(window.fbq) {
+        window.fbq('track', 'CompleteRegistration');
+      }
     }
   }
 }
@@ -64,6 +79,12 @@ export default {
   .email-container {
     position: relative;
     margin-bottom: 50px;
+  }
+
+  &.has-modal {
+    .email-container {
+      margin-bottom: 10px;
+    }
   }
   input.email {
     border: 1px solid white;

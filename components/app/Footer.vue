@@ -13,7 +13,6 @@
       <div class="links-social-row">
         <footer-links />
         <div>
-          <element-email />
           <footer-social />
         </div>
       </div>
