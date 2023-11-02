@@ -197,7 +197,7 @@ export default {
       transform: translate(-50%, -50%);
     }
   }
-  .event-section {
+  &.event-section {
     &.active {
       .event-item {
         opacity: 1;
