@@ -1,6 +1,7 @@
 <template>
   <div>
-    <app-header />
+    <app-header v-if="!globals.data.new_navigation" />
+    <app-header2 v-if="globals.data.new_navigation" />
     <Nuxt />
     <app-code />
     <app-footer />
