@@ -208,26 +208,24 @@ export default {
       if (this.animating === true) {
         return
       }
-      this.animating = true
       this.animateTarget(e.target)
     },
+    handleComplete(target) {
+      this.animating = false
+      if (this.currentType !== target.dataset.type && this.currentType !== '') {
+        this.animateTarget(
+          document.querySelector(`.menu-link[data-type='${this.currentType}']`),
+        )
+      } else if (this.currentType === '') {
+        this.handleMouseOut()
+      }
+    },
     animateTarget(target) {
+      this.animating = true
       const tl = gsap.timeline({
         paused: true,
         overwrite: 'auto',
-        onComplete: () => {
-          this.animating = false
-          if (
-            this.currentType !== target.dataset.type &&
-            this.currentType !== ''
-          ) {
-            this.animateTarget(
-              document.querySelector(
-                `.menu-link[data-type='${this.currentType}']`,
-              ),
-            )
-          }
-        },
+        onComplete: () => this.handleComplete(target),
       })
 
       if (!this.currentItem) {
@@ -289,8 +287,16 @@ export default {
       tl.play()
     },
     handleMouseOut() {
+      this.currentType = ''
+      if (this.animating) return
       if (this.currentItem) {
-        const tl = gsap.timeline({ overwrite: true })
+        this.animating = true
+        const tl = gsap.timeline({
+          overwrite: 'auto',
+          onComplete: () => {
+            this.handleComplete()
+          },
+        })
         const activeLink = document.querySelector('.active-page')
         const firstLink = document.querySelector('.menu-link')
         const childLinks = this.currentItem.querySelector('.child-links')
@@ -312,10 +318,8 @@ export default {
           x: activeLink ? activeLink.offsetLeft : firstLink.offsetLeft,
           height: this.currentItem.offsetHeight,
         })
+        this.currentItem = undefined
       }
-      this.currentItem = undefined
-      this.animating = false
-      this.currentType = ''
     },
     htmlSerializer(type, element, content, children) {
       // If element is a list item,
