@@ -2,7 +2,15 @@
   <div>
     <app-header v-if="!globals.data.new_navigation" />
     <app-header2 v-if="globals.data.new_navigation" />
-    <Nuxt />
+    <div
+      :class="`header-offset ${
+        options.floatingHeader === false && globals.data.new_navigation === true
+          ? 'push-down'
+          : ''
+      }`"
+    >
+      <Nuxt />
+    </div>
     <app-code />
     <app-footer />
     <element-modal v-if="showModal" />
@@ -45,6 +53,12 @@ export default {
     globals() {
       return this.$store.state.globals.results
     },
+    options() {
+      return this.$store.state.ui.options
+    },
+    floatingHeader() {
+      return this.$store.state.ui.options.floatingHeader
+    },
     showModal() {
       return this.$store.state.ui.options.emailModal === true
     },
@@ -78,3 +92,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.header-offset.push-down {
+  padding-top: 110px;
+  @include media-breakpoint-up(md) {
+    padding-top: 145px;
+  }
+}
+</style>

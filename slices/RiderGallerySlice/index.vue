@@ -144,6 +144,9 @@ export default {
     riders() {
       return this.$store.state.riders.results
     },
+    globals() {
+      return this.$store.state.globals.results
+    },
     sliceItems() {
       return this.slice.items.filter((item) => {
         return item.Rider.id
@@ -170,7 +173,9 @@ export default {
   mounted() {
     const section = document.querySelector('.rider-gallery-slice')
     const header = document.querySelector('header')
-    section.style.paddingTop = `${header.offsetHeight}px`
+    if (this.globals.data.new_navigation !== true) {
+      section.style.paddingTop = `${header.offsetHeight}px`
+    }
     this.currentMobileRider = this.getRider(this.sliceItems[0].Rider.id)
     window.addEventListener('resize', () => {
       this.sliderResize()
