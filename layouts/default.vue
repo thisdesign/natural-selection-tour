@@ -1,12 +1,9 @@
 <template>
   <div>
-    <app-header v-if="!globals.data.new_navigation" />
-    <app-header2 v-if="globals.data.new_navigation" />
+    <app-header />
     <div
       :class="`header-offset ${
-        options.floatingHeader === false && globals.data.new_navigation === true
-          ? 'push-down'
-          : ''
+        options.floatingHeader === false ? 'push-down' : ''
       }`"
     >
       <Nuxt />

@@ -171,11 +171,6 @@ export default {
     },
   },
   mounted() {
-    const section = document.querySelector('.rider-gallery-slice')
-    const header = document.querySelector('header')
-    if (this.globals.data.new_navigation !== true) {
-      section.style.paddingTop = `${header.offsetHeight}px`
-    }
     this.currentMobileRider = this.getRider(this.sliceItems[0].Rider.id)
     window.addEventListener('resize', () => {
       this.sliderResize()

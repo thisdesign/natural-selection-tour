@@ -48,16 +48,10 @@ export default {
       return this.$store.state.globals.results
     },
     primaryLinks() {
-      const $state = this.$store.state
-      return $state.ui.options.pageType === 'Proving Grounds'
-        ? this.globals.data['FooterPrimaryLinks-pg']
-        : this.globals.data.FooterPrimaryLinks
+      return this.globals.data.FooterPrimaryLinks
     },
     secondaryLinks() {
-      const $state = this.$store.state
-      return $state.ui.options.pageType === 'Proving Grounds'
-        ? this.globals.data['FooterSecondaryLinks-pg']
-        : this.globals.data.FooterSecondaryLinks
+      return this.globals.data.FooterSecondaryLinks
     },
   },
   methods: {
