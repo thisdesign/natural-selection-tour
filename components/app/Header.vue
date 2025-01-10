@@ -15,33 +15,7 @@
         <div class="mobile-buttons">
           <div class="shop-link">
             <a :href="globals.data.shop_link.url" target="_blank" class="link">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clip-path="url(#clip0_1209_7906)">
-                  <path
-                    d="M5 13.25C5 16.145 7.355 18.5 10.25 18.5H19.5V16H10.25C8.7335 16 7.5 14.7665 7.5 13.25V12H19L22 3H2V5.5H5V13.25ZM18.5315 5.5L17.198 9.5H7.5V5.5H18.5315Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M15 22C15.5523 22 16 21.5523 16 21C16 20.4477 15.5523 20 15 20C14.4477 20 14 20.4477 14 21C14 21.5523 14.4477 22 15 22Z"
-                    fill="white"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1209_7906">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
+              {{ globals.data.shop_title }}
             </a>
           </div>
           <button
@@ -95,6 +69,15 @@
                   />
                 </nuxt-link>
               </div>
+            </div>
+            <div class="menu-link mobile-shop-link">
+              <a
+                :href="globals.data.shop_link.url"
+                target="_blank"
+                class="link"
+              >
+                {{ globals.data.shop_title }}
+              </a>
             </div>
           </nav>
           <div class="nav-footer">
@@ -620,6 +603,20 @@ nav {
 .shop-link {
   position: relative;
   z-index: 100;
+  margin-top: -9px;
+  a {
+    text-decoration: none;
+    font-size: 20px;
+  }
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.mobile-shop-link {
+  @media (min-width: 1024px) {
+    display: none !important;
+  }
 }
 
 .mobile-buttons {
@@ -680,7 +677,7 @@ nav .menu-link a.child-link {
 
 .nav-footer {
   display: flex;
-  align-items: flex-end;
+  // align-items: flex-end;
   justify-content: space-between;
   @include media-breakpoint-up(md) {
     display: none;
@@ -693,11 +690,11 @@ nav .menu-link a.child-link {
     text-decoration: none;
     // font-weight: 700;
     font-size: 20px;
-    margin-bottom: clamp(0.5rem, 3vh, 1.8rem);
+    // margin-bottom: clamp(0.5rem, 3vh, 1.8rem);
   }
 }
 .nav-social {
-  padding-bottom: 1.7rem;
+  // padding-bottom: 1.7rem;
   display: flex;
   align-items: center;
   a {
