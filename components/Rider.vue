@@ -44,7 +44,29 @@
           <prismic-rich-text :field="rider.data.Bio" />
         </div>
       </div>
-      n
+      <div class="rider-sponsors">
+        <div class="rider-sponsors-title">
+          <h4>Industry Alliance Sponsors</h4>
+          <span>0{{ rider.data.Sponsors.length }}</span>
+        </div>
+        <div class="rider-sponsors-logos">
+          <div
+            v-for="(item, index) in rider.data.Sponsors"
+            :key="`rider-logo-${index}`"
+            class="rider-logo"
+          >
+            <nuxt-link
+              v-if="item.Partner.uid"
+              :to="`/partners/${item.Partner.uid}`"
+            >
+              <prismic-image
+                v-if="logos[item.Partner.uid]"
+                :field="logos[item.Partner.uid]"
+              />
+            </nuxt-link>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
