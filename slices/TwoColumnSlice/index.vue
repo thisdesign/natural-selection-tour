@@ -71,7 +71,7 @@ export default {
     },
   },
   mounted() {
-    // console.log(this.slice)
+    // console.log('slice', this.slice.primary.SidebarContent)
   },
 }
 </script>
@@ -126,6 +126,15 @@ img.two-column-title {
     @include media-breakpoint-up(sm) {
       font-size: 4vw;
     }
+  }
+  strong {
+    font-weight: bold;
+  }
+  em {
+    font-style: italic;
+  }
+  a {
+    font-size: inherit;
   }
 }
 .two-column-footer {

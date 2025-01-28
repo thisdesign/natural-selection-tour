@@ -9,45 +9,53 @@
       <slot></slot>
     </div>
     <div :class="`col col-right ${shouldShow ? 'show' : ''}`">
-      <element-section-bar
-        ref="sideBar"
-        :number="sidebarSectionNumber"
-        :title="sidebarSectionTitle"
-      />
-      <div class="middle-content">
-        <PrismicRichText
-          v-if="sidebarContent"
-          :field="sidebarContent"
-          class="sidebar-content"
-        />
-        <element-cta-button
-          v-if="sidebarCta && sidebarCtaLink"
-          class="partners-cta-btn"
-          :link="sidebarCtaLink"
-          :title="sidebarCta"
-        />
-      </div>
-      <div v-if="sidebarStatus === 'video-loop'">
-        <div class="video-wrapper">
-          <video
-            :src="sidebarMedia.url"
-            autoplay
-            muted
-            playsinline
-            loop
-          ></video>
+      <div class="content-wrap">
+        <div>
+          <element-section-bar
+            ref="sideBar"
+            :number="sidebarSectionNumber"
+            :title="sidebarSectionTitle"
+          />
+          <div v-if="sidebarStatus === 'video-loop'">
+            <div class="video-wrapper">
+              <video
+                :src="sidebarMedia.url"
+                autoplay
+                muted
+                playsinline
+                loop
+              ></video>
+            </div>
+          </div>
+          <div
+            v-if="
+              sidebarStatusAvailable === true && sidebarStatus !== 'video-loop'
+            "
+            class="status"
+            :class="getStatus(sidebarStatus).color"
+          >
+            <span class="status-title">{{ statusTitle }}</span>
+            <element-status-icon class="status-icon" :status="sidebarStatus" />
+          </div>
+          <div class="middle-content">
+            <PrismicRichText
+              v-if="sidebarContent && sidebarContent.length > 0"
+              :field="sidebarContent"
+              class="sidebar-content"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        v-if="sidebarStatusAvailable === true && sidebarStatus !== 'video-loop'"
-        class="status"
-        :class="getStatus(sidebarStatus).color"
-      >
-        <span class="status-title">{{ statusTitle }}</span>
-        <element-status-icon class="status-icon" :status="sidebarStatus" />
-      </div>
-      <div class="footer">
-        <slot name="footer"></slot>
+        <div>
+          <div class="footer">
+            <slot name="footer"></slot>
+          </div>
+          <element-cta-button
+            v-if="sidebarCta && sidebarCtaLink"
+            class="partners-cta-btn"
+            :link="sidebarCtaLink"
+            :title="sidebarCta"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -151,15 +159,22 @@ section {
   transition: opacity 0.5s ease-out 0.5s, transform 0.5s ease-out 0.5s;
   opacity: 0;
   transform: translateY(5vh);
+  padding-bottom: 5vw;
   &.show {
     opacity: 1;
     transform: translateY(0);
   }
   @include media-breakpoint-up(sm) {
     width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  }
+}
+
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include media-breakpoint-up(sm) {
+    height: 100%;
   }
 }
 .video-wrapper {
@@ -180,7 +195,7 @@ section {
 .status {
   margin: 0 0 3rem 0;
   @include media-breakpoint-up(sm) {
-    margin: 0 0 auto 0;
+    // margin: 0 0 auto 0;
   }
 }
 .status-title {
