@@ -16,6 +16,7 @@ import ImageSliderSlice from './ImageSliderSlice';
 import PartnerLogoGridSlice from './PartnerLogoGridSlice';
 import RiderGallerySlice from './RiderGallerySlice';
 import RiderRandomizerSlice from './RiderRandomizerSlice';
+import SweepstakesSlice from './SweepstakesSlice';
 import Streams from './Streams';
 import TextSlice from './TextSlice';
 import TwoColumnSlice from './TwoColumnSlice';
@@ -38,6 +39,7 @@ export {
 	PartnerLogoGridSlice,
 	RiderGallerySlice,
 	RiderRandomizerSlice,
+  SweepstakesSlice
 	Streams,
 	TextSlice,
 	TwoColumnSlice,
@@ -61,6 +63,7 @@ export const components = {
 	partner_logo_grid_slice: PartnerLogoGridSlice,
 	rider_gallery_slice: RiderGallerySlice,
 	rider_randomizer_slice: RiderRandomizerSlice,
+  sweepstakes_slice: SweepstakesSlice,
 	streams: Streams,
 	text_slice: TextSlice,
 	two_column_slice: TwoColumnSlice,
