@@ -1,24 +1,12 @@
 <template>
-  <div>
-    <iframe
-      id="sweeps-component"
-      :src="`/sweeps.html?id=${slice.primary.sweepstakes_id}`"
-    ></iframe>
-    <style>
-      #sweeps-component {
-        width: 100%;
-        height: {{ slice.primary.iframe_height }}px;
-        @media (max-width: 767px) {
-          height: {{ slice.primary.iframe_mobile_height }}px;
-        }
-      }
-    </style>
+  <div ref="sweeps">
+    <div :id="`vsscript_${slice.primary.sweepstakes_id}`"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'FeedEmbedSlice',
+  name: 'SweepstakesSlice',
   props: {
     slice: {
       type: Object,
@@ -27,6 +15,16 @@ export default {
         return {}
       },
     },
+  },
+  mounted() {
+    if (this.$refs.sweeps) {
+      const s = document.createElement('script')
+      s.type = 'text/javascript'
+      s.src =
+        'https://app.viralsweep.com/vsa-widget-51f6c6-201609.js?sid=' +
+        this.slice.primary.sweepstakes_id
+      this.$refs.sweeps.append(s)
+    }
   },
 }
 </script>
