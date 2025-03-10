@@ -1,0 +1,60 @@
+{
+  "id": "partner_logo_grid_slice",
+  "type": "SharedSlice",
+  "name": "PartnerLogoGridSlice",
+  "description": "PartnerLogoGridSlice",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "PartnerLogoGridSlice",
+      "primary": {
+        "SectionTitle": {
+          "config": {
+            "label": "SectionTitle",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "SectionNumber": {
+          "config": {
+            "label": "SectionNumber",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Intro",
+            "placeholder": "Introduction",
+            "allowTargetBlank": false,
+            "single": "heading2"
+          }
+        },
+        "UseExternalLinks": {
+          "config": {
+            "label": "UseExternalLinks",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          },
+          "type": "Boolean"
+        },
+        "FeaturedOnly": {
+          "type": "Boolean",
+          "config": {
+            "label": "Featured Only",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
