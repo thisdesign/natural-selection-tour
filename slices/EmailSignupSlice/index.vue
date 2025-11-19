@@ -16,7 +16,7 @@
       <PrismicRichText :field="slice.primary.content" />
     </div>
     <div class="email">
-      <element-email theme="light" />
+      <!-- <element-email theme="light" /> -->
     </div>
   </section>
 </template>

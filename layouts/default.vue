@@ -10,7 +10,7 @@
     </div>
     <app-code />
     <app-footer />
-    <element-modal
+    <!-- <element-modal
       v-if="
         showModal &&
         !(
@@ -18,8 +18,8 @@
           globals.data.sweepstakes_page.slug === $route.params.uid
         )
       "
-    />
-    <element-mailCta
+    /> -->
+    <!-- <element-mailCta
       v-if="
         !showModal &&
         !(
@@ -27,7 +27,7 @@
           globals.data.sweepstakes_page.slug === $route.params.uid
         )
       "
-    />
+    /> -->
   </div>
 </template>
 

@@ -32,7 +32,7 @@
       </div>
       <div class="column col4">
         <footer-feature-text />
-        <element-email theme="dark" />
+        <!-- <element-email theme="dark" /> -->
         <footer-social />
       </div>
     </div>
