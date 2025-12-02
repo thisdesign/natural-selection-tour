@@ -6,7 +6,8 @@
   "license": "MIT",
   "main": "slices/index.js",
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
+    "legacy:dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
+    "dev": "nuxt",
     "nuxt:build": "nuxt build",
     "build": "nuxt generate",
     "legacy:build": "NODE_OPTIONS=--openssl-legacy-provider nuxt generate",

@@ -16,6 +16,7 @@
           <footer-social />
         </div>
       </div>
+      <element-klaviyo />
       <footer-copy />
     </div>
 
@@ -33,6 +34,7 @@
       <div class="column col4">
         <footer-feature-text />
         <!-- <element-email theme="dark" /> -->
+        <element-klaviyo />
         <footer-social />
       </div>
     </div>
