@@ -148,7 +148,11 @@ export default {
     handleTap(data) {
       const index = data.index.split('event-item-')[1].split('-after-copy')[0]
       const item = this.slice.items[index]
-      window.location.href = item.Link.url
+      if (item.Link.target === '_blank') {
+        window.open(item.Link.url)
+      } else {
+        window.location.href = item.Link.url
+      }
     },
     onPrev() {
       this.$refs.slider.$emit('slidePre')

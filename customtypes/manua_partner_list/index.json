@@ -1,0 +1,43 @@
+{
+  "id": "manua_partner_list",
+  "label": "Manual Partner List",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main" : {
+      "featured_partners" : {
+        "type" : "Group",
+        "config" : {
+          "fields" : {
+            "partner" : {
+              "type" : "Link",
+              "config" : {
+                "select" : "document",
+                "customtypes" : [ "partner" ],
+                "label" : "Partner"
+              }
+            }
+          },
+          "label" : "Featured Partners"
+        }
+      },
+      "partners" : {
+        "type" : "Group",
+        "config" : {
+          "fields" : {
+            "partner" : {
+              "type" : "Link",
+              "config" : {
+                "select" : "document",
+                "customtypes" : [ "partner" ],
+                "label" : "Partner"
+              }
+            }
+          },
+          "label" : "Partners"
+        }
+      }
+    }
+  }
+}
+

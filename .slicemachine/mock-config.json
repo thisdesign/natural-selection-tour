@@ -3,7 +3,11 @@
     "PartnerHeroSlice": {},
     "Streams": {},
     "HeroVideoSlice": {},
-    "ImageCarouselSlice": {},
+    "ImageCarouselSlice": {
+      "default-slice": {
+        "items": {}
+      }
+    },
     "BracketSlice": {},
     "DuelsSlice": {
       "default": {
